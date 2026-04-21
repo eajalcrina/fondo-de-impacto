@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Calendar, Mail, MessageCircle, ChevronDown } from "lucide-react";
+import { Calendar, MessageCircle, ChevronDown } from "lucide-react";
 import { CTA } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -23,20 +23,12 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-fi-dark"
+      className="relative min-h-dvh flex flex-col justify-center overflow-hidden"
+      style={{ background: "radial-gradient(ellipse at 18% 65%, rgba(153,66,21,0.18) 0%, transparent 52%), radial-gradient(ellipse at 82% 18%, rgba(124,160,127,0.09) 0%, transparent 42%), #132617" }}
     >
-      {/* Background pattern */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 50%, #994215 0%, transparent 50%), radial-gradient(circle at 80% 20%, #7ca07f 0%, transparent 40%)",
-        }}
-      />
-
       {/* Subtle grid */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
           backgroundImage:
             "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
@@ -44,10 +36,11 @@ export function Hero() {
         }}
       />
 
-      {/* Large decorative circle */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] rounded-full border border-white/5" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] rounded-full border border-white/[0.03]" />
-      <div className="absolute -left-40 bottom-0 w-[500px] h-[500px] rounded-full bg-fi-primary/5 blur-3xl" />
+      {/* Decorative rings — asymmetric, broken */}
+      <div className="absolute right-[-8%] top-1/2 -translate-y-[55%] w-[560px] h-[560px] rounded-full border border-white/[0.06]" />
+      <div className="absolute right-[-18%] top-1/2 -translate-y-[48%] w-[760px] h-[760px] rounded-full border border-white/[0.03]" />
+      <div className="absolute -left-48 bottom-[-5%] w-[480px] h-[480px] rounded-full bg-fi-primary/[0.06] blur-3xl" />
+      <div className="absolute right-[10%] top-[15%] w-[220px] h-[220px] rounded-full bg-fi-sage/[0.05] blur-2xl" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24">
@@ -68,7 +61,7 @@ export function Hero() {
           {/* Headline */}
           <h1
             className={[
-              "text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6",
+              "text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-[1.04] tracking-[-0.02em] mb-6",
               "transition-all duration-700 delay-100",
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
             ].join(" ")}
@@ -90,9 +83,9 @@ export function Hero() {
             {["10% fijo anual", "12 meses", "Deuda sin dilución", "Desde S/ 10,000"].map(
               (term, i) => (
                 <React.Fragment key={term}>
-                  <span className="text-white/80 text-sm font-medium">{term}</span>
+                  <span className="text-white/70 text-sm font-medium">{term}</span>
                   {i < 3 && (
-                    <span className="w-1 h-1 rounded-full bg-fi-primary" />
+                    <span className="w-[3px] h-[3px] rounded-full bg-fi-primary/70" />
                   )}
                 </React.Fragment>
               )
@@ -102,7 +95,7 @@ export function Hero() {
           {/* Description */}
           <p
             className={[
-              "text-white/60 text-lg leading-relaxed max-w-2xl mb-10",
+              "text-white/55 text-lg leading-[1.75] max-w-[58ch] mb-10",
               "transition-all duration-700 delay-300",
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
             ].join(" ")}
@@ -141,22 +134,22 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Metric chips */}
+          {/* Metric chips — left-border accent style */}
           <div
             className={[
-              "flex flex-wrap gap-4 transition-all duration-700 delay-500",
+              "flex flex-wrap gap-6 transition-all duration-700 delay-500",
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
             ].join(" ")}
           >
             {metrics.map((m) => (
               <div
                 key={m.value}
-                className="flex flex-col gap-0.5 bg-white/5 border border-white/10 rounded-2xl px-5 py-3 backdrop-blur-sm"
+                className="flex flex-col gap-1 pl-4 border-l-2 border-fi-primary/50"
               >
-                <span className="text-white font-bold text-lg leading-none">
+                <span className="text-white font-bold text-xl leading-none tabular-nums">
                   {m.value}
                 </span>
-                <span className="text-white/40 text-xs font-light">{m.label}</span>
+                <span className="text-white/40 text-xs font-light tracking-wide">{m.label}</span>
               </div>
             ))}
           </div>
@@ -164,8 +157,8 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
-        <ChevronDown size={24} />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/25 animate-bounce">
+        <ChevronDown size={20} />
       </div>
     </section>
   );

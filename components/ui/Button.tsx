@@ -10,17 +10,16 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   size?: Size;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
-  as?: "a" | "button";
 }
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-fi-primary text-white hover:brightness-110 shadow-lg hover:shadow-fi-primary/30",
+    "bg-fi-primary text-white hover:brightness-110 hover:scale-[1.02] active:scale-[0.97] active:brightness-95 shadow-primary-glow",
   "outline-white":
-    "border border-white text-white hover:bg-white hover:text-fi-primary",
+    "border border-white text-white hover:bg-white hover:text-fi-primary active:scale-[0.97] active:bg-white/90",
   "outline-dark":
-    "border border-fi-dark text-fi-dark hover:bg-fi-dark hover:text-white",
-  ghost: "text-fi-primary hover:underline",
+    "border border-fi-dark text-fi-dark hover:bg-fi-dark hover:text-white active:scale-[0.97]",
+  ghost: "text-fi-primary hover:underline active:opacity-70",
 };
 
 const sizeClasses: Record<Size, string> = {
@@ -45,6 +44,7 @@ export function Button({
         "inline-flex items-center justify-center font-semibold rounded-full",
         "transition-all duration-200 cursor-pointer select-none",
         "tracking-wide uppercase text-xs",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fi-primary focus-visible:ring-offset-2",
         variantClasses[variant],
         sizeClasses[size],
         className,

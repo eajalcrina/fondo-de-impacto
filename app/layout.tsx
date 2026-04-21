@@ -30,7 +30,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <a href="#hero" className="skip-link">Saltar al contenido</a>
+        {children}
+      </body>
     </html>
   );
 }

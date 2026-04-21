@@ -19,8 +19,14 @@ const config: Config = {
         sans: ["var(--font-montserrat)", "Montserrat", "sans-serif"],
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(135deg, #132617 0%, #1e3a1f 50%, #132617 100%)",
+        "hero-gradient": "radial-gradient(ellipse at 20% 60%, rgba(153,66,21,0.15) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(124,160,127,0.08) 0%, transparent 45%), linear-gradient(160deg, #132617 0%, #1a3020 60%, #132617 100%)",
         "cta-gradient":  "linear-gradient(135deg, #994215 0%, #b85418 100%)",
+      },
+      boxShadow: {
+        "primary-glow": "0 12px 40px -8px rgba(153, 66, 21, 0.45)",
+        "dark-glow":    "0 12px 40px -8px rgba(19, 38, 23, 0.35)",
+        "sage-glow":    "0 8px 32px -8px rgba(124, 160, 127, 0.3)",
+        "card-dark":    "0 4px 24px -4px rgba(19, 38, 23, 0.12)",
       },
       keyframes: {
         "fade-up": {
