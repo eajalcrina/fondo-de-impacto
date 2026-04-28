@@ -2,17 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap');
-
-:root {
-  --font-montserrat: 'Montserrat', sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+* { box-sizing: border-box; padding: 0; margin: 0; }
 
 html {
   scroll-behavior: smooth;
@@ -20,28 +10,33 @@ html {
 }
 
 body {
-  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
-  background-color: #f4f4f4;
-  color: #132617;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: #faf8f3;
+  color: #0e0e0c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: #132617; }
-::-webkit-scrollbar-thumb { background: #994215; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #994215; border-radius: 0; }
 
-/* Selection */
 ::selection { background: #994215; color: white; }
 
-@layer utilities {
-  .section-label {
-    @apply text-xs font-semibold tracking-[0.25em] uppercase;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  .animate-delay-100 { animation-delay: 100ms; }
-  .animate-delay-200 { animation-delay: 200ms; }
-  .animate-delay-300 { animation-delay: 300ms; }
-  .animate-delay-400 { animation-delay: 400ms; }
-  .opacity-0-initial { opacity: 0; }
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.25em];
+  }
+  .hairline-h { @apply h-px w-full; }
+  .hairline-v { @apply w-px; }
 }
