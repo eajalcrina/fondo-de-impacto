@@ -10,23 +10,23 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   size?: Size;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
-  as?: "a" | "button";
 }
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-fi-primary text-white hover:brightness-110 shadow-lg hover:shadow-fi-primary/30",
+    "bg-fi-primary text-white hover:brightness-95 transition-[filter] duration-200 ease-soft",
   "outline-white":
-    "border border-white text-white hover:bg-white hover:text-fi-primary",
+    "border-[1.5px] border-white text-white hover:bg-white/10 transition-colors duration-200 ease-soft",
   "outline-dark":
-    "border border-fi-dark text-fi-dark hover:bg-fi-dark hover:text-white",
-  ghost: "text-fi-primary hover:underline",
+    "border-[1.5px] border-fi-ink text-fi-ink hover:bg-fi-ink/5 transition-colors duration-200 ease-soft",
+  ghost:
+    "text-fi-primary font-semibold hover:underline underline-offset-2 transition-all duration-200 ease-soft",
 };
 
 const sizeClasses: Record<Size, string> = {
-  sm: "px-4 py-2 text-sm gap-1.5",
-  md: "px-6 py-3 text-sm gap-2",
-  lg: "px-8 py-4 text-base gap-2.5",
+  sm: "px-5 py-2.5 text-[12px] gap-1.5",
+  md: "px-6 py-3 text-[13px] gap-2",
+  lg: "px-8 py-[14px] text-[14px] gap-2.5",
 };
 
 export function Button({
@@ -42,21 +42,16 @@ export function Button({
     <a
       {...props}
       className={[
-        "inline-flex items-center justify-center font-semibold rounded-full",
-        "transition-all duration-200 cursor-pointer select-none",
-        "tracking-wide uppercase text-xs",
+        "inline-flex items-center justify-center font-semibold rounded",
+        "cursor-pointer select-none tracking-wide",
         variantClasses[variant],
         sizeClasses[size],
         className,
       ].join(" ")}
     >
-      {icon && iconPosition === "left" && (
-        <span className="shrink-0">{icon}</span>
-      )}
+      {icon && iconPosition === "left" && <span className="shrink-0">{icon}</span>}
       {children}
-      {icon && iconPosition === "right" && (
-        <span className="shrink-0">{icon}</span>
-      )}
+      {icon && iconPosition === "right" && <span className="shrink-0">{icon}</span>}
     </a>
   );
 }
