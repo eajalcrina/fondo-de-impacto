@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 interface SectionRevealProps {
   children: React.ReactNode;
@@ -10,28 +11,22 @@ interface SectionRevealProps {
 
 export function SectionReveal({ children, className = "", delay = 0 }: SectionRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+  const inView = useInView(ref, { once: true, margin: "-15% 0px" });
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={[
-        "transition-all duration-700 ease-out",
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-        className,
-      ].join(" ")}
+      className={className}
+      initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: prefersReducedMotion ? 0 : 0.7,
+        delay: delay / 1000,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
