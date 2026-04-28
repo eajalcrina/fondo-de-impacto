@@ -8,10 +8,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "fi-dark":    "#132617",
-        "fi-primary": "#994215",
+        "fi-dark":    "#161412",
+        "fi-primary": "#c0411c",
         "fi-light":   "#faf8f3",
-        "fi-sage":    "#7ca07f",
+        "fi-sage":    "#a89272",
         "fi-ink":     "#0e0e0c",
         "fi-line":    "#e6e3da",
         endemics:     "#2c2c2a",

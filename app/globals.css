@@ -20,10 +20,10 @@ body {
 }
 
 ::-webkit-scrollbar       { width: 6px; }
-::-webkit-scrollbar-track { background: #132617; }
-::-webkit-scrollbar-thumb { background: #994215; border-radius: 0; }
+::-webkit-scrollbar-track { background: #161412; }
+::-webkit-scrollbar-thumb { background: #c0411c; border-radius: 0; }
 
-::selection { background: #994215; color: white; }
+::selection { background: #c0411c; color: white; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
