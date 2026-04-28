@@ -1,50 +1,48 @@
-import React from "react";
-import { Mail, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 import { CTA } from "@/lib/constants";
+
+const navLinks = [
+  { label: "Qué es FI",       href: "#que-es" },
+  { label: "Track Record",    href: "#track-record" },
+  { label: "Call 2026",       href: "#call-2026" },
+  { label: "Proyectos",       href: "#proyectos" },
+  { label: "Cómo participar", href: "#como-participar" },
+];
 
 export function Footer() {
   return (
-    <footer className="bg-fi-dark border-t border-white/5 py-12">
+    <footer className="bg-fi-ink py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
 
-        <div className="grid md:grid-cols-3 gap-12 mb-10">
-
-          {/* Logo & tagline */}
+          {/* Wordmark */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-fi-primary" />
-              </div>
-              <div>
-                <div className="text-white font-bold text-sm tracking-wider uppercase leading-none">
-                  Fondo de Impacto
-                </div>
-                <div className="text-white/30 text-[9px] tracking-[0.2em] uppercase">
-                  Powered by Redesign Lab
-                </div>
-              </div>
+            <div className="flex items-center gap-2 mb-6">
+              <span className="font-display text-[16px] font-[500] text-white leading-none">
+                Fondo de Impacto
+              </span>
+              <span className="text-white/40 text-[16px] leading-none">·</span>
+              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] text-white/40 leading-none">
+                Redesign Lab
+              </span>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+            <p className="font-sans text-[13px] text-white/40 leading-relaxed max-w-[240px]">
               Invertimos en los negocios que el planeta necesita hoy.
             </p>
           </div>
 
-          {/* Call details */}
+          {/* Sitemap */}
           <div>
-            <h4 className="text-white/40 text-xs font-semibold tracking-widest uppercase mb-4">
-              Investment Call 2026
-            </h4>
-            <ul className="space-y-2 text-sm">
-              {[
-                "S/ 300,000 meta total",
-                "10% fijo anual",
-                "12 meses · Pago bullet",
-                "Deuda — Sin dilución",
-                "Ticket mín. S/ 10,000",
-              ].map((item) => (
-                <li key={item} className="text-white/50 flex gap-2">
-                  <span className="text-fi-primary">·</span>
-                  {item}
+            <p className="eyebrow text-white/30 mb-6">Navegación</p>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="font-sans text-[12px] font-semibold uppercase tracking-[0.25em] text-white/60 hover:text-white transition-colors duration-200"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -52,43 +50,43 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white/40 text-xs font-semibold tracking-widest uppercase mb-4">
-              Contacto
-            </h4>
-            <div className="space-y-3">
+            <p className="eyebrow text-white/30 mb-6">Contacto</p>
+            <div className="space-y-4">
               <a
                 href={CTA.email}
-                className="flex items-center gap-3 text-white/50 hover:text-white transition-colors text-sm"
+                className="flex items-center gap-3 font-sans text-[14px] text-white/70 hover:text-white transition-colors duration-200"
               >
-                <Mail size={14} className="text-fi-primary" />
+                <Mail size={14} className="text-fi-primary shrink-0" />
                 {CTA.contactEmail}
               </a>
               <a
                 href={CTA.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/50 hover:text-white transition-colors text-sm"
+                className="flex items-center gap-3 font-sans text-[14px] text-white/70 hover:text-white transition-colors duration-200"
               >
-                <Phone size={14} className="text-fi-primary" />
+                <Phone size={14} className="text-fi-primary shrink-0" />
                 {CTA.phone}
+              </a>
+              <a
+                href="https://www.linkedin.com/company/redesignlab/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 font-sans text-[14px] text-white/70 hover:text-white transition-colors duration-200"
+              >
+                <Linkedin size={14} className="text-fi-primary shrink-0" />
+                LinkedIn
               </a>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-white/5 mb-6" />
+        <div className="h-px bg-white/10 mb-6" />
 
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/20 text-xs">
-            © 2026 Fondo de Impacto — Redesign Lab. Todos los derechos reservados.
-          </p>
-          <p className="text-white/15 text-xs text-center md:text-right max-w-md">
-            Este material es confidencial y está dirigido exclusivamente a
-            inversionistas calificados. No constituye oferta pública de valores.
-          </p>
-        </div>
+        <p className="font-sans text-[11px] text-white/30">
+          © 2026 Fondo de Impacto · Powered by Redesign Lab
+        </p>
       </div>
     </footer>
   );
