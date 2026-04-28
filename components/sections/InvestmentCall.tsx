@@ -148,34 +148,19 @@ function ProjectCard({
         <div className="grid grid-cols-12 h-full">
           {/* Left panel — project color (7 cols) */}
           <div
-            className="col-span-7 relative overflow-hidden p-10 lg:p-14 flex flex-col justify-between"
+            className="col-span-7 relative overflow-hidden p-6 md:p-10 lg:p-14 flex flex-col justify-between"
             style={{ backgroundColor: project.color }}
           >
-            {/* Logo overlay */}
-            <div
-              className="absolute inset-0 flex items-start justify-start pointer-events-none transition-opacity duration-300 ease-soft"
-              style={{ opacity: 0.08 }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={project.logo}
-                alt=""
-                aria-hidden
-                className="w-[140%] max-w-none object-contain scale-150 origin-top-left"
-                style={{ filter: "brightness(0) invert(1)", mixBlendMode: "soft-light" }}
-              />
-            </div>
-
             {/* Content */}
             <div className="relative z-10">
-              <div className="font-display text-[14px] tracking-widest text-white/40 mb-1">
+              <div className="font-display text-[12px] tracking-widest text-white/40 mb-1">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <div className="font-sans text-[11px] font-bold tracking-[0.4em] uppercase text-white mb-10">
+              <div className="font-sans text-[10px] font-bold tracking-[0.4em] uppercase text-white mb-6">
                 {project.name}
               </div>
 
-              <h3 className="font-display text-[3rem] lg:text-[3.5rem] font-[400] text-white leading-[1.05]">
+              <h3 className="font-display text-[clamp(1.25rem,3.5vw,3rem)] font-[400] text-white leading-[1.05]">
                 {project.tagline}
               </h3>
             </div>
@@ -188,7 +173,7 @@ function ProjectCard({
           </div>
 
           {/* Right panel — fi-dark ficha (5 cols) */}
-          <div className="col-span-5 bg-fi-dark p-8 lg:p-10 flex flex-col">
+          <div className="col-span-5 bg-fi-dark p-4 md:p-8 lg:p-10 flex flex-col">
             <div className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-fi-sage mb-3">
               Ficha
             </div>
@@ -198,7 +183,7 @@ function ProjectCard({
               {/* Inversión */}
               <div className="pb-5">
                 <div className="eyebrow text-white/40 mb-2">Inversión</div>
-                <div className="font-display text-[2rem] font-[400] text-white leading-none" style={{ fontFeatureSettings: '"tnum"' }}>
+                <div className="font-display text-[clamp(1.1rem,2.5vw,2rem)] font-[400] text-white leading-none" style={{ fontFeatureSettings: '"tnum"' }}>
                   {project.investment}
                 </div>
               </div>
