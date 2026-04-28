@@ -1,24 +1,24 @@
 "use client";
 
-import React from "react";
 import { Leaf, Shield, Network } from "lucide-react";
 import { SectionReveal } from "@/components/ui/SectionReveal";
+import { Hairline } from "@/components/ui/Hairline";
 
 const pillars = [
   {
-    icon: <Leaf size={24} />,
+    icon: Leaf,
     title: "Impacto real",
     description:
       "Negocios que generan valor económico, social y ambiental en comunidades de la Amazonía y los Andes peruanos.",
   },
   {
-    icon: <Shield size={24} />,
+    icon: Shield,
     title: "Retorno garantizado",
     description:
       "Instrumento de deuda con tasa fija del 10% anual, pago bullet al mes 12 y contrato notarial firmado por los fundadores.",
   },
   {
-    icon: <Network size={24} />,
+    icon: Network,
     title: "Ecosistema vivo",
     description:
       "Al invertir, formas parte de una red de innovación con presencia global y alianzas con IDB, MIT, GIZ, WWF y más.",
@@ -27,56 +27,69 @@ const pillars = [
 
 export function WhatIsFI() {
   return (
-    <section id="que-es" className="bg-fi-light py-24 lg:py-32">
+    <section id="que-es" className="bg-fi-light py-32 lg:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
-        <SectionReveal className="mb-16 max-w-3xl">
-          <span className="section-label text-fi-primary mb-4 block">
-            Quiénes somos
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-fi-dark leading-tight mb-6">
+        <SectionReveal className="mb-16">
+          <span className="eyebrow text-fi-primary mb-4 block">Quiénes somos</span>
+          <h2 className="font-display text-display-lg text-fi-ink mb-6">
             Aceleramos negocios
             <br />
             con capital de impacto.
           </h2>
-          <p className="text-fi-dark/60 text-lg leading-relaxed">
-            Fondo de Impacto es la plataforma de inversión de Redesign Lab: un
-            ecosistema de financiamiento que conecta inversionistas ángel con
-            marcas peruanas construidas sobre la biodiversidad amazónica y
-            andina. No es un fondo de riesgo. Es una oportunidad de retorno
-            garantizado con propósito real.
+          <p className="font-sans text-[18px] text-fi-ink/60 leading-relaxed max-w-3xl">
+            Fondo de Impacto es la plataforma de inversión de Redesign Lab: un ecosistema
+            de financiamiento que conecta inversionistas ángel con marcas peruanas
+            construidas sobre la biodiversidad amazónica y andina. No es un fondo de
+            riesgo. Es una oportunidad de retorno garantizado con propósito real.
           </p>
         </SectionReveal>
 
-        {/* Pillars */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {pillars.map((pillar, i) => (
-            <SectionReveal key={pillar.title} delay={i * 120}>
-              <div className="bg-white rounded-3xl p-8 h-full border border-fi-dark/5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-2xl bg-fi-primary/10 flex items-center justify-center text-fi-primary mb-6 group-hover:bg-fi-primary group-hover:text-white transition-all duration-300">
-                  {pillar.icon}
+        {/* Pillars — editorial blocks with vertical hairlines */}
+        <div className="grid md:grid-cols-3 gap-0 mb-20">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon;
+            return (
+              <SectionReveal key={pillar.title} delay={i * 120}>
+                <div className="pl-8 pr-6 relative">
+                  {/* Animated vertical hairline left edge */}
+                  <div className="absolute left-0 top-0 bottom-0 flex">
+                    <Hairline
+                      direction="vertical"
+                      color="#e6e3da"
+                      animated
+                      delay={i * 120}
+                      className="h-full"
+                    />
+                  </div>
+
+                  <Icon size={24} className="text-fi-primary mb-6" strokeWidth={1.5} />
+                  <h3 className="font-display text-display-sm text-fi-ink mb-3">
+                    {pillar.title}
+                  </h3>
+                  <p className="font-sans text-[14px] text-fi-ink/60 leading-relaxed">
+                    {pillar.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-fi-dark mb-3">
-                  {pillar.title}
-                </h3>
-                <p className="text-fi-dark/60 text-sm leading-relaxed">
-                  {pillar.description}
-                </p>
-              </div>
-            </SectionReveal>
-          ))}
+              </SectionReveal>
+            );
+          })}
         </div>
 
-        {/* Tagline */}
+        {/* Pull-quote */}
         <SectionReveal>
-          <div className="text-center">
-            <div className="inline-flex items-center gap-3">
-              <div className="h-px w-16 bg-fi-primary/30" />
-              <p className="text-fi-primary italic text-lg font-medium">
-                &ldquo;Invertimos en los negocios que el planeta necesita hoy.&rdquo;
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 md:col-start-2 md:col-span-8 relative">
+              <span
+                className="absolute -top-8 -left-4 font-display text-[80px] leading-none text-fi-primary/30 select-none"
+                aria-hidden
+              >
+                &ldquo;
+              </span>
+              <p className="font-display italic text-[32px] font-[400] text-fi-primary leading-tight">
+                Invertimos en los negocios que el planeta necesita hoy.
               </p>
-              <div className="h-px w-16 bg-fi-primary/30" />
             </div>
           </div>
         </SectionReveal>
