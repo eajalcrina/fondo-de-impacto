@@ -5,16 +5,17 @@
 * { box-sizing: border-box; padding: 0; margin: 0; }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 body {
   font-family: var(--font-inter), system-ui, sans-serif;
   background-color: #faf8f3;
   color: #0e0e0c;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "ss01", "cv11";
 }
 
@@ -29,13 +30,12 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
 @layer utilities {
   .eyebrow {
-    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.25em];
+    @apply font-sans text-eyebrow font-semibold uppercase;
   }
   .hairline-h { @apply h-px w-full; }
   .hairline-v { @apply w-px; }
