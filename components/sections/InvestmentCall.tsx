@@ -147,7 +147,7 @@ function ProjectCard({
 
           {/* Left panel — project color, full width on mobile / 7 cols on md+ */}
           <div
-            className="relative overflow-hidden p-10 md:p-10 lg:p-14 flex flex-col justify-between md:col-span-7"
+            className="relative overflow-hidden p-8 lg:p-10 flex flex-col justify-between md:col-span-7"
             style={{ backgroundColor: project.color, minHeight: "280px" }}
           >
             {/* Content */}
@@ -159,7 +159,7 @@ function ProjectCard({
                 {project.name}
               </div>
 
-              <h3 className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-[400] text-white leading-[1.05]">
+              <h3 className="font-display text-[1.5rem] lg:text-[1.75rem] font-[400] text-white leading-[1.1]">
                 {project.tagline}
               </h3>
             </div>
