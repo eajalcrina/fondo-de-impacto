@@ -42,7 +42,7 @@ export function TrackRecord() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10 mb-20">
           {STATS_TRACK_RECORD.map((stat, i) => (
             <SectionReveal key={stat.value} delay={i * 100}>
-              <StatBlock value={stat.value} label={stat.label} dark />
+              <StatBlock value={stat.value} label={stat.label} accent="white" />
             </SectionReveal>
           ))}
         </div>

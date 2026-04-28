@@ -1,50 +1,84 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { CountUp, CountUpFormat } from "@/components/ui/CountUp";
 
 interface StatBlockProps {
   value: string;
   label: string;
-  dark?: boolean;
+  accent?: "primary" | "white" | "sage";
+  numeric?: boolean;
 }
 
-export function StatBlock({ value, label, dark = false }: StatBlockProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+const accentClasses: Record<string, string> = {
+  primary: "text-fi-primary",
+  white:   "text-white",
+  sage:    "text-fi-sage",
+};
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+function parseNumeric(raw: string): {
+  prefix: string;
+  num: number;
+  suffix: string;
+  format: CountUpFormat;
+} | null {
+  const match = raw.match(/^([^0-9]*)([0-9][0-9,.]*)([^0-9]*)$/);
+  if (!match) return null;
+  const [, prefix, numStr, suffix] = match;
+  const num = parseFloat(numStr.replace(/,/g, ""));
+  if (isNaN(num)) return null;
+  const format: CountUpFormat =
+    suffix.trim() === "%" ? "percent" : "int";
+  return { prefix: prefix.trim(), num, suffix: suffix ? ` ${suffix.trim()}` : "", format };
+}
+
+export function StatBlock({
+  value,
+  label,
+  accent = "white",
+  numeric = false,
+}: StatBlockProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+
+  const parsed = numeric ? parseNumeric(value) : null;
 
   return (
-    <div
-      ref={ref}
-      className={[
-        "flex flex-col gap-1 transition-all duration-700",
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-      ].join(" ")}
-    >
-      <span
-        className={[
-          "text-4xl md:text-5xl font-bold tracking-tight leading-none",
-          dark ? "text-white" : "text-fi-dark",
-        ].join(" ")}
-      >
-        {value}
-      </span>
-      <span
-        className={[
-          "text-sm font-light leading-tight max-w-[180px]",
-          dark ? "text-white/70" : "text-fi-dark/60",
-        ].join(" ")}
-      >
-        {label}
-      </span>
+    <div ref={ref} className="flex flex-col gap-2">
+      {/* Animated hairline top */}
+      <motion.div
+        className="h-px w-full"
+        style={{ transformOrigin: "left" }}
+        initial={{ scaleX: 0 }}
+        animate={inView ? { scaleX: 1 } : {}}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      />
+
+      <div className="pt-4">
+        <span
+          className={[
+            "font-display text-numeric-lg leading-none block",
+            "font-[400]",
+            accentClasses[accent] ?? "text-white",
+          ].join(" ")}
+          style={{ fontFeatureSettings: '"tnum"' }}
+        >
+          {numeric && parsed ? (
+            <CountUp
+              value={parsed.num}
+              format={parsed.format}
+              prefix={parsed.prefix}
+              suffix={parsed.suffix}
+            />
+          ) : (
+            value
+          )}
+        </span>
+        <span className="font-sans text-[13px] leading-relaxed mt-2 block opacity-60">
+          {label}
+        </span>
+      </div>
     </div>
   );
 }
