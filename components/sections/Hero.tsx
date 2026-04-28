@@ -1,171 +1,162 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Calendar, Mail, MessageCircle, ChevronDown } from "lucide-react";
+import { useRef } from "react";
+import { Calendar, MessageCircle } from "lucide-react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { CTA } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { CountUp } from "@/components/ui/CountUp";
+import { Hairline } from "@/components/ui/Hairline";
 
-const metrics = [
-  { value: "S/ 300,000", label: "Meta de levantamiento" },
-  { value: "10% Anual",  label: "Tasa fija garantizada" },
-  { value: "12 Meses",   label: "Plazo de retorno" },
+// Noise texture via SVG feTurbulence
+const NOISE = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`;
+
+const snapshot = [
+  { label: "CAPITAL OBJETIVO", value: 300000, format: "currency-soles" as const, accent: false },
+  { label: "TASA FIJA ANUAL",  value: 10,     format: "percent" as const,         accent: true  },
+  { label: "PLAZO",            value: 12,     format: "int" as const,             accent: false, suffix: " meses" },
+  { label: "TICKET MÍNIMO",   value: 10000,  format: "currency-soles" as const,  accent: false, small: true },
 ];
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const prefersReducedMotion = useReducedMotion();
 
-  useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 50);
-    return () => clearTimeout(t);
-  }, []);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const parallaxY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    prefersReducedMotion ? [0, 0] : [0, -40]
+  );
 
   return (
     <section
+      ref={sectionRef}
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-fi-dark"
+      className="relative min-h-screen flex items-center bg-fi-dark overflow-hidden"
     >
-      {/* Background pattern */}
+      {/* Noise texture */}
       <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 50%, #994215 0%, transparent 50%), radial-gradient(circle at 80% 20%, #7ca07f 0%, transparent 40%)",
-        }}
+        className="absolute inset-0 opacity-[0.035] mix-blend-overlay pointer-events-none"
+        style={{ backgroundImage: NOISE }}
+        aria-hidden
       />
 
-      {/* Subtle grid */}
+      {/* Horizontal hairline at 1/3 height */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
+        className="absolute left-0 right-0 h-px bg-white/10 pointer-events-none"
+        style={{ top: "33.333%" }}
+        aria-hidden
       />
 
-      {/* Large decorative circle */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] rounded-full border border-white/5" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] rounded-full border border-white/[0.03]" />
-      <div className="absolute -left-40 bottom-0 w-[500px] h-[500px] rounded-full bg-fi-primary/5 blur-3xl" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24 w-full">
+        <div className="grid grid-cols-12 gap-8 lg:gap-16 items-center">
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24">
-        <div className="max-w-4xl">
-
-          {/* Badge */}
-          <div
-            className={[
-              "transition-all duration-700",
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-            ].join(" ")}
-          >
-            <Badge color="white" className="mb-8">
+          {/* Left: 7 columns */}
+          <div className="col-span-12 lg:col-span-7">
+            <Badge color="sage" className="mb-8">
               Investment Call 2026 · I
             </Badge>
-          </div>
 
-          {/* Headline */}
-          <h1
-            className={[
-              "text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6",
-              "transition-all duration-700 delay-100",
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-            ].join(" ")}
-          >
-            Invierte en el futuro
-            <br />
-            <span className="text-fi-primary">de la bioeconomía</span>
-            <br />
-            peruana.
-          </h1>
+            <h1 className="font-display text-display-xl text-white mb-8 leading-[1.05]">
+              Invierte en el futuro
+              <br />
+              de la{" "}
+              <span className="relative inline-block">
+                bioeconomía
+                <motion.span
+                  className="absolute left-0 right-0 h-[1.5px] bg-fi-primary origin-left"
+                  style={{ bottom: "-4px" }}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.6, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                  aria-hidden
+                />
+              </span>
+              <br />
+              peruana.
+            </h1>
 
-          {/* Key terms strip */}
-          <div
-            className={[
-              "flex flex-wrap items-center gap-2 mb-8 transition-all duration-700 delay-200",
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-            ].join(" ")}
-          >
-            {["10% fijo anual", "12 meses", "Deuda sin dilución", "Desde S/ 10,000"].map(
-              (term, i) => (
-                <React.Fragment key={term}>
-                  <span className="text-white/80 text-sm font-medium">{term}</span>
-                  {i < 3 && (
-                    <span className="w-1 h-1 rounded-full bg-fi-primary" />
-                  )}
-                </React.Fragment>
-              )
-            )}
-          </div>
+            <p className="font-sans text-[18px] text-white/70 leading-relaxed max-w-xl mb-10">
+              Fondo de Impacto conecta capital ángel con marcas sostenibles de la
+              biodiversidad peruana. Un instrumento de deuda simple, con retorno
+              garantizado por contrato notarial y respaldo de Redesign Lab.
+            </p>
 
-          {/* Description */}
-          <p
-            className={[
-              "text-white/60 text-lg leading-relaxed max-w-2xl mb-10",
-              "transition-all duration-700 delay-300",
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-            ].join(" ")}
-          >
-            Fondo de Impacto conecta capital ángel con marcas sostenibles de la
-            biodiversidad peruana. Un instrumento de deuda simple, con retorno
-            garantizado por contrato notarial y respaldo de Redesign Lab.
-          </p>
-
-          {/* CTA Buttons */}
-          <div
-            className={[
-              "flex flex-col sm:flex-row gap-4 mb-16 transition-all duration-700 delay-[400ms]",
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-            ].join(" ")}
-          >
-            <Button
-              href={CTA.calendar}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-              size="lg"
-              icon={<Calendar size={16} />}
-            >
-              Agendar entrevista 1:1
-            </Button>
-            <Button
-              href={CTA.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline-white"
-              size="lg"
-              icon={<MessageCircle size={16} />}
-            >
-              Escribir por WhatsApp
-            </Button>
-          </div>
-
-          {/* Metric chips */}
-          <div
-            className={[
-              "flex flex-wrap gap-4 transition-all duration-700 delay-500",
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-            ].join(" ")}
-          >
-            {metrics.map((m) => (
-              <div
-                key={m.value}
-                className="flex flex-col gap-0.5 bg-white/5 border border-white/10 rounded-2xl px-5 py-3 backdrop-blur-sm"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                href={CTA.calendar}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                size="lg"
+                icon={<Calendar size={16} />}
               >
-                <span className="text-white font-bold text-lg leading-none">
-                  {m.value}
-                </span>
-                <span className="text-white/40 text-xs font-light">{m.label}</span>
+                Agendar entrevista 1:1
+              </Button>
+              <Button
+                href={CTA.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline-white"
+                size="lg"
+                icon={<MessageCircle size={16} />}
+              >
+                Escribir por WhatsApp
+              </Button>
+            </div>
+          </div>
+
+          {/* Right: snapshot ficha — cols 9-12 with parallax */}
+          <motion.div
+            className="col-span-12 lg:col-span-4 lg:col-start-9"
+            style={{ y: parallaxY }}
+          >
+            <div className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-fi-sage mb-3">
+              Snapshot
+            </div>
+            <Hairline color="rgba(255,255,255,0.15)" />
+
+            {snapshot.map((item, i) => (
+              <div key={item.label}>
+                <div className="py-5">
+                  <div className="font-sans text-[11px] font-semibold tracking-[0.2em] uppercase text-white/40 mb-1">
+                    {item.label}
+                  </div>
+                  <div
+                    className={[
+                      "font-display font-[400] leading-none",
+                      item.small ? "text-[2.25rem] text-white/70" : "text-numeric-lg",
+                      item.accent ? "text-fi-primary" : "text-white",
+                    ].join(" ")}
+                    style={{ fontFeatureSettings: '"tnum"' }}
+                  >
+                    <CountUp
+                      value={item.value}
+                      format={item.format}
+                      suffix={"suffix" in item ? item.suffix : undefined}
+                    />
+                  </div>
+                </div>
+                {i < snapshot.length - 1 && <Hairline color="rgba(255,255,255,0.1)" />}
               </div>
             ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
-        <ChevronDown size={24} />
+            <Hairline color="rgba(255,255,255,0.15)" />
+            <div className="pt-4 font-sans text-[12px] text-white/60 leading-relaxed">
+              <span className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-white/40">
+                Estructura
+              </span>
+              <br />
+              Deuda · Sin dilución · Contrato notarial
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
