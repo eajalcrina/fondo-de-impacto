@@ -1,98 +1,103 @@
 "use client";
 
-import React from "react";
-import { Check, Star } from "lucide-react";
 import { SectionReveal } from "@/components/ui/SectionReveal";
-import { Button } from "@/components/ui/Button";
+import { Hairline } from "@/components/ui/Hairline";
 import { INVESTOR_PROFILES, CTA } from "@/lib/constants";
 
 export function InvestorProfiles() {
   return (
-    <section className="bg-fi-light py-24 lg:py-32">
+    <section className="bg-fi-light py-32 lg:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* Header */}
-        <SectionReveal className="text-center mb-16">
-          <span className="section-label text-fi-primary mb-4 block">
-            Perfiles de inversionista
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-fi-dark leading-tight mb-4">
-            ¿Cuál es tu perfil?
-          </h2>
-          <p className="text-fi-dark/50 text-lg max-w-xl mx-auto">
-            Ambos perfiles reciben el mismo retorno: 10% anual fijo,
-            pago bullet mes 12, respaldado por contrato notarial.
-          </p>
+        {/* Asymmetric header */}
+        <SectionReveal className="mb-16">
+          <div className="grid grid-cols-12 gap-8 items-end">
+            <div className="col-span-12 lg:col-span-7">
+              <span className="eyebrow text-fi-primary mb-4 block">Perfiles de inversionista</span>
+              <h2 className="font-display text-display-lg text-fi-ink">
+                ¿Cuál es tu perfil?
+              </h2>
+            </div>
+            <div className="col-span-12 lg:col-span-4 lg:col-start-9">
+              <p className="font-sans text-[18px] text-fi-ink/60 leading-relaxed">
+                Ambos perfiles reciben el mismo retorno: 10% anual fijo,
+                pago bullet mes 12, respaldado por contrato notarial.
+              </p>
+            </div>
+          </div>
         </SectionReveal>
 
-        {/* Profile cards */}
+        {/* Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {INVESTOR_PROFILES.map((profile, i) => (
             <SectionReveal key={profile.tier} delay={i * 150}>
               <div
                 className={[
-                  "rounded-3xl p-8 h-full border transition-all duration-300 relative overflow-hidden",
+                  "rounded p-10 h-full border relative overflow-hidden",
                   profile.highlighted
-                    ? "bg-fi-dark text-white border-fi-primary shadow-xl shadow-fi-dark/20"
-                    : "bg-white text-fi-dark border-fi-dark/10 shadow-sm",
+                    ? "bg-fi-dark border-white/10"
+                    : "bg-white border-fi-line",
                 ].join(" ")}
               >
-                {/* Highlighted label */}
+                {/* Strategic investor label */}
                 {profile.highlighted && (
-                  <div className="absolute top-6 right-6">
-                    <span className="flex items-center gap-1 bg-fi-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                      <Star size={10} fill="white" />
-                      Recomendado
+                  <div className="absolute top-8 right-8">
+                    <span className="eyebrow text-fi-sage">
+                      Para inversionistas estratégicos
                     </span>
                   </div>
                 )}
 
                 {/* Tier */}
-                <div className="mb-6">
+                <div className="mb-8">
                   <h3
                     className={[
-                      "text-2xl font-bold mb-1",
-                      profile.highlighted ? "text-white" : "text-fi-dark",
+                      "font-display text-[2rem] font-[500] mb-1",
+                      profile.highlighted ? "text-white" : "text-fi-ink",
                     ].join(" ")}
                   >
                     {profile.tier}
                   </h3>
-                  <p
-                    className={[
-                      "text-xs font-semibold tracking-wider uppercase mb-3",
-                      profile.highlighted ? "text-fi-primary" : "text-fi-primary",
-                    ].join(" ")}
-                  >
+                  <p className="eyebrow text-fi-primary mt-1 mb-4">
                     {profile.subtitle}
                   </p>
-                  <div
-                    className={[
-                      "inline-block px-4 py-1.5 rounded-full text-sm font-bold",
-                      profile.highlighted
-                        ? "bg-fi-primary text-white"
-                        : "bg-fi-dark text-white",
-                    ].join(" ")}
-                  >
-                    {profile.range}
+                  {/* Range with hairline underline */}
+                  <div className="relative inline-block">
+                    <span
+                      className={[
+                        "font-sans text-[14px] font-semibold",
+                        profile.highlighted ? "text-white" : "text-fi-ink",
+                      ].join(" ")}
+                    >
+                      {profile.range}
+                    </span>
+                    <div
+                      className="absolute -bottom-0.5 left-0 right-0 h-px"
+                      style={{ backgroundColor: "#994215" }}
+                    />
                   </div>
                 </div>
 
-                {/* Description */}
                 <p
                   className={[
-                    "text-sm leading-relaxed mb-6",
-                    profile.highlighted ? "text-white/60" : "text-fi-dark/60",
+                    "font-sans text-[14px] leading-relaxed mb-8",
+                    profile.highlighted ? "text-white/60" : "text-fi-ink/60",
                   ].join(" ")}
                 >
                   {profile.description}
                 </p>
 
-                {/* For whom */}
+                <Hairline
+                  color={profile.highlighted ? "rgba(255,255,255,0.1)" : "#e6e3da"}
+                  className="mb-6"
+                />
+
+                {/* Ideal para */}
                 <div className="mb-6">
                   <p
                     className={[
-                      "text-xs font-semibold tracking-wider uppercase mb-3",
-                      profile.highlighted ? "text-white/40" : "text-fi-dark/40",
+                      "eyebrow mb-3",
+                      profile.highlighted ? "text-white/40" : "text-fi-ink/40",
                     ].join(" ")}
                   >
                     Ideal para
@@ -102,68 +107,43 @@ export function InvestorProfiles() {
                       <li
                         key={item}
                         className={[
-                          "text-sm flex gap-2 items-start",
-                          profile.highlighted ? "text-white/70" : "text-fi-dark/70",
+                          "font-sans text-[14px] flex gap-3 items-start",
+                          profile.highlighted ? "text-white/70" : "text-fi-ink/70",
                         ].join(" ")}
                       >
-                        <span
-                          className={[
-                            "mt-1 shrink-0",
-                            profile.highlighted ? "text-fi-sage" : "text-fi-sage",
-                          ].join(" ")}
-                        >
-                          ·
-                        </span>
+                        <span className="shrink-0 mt-0.5">—</span>
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Divider */}
-                <div
-                  className={[
-                    "h-px mb-6",
-                    profile.highlighted ? "bg-white/10" : "bg-fi-dark/10",
-                  ].join(" ")}
+                <Hairline
+                  color={profile.highlighted ? "rgba(255,255,255,0.1)" : "#e6e3da"}
+                  className="mb-6"
                 />
 
                 {/* Benefits */}
                 <div>
                   <p
                     className={[
-                      "text-xs font-semibold tracking-wider uppercase mb-3",
-                      profile.highlighted ? "text-white/40" : "text-fi-dark/40",
+                      "eyebrow mb-3",
+                      profile.highlighted ? "text-white/40" : "text-fi-ink/40",
                     ].join(" ")}
                   >
                     Beneficios
                   </p>
                   <ul className="space-y-2">
                     {profile.benefits.map((benefit) => (
-                      <li key={benefit} className="flex gap-3 items-start">
-                        <div
-                          className={[
-                            "w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5",
-                            profile.highlighted
-                              ? "bg-fi-primary/20"
-                              : "bg-fi-dark/10",
-                          ].join(" ")}
-                        >
-                          <Check
-                            size={10}
-                            className={
-                              profile.highlighted ? "text-fi-primary" : "text-fi-dark"
-                            }
-                          />
-                        </div>
-                        <span
-                          className={[
-                            "text-sm",
-                            profile.highlighted ? "text-white/70" : "text-fi-dark/70",
-                          ].join(" ")}
-                        >
-                          {benefit}
-                        </span>
+                      <li
+                        key={benefit}
+                        className={[
+                          "font-sans text-[14px] flex gap-3 items-start",
+                          profile.highlighted ? "text-white/70" : "text-fi-ink/70",
+                        ].join(" ")}
+                      >
+                        <span className="shrink-0 text-fi-primary mt-0.5">—</span>
+                        {benefit}
                       </li>
                     ))}
                   </ul>
@@ -173,14 +153,12 @@ export function InvestorProfiles() {
           ))}
         </div>
 
-        {/* Unifying note */}
+        {/* Note */}
         <SectionReveal>
-          <div className="text-center">
-            <p className="text-fi-dark/50 text-sm italic">
-              &ldquo;Ambos perfiles reciben el mismo retorno: 10% anual fijo, pago bullet mes 12,
-              respaldado por contrato notarial firmado por los co-fundadores.&rdquo;
-            </p>
-          </div>
+          <p className="font-sans text-[14px] italic text-fi-ink/50 text-center">
+            &ldquo;Ambos perfiles reciben el mismo retorno: 10% anual fijo, pago bullet mes 12,
+            respaldado por contrato notarial firmado por los co-fundadores.&rdquo;
+          </p>
         </SectionReveal>
       </div>
     </section>
