@@ -52,11 +52,22 @@ export function CountUp({
     animated.current = true;
 
     const start = performance.now();
-    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+    const easeEditorial = (t: number): number => {
+      const p1x = 0.22, p1y = 1, p2x = 0.36, p2y = 1;
+      let lo = 0, hi = 1, s = t;
+      for (let i = 0; i < 10; i++) {
+        const x = 3 * p1x * s * (1 - s) ** 2 + 3 * p2x * s ** 2 * (1 - s) + s ** 3;
+        if (Math.abs(x - t) < 0.0001) break;
+        if (x < t) lo = s;
+        else hi = s;
+        s = (lo + hi) / 2;
+      }
+      return 3 * p1y * s * (1 - s) ** 2 + 3 * p2y * s ** 2 * (1 - s) + s ** 3;
+    };
 
     function tick(now: number) {
       const progress = Math.min((now - start) / duration, 1);
-      setDisplayed(formatValue(easeOut(progress) * value, format));
+      setDisplayed(formatValue(easeEditorial(progress) * value, format));
       if (progress < 1) requestAnimationFrame(tick);
     }
 
