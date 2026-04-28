@@ -133,8 +133,8 @@ function ProjectCard({
     <SectionReveal delay={index * 100}>
       <div
         ref={cardRef}
-        className="relative overflow-hidden group"
-        style={{ aspectRatio: "5/6" }}
+        className="relative overflow-hidden group flex flex-col md:grid md:grid-cols-12"
+        style={{ minHeight: "480px" }}
       >
         {/* Animated hairline top — project color */}
         <motion.div
@@ -145,11 +145,10 @@ function ProjectCard({
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         />
 
-        <div className="grid grid-cols-12 h-full">
-          {/* Left panel — project color (7 cols) */}
+          {/* Left panel — project color, full width on mobile / 7 cols on md+ */}
           <div
-            className="col-span-7 relative overflow-hidden p-6 md:p-10 lg:p-14 flex flex-col justify-between"
-            style={{ backgroundColor: project.color }}
+            className="relative overflow-hidden p-10 md:p-10 lg:p-14 flex flex-col justify-between md:col-span-7"
+            style={{ backgroundColor: project.color, minHeight: "280px" }}
           >
             {/* Content */}
             <div className="relative z-10">
@@ -160,20 +159,20 @@ function ProjectCard({
                 {project.name}
               </div>
 
-              <h3 className="font-display text-[clamp(1.25rem,3.5vw,3rem)] font-[400] text-white leading-[1.05]">
+              <h3 className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-[400] text-white leading-[1.05]">
                 {project.tagline}
               </h3>
             </div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 mt-6">
               <span className="eyebrow text-white/50">
                 {project.category}
               </span>
             </div>
           </div>
 
-          {/* Right panel — fi-dark ficha (5 cols) */}
-          <div className="col-span-5 bg-fi-dark p-4 md:p-8 lg:p-10 flex flex-col">
+          {/* Right panel — fi-dark ficha, full width on mobile / 5 cols on md+ */}
+          <div className="bg-fi-dark p-8 md:p-8 lg:p-10 flex flex-col md:col-span-5">
             <div className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-fi-sage mb-3">
               Ficha
             </div>
@@ -183,7 +182,7 @@ function ProjectCard({
               {/* Inversión */}
               <div className="pb-5">
                 <div className="eyebrow text-white/40 mb-2">Inversión</div>
-                <div className="font-display text-[clamp(1.1rem,2.5vw,2rem)] font-[400] text-white leading-none" style={{ fontFeatureSettings: '"tnum"' }}>
+                <div className="font-display text-[1.75rem] font-[400] text-white leading-none" style={{ fontFeatureSettings: '"tnum"' }}>
                   {project.investment}
                 </div>
               </div>
@@ -210,7 +209,6 @@ function ProjectCard({
               </div>
             </div>
           </div>
-        </div>
       </div>
     </SectionReveal>
   );
