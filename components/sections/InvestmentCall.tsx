@@ -130,10 +130,10 @@ function ProjectCard({
   const [hitoMain, hitoSub] = project.margin.split(" - ");
 
   return (
-    <SectionReveal delay={index * 100}>
+    <SectionReveal delay={index * 100} className="h-full">
       <div
         ref={cardRef}
-        className="relative overflow-hidden group flex flex-col md:grid md:grid-cols-12"
+        className="relative overflow-hidden group flex flex-col md:grid md:grid-cols-12 h-full"
         style={{ minHeight: "480px" }}
       >
         {/* Animated hairline top — project color */}
