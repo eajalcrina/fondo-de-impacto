@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { CTA } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { RedesignLabLogo } from "@/components/ui/RedesignLabLogo";
@@ -25,11 +25,21 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = open ? "hidden" : previous;
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
   return (
     <header
       className={[
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-fi-dark/95 backdrop-blur-md" : "bg-transparent",
+        scrolled && !open ? "bg-fi-dark/95 backdrop-blur-md" : "bg-transparent",
       ].join(" ")}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
@@ -69,11 +79,12 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger — kept above the mobile overlay so it stays interactive */}
         <button
-          className="lg:hidden text-white p-2"
-          onClick={() => setOpen(!open)}
+          className="lg:hidden text-white p-2 relative z-[70]"
+          onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -84,32 +95,76 @@ export function Navbar() {
         {open && (
           <motion.div
             key="mobile-menu"
-            className="lg:hidden fixed inset-0 bg-fi-dark z-40 flex flex-col items-center justify-center gap-10"
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menú de navegación"
+            className="lg:hidden fixed inset-0 z-[60] flex flex-col"
+            style={{ backgroundColor: "#0c1c1f" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
-            <button
-              className="absolute top-5 right-6 text-white p-2"
-              onClick={() => setOpen(false)}
-              aria-label="Cerrar menú"
+            {/* Top bar — matches navbar height so the close X visually replaces the hamburger */}
+            <div className="h-20 px-6 flex items-center justify-between shrink-0">
+              <span className="font-display text-[15px] font-[600] text-white leading-none whitespace-nowrap">
+                Fondo de Impacto
+              </span>
+              {/* Empty spacer — the real close button is the hamburger above (z-70) */}
+              <span className="w-[22px] h-[22px]" aria-hidden />
+            </div>
+
+            <div className="h-px bg-white/10 mx-6 shrink-0" />
+
+            {/* Links — left-aligned editorial rows with hairlines */}
+            <nav className="flex-1 overflow-y-auto px-6 pt-2 pb-6">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center justify-between py-5 border-b border-white/10 active:opacity-60"
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.35, delay: 0.05 + i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <span className="font-display text-[24px] font-[500] text-white leading-none">
+                    {link.label}
+                  </span>
+                  <span className="font-sans text-[11px] font-semibold tracking-[0.25em] text-white/30 group-hover:text-fi-primary transition-colors">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </motion.a>
+              ))}
+            </nav>
+
+            {/* CTA + footer */}
+            <motion.div
+              className="px-6 pb-10 pt-2 shrink-0"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              <X size={22} />
-            </button>
-            {navLinks.map((link, i) => (
-              <motion.a
-                key={link.href}
-                href={link.href}
+              <Button
+                href={CTA.calendar}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                size="lg"
+                icon={<Calendar size={16} />}
+                className="w-full"
                 onClick={() => setOpen(false)}
-                className="font-display text-[28px] font-[400] text-white hover:text-fi-sage transition-colors duration-200"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
               >
-                {link.label}
-              </motion.a>
-            ))}
+                Agendar entrevista 1:1
+              </Button>
+              <div className="flex items-center gap-2 mt-6 justify-center">
+                <span className="font-sans text-[10px] text-white/40 uppercase tracking-[0.2em]">
+                  Powered by
+                </span>
+                <RedesignLabLogo color="white" size="sm" className="opacity-60" />
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
