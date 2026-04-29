@@ -133,7 +133,7 @@ function ProjectCard({
     <SectionReveal delay={index * 100} className="h-full">
       <div
         ref={cardRef}
-        className="relative overflow-hidden group flex flex-col md:grid md:grid-cols-12 h-full"
+        className="relative overflow-hidden group flex flex-col lg:grid lg:grid-cols-12 h-full"
         style={{ minHeight: "480px" }}
       >
         {/* Animated hairline top — project color */}
@@ -145,9 +145,9 @@ function ProjectCard({
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         />
 
-          {/* Left panel — project color, full width on mobile / 7 cols on md+ */}
+          {/* Left panel — project color, full width below lg / 7 cols on lg+ */}
           <div
-            className="relative overflow-hidden p-8 lg:p-10 flex flex-col justify-between md:col-span-7"
+            className="relative overflow-hidden p-8 lg:p-10 flex flex-col justify-between lg:col-span-7"
             style={{ backgroundColor: project.color, minHeight: "280px" }}
           >
             {/* Content */}
@@ -171,8 +171,8 @@ function ProjectCard({
             </div>
           </div>
 
-          {/* Right panel — fi-dark ficha, full width on mobile / 5 cols on md+ */}
-          <div className="bg-fi-dark p-8 md:p-8 lg:p-10 flex flex-col md:col-span-5">
+          {/* Right panel — fi-dark ficha, full width below lg / 5 cols on lg+ */}
+          <div className="bg-fi-dark p-8 lg:p-10 flex flex-col lg:col-span-5">
             <div className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-fi-sage mb-3">
               Ficha
             </div>

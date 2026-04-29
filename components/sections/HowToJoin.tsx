@@ -52,7 +52,7 @@ export function HowToJoin() {
                   <span className="font-display text-[64px] font-[400] text-white/40 leading-none mb-4">
                     {step.number}
                   </span>
-                  <h3 className="font-display text-[22px] font-[500] text-white mb-3">
+                  <h3 className="font-display text-[22px] font-[400] text-white mb-3">
                     {step.title}
                   </h3>
                   <p className="font-sans text-[14px] text-white/50 leading-relaxed">

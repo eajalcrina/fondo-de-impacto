@@ -1,24 +1,23 @@
 "use client";
 
-import { Leaf, Shield, Network } from "lucide-react";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Hairline } from "@/components/ui/Hairline";
 
 const pillars = [
   {
-    icon: Leaf,
+    number: "01",
     title: "Impacto real",
     description:
       "Negocios que generan valor económico, social y ambiental en comunidades de la Amazonía y los Andes peruanos.",
   },
   {
-    icon: Shield,
+    number: "02",
     title: "Retorno garantizado",
     description:
       "Instrumento de deuda con tasa fija del 10% anual, pago bullet al mes 12 y contrato notarial firmado por los fundadores.",
   },
   {
-    icon: Network,
+    number: "03",
     title: "Ecosistema vivo",
     description:
       "Al invertir, formas parte de una red de innovación con presencia global y alianzas con IDB, MIT, GIZ, WWF y más.",
@@ -48,47 +47,45 @@ export function WhatIsFI() {
 
         {/* Pillars — editorial blocks with vertical hairlines */}
         <div className="grid md:grid-cols-3 gap-0 mb-20">
-          {pillars.map((pillar, i) => {
-            const Icon = pillar.icon;
-            return (
-              <SectionReveal key={pillar.title} delay={i * 120}>
-                <div className="pl-8 pr-6 relative">
-                  {/* Animated vertical hairline left edge */}
-                  <div className="absolute left-0 top-0 bottom-0 flex">
-                    <Hairline
-                      direction="vertical"
-                      color="#e6e3da"
-                      animated
-                      delay={i * 120}
-                      className="h-full"
-                    />
-                  </div>
-
-                  <Icon size={24} className="text-fi-primary mb-6" strokeWidth={1.5} />
-                  <h3 className="font-display text-display-sm text-fi-ink mb-3">
-                    {pillar.title}
-                  </h3>
-                  <p className="font-sans text-[14px] text-fi-ink/60 leading-relaxed">
-                    {pillar.description}
-                  </p>
+          {pillars.map((pillar, i) => (
+            <SectionReveal key={pillar.title} delay={i * 120}>
+              <div className="pl-8 pr-6 relative">
+                {/* Animated vertical hairline left edge */}
+                <div className="absolute left-0 top-0 bottom-0 flex">
+                  <Hairline
+                    direction="vertical"
+                    color="#e6e3da"
+                    animated
+                    delay={i * 120}
+                    className="h-full"
+                  />
                 </div>
-              </SectionReveal>
-            );
-          })}
+
+                {/* Editorial number instead of icon */}
+                <div className="font-display text-[11px] tracking-[0.3em] text-fi-primary/50 mb-6 font-[400]">
+                  {pillar.number}
+                </div>
+
+                <h3 className="font-display text-display-sm text-fi-ink mb-3 font-[400]">
+                  {pillar.title}
+                </h3>
+                <p className="font-sans text-[14px] text-fi-ink/60 leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
+            </SectionReveal>
+          ))}
         </div>
 
-        {/* Pull-quote */}
+        {/* Pull-quote — toned down */}
         <SectionReveal>
           <div className="grid grid-cols-12">
-            <div className="col-span-12 md:col-start-2 md:col-span-8 relative">
-              <span
-                className="absolute -top-8 -left-4 font-display text-[80px] leading-none text-fi-primary/30 select-none"
-                aria-hidden
-              >
-                &ldquo;
-              </span>
-              <p className="font-display italic text-[32px] font-[400] text-fi-primary leading-tight">
+            <div className="col-span-12 md:col-start-2 md:col-span-8 relative pl-8 border-l-2 border-fi-line">
+              <p className="font-display italic text-[26px] lg:text-[30px] font-[400] text-fi-ink/60 leading-tight">
                 Invertimos en los negocios que el planeta necesita hoy.
+              </p>
+              <p className="font-sans text-[12px] text-fi-ink/40 mt-4 tracking-[0.1em] uppercase">
+                Redesign Lab · Lima, Perú
               </p>
             </div>
           </div>
