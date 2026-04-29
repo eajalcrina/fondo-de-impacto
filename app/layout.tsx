@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Work_Sans, Libre_Caslon_Display } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const workSans = Work_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-work-sans",
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const libreDisplay = Libre_Caslon_Display({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-caslon",
+  weight: "400",
   display: "swap",
-  axes: ["opsz", "SOFT"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="es" className={`${workSans.variable} ${libreDisplay.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

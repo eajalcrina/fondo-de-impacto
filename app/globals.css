@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-work-sans), system-ui, sans-serif;
   background-color: #faf8f3;
   color: #0e0e0c;
   font-feature-settings: "ss01", "cv11";

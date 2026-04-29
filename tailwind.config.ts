@@ -18,8 +18,8 @@ const config: Config = {
         rareby:       "#f82605",
       },
       fontFamily: {
-        sans:    ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
+        sans:    ["var(--font-work-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-caslon)", "Georgia", "serif"],
       },
       letterSpacing: {
         eyebrow:       "0.25em",
