@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { Work_Sans, Libre_Caslon_Display } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const workSans = Work_Sans({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-work-sans",
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
-});
-
-const libreDisplay = Libre_Caslon_Display({
-  subsets: ["latin"],
-  variable: "--font-caslon",
-  weight: "400",
+  variable: "--font-jakarta",
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -31,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${workSans.variable} ${libreDisplay.variable}`}>
+    <html lang="es" className={`${plusJakarta.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

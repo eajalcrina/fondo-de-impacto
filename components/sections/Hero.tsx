@@ -35,17 +35,25 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center bg-fi-dark overflow-hidden"
     >
+      {/* Forest image — top 55%, fades into fi-dark */}
+      <div className="absolute inset-x-0 top-0 h-[55%] pointer-events-none" aria-hidden>
+        <img
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80"
+          alt=""
+          className="w-full h-full object-cover object-center"
+          style={{ opacity: 0.45 }}
+          loading="eager"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, rgba(12,28,31,0.3) 0%, #0c1c1f 100%)" }}
+        />
+      </div>
+
       {/* Noise texture */}
       <div
         className="absolute inset-0 opacity-[0.035] mix-blend-overlay pointer-events-none"
         style={{ backgroundImage: NOISE }}
-        aria-hidden
-      />
-
-      {/* Subtle horizontal rule at 30% */}
-      <div
-        className="absolute left-0 right-0 h-px bg-white/[0.06] pointer-events-none"
-        style={{ top: "30%" }}
         aria-hidden
       />
 
@@ -63,7 +71,7 @@ export function Hero() {
 
         {/* Headline */}
         <motion.h1
-          className="font-display text-white leading-[1.03] tracking-[-0.025em] mb-8 mx-auto"
+          className="font-display font-[700] text-white leading-[1.03] tracking-[-0.035em] mb-8 mx-auto"
           style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

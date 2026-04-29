@@ -8,18 +8,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "fi-dark":    "#161412",
-        "fi-primary": "#c0411c",
+        "fi-dark":    "#0c1c1f",
+        "fi-primary": "#c0541c",
         "fi-light":   "#faf8f3",
-        "fi-sage":    "#a89272",
+        "fi-sage":    "#9ab8bb",
         "fi-ink":     "#0e0e0c",
         "fi-line":    "#e6e3da",
         endemics:     "#2c2c2a",
         rareby:       "#f82605",
       },
       fontFamily: {
-        sans:    ["var(--font-work-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-caslon)", "Georgia", "serif"],
+        sans:    ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        display: ["var(--font-jakarta)", "system-ui", "sans-serif"],
       },
       letterSpacing: {
         eyebrow:       "0.25em",

@@ -29,8 +29,8 @@ export function HowToJoin() {
 
         {/* Stepper */}
         <div className="relative mb-16">
-          {/* Animated connector line — desktop */}
-          <div ref={lineRef} className="hidden md:block absolute top-8 left-0 right-0 h-px overflow-hidden">
+          {/* Animated connector line — desktop, sits BELOW the numbers */}
+          <div ref={lineRef} className="hidden md:block absolute top-[76px] left-0 right-0 h-px overflow-hidden">
             <div className="absolute inset-0 bg-white/10" />
             <motion.div
               className="absolute inset-0 bg-fi-primary origin-left"
@@ -49,7 +49,8 @@ export function HowToJoin() {
                     <div className="md:hidden absolute left-4 top-16 w-px h-16 bg-white/10" />
                   )}
 
-                  <span className="font-display text-[64px] font-[400] text-white/40 leading-none mb-4">
+                  {/* Number sits above the line with a fi-dark bg gap to visually clear the line */}
+                  <span className="font-display text-[64px] font-[400] text-white/50 leading-none mb-3 pr-3 bg-fi-dark inline-block">
                     {step.number}
                   </span>
                   <h3 className="font-display text-[22px] font-[400] text-white mb-3">

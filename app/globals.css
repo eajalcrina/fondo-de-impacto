@@ -13,17 +13,17 @@ html {
 }
 
 body {
-  font-family: var(--font-work-sans), system-ui, sans-serif;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
   background-color: #faf8f3;
   color: #0e0e0c;
   font-feature-settings: "ss01", "cv11";
 }
 
 ::-webkit-scrollbar       { width: 6px; }
-::-webkit-scrollbar-track { background: #161412; }
-::-webkit-scrollbar-thumb { background: #c0411c; border-radius: 0; }
+::-webkit-scrollbar-track { background: #0c1c1f; }
+::-webkit-scrollbar-thumb { background: #c0541c; border-radius: 0; }
 
-::selection { background: #c0411c; color: white; }
+::selection { background: #c0541c; color: white; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
