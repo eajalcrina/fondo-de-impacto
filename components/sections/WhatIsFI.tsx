@@ -26,7 +26,7 @@ const pillars = [
 
 export function WhatIsFI() {
   return (
-    <section id="que-es" className="bg-fi-light py-32 lg:py-40">
+    <section id="que-es" className="bg-fi-light py-20 sm:py-32 lg:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}

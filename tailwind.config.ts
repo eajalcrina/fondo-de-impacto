@@ -30,9 +30,9 @@ const config: Config = {
         "display-lg": ["clamp(2.5rem, 4.5vw, 3.5rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
         "display-md": ["2.5rem",                        { lineHeight: "1.1" }],
         "display-sm": ["1.75rem",                       { lineHeight: "1.15" }],
-        "numeric-xl": ["clamp(3rem, 5vw, 4.5rem)",     { lineHeight: "1", letterSpacing: "-0.02em" }],
-        "numeric-lg": ["3.5rem",                        { lineHeight: "1", letterSpacing: "-0.02em" }],
-        "numeric-md": ["2rem",                          { lineHeight: "1", letterSpacing: "-0.01em" }],
+        "numeric-xl": ["clamp(3rem, 5vw, 4.5rem)",                  { lineHeight: "1", letterSpacing: "-0.02em" }],
+        "numeric-lg": ["clamp(2rem, 7.5vw, 3.5rem)",                { lineHeight: "1", letterSpacing: "-0.02em" }],
+        "numeric-md": ["clamp(1.5rem, 5vw, 2rem)",                  { lineHeight: "1", letterSpacing: "-0.01em" }],
         eyebrow:      ["0.6875rem",                     { letterSpacing: "0.25em", lineHeight: "1.6" }],
       },
       transitionTimingFunction: {

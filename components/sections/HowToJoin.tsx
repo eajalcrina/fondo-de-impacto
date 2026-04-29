@@ -12,7 +12,7 @@ export function HowToJoin() {
   const lineInView = useInView(lineRef, { once: true, margin: "-20% 0px" });
 
   return (
-    <section id="como-participar" className="bg-fi-dark py-32 lg:py-40 overflow-hidden">
+    <section id="como-participar" className="bg-fi-dark py-20 sm:py-32 lg:py-40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}

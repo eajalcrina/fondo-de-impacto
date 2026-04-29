@@ -57,7 +57,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8 pt-36 pb-28 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8 pt-32 pb-20 sm:pt-36 sm:pb-28 text-center">
 
         {/* Badge */}
         <motion.div
@@ -71,8 +71,8 @@ export function Hero() {
 
         {/* Headline */}
         <motion.h1
-          className="font-display font-[700] text-white leading-[1.03] tracking-[-0.035em] mb-8 mx-auto"
-          style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+          className="font-display font-[700] text-white leading-[1.03] tracking-[-0.035em] mb-8 mx-auto break-words"
+          style={{ fontSize: "clamp(2.25rem, 7vw, 6rem)", overflowWrap: "break-word" }}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -118,20 +118,20 @@ export function Hero() {
 
         {/* Stats row */}
         <motion.div
-          className="flex justify-center items-stretch mb-6"
+          className="grid grid-cols-2 sm:flex sm:justify-center sm:items-stretch gap-y-8 mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
           {stats.map((stat, i) => (
-            <div key={stat.label} className="flex items-stretch">
+            <div key={stat.label} className="flex items-stretch min-w-0">
               {i > 0 && (
-                <div className="w-px bg-white/10 mx-8 self-stretch" aria-hidden />
+                <div className="hidden sm:block w-px bg-white/10 mx-6 md:mx-8 self-stretch" aria-hidden />
               )}
-              <div className="text-center">
+              <div className="text-center min-w-0 flex-1 px-2 sm:px-0">
                 <div
-                  className="font-display text-white leading-none tracking-[-0.02em]"
-                  style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", fontFeatureSettings: '"tnum"' }}
+                  className="font-display text-white leading-none tracking-[-0.02em] break-words"
+                  style={{ fontSize: "clamp(1.25rem, 4.5vw, 2.5rem)", fontFeatureSettings: '"tnum"', overflowWrap: "anywhere" }}
                 >
                   <CountUp
                     value={stat.value}
