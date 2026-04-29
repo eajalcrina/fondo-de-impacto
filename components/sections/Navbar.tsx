@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { CTA } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { RedesignLabLogo } from "@/components/ui/RedesignLabLogo";
 
 const navLinks = [
   { label: "Qué es FI",        href: "#que-es" },
@@ -33,15 +34,13 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Wordmark */}
-        <a href="#" className="flex items-center gap-2 group">
-          <span className="font-display text-[16px] font-[500] text-white leading-none">
+        <div className="flex items-center gap-2.5">
+          <a href="#" className="font-display text-[16px] font-[600] text-white leading-none hover:opacity-80 transition-opacity duration-200">
             Fondo de Impacto
-          </span>
-          <span className="text-white/40 text-[16px] leading-none select-none">·</span>
-          <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] text-white/40 leading-none">
-            Redesign Lab
-          </span>
-        </a>
+          </a>
+          <span className="text-white/30 text-[14px] leading-none select-none">·</span>
+          <RedesignLabLogo color="white" size="sm" className="opacity-50 hover:opacity-80" />
+        </div>
 
         {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-8">

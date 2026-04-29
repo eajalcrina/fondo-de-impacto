@@ -1,5 +1,6 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
 import { CTA } from "@/lib/constants";
+import { RedesignLabLogo } from "@/components/ui/RedesignLabLogo";
 
 const navLinks = [
   { label: "Qué es FI",       href: "#que-es" },
@@ -17,14 +18,14 @@ export function Footer() {
 
           {/* Wordmark */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <span className="font-display text-[16px] font-[500] text-white leading-none">
+            <div className="mb-4">
+              <span className="font-display text-[16px] font-[600] text-white leading-none block mb-1">
                 Fondo de Impacto
               </span>
-              <span className="text-white/40 text-[16px] leading-none">·</span>
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] text-white/40 leading-none">
-                Redesign Lab
-              </span>
+              <div className="flex items-center gap-1.5">
+                <span className="font-sans text-[10px] text-white/30 uppercase tracking-[0.2em]">Powered by</span>
+                <RedesignLabLogo color="white" size="sm" className="opacity-60 hover:opacity-100" />
+              </div>
             </div>
             <p className="font-sans text-[13px] text-white/40 leading-relaxed max-w-[240px]">
               Invertimos en los negocios que el planeta necesita hoy.
@@ -84,9 +85,12 @@ export function Footer() {
         {/* Divider */}
         <div className="h-px bg-white/10 mb-6" />
 
-        <p className="font-sans text-[11px] text-white/30">
-          © 2026 Fondo de Impacto · Powered by Redesign Lab
-        </p>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span className="font-sans text-[11px] text-white/30">© 2026 Fondo de Impacto</span>
+          <span className="text-white/20 text-[11px]">·</span>
+          <span className="font-sans text-[11px] text-white/30">Powered by</span>
+          <RedesignLabLogo color="white" size="sm" className="opacity-40 hover:opacity-70" />
+        </div>
       </div>
     </footer>
   );
