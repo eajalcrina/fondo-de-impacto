@@ -32,14 +32,14 @@ export function Navbar() {
         scrolled ? "bg-fi-dark/95 backdrop-blur-md" : "bg-transparent",
       ].join(" ")}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         {/* Wordmark */}
-        <div className="flex items-center gap-2.5">
-          <a href="#" className="font-display text-[16px] font-[600] text-white leading-none hover:opacity-80 transition-opacity duration-200">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <a href="#" className="font-display text-[15px] sm:text-[16px] font-[600] text-white leading-none hover:opacity-80 transition-opacity duration-200 whitespace-nowrap">
             Fondo de Impacto
           </a>
-          <span className="text-white/30 text-[14px] leading-none select-none">·</span>
-          <RedesignLabLogo color="white" size="sm" className="opacity-50 hover:opacity-80" />
+          <span className="hidden sm:inline text-white/30 text-[14px] leading-none select-none">·</span>
+          <RedesignLabLogo color="white" size="sm" className="hidden sm:inline-flex opacity-50 hover:opacity-80" />
         </div>
 
         {/* Desktop links */}

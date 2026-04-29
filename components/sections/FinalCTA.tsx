@@ -27,7 +27,7 @@ const actions = [
 
 export function FinalCTA() {
   return (
-    <section className="bg-fi-primary py-32 lg:py-40 overflow-hidden">
+    <section className="bg-fi-primary py-20 sm:py-32 lg:py-40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
 
         <SectionReveal className="mb-12">

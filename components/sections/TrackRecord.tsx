@@ -7,7 +7,7 @@ import { STATS_TRACK_RECORD, ALLIES, TEAM } from "@/lib/constants";
 
 export function TrackRecord() {
   return (
-    <section id="track-record" className="bg-fi-light py-32 lg:py-40">
+    <section id="track-record" className="bg-fi-light py-20 sm:py-32 lg:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
@@ -36,7 +36,7 @@ export function TrackRecord() {
         </SectionReveal>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-12 gap-y-10 mb-20">
           {STATS_TRACK_RECORD.map((stat, i) => {
             const isNumeric = stat.value === "10" || stat.value === "+120";
             return (

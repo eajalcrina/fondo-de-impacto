@@ -58,11 +58,11 @@ export function StatBlock({
       <div className="pt-4">
         <span
           className={[
-            "font-display text-numeric-lg leading-none block",
+            "font-display text-numeric-lg leading-none block break-words",
             "font-[400]",
             accentClasses[accent] ?? "text-white",
           ].join(" ")}
-          style={{ fontFeatureSettings: '"tnum"' }}
+          style={{ fontFeatureSettings: '"tnum"', wordBreak: "break-word", overflowWrap: "anywhere" }}
         >
           {numeric && parsed ? (
             <CountUp

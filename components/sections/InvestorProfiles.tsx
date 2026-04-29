@@ -6,7 +6,7 @@ import { INVESTOR_PROFILES, CTA } from "@/lib/constants";
 
 export function InvestorProfiles() {
   return (
-    <section className="bg-fi-light py-32 lg:py-40">
+    <section className="bg-fi-light py-20 sm:py-32 lg:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Asymmetric header */}
@@ -33,7 +33,7 @@ export function InvestorProfiles() {
             <SectionReveal key={profile.tier} delay={i * 150}>
               <div
                 className={[
-                  "rounded p-10 h-full border relative overflow-hidden",
+                  "rounded p-6 sm:p-10 h-full border relative overflow-hidden",
                   profile.highlighted
                     ? "bg-fi-dark border-white/10"
                     : "bg-white border-fi-line",
@@ -41,7 +41,7 @@ export function InvestorProfiles() {
               >
                 {/* Strategic investor label */}
                 {profile.highlighted && (
-                  <div className="absolute top-8 right-8">
+                  <div className="hidden md:block absolute top-8 right-8">
                     <span className="eyebrow text-fi-sage">
                       Para inversionistas estratégicos
                     </span>

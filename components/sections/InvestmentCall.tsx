@@ -11,7 +11,7 @@ import { PROJECTS } from "@/lib/constants";
 
 export function InvestmentCall() {
   return (
-    <section id="call-2026" className="bg-fi-dark py-32 lg:py-40 overflow-hidden">
+    <section id="call-2026" className="bg-fi-dark py-20 sm:py-32 lg:py-40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
@@ -37,7 +37,7 @@ export function InvestmentCall() {
               {/* Capital */}
               <div className="text-center md:text-left md:pr-8">
                 <div className="eyebrow text-white/40 mb-4">Capital</div>
-                <div className="font-display font-[400] leading-none text-white mb-2" style={{ fontSize: "4.5rem", fontFeatureSettings: '"tnum"' }}>
+                <div className="font-display font-[400] leading-none text-white mb-2 break-words" style={{ fontSize: "clamp(2.25rem, 9vw, 4.5rem)", fontFeatureSettings: '"tnum"', overflowWrap: "anywhere" }}>
                   <CountUp value={300000} format="currency-soles" />
                 </div>
               </div>
@@ -47,7 +47,7 @@ export function InvestmentCall() {
                 <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-white/10" />
                 <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-white/10" />
                 <div className="eyebrow text-white/40 mb-4">Retorno</div>
-                <div className="font-display font-[400] leading-none text-white mb-2" style={{ fontSize: "4.5rem", fontFeatureSettings: '"tnum"' }}>
+                <div className="font-display font-[400] leading-none text-white mb-2 break-words" style={{ fontSize: "clamp(2.25rem, 9vw, 4.5rem)", fontFeatureSettings: '"tnum"', overflowWrap: "anywhere" }}>
                   <CountUp value={10} format="percent" />
                   <span className="font-sans text-[13px] text-white/50 ml-2 align-middle">anual</span>
                 </div>
@@ -56,7 +56,7 @@ export function InvestmentCall() {
               {/* Devolución */}
               <div className="text-center md:text-right md:pl-8 mt-10 md:mt-0">
                 <div className="eyebrow text-white/40 mb-4">Devolución</div>
-                <div className="font-display font-[400] leading-none text-white mb-2" style={{ fontSize: "4.5rem", fontFeatureSettings: '"tnum"' }}>
+                <div className="font-display font-[400] leading-none text-white mb-2 break-words" style={{ fontSize: "clamp(2.25rem, 9vw, 4.5rem)", fontFeatureSettings: '"tnum"', overflowWrap: "anywhere" }}>
                   <CountUp value={330000} format="currency-soles" />
                 </div>
                 <div className="font-sans text-[12px] text-white/40 mt-1">Mes 12</div>
@@ -147,7 +147,7 @@ function ProjectCard({
 
           {/* Left panel — project color, full width below lg / 7 cols on lg+ */}
           <div
-            className="relative overflow-hidden p-8 lg:p-10 flex flex-col justify-between lg:col-span-7"
+            className="relative overflow-hidden p-6 sm:p-8 lg:p-10 flex flex-col justify-between lg:col-span-7"
             style={{ backgroundColor: project.color, minHeight: "280px" }}
           >
             {/* Content */}
@@ -172,7 +172,7 @@ function ProjectCard({
           </div>
 
           {/* Right panel — fi-dark ficha, full width below lg / 5 cols on lg+ */}
-          <div className="bg-fi-dark p-8 lg:p-10 flex flex-col lg:col-span-5">
+          <div className="bg-fi-dark p-6 sm:p-8 lg:p-10 flex flex-col lg:col-span-5">
             <div className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-fi-sage mb-3">
               Ficha
             </div>
