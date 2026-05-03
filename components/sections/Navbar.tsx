@@ -58,7 +58,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="relative font-sans text-[12px] font-semibold uppercase tracking-[0.25em] text-white/60 hover:text-white transition-colors duration-200 group"
+              className="relative font-sans text-[12px] font-semibold uppercase tracking-[0.25em] text-white/60 hover:text-white transition-colors duration-200 group focus-visible:outline-none focus-visible:text-white"
             >
               {link.label}
               <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-editorial" />
@@ -81,10 +81,11 @@ export function Navbar() {
 
         {/* Hamburger — kept above the mobile overlay so it stays interactive */}
         <button
-          className="lg:hidden text-white p-2 relative z-[70]"
+          className="lg:hidden text-white p-2 relative z-[70] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-fi-dark rounded"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>

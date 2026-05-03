@@ -100,7 +100,7 @@ export function InvestmentCall() {
           <div className="py-5">
             <Hairline color="rgba(255,255,255,0.1)" className="mb-5" />
             <div className="flex items-start gap-3">
-              <Lock size={12} className="text-white/40 mt-0.5 shrink-0" />
+              <Lock size={14} className="text-white/40 mt-0.5 shrink-0" />
               <p className="font-sans text-[12px] text-white/50 leading-relaxed">
                 La información financiera detallada de cada proyecto —proyecciones,
                 uso de fondos y modelo operativo— está disponible en el{" "}
@@ -133,8 +133,7 @@ function ProjectCard({
     <SectionReveal delay={index * 100} className="h-full">
       <div
         ref={cardRef}
-        className="relative overflow-hidden group flex flex-col lg:grid lg:grid-cols-12 h-full"
-        style={{ minHeight: "480px" }}
+        className="relative overflow-hidden group flex flex-col md:flex-row lg:grid lg:grid-cols-12 h-full min-h-[480px]"
       >
         {/* Animated hairline top — project color */}
         <motion.div
@@ -147,8 +146,8 @@ function ProjectCard({
 
           {/* Left panel — project color, full width below lg / 7 cols on lg+ */}
           <div
-            className="relative overflow-hidden p-6 sm:p-8 lg:p-10 flex flex-col justify-between lg:col-span-7"
-            style={{ backgroundColor: project.color, minHeight: "280px" }}
+            className="relative overflow-hidden p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:w-3/5 lg:w-auto lg:col-span-7 min-h-[280px]"
+            style={{ backgroundColor: project.color }}
           >
             {/* Content */}
             <div className="relative z-10">
@@ -172,7 +171,7 @@ function ProjectCard({
           </div>
 
           {/* Right panel — fi-dark ficha, full width below lg / 5 cols on lg+ */}
-          <div className="bg-fi-dark p-6 sm:p-8 lg:p-10 flex flex-col lg:col-span-5">
+          <div className="bg-fi-dark p-6 sm:p-8 lg:p-10 flex flex-col md:w-2/5 lg:w-auto lg:col-span-5">
             <div className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-fi-sage mb-3">
               Ficha
             </div>

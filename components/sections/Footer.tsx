@@ -85,11 +85,21 @@ export function Footer() {
         {/* Divider */}
         <div className="h-px bg-white/10 mb-6" />
 
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="font-sans text-[11px] text-white/30">© 2026 Fondo de Impacto</span>
-          <span className="text-white/20 text-[11px]">·</span>
-          <span className="font-sans text-[11px] text-white/30">Powered by</span>
-          <RedesignLabLogo color="white" size="sm" className="opacity-40 hover:opacity-70" />
+        <div className="flex flex-wrap items-center justify-between gap-y-2">
+          <span className="font-sans text-[11px] text-white/30">
+            © 2026 Fondo de Impacto · Powered by{" "}
+            <a
+              href="https://redesignlab.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white/60 transition-colors duration-200"
+            >
+              Redesign Lab
+            </a>
+          </span>
+          <span className="font-sans text-[11px] text-white/20 italic">
+            Documento de carácter informativo. No constituye oferta pública de valores.
+          </span>
         </div>
       </div>
     </footer>

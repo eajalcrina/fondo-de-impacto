@@ -1,7 +1,9 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Hairline } from "@/components/ui/Hairline";
+import { Button } from "@/components/ui/Button";
 import { INVESTOR_PROFILES, CTA } from "@/lib/constants";
 
 export function InvestorProfiles() {
@@ -33,7 +35,7 @@ export function InvestorProfiles() {
             <SectionReveal key={profile.tier} delay={i * 150}>
               <div
                 className={[
-                  "rounded p-6 sm:p-10 h-full border relative overflow-hidden",
+                  "rounded-none p-6 sm:p-10 h-full border relative overflow-hidden",
                   profile.highlighted
                     ? "bg-fi-dark border-white/10"
                     : "bg-white border-fi-line",
@@ -71,10 +73,7 @@ export function InvestorProfiles() {
                     >
                       {profile.range}
                     </span>
-                    <div
-                      className="absolute -bottom-0.5 left-0 right-0 h-px"
-                      style={{ backgroundColor: "#994215" }}
-                    />
+                    <div className="absolute -bottom-0.5 left-0 right-0 h-px bg-fi-primary" />
                   </div>
                 </div>
 
@@ -148,18 +147,39 @@ export function InvestorProfiles() {
                     ))}
                   </ul>
                 </div>
+
+                {/* CTA */}
+                <div className="mt-8 pt-6 border-t border-fi-line/50">
+                  {profile.highlighted ? (
+                    <Button
+                      href={CTA.calendar}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="outline-white"
+                      size="md"
+                      icon={<ArrowRight size={14} />}
+                      iconPosition="right"
+                      className="w-full justify-center"
+                    >
+                      Agendar entrevista 1:1
+                    </Button>
+                  ) : (
+                    <a
+                      href={CTA.calendar}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-sans text-[13px] font-semibold text-fi-primary hover:text-fi-ink transition-colors duration-200 group"
+                    >
+                      Comenzar el proceso
+                      <ArrowRight size={13} className="transition-transform duration-200 group-hover:translate-x-1" />
+                    </a>
+                  )}
+                </div>
               </div>
             </SectionReveal>
           ))}
         </div>
 
-        {/* Note */}
-        <SectionReveal>
-          <p className="font-sans text-[14px] italic text-fi-ink/50 text-center">
-            &ldquo;Ambos perfiles reciben el mismo retorno: 10% anual fijo, pago bullet mes 12,
-            respaldado por contrato notarial firmado por los co-fundadores.&rdquo;
-          </p>
-        </SectionReveal>
       </div>
     </section>
   );

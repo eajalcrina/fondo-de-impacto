@@ -14,13 +14,13 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-fi-primary text-white hover:brightness-110 active:scale-[0.98] active:brightness-95 transition-[filter,transform] duration-150 ease-soft",
+    "bg-fi-primary text-white hover:brightness-110 active:scale-[0.98] active:brightness-95 transition-all duration-150 ease-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fi-primary focus-visible:ring-offset-2",
   "outline-white":
-    "border-[1.5px] border-white text-white hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transition-[colors,transform] duration-150 ease-soft",
+    "border-[1.5px] border-white text-white hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transition-all duration-150 ease-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2",
   "outline-dark":
-    "border-[1.5px] border-fi-ink text-fi-ink hover:bg-fi-ink/5 active:scale-[0.98] transition-[colors,transform] duration-150 ease-soft",
+    "border-[1.5px] border-fi-ink text-fi-ink hover:bg-fi-ink/5 active:scale-[0.98] transition-all duration-150 ease-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fi-ink focus-visible:ring-offset-2",
   ghost:
-    "text-fi-primary font-semibold hover:underline underline-offset-2 active:opacity-70 transition-all duration-150 ease-soft",
+    "text-fi-primary font-semibold hover:underline underline-offset-2 active:opacity-70 transition-all duration-150 ease-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fi-primary focus-visible:ring-offset-2",
 };
 
 const sizeClasses: Record<Size, string> = {

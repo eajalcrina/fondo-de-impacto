@@ -57,7 +57,7 @@ export function TrackRecord() {
         {/* Institutional allies */}
         <SectionReveal className="mb-14">
           <h3 className="eyebrow text-fi-ink/40 mb-8">Aliados del Ecosistema</h3>
-          <div className="grid md:grid-cols-3 gap-0">
+          <div className="grid md:grid-cols-3 gap-y-10 gap-x-0">
             {ALLIES.map((group, i) => (
               <SectionReveal key={group.group} delay={i * 100}>
                 <div className="pl-8 relative">
@@ -85,12 +85,12 @@ export function TrackRecord() {
             <SectionReveal key={member.name} delay={i * 120}>
               <div className="flex flex-col sm:flex-row gap-0 overflow-hidden">
                 {/* Photo */}
-                <div className="w-full sm:w-2/5 shrink-0 relative" style={{ aspectRatio: "4/5" }}>
+                <div className="w-full sm:w-2/5 shrink-0 relative aspect-[4/5]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
+                    className="absolute inset-0 w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
 

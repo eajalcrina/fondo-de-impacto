@@ -49,7 +49,7 @@ export function StatBlock({
       {/* Animated hairline top */}
       <motion.div
         className="h-px w-full"
-        style={{ transformOrigin: "left" }}
+        style={{ transformOrigin: "left", backgroundColor: "#e6e3da" }}
         initial={{ scaleX: 0 }}
         animate={inView ? { scaleX: 1 } : {}}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

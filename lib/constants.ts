@@ -44,7 +44,7 @@ export const TEAM = [
   {
     name: "Lorenzo Ortiz",
     role: "COO & Co-Fundador",
-    linkedin: "https://www.linkedin.com/in/eddieajalcrina/",
+    linkedin: "https://www.linkedin.com/in/lorenzoortiz/",
     image: "/images/lorenzo.jpeg",
     highlights: [
       "MIT Business Analytics · Ing. Industrial UNT",

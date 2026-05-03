@@ -46,7 +46,7 @@ export function WhatIsFI() {
         </SectionReveal>
 
         {/* Pillars — editorial blocks with vertical hairlines */}
-        <div className="grid md:grid-cols-3 gap-0 mb-20">
+        <div className="grid md:grid-cols-3 gap-y-12 gap-x-0 mb-20">
           {pillars.map((pillar, i) => (
             <SectionReveal key={pillar.title} delay={i * 120}>
               <div className="pl-8 pr-6 relative">

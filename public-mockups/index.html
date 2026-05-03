@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fondo de Impacto — Paletas</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f0ede6;
+    font-family: Georgia, 'Times New Roman', serif;
+    padding: 48px 32px;
+  }
+  .page-title {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  .page-sub {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1320px;
+  }
+  .card {
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.12);
+  }
+  /* DARK SECTION — hero */
+  .dark {
+    padding: 28px 24px 24px;
+    position: relative;
+  }
+  .dark::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    opacity: 0.2;
+    background: white;
+  }
+  .eyebrow {
+    font-family: -apple-system, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .hero-headline {
+    font-size: 32px;
+    font-weight: 400;
+    color: white;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .hero-headline em {
+    font-style: normal;
+    position: relative;
+    display: inline-block;
+  }
+  .hero-headline em::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    height: 1.5px;
+  }
+  .hero-body {
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 20px;
+  }
+  /* Snapshot strip */
+  .snapshot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 16px;
+    margin-top: 4px;
+  }
+  .snap-item {
+    padding: 10px 12px 10px 0;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .snap-item:nth-child(even) {
+    padding-left: 12px;
+    border-right: none;
+  }
+  .snap-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 3px;
+  }
+  .snap-value {
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    line-height: 1;
+  }
+  /* CTA button */
+  .btn {
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 2px;
+    color: white;
+    margin-top: 4px;
+  }
+  /* LIGHT SECTION */
+  .light {
+    background: #faf8f3;
+    padding: 20px 24px;
+  }
+  .light-eyebrow {
+    font-family: -apple-system, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .light-headline {
+    font-size: 22px;
+    font-weight: 400;
+    color: #0e0e0c;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .hairline {
+    height: 1px;
+    background: #e6e3da;
+    margin: 12px 0;
+  }
+  .stat-row {
+    display: flex;
+    gap: 24px;
+  }
+  .stat { flex: 1; }
+  .stat-value {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .stat-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 9px;
+    color: #888;
+    line-height: 1.4;
+  }
+  /* CTA SECTION */
+  .cta-section {
+    padding: 24px;
+    text-align: center;
+  }
+  .cta-headline {
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .cta-action {
+    font-family: -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    display: inline-block;
+    padding-bottom: 2px;
+  }
+  /* PALETTE LABEL */
+  .palette-label {
+    padding: 12px 24px;
+    background: #f0ede6;
+    border-top: 1px solid #e0dcd4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .palette-name {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #333;
+  }
+  .palette-swatches {
+    display: flex;
+    gap: 6px;
+  }
+  .swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0,0,0,0.1);
+  }
+  .palette-hex {
+    font-family: -apple-system, sans-serif;
+    font-size: 9px;
+    color: #888;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<p class="page-title">Fondo de Impacto · Redesign Lab</p>
+<p class="page-sub">Exploración de paletas de color</p>
+
+<div class="grid">
+
+  <!-- ═══════════════════════════════════════
+       PALETA 1 — Petróleo + Cobre
+  ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="dark" style="background:#0c1e1e">
+      <span class="eyebrow" style="color:#7ab8b0">Investment Call 2026 · I</span>
+      <div class="hero-headline">
+        Invierte en el futuro<br>de la <em style="color:white">bioeconomía<span style="display:block;height:1.5px;background:#b5541e;margin-top:2px"></span></em><br>peruana.
+      </div>
+      <div class="hero-body">Instrumento de deuda con 10% fijo anual, respaldado por contrato notarial.</div>
+      <div class="btn" style="background:#b5541e">Agendar entrevista 1:1</div>
+      <div class="snapshot">
+        <div class="snap-item">
+          <div class="snap-label">Capital</div>
+          <div class="snap-value" style="color:#b5541e">S/ 300k</div>
+        </div>
+        <div class="snap-item">
+          <div class="snap-label">Retorno</div>
+          <div class="snap-value">10%</div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Plazo</div>
+          <div class="snap-value">12 <span style="font-size:12px;opacity:.5">meses</span></div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Ticket mín.</div>
+          <div class="snap-value" style="font-size:16px">S/ 10k</div>
+        </div>
+      </div>
+    </div>
+    <div class="light">
+      <span class="light-eyebrow" style="color:#b5541e">Track Record</span>
+      <div class="light-headline">Más de 5 años<br>de impacto real en Perú.</div>
+      <div class="hairline"></div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-value" style="color:#b5541e">10</div>
+          <div class="stat-label">Empresas aceleradas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:#b5541e">+120</div>
+          <div class="stat-label">Empleos directos generados</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-section" style="background:#b5541e">
+      <div class="cta-headline">El momento de actuar<br>es ahora.</div>
+      <span class="cta-action">Agendar conversación →</span>
+    </div>
+    <div class="palette-label">
+      <div>
+        <div class="palette-name">01 · Petróleo + Cobre</div>
+        <div class="palette-hex">#0c1e1e · #b5541e</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background:#0c1e1e"></div>
+        <div class="swatch" style="background:#b5541e"></div>
+        <div class="swatch" style="background:#faf8f3;border-color:#d0ccc4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PALETA 2 — Medianoche + Ámbar
+  ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="dark" style="background:#12102a">
+      <span class="eyebrow" style="color:#9b96d4">Investment Call 2026 · I</span>
+      <div class="hero-headline">
+        Invierte en el futuro<br>de la <em style="color:white">bioeconomía<span style="display:block;height:1.5px;background:#c97d1a;margin-top:2px"></span></em><br>peruana.
+      </div>
+      <div class="hero-body">Instrumento de deuda con 10% fijo anual, respaldado por contrato notarial.</div>
+      <div class="btn" style="background:#c97d1a">Agendar entrevista 1:1</div>
+      <div class="snapshot">
+        <div class="snap-item">
+          <div class="snap-label">Capital</div>
+          <div class="snap-value" style="color:#c97d1a">S/ 300k</div>
+        </div>
+        <div class="snap-item">
+          <div class="snap-label">Retorno</div>
+          <div class="snap-value">10%</div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Plazo</div>
+          <div class="snap-value">12 <span style="font-size:12px;opacity:.5">meses</span></div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Ticket mín.</div>
+          <div class="snap-value" style="font-size:16px">S/ 10k</div>
+        </div>
+      </div>
+    </div>
+    <div class="light">
+      <span class="light-eyebrow" style="color:#c97d1a">Track Record</span>
+      <div class="light-headline">Más de 5 años<br>de impacto real en Perú.</div>
+      <div class="hairline"></div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-value" style="color:#c97d1a">10</div>
+          <div class="stat-label">Empresas aceleradas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:#c97d1a">+120</div>
+          <div class="stat-label">Empleos directos generados</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-section" style="background:#c97d1a">
+      <div class="cta-headline">El momento de actuar<br>es ahora.</div>
+      <span class="cta-action">Agendar conversación →</span>
+    </div>
+    <div class="palette-label">
+      <div>
+        <div class="palette-name">02 · Medianoche + Ámbar</div>
+        <div class="palette-hex">#12102a · #c97d1a</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background:#12102a"></div>
+        <div class="swatch" style="background:#c97d1a"></div>
+        <div class="swatch" style="background:#faf8f3;border-color:#d0ccc4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PALETA 3 — Carbón + Siena
+  ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="dark" style="background:#161412">
+      <span class="eyebrow" style="color:#a09890">Investment Call 2026 · I</span>
+      <div class="hero-headline">
+        Invierte en el futuro<br>de la <em style="color:white">bioeconomía<span style="display:block;height:1.5px;background:#c0411c;margin-top:2px"></span></em><br>peruana.
+      </div>
+      <div class="hero-body">Instrumento de deuda con 10% fijo anual, respaldado por contrato notarial.</div>
+      <div class="btn" style="background:#c0411c">Agendar entrevista 1:1</div>
+      <div class="snapshot">
+        <div class="snap-item">
+          <div class="snap-label">Capital</div>
+          <div class="snap-value" style="color:#c0411c">S/ 300k</div>
+        </div>
+        <div class="snap-item">
+          <div class="snap-label">Retorno</div>
+          <div class="snap-value">10%</div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Plazo</div>
+          <div class="snap-value">12 <span style="font-size:12px;opacity:.5">meses</span></div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Ticket mín.</div>
+          <div class="snap-value" style="font-size:16px">S/ 10k</div>
+        </div>
+      </div>
+    </div>
+    <div class="light">
+      <span class="light-eyebrow" style="color:#c0411c">Track Record</span>
+      <div class="light-headline">Más de 5 años<br>de impacto real en Perú.</div>
+      <div class="hairline"></div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-value" style="color:#c0411c">10</div>
+          <div class="stat-label">Empresas aceleradas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:#c0411c">+120</div>
+          <div class="stat-label">Empleos directos generados</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-section" style="background:#c0411c">
+      <div class="cta-headline">El momento de actuar<br>es ahora.</div>
+      <span class="cta-action">Agendar conversación →</span>
+    </div>
+    <div class="palette-label">
+      <div>
+        <div class="palette-name">03 · Carbón + Siena</div>
+        <div class="palette-hex">#161412 · #c0411c</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background:#161412"></div>
+        <div class="swatch" style="background:#c0411c"></div>
+        <div class="swatch" style="background:#faf8f3;border-color:#d0ccc4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PALETA 4 — Espresso + Musgo
+  ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="dark" style="background:#1a1108">
+      <span class="eyebrow" style="color:#7aaa84">Investment Call 2026 · I</span>
+      <div class="hero-headline">
+        Invierte en el futuro<br>de la <em style="color:white">bioeconomía<span style="display:block;height:1.5px;background:#3d7a4a;margin-top:2px"></span></em><br>peruana.
+      </div>
+      <div class="hero-body">Instrumento de deuda con 10% fijo anual, respaldado por contrato notarial.</div>
+      <div class="btn" style="background:#3d7a4a">Agendar entrevista 1:1</div>
+      <div class="snapshot">
+        <div class="snap-item">
+          <div class="snap-label">Capital</div>
+          <div class="snap-value" style="color:#7aaa84">S/ 300k</div>
+        </div>
+        <div class="snap-item">
+          <div class="snap-label">Retorno</div>
+          <div class="snap-value">10%</div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Plazo</div>
+          <div class="snap-value">12 <span style="font-size:12px;opacity:.5">meses</span></div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Ticket mín.</div>
+          <div class="snap-value" style="font-size:16px">S/ 10k</div>
+        </div>
+      </div>
+    </div>
+    <div class="light">
+      <span class="light-eyebrow" style="color:#3d7a4a">Track Record</span>
+      <div class="light-headline">Más de 5 años<br>de impacto real en Perú.</div>
+      <div class="hairline"></div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-value" style="color:#3d7a4a">10</div>
+          <div class="stat-label">Empresas aceleradas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:#3d7a4a">+120</div>
+          <div class="stat-label">Empleos directos generados</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-section" style="background:#3d7a4a">
+      <div class="cta-headline">El momento de actuar<br>es ahora.</div>
+      <span class="cta-action">Agendar conversación →</span>
+    </div>
+    <div class="palette-label">
+      <div>
+        <div class="palette-name">04 · Espresso + Musgo</div>
+        <div class="palette-hex">#1a1108 · #3d7a4a</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background:#1a1108"></div>
+        <div class="swatch" style="background:#3d7a4a"></div>
+        <div class="swatch" style="background:#faf8f3;border-color:#d0ccc4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PALETA 5 — Pizarra + Cobre rosado
+  ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="dark" style="background:#181620">
+      <span class="eyebrow" style="color:#a89ec8">Investment Call 2026 · I</span>
+      <div class="hero-headline">
+        Invierte en el futuro<br>de la <em style="color:white">bioeconomía<span style="display:block;height:1.5px;background:#c0633a;margin-top:2px"></span></em><br>peruana.
+      </div>
+      <div class="hero-body">Instrumento de deuda con 10% fijo anual, respaldado por contrato notarial.</div>
+      <div class="btn" style="background:#c0633a">Agendar entrevista 1:1</div>
+      <div class="snapshot">
+        <div class="snap-item">
+          <div class="snap-label">Capital</div>
+          <div class="snap-value" style="color:#c0633a">S/ 300k</div>
+        </div>
+        <div class="snap-item">
+          <div class="snap-label">Retorno</div>
+          <div class="snap-value">10%</div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Plazo</div>
+          <div class="snap-value">12 <span style="font-size:12px;opacity:.5">meses</span></div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Ticket mín.</div>
+          <div class="snap-value" style="font-size:16px">S/ 10k</div>
+        </div>
+      </div>
+    </div>
+    <div class="light">
+      <span class="light-eyebrow" style="color:#c0633a">Track Record</span>
+      <div class="light-headline">Más de 5 años<br>de impacto real en Perú.</div>
+      <div class="hairline"></div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-value" style="color:#c0633a">10</div>
+          <div class="stat-label">Empresas aceleradas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:#c0633a">+120</div>
+          <div class="stat-label">Empleos directos generados</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-section" style="background:#c0633a">
+      <div class="cta-headline">El momento de actuar<br>es ahora.</div>
+      <span class="cta-action">Agendar conversación →</span>
+    </div>
+    <div class="palette-label">
+      <div>
+        <div class="palette-name">05 · Pizarra + Cobre rosado</div>
+        <div class="palette-hex">#181620 · #c0633a</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background:#181620"></div>
+        <div class="swatch" style="background:#c0633a"></div>
+        <div class="swatch" style="background:#faf8f3;border-color:#d0ccc4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PALETA 6 — Negro cálido + Índigo
+  ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="dark" style="background:#141210">
+      <span class="eyebrow" style="color:#9898d0">Investment Call 2026 · I</span>
+      <div class="hero-headline">
+        Invierte en el futuro<br>de la <em style="color:white">bioeconomía<span style="display:block;height:1.5px;background:#4c52d4;margin-top:2px"></span></em><br>peruana.
+      </div>
+      <div class="hero-body">Instrumento de deuda con 10% fijo anual, respaldado por contrato notarial.</div>
+      <div class="btn" style="background:#4c52d4">Agendar entrevista 1:1</div>
+      <div class="snapshot">
+        <div class="snap-item">
+          <div class="snap-label">Capital</div>
+          <div class="snap-value" style="color:#7a7ee8">S/ 300k</div>
+        </div>
+        <div class="snap-item">
+          <div class="snap-label">Retorno</div>
+          <div class="snap-value">10%</div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Plazo</div>
+          <div class="snap-value">12 <span style="font-size:12px;opacity:.5">meses</span></div>
+        </div>
+        <div class="snap-item" style="margin-top:8px">
+          <div class="snap-label">Ticket mín.</div>
+          <div class="snap-value" style="font-size:16px">S/ 10k</div>
+        </div>
+      </div>
+    </div>
+    <div class="light">
+      <span class="light-eyebrow" style="color:#4c52d4">Track Record</span>
+      <div class="light-headline">Más de 5 años<br>de impacto real en Perú.</div>
+      <div class="hairline"></div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-value" style="color:#4c52d4">10</div>
+          <div class="stat-label">Empresas aceleradas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:#4c52d4">+120</div>
+          <div class="stat-label">Empleos directos generados</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-section" style="background:#4c52d4">
+      <div class="cta-headline">El momento de actuar<br>es ahora.</div>
+      <span class="cta-action">Agendar conversación →</span>
+    </div>
+    <div class="palette-label">
+      <div>
+        <div class="palette-name">06 · Negro cálido + Índigo</div>
+        <div class="palette-hex">#141210 · #4c52d4</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background:#141210"></div>
+        <div class="swatch" style="background:#4c52d4"></div>
+        <div class="swatch" style="background:#faf8f3;border-color:#d0ccc4"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

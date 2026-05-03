@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { Calendar, MessageCircle } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { CTA } from "@/lib/constants";
@@ -33,16 +34,17 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-screen flex items-center bg-fi-dark overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center bg-fi-dark overflow-hidden"
     >
       {/* Forest image — top 55%, fades into fi-dark */}
       <div className="absolute inset-x-0 top-0 h-[55%] pointer-events-none" aria-hidden>
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover object-center"
+          fill
+          className="object-cover object-center"
           style={{ opacity: 0.45 }}
-          loading="eager"
+          priority
         />
         <div
           className="absolute inset-0"
@@ -85,8 +87,8 @@ export function Hero() {
             <motion.span
               className="absolute left-0 right-0 h-[2px] bg-fi-primary origin-left"
               style={{ bottom: "-2px" }}
-              initial={{ scaleX: 0 }}
-              animate={prefersReducedMotion ? { scaleX: 1 } : { scaleX: 1 }}
+              initial={{ scaleX: prefersReducedMotion ? 1 : 0 }}
+              animate={{ scaleX: 1 }}
               transition={{ duration: 0.7, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
               aria-hidden
             />
