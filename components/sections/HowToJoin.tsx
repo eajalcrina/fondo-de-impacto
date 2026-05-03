@@ -29,11 +29,11 @@ export function HowToJoin() {
 
         {/* Stepper */}
         <div className="relative mb-16">
-          {/* Animated connector line — desktop, sits BELOW the numbers */}
+          {/* Animated connector — kept low-opacity so it hints at progression instead of cutting the row */}
           <div ref={lineRef} className="hidden md:block absolute top-[76px] left-0 right-0 h-px overflow-hidden">
-            <div className="absolute inset-0 bg-white/10" />
+            <div className="absolute inset-0 bg-white/[0.06]" />
             <motion.div
-              className="absolute inset-0 bg-fi-primary origin-left"
+              className="absolute inset-0 bg-fi-primary/25 origin-left"
               initial={{ scaleX: 0 }}
               animate={lineInView ? { scaleX: 1 } : {}}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
