@@ -103,7 +103,7 @@ export function WhatIsFI() {
 
                     {/* Large number accent */}
                     <div
-                      className="font-display text-[56px] sm:text-[64px] font-[300] leading-none text-fi-primary/15 mb-4 select-none"
+                      className="font-display text-[56px] sm:text-[64px] font-[300] leading-none text-fi-primary/30 mb-4 select-none"
                       aria-hidden
                     >
                       {pillar.number}
