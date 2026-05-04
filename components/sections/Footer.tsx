@@ -1,6 +1,7 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
 import { CTA } from "@/lib/constants";
 import { RedesignLabLogo } from "@/components/ui/RedesignLabLogo";
+import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 
 const navLinks = [
   { label: "Qué es FI",       href: "#que-es" },
@@ -12,8 +13,10 @@ const navLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-fi-ink py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <footer className="bg-fi-ink py-16 relative overflow-hidden">
+      <NoiseOverlay opacity="opacity-[0.025]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
 
           {/* Wordmark */}

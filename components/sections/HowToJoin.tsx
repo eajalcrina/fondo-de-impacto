@@ -6,14 +6,26 @@ import { motion, useInView } from "framer-motion";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Button } from "@/components/ui/Button";
 import { STEPS, CTA } from "@/lib/constants";
+import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 
 export function HowToJoin() {
   const lineRef = useRef<HTMLDivElement>(null);
   const lineInView = useInView(lineRef, { once: true, margin: "-20% 0px" });
 
   return (
-    <section id="como-participar" className="bg-fi-dark py-20 sm:py-32 lg:py-40 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="como-participar" className="bg-fi-dark py-20 sm:py-32 lg:py-40 overflow-hidden relative">
+      {/* Subtle depth layers */}
+      <NoiseOverlay opacity="opacity-[0.03]" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 50% 40% at 20% 30%, rgba(154,184,187,0.04) 0%, transparent 70%), radial-gradient(ellipse 35% 50% at 90% 70%, rgba(192,84,28,0.03) 0%, transparent 60%)",
+        }}
+        aria-hidden
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
         <SectionReveal className="mb-16">

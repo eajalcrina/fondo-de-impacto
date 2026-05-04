@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
 import { Calendar, MessageCircle } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -8,9 +7,7 @@ import { CTA } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { CountUp } from "@/components/ui/CountUp";
-
-// Noise texture via SVG feTurbulence
-const NOISE = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`;
+import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 
 const stats = [
   { label: "Capital",       value: 300000, format: "currency-soles" as const },
@@ -27,21 +24,20 @@ const terms = [
 ];
 
 export function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
 
   return (
     <section
-      ref={sectionRef}
       id="hero"
       className="relative min-h-[100dvh] flex items-center bg-fi-dark overflow-hidden"
     >
       {/* Forest image — top 55%, fades into fi-dark */}
       <div className="absolute inset-x-0 top-0 h-[55%] pointer-events-none" aria-hidden>
         <Image
-          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80"
+          src="/images/hero-forest.jpg"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover object-center"
           style={{ opacity: 0.45 }}
           priority
@@ -53,11 +49,7 @@ export function Hero() {
       </div>
 
       {/* Noise texture */}
-      <div
-        className="absolute inset-0 opacity-[0.035] mix-blend-overlay pointer-events-none"
-        style={{ backgroundImage: NOISE }}
-        aria-hidden
-      />
+      <NoiseOverlay />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8 pt-32 pb-20 sm:pt-36 sm:pb-28 text-center">
 
