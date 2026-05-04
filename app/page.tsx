@@ -10,16 +10,20 @@ import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Navbar />
-      <Hero />
-      <WhatIsFI />
-      <InvestmentCall />
-      <InvestorProfiles />
-      <HowToJoin />
-      <TrackRecord />
-      <FinalCTA />
+      <main>
+        <article itemScope itemType="https://schema.org/WebPage">
+          <Hero />
+          <WhatIsFI />
+          <InvestmentCall />
+          <InvestorProfiles />
+          <HowToJoin />
+          <TrackRecord />
+          <FinalCTA />
+        </article>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

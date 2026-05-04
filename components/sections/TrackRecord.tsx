@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { Hairline } from "@/components/ui/Hairline";
@@ -86,11 +87,12 @@ export function TrackRecord() {
               <div className="flex flex-col sm:flex-row gap-0 overflow-hidden">
                 {/* Photo */}
                 <div className="w-full sm:w-2/5 shrink-0 relative aspect-[4/5]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={member.image}
-                    alt={member.name}
-                    className="absolute inset-0 w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500"
+                    alt={`${member.name}, ${member.role} de Redesign Lab`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 40vw, 20vw"
+                    className="object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
 
