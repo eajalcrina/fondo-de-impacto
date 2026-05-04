@@ -82,19 +82,7 @@ export function WhatIsFI() {
               {pillars.map((pillar, i) => (
                 <SectionReveal key={pillar.title} delay={i * 120}>
                   <div className="relative py-8 md:py-0 md:px-8 first:pt-0 last:pb-0 md:first:pl-0 md:last:pr-0">
-                    {/* Vertical hairline (desktop) */}
-                    {i > 0 && (
-                      <div className="hidden md:block absolute left-0 top-0 bottom-0">
-                        <Hairline
-                          direction="vertical"
-                          color="rgba(255,255,255,0.08)"
-                          animated
-                          delay={i * 120}
-                          className="h-full"
-                        />
-                      </div>
-                    )}
-                    {/* Horizontal hairline (mobile) */}
+                    {/* Horizontal hairline (mobile only) */}
                     {i > 0 && (
                       <div className="md:hidden absolute top-0 left-0 right-0">
                         <Hairline color="rgba(255,255,255,0.08)" />
