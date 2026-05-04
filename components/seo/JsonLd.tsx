@@ -1,6 +1,6 @@
 import { CTA, TEAM, STATS_TRACK_RECORD, INVESTOR_PROFILES, PROJECTS, STEPS } from "@/lib/constants";
 
-const SITE_URL = "https://fondodeimpacto.pe";
+const SITE_URL = "https://www.fondodeimpacto.pe";
 
 /** Organization — Redesign Lab as the parent entity */
 const organizationSchema = {

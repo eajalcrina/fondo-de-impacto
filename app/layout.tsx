@@ -10,7 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const SITE_URL = "https://fondodeimpacto.pe";
+const SITE_URL = "https://www.fondodeimpacto.pe";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -29,6 +29,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://fondodeimpacto.pe/sitemap.xml",
+    sitemap: "https://www.fondodeimpacto.pe/sitemap.xml",
   };
 }

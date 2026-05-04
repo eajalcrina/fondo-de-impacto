@@ -115,7 +115,7 @@ export default async function OGImage() {
               color: "rgba(255,255,255,0.3)",
             }}
           >
-            fondodeimpacto.pe
+            www.fondodeimpacto.pe
           </div>
         </div>
       </div>
