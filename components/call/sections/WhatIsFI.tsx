@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Leaf, Shield, Network } from "lucide-react";
-import { SectionReveal } from "@/components/ui/SectionReveal";
+import { SectionReveal } from "@/components/call/ui/SectionReveal";
 
 const pillars = [
   {

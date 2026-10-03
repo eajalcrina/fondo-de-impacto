@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Calendar, Mail, MessageCircle } from "lucide-react";
-import { SectionReveal } from "@/components/ui/SectionReveal";
+import { SectionReveal } from "@/components/call/ui/SectionReveal";
 import { CTA } from "@/lib/constants";
 
 export function FinalCTA() {

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { SectionReveal } from "@/components/ui/SectionReveal";
-import { StatBlock } from "@/components/ui/StatBlock";
+import { SectionReveal } from "@/components/call/ui/SectionReveal";
+import { StatBlock } from "@/components/call/ui/StatBlock";
 import { STATS_TRACK_RECORD, ALLIES, TEAM } from "@/lib/constants";
 
 export function TrackRecord() {

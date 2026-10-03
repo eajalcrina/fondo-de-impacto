@@ -2,9 +2,9 @@
 
 import React from "react";
 import { ArrowRight, Lock } from "lucide-react";
-import { SectionReveal } from "@/components/ui/SectionReveal";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { SectionReveal } from "@/components/call/ui/SectionReveal";
+import { Badge } from "@/components/call/ui/Badge";
+import { Button } from "@/components/call/ui/Button";
 import { PROJECTS, CTA } from "@/lib/constants";
 
 export function InvestmentCall() {

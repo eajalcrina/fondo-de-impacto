@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CTA } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/call/ui/Button";
 
 const navLinks = [
   { label: "Qué es FI",   href: "#que-es" },

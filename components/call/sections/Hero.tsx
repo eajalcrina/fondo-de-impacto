@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { Calendar, Mail, MessageCircle, ChevronDown } from "lucide-react";
 import { CTA } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/call/ui/Button";
+import { Badge } from "@/components/call/ui/Badge";
 
 const metrics = [
   { value: "S/ 300,000", label: "Meta de levantamiento" },
