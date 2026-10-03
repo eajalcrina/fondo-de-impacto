@@ -1,0 +1,49 @@
+/** Opciones de los formularios y sus etiquetas legibles. */
+export const RUBROS: [string, string][] = [
+  ["agricultura", "Agricultura"],
+  ["alimentos_bebidas", "Alimentos y bebidas"],
+  ["agroforestal", "Agroforestal"],
+  ["bioeconomia|bionegocios", "Bioeconomía y bionegocios"],
+  ["economia_circular", "Economía circular"],
+  ["turismo", "Turismo"],
+  ["biotech|biomateriales", "Biotecnología y biomateriales"],
+  ["agritech|bioinsumos", "Agritech y bioinsumos"],
+  ["*", "Otro rubro de impacto"],
+];
+
+export const PAISES: [string, string][] = [
+  ["PE", "Perú"],
+  ["CO", "Colombia"],
+  ["EC", "Ecuador"],
+  ["BO", "Bolivia"],
+  ["BR", "Brasil"],
+  ["MX", "México"],
+  ["CL", "Chile"],
+  ["CA", "Centroamérica"],
+  ["OT", "Otro país de América Latina"],
+];
+
+export const TIPOS_OPC: [string, string][] = [
+  ["*", "No estoy seguro"],
+  ["nr", "No reembolsable"],
+  ["de", "Deuda"],
+  ["eq", "Equity"],
+  ["bl", "Blended o mixto"],
+];
+
+export const RANGOS_OPC: [string, string][] = [
+  ["0", "Hasta USD 50 mil"],
+  ["1", "USD 50 mil a 500 mil"],
+  ["2", "USD 500 mil a 5 millones"],
+  ["3", "Más de USD 5 millones"],
+];
+
+export const PUBLICOS: [string, string][] = [
+  ["cooperativa", "Asociación o cooperativa"],
+  ["consultor", "Consultor o asesor"],
+  ["agencia_fondo", "Agencia de cooperación o fondo"],
+];
+
+export function etiqueta(lista: [string, string][], valor: string): string {
+  return lista.find(([v]) => v === valor)?.[1] ?? valor;
+}
