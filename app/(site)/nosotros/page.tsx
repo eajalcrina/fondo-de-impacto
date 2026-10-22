@@ -27,10 +27,10 @@ export default function NosotrosPage() {
   <section className="sec tint"><div className="wrap">
     <div className="head"><span className="eyebrow">Track record</span><Words as="h2" className="d3" text="Desde 2021, con empresas de impacto en Perú y la región" /></div>
     <div className="stats num">
-      <div><b>USD 1,2MM</b><span>fondos no reembolsables internacionales</span></div>
-      <div><b>USD 1,5MM</b><span>deuda levantada para empresas acompañadas</span></div>
-      <div><b>10</b><span>empresas en portafolio activo de Redesign Lab</span></div>
-      <div><b>+USD 26MM</b><span>facturación del portafolio en 2024</span></div>
+      <div><b>USD 1,2MM</b><span>en fondos no reembolsables</span></div>
+      <div><b>USD 1,5MM</b><span>en capital de impacto, principalmente deuda</span></div>
+      <div><b>+10</b><span>empresas invertidas en América Latina</span></div>
+      <div><b>USD 26MM</b><span>facturación del portafolio en 2025 (+28 % frente a 2024)</span></div>
       <div><b>+120</b><span>comunidades con impacto directo</span></div>
     </div>
   </div></section>

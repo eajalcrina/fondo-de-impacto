@@ -28,13 +28,13 @@ export const EQUIPO: Persona[] = [
     foco: "Estrategia, alianzas y relación con fondos",
     foto: "/img/eddie.jpg",
     linkedin: "https://www.linkedin.com/in/eddieajalcrina/",
-    bio: "Más de 15 años llevando la sostenibilidad a la rentabilidad, en marcas globales y en grupos corporativos de la región. Lidera la estrategia del fondo y la relación con fondos de impacto, agencias de cooperación e inversionistas.",
+    bio: "Más de 15 años de experiencia, del sector privado a la cooperación internacional y la inversión de impacto. Dirigió la sostenibilidad de grupos líderes en ingredientes marinos y nutrición acuícola en América Latina. Lidera la estrategia del fondo y la relación con fondos de impacto, agencias de cooperación e inversionistas.",
     logros: [
-      "Ex jefe corporativo en Alicorp–Vitapro y TASA–Grupo Breca",
-      "Ex coordinador de la Unión Europea en Perú, economía circular",
-      "Coautor de Bio Business Playbook",
+      "Participó en la estructuración de un green loan de USD 80M (Bank of America y Banco Mundial) en su etapa corporativa",
+      "Coordinó un programa de la Unión Europea de EUR 14M en el Perú (Negocios Sostenibles y Equipo Europa – Transición Circular)",
+      "Coautor del Bio Business Playbook y del Playbook Circular LatAm",
     ],
-    formacion: "MBA ESAN · Maestría en Biocomercio PUCP",
+    formacion: "MBA (ESAN) · Maestría en Biocomercio (PUCP)",
   },
   {
     nombre: "Lorenzo Ortiz",
@@ -46,7 +46,7 @@ export const EQUIPO: Persona[] = [
     logros: [
       "Ex Head of Operations en TASA y ex gerente de planta en Exandal",
       "Singularity University LATAM Fellow",
-      "Coautor de Bio Business Playbook",
+      "Coautor del Bio Business Playbook y del Playbook Circular LatAm",
     ],
     formacion: "MIT Business Analytics · Ing. Industrial UNT",
   },

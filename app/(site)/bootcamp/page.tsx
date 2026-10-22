@@ -21,7 +21,7 @@ export default function BootcampPage() {
 <div className="stack" style={{ gap: "26px" }}>
       <span className="eyebrow">Bootcamp de Levantamiento de Capital</span>
       <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)" }} text="Sal a levantar capital acompañado por quienes ya lo han hecho." />
-      <p className="lead">Investment readiness aplicado. Ocho semanas de trabajo intensivo y personalizado para empresas de impacto listas para buscar inversión, con un equipo que ha levantado más de USD 2,7MM para empresas de la región desde 2021.</p>
+      <p className="lead">Investment readiness aplicado. Ocho semanas de trabajo intensivo y personalizado para empresas de impacto listas para buscar inversión, con un equipo que, desde 2021, ha levantado USD 1,5MM en capital de impacto y USD 1,2MM en fondos no reembolsables para empresas de la región.</p>
       <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="lnk q" href="/bootcamp#como-funciona">Ver cómo funciona</Link></div>
     </div>
     <div className="card num dk">

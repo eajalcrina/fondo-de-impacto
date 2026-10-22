@@ -20,7 +20,7 @@ export default function HomePage() {
     <Words as="h1" className="d1" style={{ maxWidth: "21ch" }} text="Capital para las empresas de impacto de América Latina que ya demostraron tracción." />
     <p className="lead" style={{ maxWidth: "48ch" }}>Te preparamos para levantar capital y te presentamos a los fondos que pueden financiarte.</p>
     <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk q" href="/inversionistas">Soy inversionista</Link></div>
-    <div className="facts num"><div><b>+50</b><span>fondos de impacto en la red</span></div><div><b>USD 2,7MM</b><span>levantados desde 2021*</span></div><div><b>USD 80MM</b><span>en financiamiento estructurado*</span></div></div>
+    <div className="facts num"><div><b>+50</b><span>fondos en nuestra red</span></div><div><b>USD 1,5MM</b><span>en capital de impacto levantado*</span></div><div><b>USD 1,2MM</b><span>en fondos no reembolsables*</span></div></div>
   </Hero>
   <PhotoBelt />
 
@@ -42,7 +42,7 @@ export default function HomePage() {
   </div></section>
 
   <section className="sec tint" id="rangos"><div className="wrap">
-    <div className="head"><span className="eyebrow">¿Cuánto capital necesitas?</span><div className="stack" style={{ gap: "12px" }}><Words as="h2" className="d2" text="Mira cuántas fuentes de capital de impacto financian en tu rango." /><p className="p2">Elige un rango y revisa los fondos disponibles para tu empresa. Es gratis y toma un minuto.</p></div></div>
+    <div className="head"><span className="eyebrow">¿Cuánto capital necesitas?</span><div className="stack" style={{ gap: "12px" }}><Words as="h2" className="d2" text="Mira cuántas fuentes de capital de impacto financian en tu rango." /><p className="p2">Elige un rango y revisa los fondos disponibles para tu empresa. Es gratis y toma dos minutos.</p></div></div>
     <Ranges />
     <p className="zero" style={{ marginTop: "22px" }}><b>USD 0</b> Ver tu reporte y completar tu Pasaporte de Inversión no tiene costo. Solo inviertes tu tiempo.</p>
   </div></section>

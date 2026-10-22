@@ -36,7 +36,7 @@ export default function PasaportePage() {
   <section className="sec" id="mapa"><div className="wrap">
     <div className="head"><span className="eyebrow">Mapa de capital de impacto</span><div className="stack" style={{ gap: "12px" }}><Words as="h2" className="d2" text="Las fuentes de capital que mapeamos y monitoreamos en América Latina" /><p className="p2">Fondos de impacto, banca de desarrollo, cooperación y fondos públicos con convocatorias para empresas de la región. Filtra por país para ver qué hay disponible.</p></div></div>
     <CapitalMap />
-    <p className="method">Base construida por Fondo de Impacto con fuentes públicas, con corte al 1 de octubre de 2026. Una fuente puede financiar más de un rango, instrumento o sector. &ldquo;Llamada activa&rdquo; incluye convocatorias abiertas y ventanillas permanentes. Los nombres y las condiciones de cada fuente se revisan contigo al completar tu Pasaporte de Inversión.</p>
+    <p className="method">Base construida por Fondo de Impacto con fuentes públicas, actualizada en octubre de 2026. Una fuente puede financiar más de un rango, instrumento o sector. &ldquo;Llamada activa&rdquo; incluye convocatorias abiertas y ventanillas permanentes. Los nombres y las condiciones de cada fuente se revisan contigo al completar tu Pasaporte de Inversión.</p>
   </div></section>
 
   <section className="sec"><div className="wrap">
