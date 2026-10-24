@@ -40,10 +40,12 @@ const GRUPOS: { titulo: string; logos: Logo[] }[] = [
   {
     titulo: "Sector público",
     logos: [
+      ["Ministerio de la Producción del Perú", "produce.png", 720, 152, 1.1],
       ["Ministerio del Ambiente del Perú", "minam.png", 268, 56, 1.1],
       ["PromPerú", "promperu.png", 372, 160],
       ["ProInnóvate", "proinnovate.png", 541, 160],
       ["Sociedad Nacional de Industrias", "sni.png", 238, 160, 1.15],
+      ["Instituto Nacional de Calidad (INACAL)", "inacal.png", 256, 85, 1.2],
     ],
   },
 ];
