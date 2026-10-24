@@ -32,7 +32,7 @@ export function TeamFull() {
             </div>
             <p className="p2 sm">{p.bio}</p>
             <ul>{p.logros.map((l) => <li key={l}>{l}</li>)}</ul>
-            <span className="xs">{p.formacion} · <a href={p.linkedin} target="_blank" rel="noopener noreferrer" className="lnk q" style={{ fontSize: 12.5 }}>LinkedIn</a></span>
+            <span className="xs">{p.formacion} · <a href={p.linkedin} target="_blank" rel="noopener noreferrer" className="lnk q" style={{ fontSize: 12.5 }}>LinkedIn</a>{p.web && <> · <a href={p.web} target="_blank" rel="noopener" className="lnk q" style={{ fontSize: 12.5 }}>Web</a></>}</span>
           </div>
         </article>
       ))}
