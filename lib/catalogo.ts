@@ -33,9 +33,11 @@ export const TIPOS_OPC: [string, string][] = [
 
 export const RANGOS_OPC: [string, string][] = [
   ["0", "Hasta USD 50 mil"],
-  ["1", "USD 50 mil a 500 mil"],
-  ["2", "USD 500 mil a 5 millones"],
-  ["3", "Más de USD 5 millones"],
+  ["1", "USD 50 mil a 150 mil"],
+  ["2", "USD 150 mil a 300 mil"],
+  ["3", "USD 300 mil a 500 mil"],
+  ["4", "USD 500 mil a 2 millones"],
+  ["5", "Más de USD 2 millones"],
 ];
 
 export const PUBLICOS: [string, string][] = [

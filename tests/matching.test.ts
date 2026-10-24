@@ -22,5 +22,5 @@ describe("matching", () => {
     });
   });
   it("countByRange ignora e=0 y sin ticket", () =>
-    expect(countByRange([f({ mn: 1e4, mx: 4e4 }), f({ mn: 1e4, mx: 4e4, e: 0 }), f({})])).toEqual([1, 0, 0, 0]));
+    expect(countByRange([f({ mn: 1e4, mx: 4e4 }), f({ mn: 1e4, mx: 4e4, e: 0 }), f({})])).toEqual([1, 0, 0, 0, 0, 0]));
 });

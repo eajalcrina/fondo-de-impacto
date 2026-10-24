@@ -4,9 +4,11 @@ import { countByRange, RANGOS, type Fuente } from "@/lib/matching";
 
 const AMT: [string, string, string][] = [
   ["Hasta USD", "50K", " "],
-  ["Desde USD", "50K", "a 500K"],
-  ["Desde USD", "500K", "a 5M"],
-  ["Más de USD", "5M", " "],
+  ["Desde USD", "50K", "a 150K"],
+  ["Desde USD", "150K", "a 300K"],
+  ["Desde USD", "300K", "a 500K"],
+  ["Desde USD", "500K", "a 2M"],
+  ["Más de USD", "2M", " "],
 ];
 
 /** Tarjetas de rango del Home: llevan al buscador con el rango elegido. */
