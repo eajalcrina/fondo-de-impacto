@@ -4,7 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Motion } from "@/components/site/Motion";
 import { Analytics } from "@/components/site/Analytics";
-import { EQUIPO, SITE } from "@/lib/site";
+import { EQUIPO, SITE, personaSchema } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { default: "Fondo de Impacto · Capital para empresas de impacto de América Latina", template: "%s · Fondo de Impacto" },
@@ -27,8 +27,9 @@ const JSON_LD = {
       description: "Prepara a empresas de impacto de América Latina para recibir inversión y les acerca capital privado.",
       areaServed: ["Perú", "Colombia", "América Latina"],
       parentOrganization: { "@type": "Organization", "@id": "https://redesignlab.org/#organization", name: "Redesign Lab", url: "https://redesignlab.org" },
-      founder: EQUIPO.slice(0, 2).map((p) => ({ "@type": "Person", name: p.nombre, jobTitle: p.cargo, sameAs: [p.linkedin] })),
-      employee: EQUIPO.map((p) => ({ "@type": "Person", name: p.nombre, jobTitle: p.cargo, sameAs: [p.linkedin] })),
+      founder: EQUIPO.slice(0, 2).map(personaSchema),
+      employee: EQUIPO.map(personaSchema),
+      sameAs: ["https://www.linkedin.com/company/fondo-de-impacto"],
     },
     { "@type": "WebSite", "@id": `${SITE.url}/#website`, url: SITE.url, name: "Fondo de Impacto", inLanguage: "es", publisher: { "@id": `${SITE.url}/#organization` } },
   ],
