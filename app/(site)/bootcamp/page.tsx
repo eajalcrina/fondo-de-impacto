@@ -77,7 +77,7 @@ export default function BootcampPage() {
       <p className="p2">Incluye las ocho semanas de trabajo, las sesiones 1:1 con el equipo, el comité simulado y, si apruebas la evaluación final, la sesión con fondos aliados.</p>
     </div>
     <ul className="check">
-      <li><b>Precio anticipado: {SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el {SITE.cohorte.fechaAnticipado}.</li>
+      <li><span><b>Precio anticipado: {SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el {SITE.cohorte.fechaAnticipado}.</span></li>
       <li>Pagas en dos cuotas: la mitad al confirmar el cupo y la otra mitad en la semana 4.</li>
       <li>Becas parciales para empresas con ventas anuales menores a USD 300,000, cofinanciadas por fondos y organizaciones de cooperación aliadas.</li>
       <li>Solo pagas después de que revisamos tu postulación y confirmamos que el programa es para tu empresa.</li>
