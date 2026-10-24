@@ -141,6 +141,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
           html: shell(
             "Recibimos tu postulación",
             `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, gracias por postular a <b>${escapeHtml(d.empresa)}</b> al Bootcamp de Levantamiento de Capital (${SITE.cohorte.nombre}, inicio: ${SITE.cohorte.inicio}). Revisamos cada postulación y te escribiremos ${SITE.respuesta} para coordinar una conversación.</p>
+<p style="font-size:15px;line-height:1.6;">Inversión: <b>${SITE.cohorte.precio}</b> por empresa, o <b>${SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el ${SITE.cohorte.fechaAnticipado}. Se paga en dos cuotas y solo después de confirmar tu cupo. Hay becas parciales para empresas con ventas anuales menores a USD 300,000.</p>
 <p style="font-size:15px;line-height:1.6;">Mientras tanto, puedes agendar una reunión con el equipo.</p>${boton(SITE.calEmpresas, "Agendar una reunión")}`,
           ),
         },
