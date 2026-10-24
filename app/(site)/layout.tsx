@@ -7,9 +7,9 @@ import { Analytics } from "@/components/site/Analytics";
 import { EQUIPO, SITE, personaSchema } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { default: "Fondo de Impacto · Capital para empresas de impacto de América Latina", template: "%s · Fondo de Impacto" },
+  title: { default: "Fondo de Impacto | Capital para empresas de impacto de América Latina", template: "%s | Fondo de Impacto" },
   description: "Preparamos a empresas de impacto de América Latina para levantar capital y las presentamos a los fondos que pueden financiarlas. Bootcamp de Levantamiento de Capital, Pasaporte de Inversión y financiamiento directo.",
-  openGraph: { type: "website", locale: "es_PE", siteName: "Fondo de Impacto", url: "https://fondodeimpacto.pe", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Fondo de Impacto · Capital para las empresas de impacto de América Latina" }] },
+  openGraph: { type: "website", locale: "es_PE", siteName: "Fondo de Impacto", url: "https://fondodeimpacto.pe", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Fondo de Impacto: capital para las empresas de impacto de América Latina" }] },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
   alternates: { canonical: "/" },
 };

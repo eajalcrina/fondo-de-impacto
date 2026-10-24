@@ -15,7 +15,7 @@ const EMAIL_NOTIFY = process.env.EMAIL_NOTIFY || "fondodeimpacto@redesignlab.org
 function renderFieldsHtml(fields: [string, string][]): string {
   const rows = fields
     .map(([label, value]) => {
-      const display = value ? escapeHtml(value).replace(/\n/g, "<br/>") : "—";
+      const display = value ? escapeHtml(value).replace(/\n/g, "<br/>") : "Sin dato";
       return `<tr><td style="padding:6px 12px 6px 0;color:#8a958c;font-size:13px;vertical-align:top;white-space:nowrap;">${escapeHtml(label)}</td><td style="padding:6px 0;color:#132617;font-size:14px;">${display}</td></tr>`;
     })
     .join("");
@@ -113,7 +113,7 @@ async function upsertContact(email: string, nombre: string, pais: string, form: 
 export async function notifyLead(form: LeadForm, data: Record<string, string>, extra: { reporte?: Report } = {}) {
   const env = buildEnvelope(form, data, extra);
   const [mail, sheet] = await Promise.allSettled([
-    sendBrevo(EMAIL_NOTIFY, env.subject, `<div style="padding:24px;">${renderFieldsHtml([...env.fields, ["Página", data.origen ?? ""], ["Referente", data.referente ?? ""], ["UTM", [data.utm_source, data.utm_medium, data.utm_campaign].filter(Boolean).join(" / ")]])}</div>`, "Fondo de Impacto — Sitio web", data.correo),
+    sendBrevo(EMAIL_NOTIFY, env.subject, `<div style="padding:24px;">${renderFieldsHtml([...env.fields, ["Página", data.origen ?? ""], ["Referente", data.referente ?? ""], ["UTM", [data.utm_source, data.utm_medium, data.utm_campaign].filter(Boolean).join(" / ")]])}</div>`, "Fondo de Impacto | Sitio web", data.correo),
     appendRow(env.tab, env.row),
     env.userEmail ? sendBrevo(env.userEmail.to, env.userEmail.subject, env.userEmail.html, "Fondo de Impacto", EMAIL_NOTIFY) : Promise.resolve(true),
     upsertContact(data.correo, data.nombre ?? "", data.pais ?? "", form),

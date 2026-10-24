@@ -28,7 +28,7 @@ export function Consultas() {
       </div>
       {pub && (
         <div id="consulta" style={{ marginTop: 40, maxWidth: 640 }}>
-          <p className="eyebrow s" style={{ marginBottom: 16 }}>Consulta · {PUBLICOS.find(([v]) => v === pub)?.[1]}</p>
+          <p className="eyebrow s" style={{ marginBottom: 16 }}>Consulta para {PUBLICOS.find(([v]) => v === pub)?.[1]}</p>
           <LeadForm
             key={pub}
             form="consulta"

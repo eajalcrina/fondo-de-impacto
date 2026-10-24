@@ -41,7 +41,7 @@ export function HowToJoin() {
 
         {/* Stepper */}
         <div className="relative mb-16">
-          {/* Animated connector — kept low-opacity so it hints at progression instead of cutting the row */}
+          {/* Animated connector: kept low-opacity so it hints at progression instead of cutting the row */}
           <div ref={lineRef} className="hidden md:block absolute top-[76px] left-0 right-0 h-px overflow-hidden">
             <div className="absolute inset-0 bg-white/[0.06]" />
             <motion.div

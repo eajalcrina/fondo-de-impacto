@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid">
           <div>
             <Logo width={160} />
-            <p className="sm" style={{ marginTop: 16, maxWidth: "30ch" }}>Capital de impacto para empresas de América Latina. Lima, Perú · Bogotá, Colombia.</p>
+            <p className="sm" style={{ marginTop: 16, maxWidth: "30ch" }}>Capital de impacto para empresas de América Latina. Desde Lima, Perú, y Bogotá, Colombia.</p>
           </div>
           <div><b>Empresas</b><ul><li><Link href="/bootcamp">Bootcamp</Link></li><li><Link href="/pasaporte">Pasaporte de Inversión</Link></li><li><Link href="/empresas">Financiamiento directo</Link></li></ul></div>
           <div><b>Fondo</b><ul><li><Link href="/inversionistas">Inversionistas</Link></li><li><Link href="/nosotros">Nosotros</Link></li><li><Link href="/privacidad">Política de privacidad</Link></li></ul></div>

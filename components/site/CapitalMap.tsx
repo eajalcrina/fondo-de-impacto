@@ -23,7 +23,7 @@ function Bars({ items, unit = "" }: { items: [string, number, string?][]; unit?:
           <span>{l}</span>
           <i><u style={{ width: on ? `${Math.round((100 * v) / max)}%` : 0 }} /></i>
           <em>{v}{unit}</em>
-          <span className="tip">{l}: {v}{unit}{extra ? ` · ${extra}` : ""}</span>
+          <span className="tip">{l}: {v}{unit}{extra ? `, ${extra}` : ""}</span>
         </div>
       ))}
     </div>

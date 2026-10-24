@@ -74,7 +74,7 @@ export function Finder() {
 
       <div className="report dk" id="reporte" aria-live="polite">
         <Ring size={1040} />
-        <div className="rep-top"><span>{ejemplo ? "Ejemplo · " : ""}Reporte preliminar</span><b>{datos?.razon_social || "Tu empresa"}</b></div>
+        <div className="rep-top"><span>{ejemplo ? "Ejemplo de reporte preliminar" : "Reporte preliminar"}</span><b>{datos?.razon_social || "Tu empresa"}</b></div>
         <div className="rep-chips">
           <span>{etiqueta(RUBROS, q.rubro)}</span><span>{etiqueta(PAISES, q.pais)}</span><span>{etiqueta(TIPOS_OPC, q.tipo)}</span><span>{etiqueta(RANGOS_OPC, String(q.rango))}</span>
         </div>
@@ -94,7 +94,7 @@ export function Finder() {
           {envio === "err" && ` No pudimos enviarte la copia por correo (${error}).`}
         </p>
         <div className="rep-cta">
-          <span className="flag">Siguiente paso recomendado · {SITE.cohorte.nombre}</span>
+          <span className="flag">Siguiente paso recomendado: {SITE.cohorte.nombre}</span>
           <p><b>¿Quieres llegar a estos fondos con un perfil que un comité pueda aprobar?</b> En el Bootcamp de Levantamiento de Capital preparas tu tesis, tu modelo financiero, tu teaser y tu pitch en ocho semanas, y al final presentas ante fondos aliados. Inicio: {SITE.cohorte.inicio.toLowerCase()}. {SITE.cohorte.cupos} cupos.</p>
           <a className="btn btn-p" href="/bootcamp#postular" style={{ justifySelf: "start" }}>Postular al Bootcamp</a>
         </div>

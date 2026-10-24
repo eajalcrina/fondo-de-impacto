@@ -28,7 +28,7 @@ export function InvestmentCall() {
 
         {/* Header */}
         <SectionReveal className="mb-16">
-          <Badge color="sage" className="mb-6">Investment Call 2026 · I</Badge>
+          <Badge color="sage" className="mb-6">Investment Call 2026, primera ronda</Badge>
           <h2 className="font-display text-display-lg text-white mb-6">
             Una sola oportunidad.
             <br />
@@ -41,7 +41,7 @@ export function InvestmentCall() {
           </p>
         </SectionReveal>
 
-        {/* Highlight fringe — editorial 3-column strip */}
+        {/* Highlight fringe: editorial 3-column strip */}
         <SectionReveal className="mb-16">
           <div className="py-16 relative">
             <Hairline color="rgba(255,255,255,0.15)" />
@@ -82,7 +82,7 @@ export function InvestmentCall() {
 
             <Hairline color="rgba(255,255,255,0.15)" />
 
-            {/* Terms — plain text, no pills */}
+            {/* Terms: plain text, no pills */}
             <div className="pt-6 flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
               {[
                 "10% fijo",
@@ -92,7 +92,7 @@ export function InvestmentCall() {
                 "Contrato notarial",
               ].map((term, i) => (
                 <span key={term} className="font-sans text-[13px] text-white/50 tracking-wide flex items-center gap-4">
-                  {i > 0 && <span className="text-white/20">·</span>}
+                  {i > 0 && <span aria-hidden="true" className="h-3 w-px bg-white/20" />}
                   {term}
                 </span>
               ))}
@@ -100,7 +100,7 @@ export function InvestmentCall() {
           </div>
         </SectionReveal>
 
-        {/* Project cards — split panel díptico */}
+        {/* Project cards: split panel díptico */}
         <div id="proyectos" className="grid md:grid-cols-2 gap-8 mb-12">
           {PROJECTS.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
@@ -114,8 +114,8 @@ export function InvestmentCall() {
             <div className="flex items-start gap-3">
               <Lock size={14} className="text-white/40 mt-0.5 shrink-0" />
               <p className="font-sans text-[12px] text-white/50 leading-relaxed">
-                La información financiera detallada de cada proyecto —proyecciones,
-                uso de fondos y modelo operativo— está disponible en el{" "}
+                La información financiera detallada de cada proyecto (proyecciones,
+                uso de fondos y modelo operativo) está disponible en el{" "}
                 <strong className="font-semibold text-white/60">data room</strong>,
                 accesible desde el paso 3 del proceso de inversión.
               </p>
@@ -147,7 +147,7 @@ function ProjectCard({
         ref={cardRef}
         className="relative overflow-hidden group flex flex-col md:flex-row lg:grid lg:grid-cols-12 h-full min-h-[480px]"
       >
-        {/* Animated hairline top — project color */}
+        {/* Animated hairline top: project color */}
         <motion.div
           className="absolute top-0 left-0 right-0 h-px z-20 origin-left"
           style={{ backgroundColor: project.color }}
@@ -156,7 +156,7 @@ function ProjectCard({
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         />
 
-          {/* Left panel — project color, full width below lg / 7 cols on lg+ */}
+          {/* Left panel: project color, full width below lg / 7 cols on lg+ */}
           <div
             className="relative overflow-hidden p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:w-3/5 lg:w-auto lg:col-span-7 min-h-[280px]"
             style={{ backgroundColor: project.color }}
@@ -182,7 +182,7 @@ function ProjectCard({
             </div>
           </div>
 
-          {/* Right panel — fi-dark ficha, full width below lg / 5 cols on lg+ */}
+          {/* Right panel: fi-dark ficha, full width below lg / 5 cols on lg+ */}
           <div className="bg-fi-dark p-6 sm:p-8 lg:p-10 flex flex-col md:w-2/5 lg:w-auto lg:col-span-5">
             <div className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-fi-sage mb-3">
               Ficha

@@ -90,7 +90,7 @@ export function Footer() {
 
         <div className="flex flex-wrap items-center justify-between gap-y-2">
           <span className="font-sans text-[11px] text-white/30">
-            © 2026 Fondo de Impacto · Powered by{" "}
+            © 2026 Fondo de Impacto, powered by{" "}
             <a
               href="https://redesignlab.org"
               target="_blank"

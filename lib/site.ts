@@ -58,7 +58,7 @@ export const EQUIPO: Persona[] = [
       "Coordinó el Programa Negocios Sostenibles y el Equipo Europa – Transición Circular de la Delegación de la Unión Europea en el Perú",
       "Ha articulado cadenas de valor amazónicas con marcas globales como Patagonia, Lacoste, Lululemon y Hugo Boss",
     ],
-    formacion: "MBA (ESAN) · Maestría en Biocomercio y Desarrollo Sostenible (PUCP)",
+    formacion: "MBA (ESAN) y Maestría en Biocomercio y Desarrollo Sostenible (PUCP)",
   },
   {
     nombre: "Lorenzo Ortiz",
@@ -72,7 +72,7 @@ export const EQUIPO: Persona[] = [
       "LATAM Fellow de Singularity University",
       "Coautor del Bio Business Playbook y del Playbook Circular LatAm",
     ],
-    formacion: "Ingeniero industrial · Posgrados en Finanzas y Business Analytics (Universidad del Pacífico, INCAE y MIT)",
+    formacion: "Ingeniero industrial con posgrados en Finanzas y Business Analytics (Universidad del Pacífico, INCAE y MIT)",
   },
   {
     nombre: "Eduardo Mariños",
@@ -86,6 +86,6 @@ export const EQUIPO: Persona[] = [
       "Cerca de USD 100MM en operaciones de crédito aprobadas",
       "Estructuró un financiamiento garantizado a cinco años para una cadena de valor agrícola con más de 3.000 productores",
     ],
-    formacion: "Economista, Universidad del Pacífico · MBA, EUDE Business School",
+    formacion: "Economista (Universidad del Pacífico) y MBA (EUDE Business School)",
   },
 ];

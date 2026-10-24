@@ -4,7 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Ring } from "@/components/site/Ring";
 
-export const metadata = { title: "Página no encontrada · Fondo de Impacto", robots: { index: false } };
+export const metadata = { title: "Página no encontrada | Fondo de Impacto", robots: { index: false } };
 
 export default function NotFound() {
   return (

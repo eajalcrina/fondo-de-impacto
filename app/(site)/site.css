@@ -62,6 +62,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--t2)}
 .eyebrow::before{content:"";width:18px;height:1px;background:var(--cobre)}
 .eyebrow.s{color:var(--t3)}.eyebrow.s::before{background:var(--salvia);width:10px}
+/* separador entre etiquetas: una barra vertical fina en lugar del punto medio */
+.sep{display:inline-block;width:1px;height:.95em;margin-inline:10px;background:currentColor;opacity:.35;vertical-align:-.12em}
+.eyebrow .sep{margin-inline:0}
 .d1{font-size:clamp(40px,6.2vw,80px);font-weight:600;letter-spacing:-.04em;line-height:1.02}
 .d2{font-size:clamp(30px,4vw,50px);font-weight:600;letter-spacing:-.032em;line-height:1.08}
 .d3{font-size:clamp(22px,2.4vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.2}
@@ -147,7 +150,11 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 /* aliados */
 .allies h5{margin:0 0 14px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--t3)}
-.allies li{font-size:15px;font-weight:500;color:var(--bosque);padding-block:7px;border-top:1px solid var(--linea)}
+.allies li{display:flex;align-items:center;height:76px;border-top:1px solid var(--linea)}
+.allies li:last-child{border-bottom:1px solid var(--linea)}
+.allies img{width:auto;max-width:min(100%,190px);object-fit:contain;object-position:left center;filter:grayscale(1);opacity:.62;transition:filter .3s,opacity .3s}
+.allies li:hover img{filter:none;opacity:1}
+@media (max-width:860px){.allies li{height:64px}}
 
 /* pasos */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}

@@ -72,7 +72,7 @@ function shell(titulo: string, cuerpo: string): string {
 <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8a4a2b;margin:0 0 12px;">Fondo de Impacto</p>
 <h1 style="font-size:24px;line-height:1.2;margin:0 0 20px;">${titulo}</h1>
 ${cuerpo}
-<p style="font-size:12px;color:#8a958c;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">Fondo de Impacto · Una división de Redesign Lab · Lima y Bogotá<br>${SITE.email} · <a href="${SITE.url}/privacidad" style="color:#8a958c;">Política de privacidad</a></p>
+<p style="font-size:12px;color:#8a958c;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">Fondo de Impacto, una división de Redesign Lab, desde Lima y Bogotá<br>${SITE.email} | <a href="${SITE.url}/privacidad" style="color:#8a958c;">Política de privacidad</a></p>
 </div>`;
 }
 
@@ -102,19 +102,19 @@ export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: 
       const tipo = etiqueta(TIPOS_OPC, d.tipo);
       const rango = etiqueta(RANGOS_OPC, d.rango);
       const cuerpo = r
-        ? `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, este es el reporte preliminar para <b>${escapeHtml(d.razon_social)}</b> (${escapeHtml(rubro)} · ${escapeHtml(pais)} · ${escapeHtml(tipo)} · ${escapeHtml(rango)}).</p>
+        ? `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, este es el reporte preliminar para <b>${escapeHtml(d.razon_social)}</b> (${escapeHtml(rubro)}, ${escapeHtml(pais)}, ${escapeHtml(tipo)}, ${escapeHtml(rango)}).</p>
 <table style="width:100%;border-collapse:collapse;margin:20px 0;"><tr>
 <td style="padding:16px;background:#132617;color:#fff;border-radius:8px 0 0 8px;"><div style="font-size:36px;font-weight:600;">${r.total}</div><div style="font-size:13px;opacity:.75;">fuentes de capital de impacto compatibles con tu perfil</div></td>
 <td style="padding:16px;background:#1b3323;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con llamada activa: convocatoria abierta o ventanilla permanente</div></td>
 </tr></table>
-<p style="font-size:14px;color:#556259;">No reembolsable: ${r.porTipo.nr} · Deuda y garantías: ${r.porTipo.de} · Equity: ${r.porTipo.eq} · Blended o mixto: ${r.porTipo.bl}${r.sinTicket ? `<br>${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso.` : ""}</p>
+<p style="font-size:14px;color:#556259;">No reembolsable: ${r.porTipo.nr}<br>Deuda y garantías: ${r.porTipo.de}<br>Equity: ${r.porTipo.eq}<br>Blended o mixto: ${r.porTipo.bl}${r.sinTicket ? `<br>${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso.` : ""}</p>
 <p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Siguiente paso recomendado: el Bootcamp de Levantamiento de Capital.</b> En ocho semanas preparas tu tesis, tu modelo financiero, tu teaser y tu pitch, y al final presentas ante fondos aliados. ${SITE.cohorte.nombre}: inicio ${SITE.cohorte.inicio.toLowerCase()}, ${SITE.cohorte.cupos} cupos.</p>
 ${boton(`${SITE.url}/bootcamp#postular`, "Postular al Bootcamp")}
 <p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>¿Quieres empezar hoy a levantar capital?</b> Conversemos 30 minutos.</p>
 ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         : `<p>Hola ${nombre}, recibimos tu solicitud.</p>`;
       return {
-        subject: `Buscador · ${d.razon_social} — ${pais} · ${rango}`,
+        subject: `Buscador: ${d.razon_social} (${pais}, ${rango})`,
         fields: [
           ["Razón social", d.razon_social], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular],
           ["Rubro", rubro], ["País", pais], ["Tipo de fondo", tipo], ["Capital", rango],
@@ -122,13 +122,13 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         ],
         tab: "Buscador",
         row: [ts, d.razon_social, d.nombre, d.correo, d.celular, rubro, pais, tipo, rango, String(r?.total ?? ""), String(r?.activas ?? ""), ...tail(d)],
-        userEmail: { to: d.correo, subject: `Tu reporte de fondos disponibles · ${d.razon_social}`, html: shell("Fondos disponibles para tu empresa", cuerpo) },
+        userEmail: { to: d.correo, subject: `Tu reporte de fondos disponibles para ${d.razon_social}`, html: shell("Fondos disponibles para tu empresa", cuerpo) },
       };
     }
     case "bootcamp": {
       const pais = etiqueta(PAISES, d.pais);
       return {
-        subject: `Postulación Bootcamp · ${d.empresa} — ${pais}`,
+        subject: `Postulación al Bootcamp: ${d.empresa} (${pais})`,
         fields: [
           ["Empresa", d.empresa], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular], ["País", pais],
           ["Rubro", d.rubro ? etiqueta(RUBROS, d.rubro) : ""], ["Ventas últimos 12 meses", d.ventas ?? ""], ["Capital que busca", d.capital ?? ""], ["Mensaje", d.mensaje ?? ""],
@@ -150,7 +150,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
     case "consulta": {
       const publico = etiqueta(PUBLICOS, d.publico);
       return {
-        subject: `Consulta · ${publico} — ${d.nombre}`,
+        subject: `Consulta de ${d.nombre} (${publico})`,
         fields: [["Público", publico], ["Nombre", d.nombre], ["Organización", d.empresa ?? ""], ["Correo", d.correo], ["Celular", d.celular ?? ""], ["Mensaje", d.mensaje]],
         tab: "Consultas",
         row: [ts, publico, d.nombre, d.empresa ?? "", d.correo, d.celular ?? "", d.mensaje, ...tail(d)],
@@ -158,7 +158,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
     }
     case "pasaporte": {
       return {
-        subject: `Pasaporte de Inversión · ${d.empresa} — ${d.nombre}`,
+        subject: `Pasaporte de Inversión: ${d.empresa}, de ${d.nombre}`,
         fields: [["Empresa", d.empresa], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular ?? ""], ["País", d.pais ? etiqueta(PAISES, d.pais) : ""], ["Rubro", d.rubro ? etiqueta(RUBROS, d.rubro) : ""], ["Mensaje", d.mensaje ?? ""]],
         tab: "Pasaporte",
         row: [ts, d.empresa, d.nombre, d.correo, d.celular ?? "", d.pais ? etiqueta(PAISES, d.pais) : "", d.rubro ? etiqueta(RUBROS, d.rubro) : "", d.mensaje ?? "", ...tail(d)],

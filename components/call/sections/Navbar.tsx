@@ -48,7 +48,7 @@ export function Navbar() {
           <a href="#" className="font-display text-[15px] sm:text-[16px] font-[600] text-white leading-none hover:opacity-80 transition-opacity duration-200 whitespace-nowrap">
             Fondo de Impacto
           </a>
-          <span className="hidden sm:inline text-white/30 text-[14px] leading-none select-none">·</span>
+          <span aria-hidden="true" className="hidden sm:inline-block h-3.5 w-px bg-white/25" />
           <RedesignLabLogo color="white" size="sm" className="hidden sm:inline-flex opacity-50 hover:opacity-80" />
         </div>
 
@@ -79,7 +79,7 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Hamburger — kept above the mobile overlay so it stays interactive */}
+        {/* Hamburger: kept above the mobile overlay so it stays interactive */}
         <button
           className="lg:hidden text-white p-2 relative z-[70] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-fi-dark rounded"
           onClick={() => setOpen((v) => !v)}
@@ -107,18 +107,18 @@ export function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Top bar — matches navbar height so the close X visually replaces the hamburger */}
+            {/* Top bar: matches navbar height so the close X visually replaces the hamburger */}
             <div className="h-20 px-6 flex items-center justify-between shrink-0">
               <span className="font-display text-[15px] font-[600] text-white leading-none whitespace-nowrap">
                 Fondo de Impacto
               </span>
-              {/* Empty spacer — the real close button is the hamburger above (z-70) */}
+              {/* Empty spacer: the real close button is the hamburger above (z-70) */}
               <span className="w-[22px] h-[22px]" aria-hidden />
             </div>
 
             <div className="h-px bg-white/10 mx-6 shrink-0" />
 
-            {/* Links — left-aligned editorial rows with hairlines */}
+            {/* Links: left-aligned editorial rows with hairlines */}
             <nav className="flex-1 overflow-y-auto px-6 pt-2 pb-6">
               {navLinks.map((link, i) => (
                 <motion.a

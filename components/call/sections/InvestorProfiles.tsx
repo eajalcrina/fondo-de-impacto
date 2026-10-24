@@ -110,7 +110,7 @@ export function InvestorProfiles() {
                           profile.highlighted ? "text-white/70" : "text-fi-ink/70",
                         ].join(" ")}
                       >
-                        <span className="shrink-0 mt-0.5">—</span>
+                        <span aria-hidden="true" className="shrink-0 mt-[0.7em] h-px w-3 bg-current opacity-50" />
                         {item}
                       </li>
                     ))}
@@ -141,7 +141,7 @@ export function InvestorProfiles() {
                           profile.highlighted ? "text-white/70" : "text-fi-ink/70",
                         ].join(" ")}
                       >
-                        <span className="shrink-0 text-fi-primary mt-0.5">—</span>
+                        <span aria-hidden="true" className="shrink-0 mt-[0.7em] h-px w-3 bg-fi-primary" />
                         {benefit}
                       </li>
                     ))}

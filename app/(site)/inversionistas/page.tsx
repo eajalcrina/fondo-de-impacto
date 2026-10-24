@@ -13,7 +13,7 @@ export default function InversionistasPage() {
     <>
 
   <Hero slides={[{ src: "/img/n2.jpg", cap: "Amazonía" }]}>
-<span className="eyebrow">Para inversionistas · Tesis de inversión</span>
+<span className="eyebrow">Para inversionistas<i className="sep" />Tesis de inversión</span>
     <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "17ch" }} text="Inversión paciente en empresas de impacto de América Latina." />
     <p className="lead" style={{ maxWidth: "58ch" }}>Canalizamos capital privado hacia empresas de impacto con historial verificado en Perú y Colombia. Sin dilución, con due diligence financiero y ESG, y reporte financiero y de impacto cada mes.</p>
     <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a></div>

@@ -39,7 +39,7 @@ export function FinalCTA() {
             es ahora.
           </h2>
           <p className="font-sans text-[18px] text-white/85 max-w-xl mx-auto leading-relaxed">
-            El call está abierto con cupos limitados. Da el primer paso hoy —
+            El call está abierto con cupos limitados. Da el primer paso hoy con
             una conversación sin compromiso.
           </p>
         </SectionReveal>
@@ -99,7 +99,7 @@ export function FinalCTA() {
 
         <SectionReveal delay={240}>
           <p className="font-sans text-[11px] text-white/60">
-            Documento confidencial — Uso exclusivo para inversionistas · Lima, Perú · 2026
+            Documento confidencial de uso exclusivo para inversionistas. Lima, Perú, 2026
           </p>
         </SectionReveal>
       </div>

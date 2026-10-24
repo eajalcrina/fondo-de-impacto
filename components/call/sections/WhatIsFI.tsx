@@ -28,11 +28,11 @@ const pillars = [
 export function WhatIsFI() {
   return (
     <section id="que-es" className="bg-fi-light">
-      {/* Top half — light background with header */}
+      {/* Top half: light background with header */}
       <div className="pt-20 sm:pt-32 lg:pt-40 pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionReveal>
-            {/* Asymmetric header — text left, description right on large screens */}
+            {/* Asymmetric header: text left, description right on large screens */}
             <div className="grid grid-cols-12 gap-y-6 gap-x-8 items-end mb-0">
               <div className="col-span-12 lg:col-span-7">
                 <span className="font-sans text-[11px] font-semibold tracking-[0.25em] text-fi-primary mb-4 block">
@@ -64,7 +64,7 @@ export function WhatIsFI() {
         </div>
       </div>
 
-      {/* Dark band — pillars with visual contrast */}
+      {/* Dark band: pillars with visual contrast */}
       <div className="relative overflow-hidden">
         <div className="bg-fi-dark py-16 sm:py-20 relative">
           <NoiseOverlay opacity="opacity-[0.03]" />
@@ -111,19 +111,19 @@ export function WhatIsFI() {
         </div>
       </div>
 
-      {/* Bottom — pull quote on light background */}
+      {/* Bottom: pull quote on light background */}
       <div className="py-16 sm:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionReveal>
             <div className="grid grid-cols-12">
               <div className="col-span-12 md:col-start-2 md:col-span-9 lg:col-start-2 lg:col-span-7 relative pl-8">
-                {/* Accent border — fi-primary instead of fi-line */}
+                {/* Accent border: fi-primary instead of fi-line */}
                 <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-fi-primary/30" />
                 <p className="font-display italic text-[26px] lg:text-[32px] font-[400] text-fi-ink/50 leading-[1.2]">
                   Invertimos en los negocios que el planeta necesita hoy.
                 </p>
                 <p className="font-sans text-[12px] text-fi-ink/35 mt-5 tracking-[0.15em]">
-                  REDESIGN LAB · Lima, Perú
+                  REDESIGN LAB, Lima, Perú
                 </p>
               </div>
             </div>

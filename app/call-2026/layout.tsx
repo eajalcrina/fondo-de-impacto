@@ -10,7 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Fondo de Impacto — Investment Call 2026 · Redesign Lab",
+  title: "Fondo de Impacto | Investment Call 2026 de Redesign Lab",
   description: "Investment Call 2026 de Fondo de Impacto. Acceso privado.",
   robots: { index: false, follow: false },
 };

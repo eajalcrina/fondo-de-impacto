@@ -31,7 +31,7 @@ export function Hero() {
       id="hero"
       className="relative min-h-[100dvh] flex items-center bg-fi-dark overflow-hidden"
     >
-      {/* Forest image — top 55%, fades into fi-dark */}
+      {/* Forest image: top 55%, fades into fi-dark */}
       <div className="absolute inset-x-0 top-0 h-[55%] pointer-events-none" aria-hidden>
         <Image
           src="/images/hero-forest.jpg"
@@ -60,7 +60,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Badge color="sage">Investment Call 2026 · I</Badge>
+          <Badge color="sage">Investment Call 2026, primera ronda</Badge>
         </motion.div>
 
         {/* Headline */}

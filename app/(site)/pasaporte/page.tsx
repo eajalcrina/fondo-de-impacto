@@ -18,7 +18,7 @@ export default function PasaportePage() {
 
   <Hero slides={[{ src: "/img/h04.jpg", cap: "Cacao" }]} split>
 <div className="stack" style={{ gap: "26px" }}>
-      <span className="eyebrow">Pasaporte de Inversión · USD 0</span>
+      <span className="eyebrow">Pasaporte de Inversión sin costo</span>
       <Words as="h1" className="d1" style={{ fontSize: "clamp(40px,5.8vw,72px)" }} text="Un solo perfil. Más de 50 fondos de impacto." />
       <p className="lead">Completa el Pasaporte de Inversión de tu empresa una sola vez y abre la puerta al capital que estás buscando. No pagas nada: solo inviertes unos 40 minutos. Con esa información preparamos un teaser confidencial con estándar de comité y lo presentamos a los fondos de nuestra red cuya tesis coincide con tu empresa.</p>
       <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><Link className="lnk q" href="/pasaporte#buscador">Ver fondos disponibles</Link></div>
@@ -60,13 +60,13 @@ export default function PasaportePage() {
   </div></section>
 
   <section className="sec" style={{ borderTop: 0 }}><div className="wrap">
-    <div className="head"><span className="eyebrow">Vista previa · Próximamente</span><div className="stack" style={{ gap: "10px" }}><Words as="h2" className="d2" text="Seis bloques, a tu ritmo" /><p className="p2">Ten a mano los estados financieros de los últimos dos años, tu pitch deck si lo tienes y las métricas de impacto que ya mides.</p></div></div>
+    <div className="head"><span className="eyebrow">Vista previa<i className="sep" />Próximamente</span><div className="stack" style={{ gap: "10px" }}><Words as="h2" className="d2" text="Seis bloques, a tu ritmo" /><p className="p2">Ten a mano los estados financieros de los últimos dos años, tu pitch deck si lo tienes y las métricas de impacto que ya mides.</p></div></div>
     <div className="formwrap">
       <ol className="sects">
         <li className="ok">Tu empresa <small>Completo</small></li><li className="ok">Tracción y mercado <small>Completo</small></li><li className="cur">Finanzas <small>En curso</small></li><li>Impacto y ESG <small>8 preguntas</small></li><li>Necesidad de capital <small>6 preguntas</small></li><li>Documentos <small>3 archivos</small></li>
       </ol>
       <div className="fcard" style={{ position: "relative" }}><span className="badge" style={{ position: "absolute", top: -14, right: 20 }}><i />Próximamente</span>
-        <div style={{ display: "flex", justifyContent: "space-between", gap: "10px", fontSize: "12.5px", color: "var(--t3)" }}><b style={{ color: "var(--bosque)" }}>3 de 6 · Finanzas</b><span>42% completado</span></div>
+        <div style={{ display: "flex", justifyContent: "space-between", gap: "10px", fontSize: "12.5px", color: "var(--t3)" }}><b style={{ color: "var(--bosque)" }}>Bloque 3 de 6: Finanzas</b><span>42% completado</span></div>
         <div className="prog"><u /></div>
         <div className="frow"><div className="field"><label>Ventas netas, últimos 12 meses (USD)</label><div className="inp num">1.100.000</div></div><div className="field"><label>Margen bruto (%)</label><div className="inp num">42</div></div></div>
         <div className="field"><label>¿Has recibido financiamiento de fondos de impacto u otros financiadores?</label><div className="opts"><span className="on">Sí, y lo repagué</span><span>Sí, está vigente</span><span>No</span></div></div>
@@ -88,7 +88,7 @@ export default function PasaportePage() {
 
   <section className="sec tint" id="completar"><div className="wrap split">
     <div className="stack" style={{ gap: 14 }}>
-      <span className="eyebrow">Acceso anticipado · USD 0</span>
+      <span className="eyebrow">Acceso anticipado sin costo</span>
       <Words as="h2" className="d2" text="Solicita acceso al Pasaporte de Inversión" />
       <p className="p2">El Pasaporte de Inversión abre por etapas. Déjanos tus datos y te avisamos cuando tu acceso esté listo. No cuesta nada: solo inviertes tu tiempo, y abre la puerta al capital que estás buscando.</p>
     </div>

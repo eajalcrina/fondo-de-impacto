@@ -36,7 +36,7 @@ export const TEAM = [
     linkedin: "https://www.linkedin.com/in/eddieajalcrina/",
     image: "/images/eddie.jpeg",
     highlights: [
-      "MBA ESAN · Maestría Biocomercio PUCP",
+      "MBA ESAN y Maestría en Biocomercio PUCP",
       "+18 años en compañías regionales, inversión de impacto y Go-to-Market",
       "Ex-Coordinador Unión Europea en Perú",
     ],
@@ -47,7 +47,7 @@ export const TEAM = [
     linkedin: "https://www.linkedin.com/in/lorenzoortiz/",
     image: "/images/lorenzo.jpeg",
     highlights: [
-      "MIT Business Analytics · Ing. Industrial UNT",
+      "Ingeniero industrial (UNT) con Business Analytics en el MIT",
       "+12 años en dirección de operaciones, estrategia y finanzas",
       "Singularity University LATAM Fellow",
     ],
@@ -86,13 +86,13 @@ export const PROJECTS = [
 export const INVESTOR_PROFILES = [
   {
     tier: "Angel Supporter",
-    range: "S/ 10,000 — S/ 29,999",
+    range: "S/ 10,000 a S/ 29,999",
     subtitle: "Inversionista Individual",
     description:
       "Profesionales, ejecutivos o emprendedores que buscan diversificar su capital con un instrumento de renta fija y propósito.",
     forWhom: ["Ejecutivos y profesionales independientes", "Emprendedores con capital disponible", "Inversionistas nuevos en el sector"],
     benefits: [
-      "Retorno 10% fijo anual — pago bullet mes 12",
+      "Retorno 10% fijo anual, con pago bullet en el mes 12",
       "Contrato notarial con garantía personal",
       "Reportes mensuales: caja, ventas, indicadores",
       "Reuniones ejecutivas trimestrales",
@@ -102,13 +102,13 @@ export const INVESTOR_PROFILES = [
   },
   {
     tier: "Angel Lead",
-    range: "S/ 30,000 — S/ 100,000",
+    range: "S/ 30,000 a S/ 100,000",
     subtitle: "Inversionista Estratégico",
     description:
       "Inversionistas con red en el ecosistema que buscan no solo retorno sino vinculación real con el proyecto y acceso estratégico.",
     forWhom: ["Ejecutivos interesados en desarrollar negocios", "Inversionistas con red en el ecosistema", "Empresarios con interés en bioeconomía"],
     benefits: [
-      "Retorno 10% fijo anual — pago bullet mes 12",
+      "Retorno 10% fijo anual, con pago bullet en el mes 12",
       "Contrato notarial con garantía personal",
       "Reportes mensuales: caja, ventas, indicadores",
       "Reuniones ejecutivas trimestrales",

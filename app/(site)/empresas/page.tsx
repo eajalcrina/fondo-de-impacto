@@ -20,7 +20,7 @@ export default function EmpresasPage() {
 
   <section className="sec tint"><div className="wrap hero-2">
     <div className="stack" style={{ gap: "22px" }}>
-      <span className="eyebrow">Empieza aquí · ¿Cuánto capital necesitas?</span>
+      <span className="eyebrow">Empieza aquí: ¿cuánto capital necesitas?</span>
       <Words as="h2" className="d2" text="Mira cuántos fondos financian a empresas como la tuya." />
       <p className="lead">Indica tu rubro, tu país y el capital que buscas. El buscador revisa 456 fuentes públicas de capital de impacto y te dice cuántas calzan contigo y cuántas tienen convocatoria abierta.</p>
       <ul className="check"><li>Gratis y en dos minutos.</li><li>Recibes una copia del reporte por correo.</li><li>Según el resultado, te recomendamos la ruta: Bootcamp o financiamiento directo.</li><li>Te respondemos {SITE.respuesta}.</li></ul>
@@ -33,14 +33,14 @@ export default function EmpresasPage() {
     <div className="head"><span className="eyebrow">Después, elige tu ruta</span><Words as="h2" className="d2" text="Dos modalidades según la etapa de tu empresa" /></div>
     <div className="cols-2">
       <div className="rule" style={{ gap: "16px" }}>
-        <span className="eyebrow s">Modalidad 1 · Investment readiness</span>
+        <span className="eyebrow s">Modalidad 1<i className="sep" />Investment readiness</span>
         <h3 className="d3">Te preparamos para levantar capital y te acompañamos hasta el cierre.</h3>
         <p className="p2">Para empresas que buscan capital de fondos de impacto, banca de desarrollo o cooperación internacional y aún no tienen un perfil de inversión completo.</p>
         <ul className="check"><li>Diagnóstico con nuestra metodología propietaria: finanzas, gobernanza, ESG e impacto.</li><li>Bootcamp de Levantamiento de Capital, con asesoría personalizada y comité simulado.</li><li>Presentación a nuestra red de más de 50 fondos de impacto.</li><li>Acompañamiento en due diligence y negociación del term sheet.</li></ul>
         <div className="cta-row"><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
       </div>
       <div className="rule" style={{ gap: "16px" }}>
-        <span className="eyebrow s">Modalidad 2 · Financiamiento directo</span>
+        <span className="eyebrow s">Modalidad 2<i className="sep" />Financiamiento directo</span>
         <h3 className="d3">Financiamos tu capital de trabajo con condiciones claras desde el inicio.</h3>
         <p className="p2">Para empresas con historial validado en el ecosistema de impacto que necesitan liquidez para inventario, órdenes de compra o expansión comercial.</p>
         <ul className="check"><li>Ventas recurrentes durante al menos 12 meses.</li><li>Historial de repago con un fondo de impacto u otro financiador.</li><li>Estados financieros del último ejercicio.</li><li>Uso de fondos ligado al ciclo operativo.</li><li>Garantía hipotecaria sobre un inmueble de la empresa o de sus accionistas.</li></ul>

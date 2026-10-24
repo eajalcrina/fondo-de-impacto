@@ -32,7 +32,7 @@ export function TrackRecord() {
           <p className="font-sans text-[18px] text-fi-ink/70 leading-relaxed max-w-3xl">
             Redesign Lab ha diseñado, financiado y escalado más de 10 empresas
             sostenibles en Loreto, Madre de Dios, Ucayali, San Martín, Ancash,
-            Lima e Ica — con alianzas activas en tres continentes.
+            Lima e Ica, con alianzas activas en tres continentes.
           </p>
         </SectionReveal>
 
@@ -67,7 +67,7 @@ export function TrackRecord() {
                   </div>
                   <p className="eyebrow text-fi-ink/40 mb-4">{group.group}</p>
                   <p className="font-sans text-[14px] text-fi-ink leading-relaxed">
-                    {group.names.join(" · ")}
+                    {group.names.slice(0, -1).join(", ")} y {group.names.at(-1)}
                   </p>
                 </div>
               </SectionReveal>
@@ -77,7 +77,7 @@ export function TrackRecord() {
 
         <Hairline color="#e6e3da" className="mb-14" />
 
-        {/* Cofounders — no card container */}
+        {/* Cofounders: no card container */}
         <SectionReveal className="mb-8">
           <h3 className="eyebrow text-fi-ink/40 mb-10">Co-fundadores</h3>
         </SectionReveal>
@@ -117,7 +117,7 @@ export function TrackRecord() {
                   <ul className="space-y-2">
                     {member.highlights.map((h) => (
                       <li key={h} className="font-sans text-[14px] text-fi-ink/70 flex gap-3 items-start leading-relaxed">
-                        <span className="shrink-0 mt-0.5 text-fi-ink/30">—</span>
+                        <span aria-hidden="true" className="shrink-0 mt-[0.7em] h-px w-3 bg-fi-ink/30" />
                         {h}
                       </li>
                     ))}
