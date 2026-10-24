@@ -96,7 +96,7 @@ export default function PasaportePage() {
       form="pasaporte"
       idPrefix="ps"
       submit="Solicitar acceso"
-      success="Listo. Recibimos tu solicitud y te escribiremos cuando tu acceso esté listo."
+      success={`Listo. Recibimos tu solicitud y te escribimos ${SITE.respuesta}.`}
       fields={[
         { name: "empresa", label: "Empresa", required: true, autoComplete: "organization", half: true },
         { name: "nombre", label: "Nombre completo", required: true, autoComplete: "name", half: true },

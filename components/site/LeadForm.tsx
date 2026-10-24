@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { attribution, track } from "@/lib/analytics";
+import { SITE } from "@/lib/site";
 
 export type Field = {
   name: string;
@@ -84,6 +85,7 @@ export function LeadForm({ form, fields, submit, hidden = {}, success, idPrefix 
       <button className="btn btn-p" type="submit" disabled={st.s === "sending"} style={{ justifySelf: "start" }}>
         {st.s === "sending" ? "Enviando…" : submit}
       </button>
+      <span className="xs">Te respondemos {SITE.respuesta}.</span>
     </form>
   );
 }

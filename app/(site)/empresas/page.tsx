@@ -6,7 +6,7 @@ import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
 import { Teaser } from "@/components/site/Teaser";
 
-export const metadata: Metadata = { title: "Para empresas", description: "Del diagnóstico al capital: Pasaporte de Inversión, Bootcamp de Levantamiento de Capital y financiamiento directo para empresas de impacto en Perú y Colombia." };
+export const metadata: Metadata = { title: "Para empresas", description: "Del diagnóstico al capital: buscador de fondos, Bootcamp de Levantamiento de Capital y financiamiento directo para empresas de impacto en Perú y Colombia." };
 
 export default function EmpresasPage() {
   return (
@@ -15,16 +15,16 @@ export default function EmpresasPage() {
   <Hero slides={[{ src: "/img/h17.jpg", cap: "Taller con empresas" }]}>
 <span className="eyebrow">Para empresas</span>
     <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "16ch" }} text="Del diagnóstico al capital, según la etapa de tu empresa." />
-    <p className="lead" style={{ maxWidth: "56ch" }}>Trabajamos con empresas de impacto en Perú y Colombia. Todo empieza con tu Pasaporte de Inversión. Con él evaluamos en qué punto estás y definimos la ruta: prepararte en el Bootcamp y levantar capital con fondos de nuestra red, o recibir financiamiento directo del fondo.</p>
+    <p className="lead" style={{ maxWidth: "56ch" }}>Trabajamos con empresas de impacto en Perú y Colombia. Todo empieza con una pregunta: ¿cuánto capital necesitas? El buscador te muestra cuántas fuentes calzan con tu empresa y, según el resultado, te recomendamos la ruta: prepararte en el Bootcamp y levantar capital con fondos de nuestra red, o recibir financiamiento directo del fondo.</p>
   </Hero>
 
   <section className="sec tint"><div className="wrap hero-2">
     <div className="stack" style={{ gap: "22px" }}>
-      <span className="eyebrow">Empieza aquí · Pasaporte de Inversión</span>
-      <Words as="h2" className="d2" text="Un solo perfil. Más de 50 fondos de impacto." />
-      <p className="lead">Completa el perfil de tu empresa una sola vez. Con esa información preparamos un teaser confidencial con estándar de comité y lo ponemos frente a los fondos de nuestra red cuya tesis coincide con la tuya.</p>
-      <ul className="check"><li>Diagnóstico de investment readiness. Cuesta USD 0, solo tu tiempo.</li><li>Teaser anónimo en el FI Deal Room, visible para fondos compatibles.</li><li>Tu nombre y tus documentos solo se comparten con tu autorización.</li><li>El mismo perfil sirve como postulación al Bootcamp.</li></ul>
-      <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><span className="xs">Acceso anticipado y sin costo.</span></div>
+      <span className="eyebrow">Empieza aquí · ¿Cuánto capital necesitas?</span>
+      <Words as="h2" className="d2" text="Mira cuántos fondos financian a empresas como la tuya." />
+      <p className="lead">Indica tu rubro, tu país y el capital que buscas. El buscador revisa 456 fuentes públicas de capital de impacto y te dice cuántas calzan contigo y cuántas tienen convocatoria abierta.</p>
+      <ul className="check"><li>Gratis y en dos minutos.</li><li>Recibes una copia del reporte por correo.</li><li>Según el resultado, te recomendamos la ruta: Bootcamp o financiamiento directo.</li><li>Te respondemos {SITE.respuesta}.</li></ul>
+      <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#buscador">Ver fondos para mi empresa</Link><span className="xs">Sin costo y sin compromiso.</span></div>
     </div>
     <Teaser />
   </div></section>
@@ -37,7 +37,7 @@ export default function EmpresasPage() {
         <h3 className="d3">Te preparamos para levantar capital y te acompañamos hasta el cierre.</h3>
         <p className="p2">Para empresas que buscan capital de fondos de impacto, banca de desarrollo o cooperación internacional y aún no tienen un perfil de inversión completo.</p>
         <ul className="check"><li>Diagnóstico con nuestra metodología propietaria: finanzas, gobernanza, ESG e impacto.</li><li>Bootcamp de Levantamiento de Capital, con asesoría personalizada y comité simulado.</li><li>Presentación a nuestra red de más de 50 fondos de impacto.</li><li>Acompañamiento en due diligence y negociación del term sheet.</li></ul>
-        <div className="cta-row"><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
+        <div className="cta-row"><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
       </div>
       <div className="rule" style={{ gap: "16px" }}>
         <span className="eyebrow s">Modalidad 2 · Financiamiento directo</span>
@@ -58,7 +58,7 @@ export default function EmpresasPage() {
         <tr><td>Qué recibes</td><td>Perfil de inversión y acceso a financiadores</td><td>Financiamiento para capital de trabajo</td></tr>
         <tr><td>Quién pone el capital</td><td>Fondos de impacto, banca de desarrollo, cooperación</td><td>Fondo de Impacto, con inversionistas privados</td></tr>
         <tr><td>Garantías</td><td>No aplica</td><td>Garantía hipotecaria</td></tr>
-        <tr><td>Primer paso</td><td>Pasaporte de Inversión y postulación al Bootcamp</td><td>Pasaporte de Inversión y revisión de elegibilidad</td></tr>
+        <tr><td>Primer paso</td><td>Buscador de fondos y postulación al Bootcamp</td><td>Conversación de 30 minutos y revisión de elegibilidad</td></tr>
       </tbody>
     </table></div>
   </div></section>

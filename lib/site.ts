@@ -4,10 +4,14 @@ export const SITE = {
   calInversionistas: "https://calendar.app.google/geMQwggAn3R4nqHt8",
   calEmpresas: "https://calendar.app.google/Fetdonx9fkLQ6vUx8",
   cohorte: {
-    nombre: "Cohorte noviembre 2026",
-    inicio: "Lunes 2 de noviembre de 2026",
+    nombre: "Cohorte febrero 2027",
+    mes: "febrero",
+    inicio: "Lunes 1 de febrero de 2027",
+    corto: "Lun 1 feb 2027",
     cupos: 15,
   },
+  /** Plazo de respuesta que prometen los formularios. */
+  respuesta: "en menos de 24 horas",
 };
 
 export type Persona = {

@@ -34,7 +34,7 @@ function Bars({ items, unit = "" }: { items: [string, number, string?][]; unit?:
 export function CapitalMap() {
   const [p, setP] = useState("*");
   const set = F.filter((f) => matchPais(f, p));
-  const tk = set.filter((f) => inRange(f, 0) !== null);
+  const tk = set.filter((f) => f.e === 1 && inRange(f, 0) !== null);
   const sc: Record<string, number> = {};
   set.forEach((f) => f.s.forEach((x) => { if (SECT[x]) sc[x] = (sc[x] || 0) + 1; }));
   return (
@@ -55,7 +55,7 @@ export function CapitalMap() {
       <div className="charts">
         <div className="chart">
           <h3>Rangos de ticket</h3>
-          <p className="sub">% de fuentes con ticket publicado que financian en cada rango</p>
+          <p className="sub">% de las fuentes que financian empresas y publican su ticket</p>
           <Bars key={`r${p}`} unit="%" items={RANGOS.map((_, i) => { const n = tk.filter((f) => inRange(f, i) === true).length; return [RLAB[i], tk.length ? Math.round((100 * n) / tk.length) : 0, `${n} de ${tk.length} fuentes`]; })} />
         </div>
         <div className="chart">

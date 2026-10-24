@@ -19,7 +19,7 @@ export default function HomePage() {
 <span className="eyebrow">Capital de impacto · Perú y Colombia</span>
     <Words as="h1" className="d1" style={{ maxWidth: "21ch" }} text="Capital para las empresas de impacto de América Latina que ya demostraron tracción." />
     <p className="lead" style={{ maxWidth: "48ch" }}>Te preparamos para levantar capital y te presentamos a los fondos que pueden financiarte.</p>
-    <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk q" href="/inversionistas">Soy inversionista</Link></div>
+    <div className="cta-row"><Link className="btn btn-p" href="#rangos">¿Cuánto capital necesitas?</Link><Link className="lnk q" href="/inversionistas">Soy inversionista</Link></div>
     <div className="facts num"><div><b>+50</b><span>fondos en nuestra red</span></div><div><b>USD 1,5MM</b><span>en capital de impacto levantado*</span></div><div><b>USD 1,2MM</b><span>en fondos no reembolsables*</span></div></div>
   </Hero>
   <PhotoBelt />
@@ -42,9 +42,9 @@ export default function HomePage() {
   </div></section>
 
   <section className="sec tint" id="rangos"><div className="wrap">
-    <div className="head"><span className="eyebrow">¿Cuánto capital necesitas?</span><div className="stack" style={{ gap: "12px" }}><Words as="h2" className="d2" text="Mira cuántas fuentes de capital de impacto financian en tu rango." /><p className="p2">Elige un rango y revisa los fondos disponibles para tu empresa. Es gratis y toma dos minutos.</p></div></div>
+    <div className="head"><span className="eyebrow">¿Cuánto capital necesitas?</span><div className="stack" style={{ gap: "12px" }}><Words as="h2" className="d2" text="Mira cuántas fuentes de capital de impacto financian en tu rango." /><p className="p2">Elige un rango y el buscador te muestra cuántas fuentes calzan con tu empresa. Según el resultado, te recomendamos la ruta para llegar a ellas. Es gratis y toma dos minutos.</p></div></div>
     <Ranges />
-    <p className="zero" style={{ marginTop: "22px" }}><b>USD 0</b> Ver tu reporte y solicitar tu Pasaporte de Inversión no tiene costo. Solo inviertes tu tiempo.</p>
+    <p className="zero" style={{ marginTop: "22px" }}><b>USD 0</b> Usar el buscador y recibir tu reporte no tiene costo.</p>
   </div></section>
 
   <section className="sec"><div className="wrap">
@@ -63,7 +63,7 @@ export default function HomePage() {
     <article className="feature dk ph-bg" style={{ backgroundImage: "linear-gradient(158deg,rgba(27,51,35,.92),rgba(7,13,9,.84)),url(/img/h16.jpg)" }}>
       <Ring size={1120} />
       <div className="stack" style={{ gap: "22px" }}>
-        <div className="cta-row" style={{ gap: "10px" }}><span className="eyebrow">Programa central</span><span className="badge"><i />Cohorte noviembre 2026 · 15 cupos</span></div>
+        <div className="cta-row" style={{ gap: "10px" }}><span className="eyebrow">Programa central</span><span className="badge"><i />{SITE.cohorte.nombre} · {SITE.cohorte.cupos} cupos</span></div>
         <h3 className="d2" style={{ maxWidth: "14ch" }}>Bootcamp de Levantamiento de Capital</h3>
         <p className="lead" style={{ maxWidth: "46ch" }}>Ocho semanas trabajando sobre tu propia empresa, con un equipo que ya ha levantado capital. Al final, presentas ante fondos de impacto aliados.</p>
         <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk q" href="/bootcamp">Ver el programa</Link></div>
@@ -76,7 +76,7 @@ export default function HomePage() {
       </ol>
     </article>
     <div className="side">
-      <div className="rule"><span className="eyebrow s">Empieza aquí · USD 0</span><h3 className="d3">Pasaporte de Inversión</h3><p className="p2">Un solo perfil para llegar a más de 50 fondos de impacto. Completarlo cuesta USD 0: solo inviertes tiempo, y abre la puerta al capital que buscas.</p><Link className="lnk" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
+      <div className="rule"><span className="eyebrow s">Empieza aquí · USD 0</span><h3 className="d3">Buscador de fondos</h3><p className="p2">Indica cuánto capital necesitas y te mostramos cuántas fuentes de capital de impacto calzan con tu empresa y cuántas tienen convocatoria abierta.</p><Link className="lnk" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
       <div className="rule"><span className="eyebrow s">Con historial de repago</span><h3 className="d3">Financiamiento directo</h3><p className="p2">Capital de trabajo del fondo para empresas con historial validado en el ecosistema de impacto.</p><a className="lnk" href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer">Ver si califico</a></div>
     </div>
   </div></section>
@@ -105,10 +105,10 @@ export default function HomePage() {
   </div></section>
 
   <section className="sec final dk ph-bg" style={{ backgroundImage: "linear-gradient(180deg,rgba(7,13,9,.86),rgba(13,27,17,.9)),url(/img/h03.jpg)" }}><Ring size={1400} /><div className="wrap">
-    <span className="eyebrow">Inicio: lunes 2 de noviembre de 2026</span>
+    <span className="eyebrow">Próxima cohorte: {SITE.cohorte.inicio.toLowerCase()}</span>
     <Words as="h2" className="d2" style={{ maxWidth: "18ch" }} text="¿Tu empresa está lista para levantar capital?" />
-    <p className="lead" style={{ maxWidth: "52ch" }}>Postula a la próxima cohorte o empieza con tu Pasaporte de Inversión. Si prefieres, conversemos 30 minutos.</p>
-    <div className="cta-row" style={{ justifyContent: "center" }}><Link className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="btn btn-g" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
+    <p className="lead" style={{ maxWidth: "52ch" }}>Empieza por saber cuánto capital necesitas y cuántos fondos calzan contigo. Si prefieres, conversemos 30 minutos.</p>
+    <div className="cta-row" style={{ justifyContent: "center" }}><Link className="btn btn-p" href="/pasaporte#buscador">Ver fondos para mi empresa</Link><Link className="btn btn-g" href="/bootcamp#postular">Postular al Bootcamp</Link></div>
   </div></section>
 
     </>

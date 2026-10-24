@@ -11,7 +11,7 @@ import { PAISES, RANGOS_OPC, RUBROS } from "@/lib/catalogo";
 const VENTAS: [string, string][] = [["menos-50k", "Menos de USD 50 mil"], ["50k-250k", "USD 50 mil a 250 mil"], ["250k-1m", "USD 250 mil a 1 millón"], ["mas-1m", "Más de USD 1 millón"]];
 import { TeamMini } from "@/components/site/Team";
 
-export const metadata: Metadata = { title: "Bootcamp de Levantamiento de Capital", description: "Ocho semanas de investment readiness aplicado para empresas de impacto. Inicio: lunes 2 de noviembre de 2026. 15 cupos." };
+export const metadata: Metadata = { title: "Bootcamp de Levantamiento de Capital", description: "Ocho semanas de investment readiness aplicado para empresas de impacto. Inicio: lunes 1 de febrero de 2027. 15 cupos." };
 
 export default function BootcampPage() {
   return (
@@ -25,9 +25,9 @@ export default function BootcampPage() {
       <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="lnk q" href="/bootcamp#como-funciona">Ver cómo funciona</Link></div>
     </div>
     <div className="card num dk">
-      <div className="top"><span>Próxima cohorte</span><b>Noviembre 2026</b></div>
+      <div className="top"><span>Próxima cohorte</span><b>Febrero 2027</b></div>
       <div className="kv" style={{ borderTop: 0, paddingTop: 0 }}>
-        <div><span>Inicio</span><b>Lun 2 nov 2026</b></div><div><span>Duración</span><b>8 semanas</b></div>
+        <div><span>Inicio</span><b>{SITE.cohorte.corto}</b></div><div><span>Duración</span><b>8 semanas</b></div>
         <div><span>Formato</span><b>Virtual + 1:1</b></div><div><span>Cupos</span><b>{SITE.cohorte.cupos} empresas</b></div>
       </div>
       <div className="meter"><span>Postulaciones</span><span style={{ flex: 1 }}></span><b className="tc">Abiertas</b></div>
@@ -85,14 +85,14 @@ export default function BootcampPage() {
   <section className="sec tint" id="postular"><div className="wrap split">
     <div className="stack" style={{ gap: 14 }}>
       <span className="eyebrow">Postulación</span>
-      <Words as="h2" className="d2" text="Postula a la cohorte de noviembre" />
-      <p className="p2">Inicio: {SITE.cohorte.inicio}. {SITE.cohorte.cupos} cupos. Revisamos cada postulación y te escribimos para coordinar una conversación.</p>
+      <Words as="h2" className="d2" text={`Postula a la cohorte de ${SITE.cohorte.mes}`} />
+      <p className="p2">Inicio: {SITE.cohorte.inicio}. {SITE.cohorte.cupos} cupos. Revisamos cada postulación y te respondemos {SITE.respuesta} para coordinar una conversación.</p>
     </div>
     <LeadForm
       form="bootcamp"
       idPrefix="bc"
       submit="Enviar postulación"
-      success="Gracias. Recibimos tu postulación y te enviamos una confirmación por correo."
+      success={`Gracias. Recibimos tu postulación y te enviamos una confirmación por correo. Te escribimos ${SITE.respuesta}.`}
       fields={[
         { name: "empresa", label: "Empresa", required: true, autoComplete: "organization", half: true },
         { name: "nombre", label: "Nombre completo", required: true, autoComplete: "name", half: true },
@@ -113,9 +113,9 @@ export default function BootcampPage() {
   </div></section>
 
   <section className="sec final"><Ring size={1400} /><div className="wrap">
-    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text="La próxima cohorte empieza el lunes 2 de noviembre de 2026, con 15 cupos." />
-    <p className="lead">Postula con tu Pasaporte de Inversión.</p>
-    <Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link>
+    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text={`La próxima cohorte empieza el ${SITE.cohorte.inicio.toLowerCase()}, con ${SITE.cohorte.cupos} cupos.`} />
+    <p className="lead">¿No sabes si es tu momento? Mira primero cuántos fondos calzan con tu empresa.</p>
+    <div className="cta-row" style={{ justifyContent: "center" }}><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="btn btn-g" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
   </div></section>
 
     </>

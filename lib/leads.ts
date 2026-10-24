@@ -108,8 +108,8 @@ export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: 
 <td style="padding:16px;background:#1b3323;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con llamada activa: convocatoria abierta o ventanilla permanente</div></td>
 </tr></table>
 <p style="font-size:14px;color:#556259;">No reembolsable: ${r.porTipo.nr} · Deuda y garantías: ${r.porTipo.de} · Equity: ${r.porTipo.eq} · Blended o mixto: ${r.porTipo.bl}${r.sinTicket ? `<br>${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso.` : ""}</p>
-<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>¿Quieres saber qué tan probable es que accedas a ellos?</b> Solicita acceso a tu Pasaporte de Inversión. No cuesta nada, solo tu tiempo.</p>
-${boton(`${SITE.url}/pasaporte#completar`, "Solicitar acceso al Pasaporte")}
+<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Siguiente paso recomendado: el Bootcamp de Levantamiento de Capital.</b> En ocho semanas preparas tu tesis, tu modelo financiero, tu teaser y tu pitch, y al final presentas ante fondos aliados. ${SITE.cohorte.nombre}: inicio ${SITE.cohorte.inicio.toLowerCase()}, ${SITE.cohorte.cupos} cupos.</p>
+${boton(`${SITE.url}/bootcamp#postular`, "Postular al Bootcamp")}
 <p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>¿Quieres empezar hoy a levantar capital?</b> Conversemos 30 minutos.</p>
 ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         : `<p>Hola ${nombre}, recibimos tu solicitud.</p>`;
@@ -140,7 +140,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
           subject: "Recibimos tu postulación al Bootcamp de Levantamiento de Capital",
           html: shell(
             "Recibimos tu postulación",
-            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, gracias por postular a <b>${escapeHtml(d.empresa)}</b> al Bootcamp de Levantamiento de Capital (${SITE.cohorte.nombre}, inicio: ${SITE.cohorte.inicio}). Revisamos cada postulación y te escribiremos para coordinar una conversación.</p>
+            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, gracias por postular a <b>${escapeHtml(d.empresa)}</b> al Bootcamp de Levantamiento de Capital (${SITE.cohorte.nombre}, inicio: ${SITE.cohorte.inicio}). Revisamos cada postulación y te escribiremos ${SITE.respuesta} para coordinar una conversación.</p>
 <p style="font-size:15px;line-height:1.6;">Mientras tanto, puedes agendar una reunión con el equipo.</p>${boton(SITE.calEmpresas, "Agendar una reunión")}`,
           ),
         },

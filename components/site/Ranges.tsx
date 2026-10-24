@@ -23,7 +23,7 @@ export function Ranges() {
           <span className="amt"><small>{AMT[i][0]}</small><b>{AMT[i][1]}</b><em className="to">{AMT[i][2]}</em></span>
           <span className="meter2"><u style={{ width: `${Math.round((100 * cnts[i]) / max)}%` }} /></span>
           <span className="cnt"><strong>{cnts[i]}</strong> fuentes publican tickets en este rango</span>
-          <span className="go">Ver fondos disponibles</span>
+          <span className="go">Ver cuántos calzan conmigo</span>
         </Link>
       ))}
     </div>

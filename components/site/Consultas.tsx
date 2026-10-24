@@ -35,7 +35,7 @@ export function Consultas() {
             idPrefix={`c-${pub}`}
             hidden={{ publico: pub }}
             submit="Enviar consulta"
-            success="Gracias. Recibimos tu consulta y te escribiremos pronto."
+            success={`Gracias. Recibimos tu consulta y te escribimos ${SITE.respuesta}.`}
             fields={[
               { name: "nombre", label: "Nombre completo", required: true, autoComplete: "name", half: true },
               { name: "empresa", label: "Organización", autoComplete: "organization", half: true },
