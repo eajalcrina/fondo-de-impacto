@@ -24,7 +24,7 @@ export default function EmpresasPage() {
       <Words as="h2" className="d2" text="Un solo perfil. Más de 50 fondos de impacto." />
       <p className="lead">Completa el perfil de tu empresa una sola vez. Con esa información preparamos un teaser confidencial con estándar de comité y lo ponemos frente a los fondos de nuestra red cuya tesis coincide con la tuya.</p>
       <ul className="check"><li>Diagnóstico de investment readiness. Cuesta USD 0, solo tu tiempo.</li><li>Teaser anónimo en el FI Deal Room, visible para fondos compatibles.</li><li>Tu nombre y tus documentos solo se comparten con tu autorización.</li><li>El mismo perfil sirve como postulación al Bootcamp.</li></ul>
-      <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Crear el pasaporte de mi empresa</Link><span className="xs">Unos 40 minutos. Guardas y sigues después.</span></div>
+      <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><span className="xs">Acceso anticipado y sin costo.</span></div>
     </div>
     <Teaser />
   </div></section>
@@ -37,7 +37,7 @@ export default function EmpresasPage() {
         <h3 className="d3">Te preparamos para levantar capital y te acompañamos hasta el cierre.</h3>
         <p className="p2">Para empresas que buscan capital de fondos de impacto, banca de desarrollo o cooperación internacional y aún no tienen un perfil de inversión completo.</p>
         <ul className="check"><li>Diagnóstico con nuestra metodología propietaria: finanzas, gobernanza, ESG e impacto.</li><li>Bootcamp de Levantamiento de Capital, con asesoría personalizada y comité simulado.</li><li>Presentación a nuestra red de más de 50 fondos de impacto.</li><li>Acompañamiento en due diligence y negociación del term sheet.</li></ul>
-        <div className="cta-row"><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk" href="/pasaporte#completar">Crear mi pasaporte</Link></div>
+        <div className="cta-row"><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
       </div>
       <div className="rule" style={{ gap: "16px" }}>
         <span className="eyebrow s">Modalidad 2 · Financiamiento directo</span>

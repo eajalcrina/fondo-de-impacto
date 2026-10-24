@@ -44,7 +44,7 @@ export default function HomePage() {
   <section className="sec tint" id="rangos"><div className="wrap">
     <div className="head"><span className="eyebrow">¿Cuánto capital necesitas?</span><div className="stack" style={{ gap: "12px" }}><Words as="h2" className="d2" text="Mira cuántas fuentes de capital de impacto financian en tu rango." /><p className="p2">Elige un rango y revisa los fondos disponibles para tu empresa. Es gratis y toma dos minutos.</p></div></div>
     <Ranges />
-    <p className="zero" style={{ marginTop: "22px" }}><b>USD 0</b> Ver tu reporte y completar tu Pasaporte de Inversión no tiene costo. Solo inviertes tu tiempo.</p>
+    <p className="zero" style={{ marginTop: "22px" }}><b>USD 0</b> Ver tu reporte y solicitar tu Pasaporte de Inversión no tiene costo. Solo inviertes tu tiempo.</p>
   </div></section>
 
   <section className="sec"><div className="wrap">
@@ -76,7 +76,7 @@ export default function HomePage() {
       </ol>
     </article>
     <div className="side">
-      <div className="rule"><span className="eyebrow s">Empieza aquí · USD 0</span><h3 className="d3">Pasaporte de Inversión</h3><p className="p2">Un solo perfil para llegar a más de 50 fondos de impacto. Completarlo cuesta USD 0: solo inviertes tiempo, y abre la puerta al capital que buscas.</p><Link className="lnk" href="/pasaporte#completar">Crear mi pasaporte</Link></div>
+      <div className="rule"><span className="eyebrow s">Empieza aquí · USD 0</span><h3 className="d3">Pasaporte de Inversión</h3><p className="p2">Un solo perfil para llegar a más de 50 fondos de impacto. Completarlo cuesta USD 0: solo inviertes tiempo, y abre la puerta al capital que buscas.</p><Link className="lnk" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
       <div className="rule"><span className="eyebrow s">Con historial de repago</span><h3 className="d3">Financiamiento directo</h3><p className="p2">Capital de trabajo del fondo para empresas con historial validado en el ecosistema de impacto.</p><a className="lnk" href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer">Ver si califico</a></div>
     </div>
   </div></section>
@@ -108,7 +108,7 @@ export default function HomePage() {
     <span className="eyebrow">Inicio: lunes 2 de noviembre de 2026</span>
     <Words as="h2" className="d2" style={{ maxWidth: "18ch" }} text="¿Tu empresa está lista para levantar capital?" />
     <p className="lead" style={{ maxWidth: "52ch" }}>Postula a la próxima cohorte o empieza con tu Pasaporte de Inversión. Si prefieres, conversemos 30 minutos.</p>
-    <div className="cta-row" style={{ justifyContent: "center" }}><Link className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="btn btn-g" href="/pasaporte#completar">Crear mi pasaporte</Link></div>
+    <div className="cta-row" style={{ justifyContent: "center" }}><Link className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="btn btn-g" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
   </div></section>
 
     </>

@@ -22,7 +22,7 @@ const REQUERIDOS: Record<LeadForm, string[]> = {
   pasaporte: [...COMUNES, "empresa"],
 };
 
-const OPCIONALES = ["celular", "empresa", "pais", "rubro", "ventas", "capital", "mensaje", "origen", "rango", "tipo", "razon_social", "publico"];
+const OPCIONALES = ["referente", "utm_source", "utm_medium", "utm_campaign", "navegador", "celular", "empresa", "pais", "rubro", "ventas", "capital", "mensaje", "origen", "rango", "tipo", "razon_social", "publico"];
 
 const MAX = 1000;
 const CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -81,8 +81,17 @@ function boton(href: string, texto: string, oscuro = true): string {
   return `<a href="${href}" style="${estilo}display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;font-size:14px;text-decoration:none;margin:4px 8px 4px 0;">${texto}</a>`;
 }
 
+export function nowLima(): string {
+  return new Date().toLocaleString("es-PE", { timeZone: "America/Lima" });
+}
+
+/** Columnas de atribución al final de cada fila (mismo criterio que Circular Club y BBS). */
+function tail(d: Record<string, string>): string[] {
+  return [d.origen ?? "", d.navegador ?? "", d.referente ?? "", d.utm_source ?? "", d.utm_medium ?? "", d.utm_campaign ?? ""];
+}
+
 export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: { reporte?: Report } = {}): Envelope {
-  const ts = new Date().toISOString();
+  const ts = nowLima();
   const nombre = escapeHtml(d.nombre ?? "");
 
   switch (form) {
@@ -99,8 +108,8 @@ export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: 
 <td style="padding:16px;background:#1b3323;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con llamada activa: convocatoria abierta o ventanilla permanente</div></td>
 </tr></table>
 <p style="font-size:14px;color:#556259;">No reembolsable: ${r.porTipo.nr} · Deuda y garantías: ${r.porTipo.de} · Equity: ${r.porTipo.eq} · Blended o mixto: ${r.porTipo.bl}${r.sinTicket ? `<br>${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso.` : ""}</p>
-<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>¿Quieres saber qué tan probable es que accedas a ellos?</b> Completa tu Pasaporte de Inversión. No cuesta nada, solo tu tiempo.</p>
-${boton(`${SITE.url}/pasaporte#completar`, "Completar mi pasaporte")}
+<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>¿Quieres saber qué tan probable es que accedas a ellos?</b> Solicita acceso a tu Pasaporte de Inversión. No cuesta nada, solo tu tiempo.</p>
+${boton(`${SITE.url}/pasaporte#completar`, "Solicitar acceso al Pasaporte")}
 <p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>¿Quieres empezar hoy a levantar capital?</b> Conversemos 30 minutos.</p>
 ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         : `<p>Hola ${nombre}, recibimos tu solicitud.</p>`;
@@ -112,7 +121,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
           ["Compatibles", String(r?.total ?? "")], ["Con llamada activa", String(r?.activas ?? "")],
         ],
         tab: "Buscador",
-        row: [ts, d.razon_social, d.nombre, d.correo, d.celular, rubro, pais, tipo, rango, String(r?.total ?? ""), String(r?.activas ?? ""), d.origen ?? ""],
+        row: [ts, d.razon_social, d.nombre, d.correo, d.celular, rubro, pais, tipo, rango, String(r?.total ?? ""), String(r?.activas ?? ""), ...tail(d)],
         userEmail: { to: d.correo, subject: `Tu reporte de fondos disponibles · ${d.razon_social}`, html: shell("Fondos disponibles para tu empresa", cuerpo) },
       };
     }
@@ -125,7 +134,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
           ["Rubro", d.rubro ? etiqueta(RUBROS, d.rubro) : ""], ["Ventas últimos 12 meses", d.ventas ?? ""], ["Capital que busca", d.capital ?? ""], ["Mensaje", d.mensaje ?? ""],
         ],
         tab: "Bootcamp",
-        row: [ts, d.empresa, d.nombre, d.correo, d.celular, pais, d.rubro ? etiqueta(RUBROS, d.rubro) : "", d.ventas ?? "", d.capital ?? "", d.mensaje ?? "", d.origen ?? ""],
+        row: [ts, d.empresa, d.nombre, d.correo, d.celular, pais, d.rubro ? etiqueta(RUBROS, d.rubro) : "", d.ventas ?? "", d.capital ?? "", d.mensaje ?? "", ...tail(d)],
         userEmail: {
           to: d.correo,
           subject: "Recibimos tu postulación al Bootcamp de Levantamiento de Capital",
@@ -143,7 +152,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         subject: `Consulta · ${publico} — ${d.nombre}`,
         fields: [["Público", publico], ["Nombre", d.nombre], ["Organización", d.empresa ?? ""], ["Correo", d.correo], ["Celular", d.celular ?? ""], ["Mensaje", d.mensaje]],
         tab: "Consultas",
-        row: [ts, publico, d.nombre, d.empresa ?? "", d.correo, d.celular ?? "", d.mensaje, d.origen ?? ""],
+        row: [ts, publico, d.nombre, d.empresa ?? "", d.correo, d.celular ?? "", d.mensaje, ...tail(d)],
       };
     }
     case "pasaporte": {
@@ -151,13 +160,13 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         subject: `Pasaporte de Inversión · ${d.empresa} — ${d.nombre}`,
         fields: [["Empresa", d.empresa], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular ?? ""], ["País", d.pais ? etiqueta(PAISES, d.pais) : ""], ["Rubro", d.rubro ? etiqueta(RUBROS, d.rubro) : ""], ["Mensaje", d.mensaje ?? ""]],
         tab: "Pasaporte",
-        row: [ts, d.empresa, d.nombre, d.correo, d.celular ?? "", d.pais ? etiqueta(PAISES, d.pais) : "", d.rubro ? etiqueta(RUBROS, d.rubro) : "", d.mensaje ?? "", d.origen ?? ""],
+        row: [ts, d.empresa, d.nombre, d.correo, d.celular ?? "", d.pais ? etiqueta(PAISES, d.pais) : "", d.rubro ? etiqueta(RUBROS, d.rubro) : "", d.mensaje ?? "", ...tail(d)],
         userEmail: {
           to: d.correo,
-          subject: "Empecemos tu Pasaporte de Inversión",
+          subject: "Recibimos tu solicitud de acceso al Pasaporte de Inversión",
           html: shell(
-            "Empecemos tu Pasaporte de Inversión",
-            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, recibimos el interés de <b>${escapeHtml(d.empresa)}</b> en completar su Pasaporte de Inversión. Completarlo cuesta USD 0: solo inviertes tiempo. Te escribiremos en los próximos días con el siguiente paso.</p>`,
+            "Recibimos tu solicitud de acceso",
+            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, recibimos la solicitud de <b>${escapeHtml(d.empresa)}</b> para acceder al Pasaporte de Inversión. El Pasaporte abre por etapas y cuesta USD 0: solo inviertes tiempo. Te escribiremos cuando tu acceso esté listo.</p>`,
           ),
         },
       };

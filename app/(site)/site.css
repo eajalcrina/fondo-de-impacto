@@ -486,7 +486,18 @@ ul,ol{margin:0;padding:0;list-style:none}
 .legal-doc p,.legal-doc li{color:var(--t2);font-size:15px}
 .legal-doc ul{list-style:disc;padding-left:20px;display:grid;gap:6px}
 .foot .grid > div{min-width:0}
-.foot a{overflow-wrap:anywhere}
+.foot a{overflow-wrap:normal}
+@media (max-width:1100px){.foot a{overflow-wrap:anywhere}}
+.foot .grid{grid-template-columns:1.2fr .9fr .9fr 1.2fr}
 @media (max-width:560px){.foot .grid{grid-template-columns:1fr}}
 .bar .tip{left:auto;right:0}
 @media (max-width:560px){.bar{grid-template-columns:118px 1fr 40px}}
+
+/* aviso de medición */
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:900;max-width:560px;background:var(--grad);color:#fff;border-radius:10px;padding:20px 22px;box-shadow:0 20px 40px -20px rgba(0,0,0,.55);display:flex;flex-direction:column;gap:14px}
+.ck p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.55}
+.ck a{color:#c7a28c;text-decoration:underline;text-underline-offset:2px}
+.ck-a{display:flex;gap:10px;flex-wrap:wrap}
+.ck .btn-p{background:#f4f2ed;color:var(--bosque);box-shadow:none}
+.ck .btn-g{border-color:rgba(255,255,255,.4);color:#fff}
+.ck .btn::after{display:none}

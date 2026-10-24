@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { attribution, track } from "@/lib/analytics";
 
 export type Field = {
   name: string;
@@ -17,8 +18,9 @@ type Estado = { s: "idle" | "sending" | "ok" | "err"; msg?: string };
 
 export async function sendLead(form: string, data: Record<string, string>): Promise<{ ok: boolean; error?: string }> {
   try {
-    const res = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form, data }) });
+    const res = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form, data: { ...attribution(), ...data } }) });
     const j = await res.json().catch(() => ({}));
+    if (res.ok) track("generate_lead", { form });
     return res.ok ? { ok: true } : { ok: false, error: j.error || "No pudimos enviar tu solicitud." };
   } catch {
     return { ok: false, error: "No pudimos conectarnos. Revisa tu conexión e inténtalo de nuevo." };

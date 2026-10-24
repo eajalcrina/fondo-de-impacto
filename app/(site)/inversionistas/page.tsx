@@ -23,7 +23,7 @@ export default function InversionistasPage() {
     <div className="head"><span className="eyebrow">Tesis</span><Words as="h2" className="d2" text="Tres convicciones" /></div>
     <div className="faq">
       <div><b className="d3" style={{ fontSize: "22px" }}>El negocio llega antes que el capital</b><p className="p2">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. El filtro casi nunca es el negocio. Es la falta de un perfil de inversión bien construido.</p></div>
-      <div><b className="d3" style={{ fontSize: "22px" }}>La demanda de liquidez está validada</b><p className="p2">Fondos de impacto de la región ya prestan a estas empresas a tasas de 25 a 40% anual, y los prestatarios siguen siendo rentables. Lo que falta es velocidad de desembolso. <span className="tc xs">[Fuente por citar]</span></p></div>
+      <div><b className="d3" style={{ fontSize: "22px" }}>La demanda de liquidez está validada</b><p className="p2">Fondos de impacto de la región ya prestan a estas empresas a tasas de 25 a 40% anual, y los prestatarios siguen siendo rentables. Lo que falta es velocidad de desembolso.</p></div>
       <div><b className="d3" style={{ fontSize: "22px" }}>Complementamos a otros fondos</b><p className="p2">Financiamos a empresas que ya repagaron a otros fondos de impacto, con plazos de decisión que el resto del ecosistema no ofrece. El historial con terceros es nuestro primer filtro de riesgo.</p></div>
     </div>
   </div></section>

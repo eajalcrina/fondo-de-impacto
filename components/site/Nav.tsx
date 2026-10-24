@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
+import { track } from "@/lib/analytics";
 import { Logo } from "./Logo";
 
 const EMPRESAS = [
@@ -35,7 +36,7 @@ export function Nav() {
           </div>
           <Link href="/inversionistas" className={path === "/inversionistas" ? "on" : undefined}>Inversionistas</Link>
           <Link href="/nosotros" className={path === "/nosotros" ? "on" : undefined}>Nosotros</Link>
-          <a className="btn btn-p btn-sm" href={cal} target="_blank" rel="noopener noreferrer">Agendar reunión</a>
+          <a className="btn btn-p btn-sm" href={cal} target="_blank" rel="noopener noreferrer" onClick={() => track("cta_calendar", { location: "nav", calendario: path === "/inversionistas" ? "inversionistas" : "empresas" })}>Agendar reunión</a>
           <button type="button" className="nav-toggle" aria-expanded={open} aria-controls="menu-movil" onClick={() => setOpen((o) => !o)}>
             <span className="sr">{open ? "Cerrar menú" : "Abrir menú"}</span>
             <i /><i /><i />

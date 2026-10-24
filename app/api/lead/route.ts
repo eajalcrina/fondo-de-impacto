@@ -13,7 +13,8 @@ export async function POST(req: NextRequest) {
   }
 
   const form = body.form ?? "";
-  const v = validateLead(form, body.data);
+  const raw = typeof body.data === "object" && body.data !== null ? { ...(body.data as Record<string, unknown>), navegador: req.headers.get("user-agent") ?? "" } : body.data;
+  const v = validateLead(form, raw);
   if (!v.ok) return NextResponse.json({ error: v.error }, { status: 400 });
 
   const extra =

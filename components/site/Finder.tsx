@@ -6,6 +6,7 @@ import { etiqueta, PAISES, RANGOS_OPC, RUBROS, TIPOS_OPC } from "@/lib/catalogo"
 import { report, TIPOS, type Fuente, type Query } from "@/lib/matching";
 import { SITE } from "@/lib/site";
 import { sendLead } from "./LeadForm";
+import { track } from "@/lib/analytics";
 import { Ring } from "./Ring";
 
 const F = fuentes as Fuente[];
@@ -39,6 +40,7 @@ export function Finder() {
     const nq: Query = { rubro: d.rubro, pais: d.pais, tipo: d.tipo, rango: Number(d.rango) };
     setQ(nq);
     setDatos(d);
+    track("finder_report", { rubro: d.rubro, pais: d.pais, tipo: d.tipo, rango: d.rango });
     setPasaporte("idle");
     setEnvio("sending");
     document.getElementById("reporte")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -105,21 +107,21 @@ export function Finder() {
         </p>
         <div className="rep-cta">
           <span className="flag">Siguiente paso · USD 0</span>
-          <p><b>¿Quieres saber qué tan probable es que accedas a ellos?</b> Completa tu Pasaporte de Inversión. No cuesta nada, solo tu tiempo, y abre la puerta al capital que buscas.</p>
+          <p><b>¿Quieres saber qué tan probable es que accedas a ellos?</b> Solicita acceso a tu Pasaporte de Inversión. No cuesta nada, solo tu tiempo, y abre la puerta al capital que buscas.</p>
           {ejemplo ? (
-            <a className="btn btn-p" href="#completar" style={{ justifySelf: "start" }}>Completar mi pasaporte</a>
+            <a className="btn btn-p" href="#completar" style={{ justifySelf: "start" }}>Solicitar acceso al Pasaporte</a>
           ) : pasaporte === "ok" ? (
-            <p className="form-msg ok" role="status">Listo. Te escribiremos para completar tu pasaporte.</p>
+            <p className="form-msg ok" role="status">Listo. Te escribiremos cuando tu acceso al Pasaporte esté listo.</p>
           ) : (
             <button type="button" className="btn btn-p" onClick={pedirPasaporte} disabled={pasaporte === "sending"} style={{ justifySelf: "start" }}>
-              {pasaporte === "sending" ? "Enviando…" : "Completar mi pasaporte"}
+              {pasaporte === "sending" ? "Enviando…" : "Solicitar acceso al Pasaporte"}
             </button>
           )}
           {pasaporte === "err" && <p className="form-msg err" role="alert">No pudimos registrar tu solicitud. Escríbenos a {SITE.email}.</p>}
         </div>
         <div className="rep-cta" style={{ background: "transparent" }}>
           <p><b>¿Quieres empezar hoy a levantar capital?</b> Conversemos 30 minutos con el equipo.</p>
-          <a className="btn btn-g" href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer" style={{ justifySelf: "start" }}>Agendar una reunión</a>
+          <a className="btn btn-g" href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer" onClick={() => track("cta_calendar", { location: "reporte", calendario: "empresas" })} style={{ justifySelf: "start" }}>Agendar una reunión</a>
         </div>
       </div>
     </div>

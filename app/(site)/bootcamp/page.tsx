@@ -78,7 +78,7 @@ export default function BootcampPage() {
     <div className="head"><span className="eyebrow">¿Para quién es?</span><Words as="h2" className="d2" text="Para empresas que quieren levantar capital ahora" /></div>
     <div className="cols-2">
       <div className="rule" style={{ gap: "18px" }}><span className="eyebrow s">Este programa es para ti si</span><ul className="check"><li>Tienes operación comercial activa y ventas verificables.</li><li>Sabes para qué necesitas el capital, o estás listo para definirlo con nosotros.</li><li>Puedes dedicarle tiempo real durante ocho semanas.</li><li>Quieres feedback directo, no solo contenido.</li></ul><div><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular</Link></div></div>
-      <div className="rule l" style={{ gap: "18px" }}><span className="eyebrow s">Todavía no es tu momento si</span><ul className="check x"><li>Aún estás validando tu producto o no tienes ventas.</li><li>No podrás dedicar horas semanales durante el programa.</li></ul><p className="p2 sm">Empieza por tu Pasaporte de Inversión. Recibes tu diagnóstico y te avisamos cuando estés listo para una cohorte.</p><Link className="lnk" href="/pasaporte#completar">Crear mi pasaporte</Link></div>
+      <div className="rule l" style={{ gap: "18px" }}><span className="eyebrow s">Todavía no es tu momento si</span><ul className="check x"><li>Aún estás validando tu producto o no tienes ventas.</li><li>No podrás dedicar horas semanales durante el programa.</li></ul><p className="p2 sm">Empieza por tu Pasaporte de Inversión. Recibes tu diagnóstico y te avisamos cuando estés listo para una cohorte.</p><Link className="lnk" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
     </div>
   </div></section>
 

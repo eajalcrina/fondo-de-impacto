@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { CONSENT_DEFAULT } from "@/lib/consent";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={montserrat.variable}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT }} />
+      </head>
       <body>{children}</body>
     </html>
   );
