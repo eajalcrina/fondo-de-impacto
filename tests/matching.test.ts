@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { inRange, matchPais, report, countByRange, type Fuente } from "@/lib/matching";
+import { inRange, matchPais, matchRubro, report, countByRange, type Fuente } from "@/lib/matching";
 
 const f = (o: Partial<Fuente>): Fuente => ({ t: [], p: [], r: 0, s: [], mn: null, mx: null, a: 0, e: 1, ...o });
 
@@ -9,6 +9,8 @@ describe("matching", () => {
   it("rango: no cruza", () => expect(inRange(f({ mn: 1e6, mx: 2e6 }), 0)).toBe(false));
   it("país: regional calza con todos", () => expect(matchPais(f({ r: 1 }), "PE")).toBe(true));
   it("país: nacional solo con su país", () => expect(matchPais(f({ p: ["CO"] }), "PE")).toBe(false));
+  it("rubro sin etiqueta propia (*artesania) calza con todas", () => expect(matchRubro(f({ s: ["turismo"] }), "*artesania")).toBe(true));
+  it("rubro con alias calza por cualquiera", () => expect(matchRubro(f({ s: ["bionegocios"] }), "bioeconomia|bionegocios")).toBe(true));
   it("país OT solo regionales", () => expect(matchPais(f({ p: ["PE"] }), "OT")).toBe(false));
   it("reporte cuenta compatibles, activas y sin ticket", () => {
     const base = [

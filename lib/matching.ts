@@ -71,7 +71,7 @@ export function matchPais(f: Fuente, pais: string): boolean {
 }
 
 export function matchRubro(f: Fuente, rubro: string): boolean {
-  if (rubro === "*") return true;
+  if (rubro.startsWith("*")) return true;
   return rubro.split("|").some((x) => f.s.includes(x));
 }
 

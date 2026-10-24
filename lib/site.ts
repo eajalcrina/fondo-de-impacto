@@ -9,6 +9,9 @@ export const SITE = {
     inicio: "Lunes 1 de febrero de 2027",
     corto: "Lun 1 feb 2027",
     cupos: 15,
+    precio: "USD 1,800",
+    precioAnticipado: "USD 1,450",
+    fechaAnticipado: "15 de diciembre de 2026",
   },
   /** Plazo de respuesta que prometen los formularios. */
   respuesta: "en menos de 24 horas",

@@ -66,6 +66,7 @@ export default function HomePage() {
         <div className="cta-row" style={{ gap: "10px" }}><span className="eyebrow">Programa central</span><span className="badge"><i />{SITE.cohorte.nombre} · {SITE.cohorte.cupos} cupos</span></div>
         <h3 className="d2" style={{ maxWidth: "14ch" }}>Bootcamp de Levantamiento de Capital</h3>
         <p className="lead" style={{ maxWidth: "46ch" }}>Ocho semanas trabajando sobre tu propia empresa, con un equipo que ya ha levantado capital. Al final, presentas ante fondos de impacto aliados.</p>
+        <p className="p2">Inversión: {SITE.cohorte.precio} por empresa ({SITE.cohorte.precioAnticipado} hasta el 15 de diciembre). Becas parciales disponibles.</p>
         <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk q" href="/bootcamp">Ver el programa</Link></div>
       </div>
       <ol className="mods">

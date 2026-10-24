@@ -29,6 +29,7 @@ export default function BootcampPage() {
       <div className="kv" style={{ borderTop: 0, paddingTop: 0 }}>
         <div><span>Inicio</span><b>{SITE.cohorte.corto}</b></div><div><span>Duración</span><b>8 semanas</b></div>
         <div><span>Formato</span><b>Virtual + 1:1</b></div><div><span>Cupos</span><b>{SITE.cohorte.cupos} empresas</b></div>
+        <div><span>Inversión</span><b>{SITE.cohorte.precio}</b></div><div><span>Hasta el 15 dic</span><b>{SITE.cohorte.precioAnticipado}</b></div>
       </div>
       <div className="meter"><span>Postulaciones</span><span style={{ flex: 1 }}></span><b className="tc">Abiertas</b></div>
       <span className="xs">Revisamos cada postulación antes de confirmar tu cupo.</span>
@@ -67,6 +68,20 @@ export default function BootcampPage() {
       <p className="p2">Una sesión con inversionistas de nuestra red, preparada para que cada empresa llegue con su caso completo.</p>
       <p className="xs" style={{ borderTop: "1px solid rgba(255,255,255,.16)", paddingTop: "14px" }}>Es una presentación ante quienes pueden financiarte, no una promesa de financiamiento.</p>
     </div>
+  </div></section>
+
+  <section className="sec tint" id="inversion"><div className="wrap split">
+    <div className="stack" style={{ gap: "14px" }}>
+      <span className="eyebrow">Inversión</span>
+      <Words as="h2" className="d2" text={`${SITE.cohorte.precio} por empresa`} />
+      <p className="p2">Incluye las ocho semanas de trabajo, las sesiones 1:1 con el equipo, el comité simulado y, si apruebas la evaluación final, la sesión con fondos aliados.</p>
+    </div>
+    <ul className="check">
+      <li><b>Precio anticipado: {SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el {SITE.cohorte.fechaAnticipado}.</li>
+      <li>Pagas en dos cuotas: la mitad al confirmar el cupo y la otra mitad en la semana 4.</li>
+      <li>Becas parciales para empresas con ventas anuales menores a USD 300,000, cofinanciadas por fondos y organizaciones de cooperación aliadas.</li>
+      <li>Solo pagas después de que revisamos tu postulación y confirmamos que el programa es para tu empresa.</li>
+    </ul>
   </div></section>
 
   <section className="sec"><div className="wrap">

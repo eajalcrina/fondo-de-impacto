@@ -8,6 +8,11 @@ export const RUBROS: [string, string][] = [
   ["turismo", "Turismo"],
   ["biotech|biomateriales", "Biotecnología y biomateriales"],
   ["agritech|bioinsumos", "Agritech y bioinsumos"],
+  // Sin etiqueta propia en la base de fuentes: el buscador los trata como «Otro rubro».
+  ["*artesania", "Artesanía y textiles"],
+  ["*cosmetica", "Cosmética e ingredientes naturales"],
+  ["*pesca", "Pesca y acuicultura"],
+  ["*energia", "Energía y agua"],
   ["*", "Otro rubro de impacto"],
 ];
 
