@@ -23,10 +23,26 @@ export type Persona = {
   foco: string;
   foto: string;
   linkedin: string;
+  /** Web personal; con ella el schema usa el mismo @id que el resto de sus webs. */
+  web?: string;
   bio: string;
   logros: string[];
   formacion: string;
 };
+
+/** Nodo Person para el schema. Eddie lleva el @id de eddieajalcrina.com para que buscadores e IAs lo traten como una sola entidad. */
+export function personaSchema(p: Persona) {
+  if (!p.web) return { "@type": "Person", name: p.nombre, jobTitle: p.cargo, sameAs: [p.linkedin] };
+  return {
+    "@type": "Person",
+    "@id": `${p.web}/#person`,
+    name: p.nombre,
+    url: p.web,
+    image: `${p.web}/eddie-ajalcrina.jpg`,
+    jobTitle: p.cargo,
+    sameAs: [p.web, p.linkedin, "https://eddieajalcrina.substack.com/", "https://biobusinessschool.org/autores/eddie-ajalcrina"],
+  };
+}
 
 export const EQUIPO: Persona[] = [
   {
@@ -35,6 +51,7 @@ export const EQUIPO: Persona[] = [
     foco: "Estrategia, alianzas y relación con fondos",
     foto: "/img/eddie.jpg",
     linkedin: "https://www.linkedin.com/in/eddieajalcrina/",
+    web: "https://eddieajalcrina.com",
     bio: "Lleva más de quince años demostrando que sostenibilidad y rentabilidad son la misma apuesta: como ejecutivo corporativo en ingredientes marinos y nutrición acuícola, como cofundador de empresas y como director independiente. Trabaja en las dos puntas de la cadena de valor, con productores de la Amazonía y con marcas, compradores e inversionistas globales. En Fondo de Impacto lidera la estrategia y la relación con fondos de impacto, agencias de cooperación e inversionistas.",
     logros: [
       "Participó en la estructuración de un green loan de USD 80M (Bank of America y Banco Mundial) en su etapa corporativa",
