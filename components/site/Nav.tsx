@@ -55,6 +55,9 @@ export function Nav() {
           <Link href="/inversionistas">{t.inversionistas}</Link>
           <Link href="/portafolio">{t.portafolio}</Link>
           <Link href="/nosotros">{t.nosotros}</Link>
+          <span className="idioma" role="group" aria-label={t.idioma}>
+            <b lang="es">ES</b><span aria-hidden="true">/</span><span className="pronto" lang="en" title={t.enPronto}>EN</span>
+          </span>
           <a className="btn btn-p" href={cal} target="_blank" rel="noopener noreferrer" onClick={() => agendar("menu_movil")}>{t.agendar}</a>
         </div>
       </div>

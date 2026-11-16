@@ -85,11 +85,11 @@
   .rng .cnt { font-size: 14px; color: var(--t2); transition: color 0.35s; }
   .rng .cnt strong { color: inherit; font-weight: 600; }
   .rng .go { display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; border-top: 1px solid var(--linea); padding-top: 12px; }
-  .rng .go::after { content: "→"; width: 34px; height: 34px; border-radius: 50%; border: 1px solid currentColor; display: grid; place-items: center; transition: transform 0.5s; }
+  .rng .go::after { content: "→"; color: var(--naranja); transition: transform 0.3s; }
   .rng:hover .k, .rng:hover .amt small, .rng:hover .cnt, .rng:focus-visible .cnt { color: var(--sobre-oscuro); }
   .rng:hover .amt .to { color: var(--naranja-claro); }
   .rng:hover .go { border-top-color: var(--linea-oscura); }
-  .rng:hover .go::after { transform: rotate(-45deg); }
+  .rng:hover .go::after { transform: translateX(4px); color: var(--naranja-claro); }
   .rng:hover .meter2 { background: rgba(255, 255, 255, 0.15); }
   .rng:hover .meter2 u { background: var(--naranja-claro); }
   .zero { display: inline-flex; align-items: baseline; gap: 8px; font-size: 14px; color: var(--t2); }

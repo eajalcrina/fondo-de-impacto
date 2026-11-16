@@ -6,8 +6,8 @@
   .heroe-foto img { object-fit: cover; }
   .heroe-panel { position: relative; overflow: hidden; display: grid; align-content: center; gap: 20px; padding: 40px var(--gut) 48px; }
   .heroe-panel > :not(.anillos) { position: relative; }
-  .heroe-panel .anillos { width: min(300px, 80vw); right: -150px; bottom: -150px; }
-  @media (min-width: 900px) { .heroe-panel .anillos { width: 520px; right: -200px; bottom: -220px; } }
+  .heroe-panel .anillos { width: min(300px, 80vw); right: -190px; bottom: -190px; }
+  @media (min-width: 900px) { .heroe-panel .anillos { width: 520px; right: -290px; bottom: -300px; } }
   .heroe-panel h1 { max-width: 14ch; }
   .heroe-panel .eyebrow { color: var(--sobre-oscuro); }
   .heroe-panel .kw { color: var(--naranja-claro); }

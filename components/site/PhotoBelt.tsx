@@ -1,10 +1,11 @@
 import Image from "next/image";
 
-const FOTOS = ["n2", "h01", "h17", "h21", "h04", "h05", "h16", "h09", "h03"];
+/** Fotos que no aparecen en otro lugar de la portada. */
+const FOTOS = ["/img/h21.jpg", "/img/h04.jpg", "/img/h05.jpg", "/img/h03.jpg", "/images/hero-forest.jpg"];
 
-/** Cinturón continuo de fotos (se pausa al pasar el cursor). */
+/** Cinturón continuo de fotos, como en la web anterior. Se detiene al pasar el cursor y con movimiento reducido. */
 export function PhotoBelt() {
-  const set = FOTOS.map((f) => <Image key={f} src={`/img/${f}.jpg`} alt="" width={144} height={96} sizes="144px" />);
+  const set = [...FOTOS, ...FOTOS].map((f, i) => <Image key={`${f}-${i}`} src={f} alt="" width={144} height={96} sizes="144px" />);
   return (
     <div className="belt" aria-hidden="true">
       <div className="belt-track">

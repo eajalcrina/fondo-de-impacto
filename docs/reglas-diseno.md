@@ -87,4 +87,6 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - Cerrado: fases 0, 1 y 2. Camino B3 con recorte anillo, verde bosque profundo con textura y naranja.
 - Piloto: sistema nuevo aplicado a todo el sitio; portada y Portafolio rediseñadas; encabezado, pie, logos y 404 nuevos.
 - Pendiente (fase 4): rediseñar Empresas, Bootcamp, Pasaporte, Inversionistas, Nosotros y Privacidad con el sistema; pasar sus textos a `lib/i18n/es.ts` con la pasada de voz; imágenes para compartir por página; fila desalineada en /empresas.
-- Esperando decisión del dueño: aprobación del piloto.
+- Revisión del asesor sobre el piloto: 27 hallazgos; corregidos los de orden de la portada, textos redundantes, cifras, logos, diagrama de la ruta, anillos, selector de idioma en celular y estilos en línea.
+- Línea base de capturas: carpeta de trabajo de la sesión (16-11-2026), 9 rutas en escritorio y celular.
+- Esperando decisión del dueño: aprobación del piloto; datos por empresa del portafolio (país, año, instrumento); fuente de «+120 comunidades»; recrear el logo con la firma «by Redesign Lab».

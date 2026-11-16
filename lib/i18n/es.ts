@@ -38,22 +38,23 @@ export const es = {
       inversionista: "Soy inversionista",
       foto: "Río amazónico al atardecer con una canoa",
     },
+    cifras: {
+      rotulo: "Resultados desde 2021",
+      items: [
+        { icono: "red", mas: true, valor: "50", nota: true, texto: "fondos de impacto en nuestra red" },
+        { icono: "brote", mas: true, valor: "10", nota: false, texto: "empresas invertidas en América Latina" },
+        { icono: "alza", mas: false, valor: "USD\u00a02.7\u00a0MM", nota: true, texto: "levantados para empresas acompañadas" },
+        { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", nota: false, texto: "facturación del portafolio en 2025" },
+      ],
+      nota: "USD\u00a01.5\u00a0MM en deuda de impacto y USD\u00a01.2\u00a0MM en fondos no reembolsables. La facturación del portafolio creció 28% frente a 2024.",
+    },
     trabajo: {
       rotulo: "Cómo trabajamos",
-      titulo: ["Tres formas de llegar al ", "capital"],
+      titulo: ["Preparamos, conectamos e ", "invertimos"],
       tarjetas: [
-        { clase: "salvia", rotulo: "Para empresas", titulo: "Bootcamp de Levantamiento de Capital", texto: "Ocho semanas sobre tu propia empresa. Al final, presentas ante fondos aliados.", cta: "Postular al Bootcamp", href: "/bootcamp", foto: "/img/h17.jpg", alt: "Equipos de empresas trabajando en un taller", pos: "50% 50%" },
-        { clase: "", rotulo: "Para empresas", titulo: "Pasaporte de Inversión", texto: "Un solo perfil para llegar a más de 50 fondos. Si tu empresa ya tiene historial de repago, puedes pedir Financiamiento directo.", cta: "Ver fondos para mi empresa", href: "/pasaporte", foto: "/img/h16.jpg", alt: "Mano marcando un mapa del territorio", pos: "60% 60%" },
+        { clase: "salvia", rotulo: "Preparación", titulo: "Bootcamp de Levantamiento de Capital", texto: "Ocho semanas sobre tu propia empresa. Al final, presentas ante fondos aliados.", cta: "Postular al Bootcamp", href: "/bootcamp", foto: "/img/h17.jpg", alt: "Equipos de empresas trabajando en un taller", pos: "50% 50%" },
+        { clase: "", rotulo: "Acceso a fondos", titulo: "Pasaporte de Inversión", texto: "Un solo perfil de inversión que leen más de 50 fondos de impacto.", cta: "Crear mi Pasaporte", href: "/pasaporte", foto: "/img/h16.jpg", alt: "Mano marcando un mapa del territorio", pos: "60% 60%" },
         { clase: "naranja", rotulo: "Para inversionistas", titulo: "Inversión paciente", texto: "Invertimos en empresas que preparamos y acompañamos, con due diligence financiero y ESG y reporte mensual.", cta: "Conocer la tesis", href: "/inversionistas", foto: "/img/h01.jpg", alt: "Mazorca de cacao en un sistema agroforestal", pos: "50% 40%" },
-      ],
-    },
-    cifras: {
-      titulo: ["", "Capital", " que ya llegó a las empresas"],
-      items: [
-        { icono: "red", mas: true, valor: "50", texto: "fondos de impacto en nuestra red" },
-        { icono: "brote", mas: true, valor: "10", texto: "empresas invertidas en América Latina" },
-        { icono: "alza", mas: false, valor: "USD\u00a02.7\u00a0MM", texto: "levantados para empresas acompañadas: 1.5 en deuda y 1.2 no reembolsables" },
-        { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025, 28% más que en 2024" },
       ],
     },
     rangos: {
@@ -68,22 +69,17 @@ export const es = {
       foto: "Comunidad reunida frente a su centro de acopio",
     },
     proceso: {
-      rotulo: "Cómo funciona",
-      titulo: "De la preparación a la inversión",
-      etapas: [
-        { k: "Originación", t: "Empresas acompañadas por Redesign Lab", d: "También recibimos empresas referidas por nuestra red de fondos." },
-        { k: "Preparación", t: "Bootcamp de Levantamiento de Capital", d: "Ocho semanas con nuestra metodología propia." },
-      ],
-      ruta: { k: "Ruta de capital", a: { t: "Red de más de 50 fondos", d: "Fondos con tesis compatible, banca de desarrollo y cooperación." }, b: { t: "Financiamiento de Fondo de Impacto", d: "Capital privado para empresas con historial validado." } },
+      etiqueta: "Cómo llega el capital a una empresa",
+      nodos: ["Empresa con tracción", "Preparación", "Red de más de 50 fondos", "Financiamiento de Fondo de Impacto"],
     },
     portafolio: {
       rotulo: "Portafolio",
       titulo: ["Empresas de la ", "biodiversidad", " que ya venden"],
+      bajada: "Cinco de las más de diez empresas en las que invertimos.",
       cta: "Ver el portafolio",
     },
-    equipo: { rotulo: "Equipo", titulo: "Estrategia, operación e inversión en un mismo equipo", cta: "Conocer al equipo" },
     organizaciones: { rotulo: "Trayectoria", titulo: "Organizaciones con las que hemos trabajado" },
-    cierre: { rotuloPrefijo: "Próxima cohorte: ", titulo: "¿Tu empresa está lista para levantar capital?", cta: "Postular al Bootcamp" },
+    cierre: { rotuloPrefijo: "Próxima cohorte: ", titulo: "¿Tu empresa está lista para levantar capital?", cta: "Postular al Bootcamp", inversionista: "Soy inversionista" },
   },
   portafolio: {
     meta: "Portafolio de Fondo de Impacto: Cotton Nation, Endemics, Rare by, GreenProd y Ecovive. Facturaron USD 26 MM en 2025, 28% más que en 2024.",
@@ -92,16 +88,25 @@ export const es = {
       titulo: ["Empresas de impacto que ya ", "crecen", " con nuestro capital"],
       bajada: "Invertimos en empresas de la biodiversidad de América Latina que preparamos y acompañamos desde adentro.",
       cta: "Conocer la tesis",
-      foto: "Mazorca de cacao abierta en manos de un productor",
+      foto: "Copa de un árbol amazónico vista desde abajo",
+    },
+    tesis: {
+      rotulo: "Tesis",
+      titulo: ["Invertimos en empresas que ya ", "venden"],
+      texto: "Empresas con ventas, cadena de valor en la biodiversidad y un equipo que conocemos desde la preparación. Por eso el capital llega con menos riesgo y con acompañamiento.",
     },
     cifras: [
-      { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025, 28% más que en 2024" },
+      { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025" },
+      { icono: "alza", mas: false, valor: "28%", texto: "crecimiento de la facturación frente a 2024" },
       { icono: "brote", mas: true, valor: "10", texto: "empresas invertidas en América Latina" },
-      { icono: "alza", mas: false, valor: "USD\u00a02.7\u00a0MM", texto: "levantados para empresas acompañadas: 1.5 en deuda y 1.2 no reembolsables" },
-      { icono: "red", mas: true, valor: "120", texto: "comunidades con impacto directo" },
     ],
-    empresas: { rotulo: "Empresas", titulo: "Del algodón amazónico a los bioinsumos" },
+    empresas: { rotulo: "Empresas", titulo: "Del algodón amazónico a los bioinsumos", bajada: "Cinco de las más de diez empresas en las que invertimos." },
     cierre: { titulo: "¿Quieres ver el portafolio en detalle?", texto: "Compartimos métricas, estados financieros y la ronda activa en una conversación privada, bajo acuerdo de confidencialidad.", cta: "Agendar reunión" },
+  },
+  comun: {
+    masDe: "más de",
+    aliados: { cooperacion: "Cooperación internacional", academia: "Academia", redes: "Fondos y redes de impacto", publico: "Sector público" },
+    rangos: { cnt: "fuentes en este rango", ir: "Ver fuentes" },
   },
   pie: {
     empresas: "Empresas",
@@ -111,7 +116,9 @@ export const es = {
     pasaporte: "Pasaporte de Inversión",
     financiamiento: "Financiamiento directo",
     privacidad: "Política de privacidad",
-    idiomas: "Español / English",
+    legalCifras: "* Periodo 2021 a 2026. USD\u00a01.5\u00a0MM en capital de impacto, principalmente deuda, y USD\u00a01.2\u00a0MM en fondos no reembolsables, levantados para empresas acompañadas por Redesign Lab. Nuestra red: más de 50 fondos de impacto con los que tenemos contacto directo activo en los últimos 12 meses.",
+    legalFuentes: (n: number) => `Fuentes mapeadas: ${n} fuentes públicas de capital de impacto que monitoreamos en América Latina.`,
+    legalOferta: "Este sitio es informativo y no constituye una oferta pública de valores ni una invitación a captar fondos del público. Las oportunidades de inversión se presentan solo en conversaciones privadas, bajo acuerdo de confidencialidad.",
   },
 };
 
