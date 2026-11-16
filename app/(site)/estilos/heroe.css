@@ -12,11 +12,12 @@
   .intro-texto .lnk:hover { color: var(--naranja-claro); }
   .intro-foto { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radio-tarjeta); overflow: hidden; background: var(--lienzo-superficie); }
   .intro-foto img { object-fit: cover; }
+  /* En escritorio la foto toma la altura del bloque de texto y el texto queda centrado frente a ella */
   @media (min-width: 900px) {
     .intro { padding-block: 72px 8px; }
-    .intro-in { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--sep); }
-    .intro-texto { grid-column: span 7; }
-    .intro-foto { grid-column: 8 / span 5; }
+    .intro-in { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--sep); align-items: stretch; }
+    .intro-texto { grid-column: span 7; align-content: center; padding-block: 24px; }
+    .intro-foto { grid-column: 8 / span 5; aspect-ratio: auto; min-height: 340px; }
   }
 
   /* 404 */

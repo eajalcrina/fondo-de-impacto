@@ -1,20 +1,29 @@
-/** Teaser de ejemplo (ilustrativo) que ven los fondos. */
+/** Maqueta del teaser confidencial que ven los fondos: una página anónima con los indicadores de un comité. */
 export function Teaser() {
   return (
-    <div className="card num" aria-label="Ejemplo de teaser">
-      <div className="top"><span>Teaser confidencial</span><b>FI-0142</b></div>
-      <h3 className="h4">Empresa peruana de alimentos de origen amazónico</h3>
-      <div className="chips"><span className="chip">Crecimiento</span><span className="chip">Deuda</span><span className="chip t">Busca USD 250K a 400K</span></div>
-      <div className="kv">
-        <div><span>Ventas últimos 12 meses</span><b>USD 1.1 MM</b></div>
-        <div><span>Crecimiento anual</span><b>38%</b></div>
-        <div><span>Margen bruto</span><b>42%</b></div>
-        <div><span>Historial con fondos</span><b>2 créditos repagados</b></div>
-        <div><span>Productores en su cadena</span><b>180</b></div>
-        <div><span>ODS principales</span><b>1, 8 y 15</b></div>
+    <figure className="teaser num" aria-label="Ejemplo ilustrativo de teaser confidencial">
+      <div className="teaser-cabeza">
+        <div className="teaser-id">
+          <span className="teaser-rotulo">Teaser confidencial</span>
+          <b className="teaser-codigo">FI-0142</b>
+        </div>
+        <div className="teaser-empresa">
+          <h3>Empresa peruana de alimentos de origen amazónico</h3>
+          <ul className="teaser-chips"><li>Crecimiento</li><li>Deuda</li><li className="clave">Busca USD 250K a 400K</li></ul>
+        </div>
       </div>
-      <div className="meter"><span>Investment readiness</span><i><u /><u /><u /><u /><u className="o" /></i><b>Alto</b></div>
-      <span className="xs">Ejemplo ilustrativo. Los fondos ven tu nombre solo si lo apruebas.</span>
-    </div>
+      <dl className="teaser-kpi">
+        <div><dt>Ventas últimos 12 meses</dt><dd>USD 1.1 MM</dd></div>
+        <div><dt>Crecimiento anual</dt><dd>38%</dd></div>
+        <div><dt>Margen bruto</dt><dd>42%</dd></div>
+        <div><dt>Historial con fondos</dt><dd>2 créditos repagados</dd></div>
+        <div><dt>Productores en su cadena</dt><dd>180</dd></div>
+        <div><dt>ODS principales</dt><dd>1, 8 y 15</dd></div>
+      </dl>
+      <figcaption className="teaser-pie">
+        <span className="teaser-nivel">Investment readiness <i><u /><u /><u /><u /><u className="o" /></i> <b>Alto</b></span>
+        <span>Ejemplo ilustrativo. Los fondos ven tu nombre solo si lo apruebas.</span>
+      </figcaption>
+    </figure>
   );
 }

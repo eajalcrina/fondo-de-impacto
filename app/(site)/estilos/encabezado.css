@@ -9,9 +9,18 @@
   .nav.claro { background: var(--blanco); color: var(--bosque); border-bottom: 1px solid var(--linea); }
   .nav.solido { background: var(--lienzo); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 100%; }
-  .logo { display: flex; align-items: center; }
-  .logo img { display: block; height: auto; width: 128px; }
-  @media (min-width: 1100px) { .logo img { width: 148px; } }
+  /* Logo: ícono de puntos y nombre en dos líneas con la firma debajo */
+  .logo { display: inline-flex; align-items: center; gap: 10px; color: var(--bosque); }
+  .logo-icono { width: 40px; height: 40px; flex-shrink: 0; }
+  .logo-texto { display: grid; gap: 3px; }
+  .logo-nombre { display: grid; font-size: 15px; font-weight: 600; line-height: 1.08; letter-spacing: 0.08em; text-transform: uppercase; }
+  .logo-clave { display: block; }
+  .logo-clave { color: var(--naranja); }
+  .logo-firma { font-size: 8.5px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; color: var(--t2); }
+  .logo-white { color: var(--blanco); }
+  .logo-white .logo-clave { color: var(--naranja-claro); }
+  .logo-white .logo-firma { color: var(--sobre-oscuro-2); }
+  @media (min-width: 1100px) { .logo-icono { width: 46px; height: 46px; } .logo-nombre { font-size: 16.5px; } .logo-firma { font-size: 9px; } }
   .acciones { display: flex; align-items: center; gap: 8px; }
   .acciones .btn { display: none; }
   @media (min-width: 900px) { .acciones .btn { display: inline-flex; margin-right: 8px; } }

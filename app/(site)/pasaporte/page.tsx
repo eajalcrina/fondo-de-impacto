@@ -41,13 +41,11 @@ export default function PasaportePage() {
       </Hero>
 
       <section className="seccion"><div className="wrap">
-        <h2 className="d2 seccion-titulo">Así ven los fondos a tu empresa</h2>
-        <div className="bloques">
-          <div className="c6 teaser-lado">
-            <p className="lead">Una página anónima con los indicadores que un analista revisa primero: tracción, márgenes, historial de repago e impacto. El Pasaporte no tiene costo para tu empresa.</p>
-          </div>
-          <div className="c6"><Teaser /></div>
+        <div className="seccion-cabeza">
+          <h2 className="d2 seccion-titulo">Así ven los fondos a tu empresa</h2>
+          <p className="seccion-texto">Una página anónima con los indicadores que un analista revisa primero: tracción, márgenes, historial de repago e impacto. El Pasaporte no tiene costo para tu empresa.</p>
         </div>
+        <Teaser />
       </div></section>
 
       <section className="seccion"><div className="wrap">

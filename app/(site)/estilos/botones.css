@@ -23,6 +23,9 @@
   .btn-b { background: var(--blanco); color: var(--bosque); }
   /* Regla: todo botón blanco se pinta de naranja al pasar el cursor o al tocarlo */
   .btn-b:hover, .btn-b:active, .btn-b:focus-visible { background: var(--naranja); color: var(--blanco); }
+  /* Sobre fondo naranja, el botón blanco pasa al tono oscuro del lienzo (nunca a naranja) */
+  .final .btn:hover, .final .btn:active, .final .btn:focus-visible,
+  .naranja .btn-b:hover, .naranja .btn-b:active, .naranja .btn-b:focus-visible { background: var(--lienzo); color: var(--blanco); }
 
   /* Botón redondo con flecha */
   .redondo { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--blanco); color: var(--bosque); flex-shrink: 0; transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out; }

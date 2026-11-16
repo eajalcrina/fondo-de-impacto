@@ -5,12 +5,12 @@ import { Logo } from "./Logo";
 
 const t = es.pie;
 
-/** Pin en forma de aguja: un círculo y un palito. */
-function Pin() {
+/** Marca de ubicación: un punto blanco con un anillo fino. */
+function Punto() {
   return (
-    <svg viewBox="0 0 8 16" aria-hidden="true" focusable="false">
-      <circle cx="4" cy="4" r="3" fill="none" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M4 7.2V15.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+      <circle cx="6" cy="6" r="5.25" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+      <circle cx="6" cy="6" r="2" fill="currentColor" />
     </svg>
   );
 }
@@ -30,8 +30,8 @@ export function Footer() {
       <div className="wrap">
         <div className="pie-fila">
           <div className="pie-marca">
-            <Logo tone="white" width={148} />
-            <ul className="paises">{es.marca.paises.map((p) => <li key={p}><Pin />{p}</li>)}</ul>
+            <Logo tone="white" />
+            <ul className="paises">{es.marca.paises.map((p) => <li key={p}><Punto />{p}</li>)}</ul>
           </div>
           <a className="arriba" href="#top">{t.arriba} <span aria-hidden="true">↑</span></a>
         </div>
@@ -40,6 +40,8 @@ export function Footer() {
             {enlaces.map((e) => <li key={e.href}><Link href={e.href}>{e.t}</Link></li>)}
             <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
           </ul>
+        </div>
+        <div className="pie-fila pie-legal">
           <div className="legal">
             <p>{t.legalOferta}</p>
             <p>{t.legalPrivado}</p>

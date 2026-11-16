@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Nosotros", description: "Fondo de Im
 export default function NosotrosPage() {
   return (
     <div className="portada oscuro interior">
-      <Hero slides={[{ src: "/img/h09.jpg", cap: "Comunidad productora" }]}>
+      <Hero slides={[{ src: "/img/h09.jpg", cap: "Comunidad productora" }]} posicion="50% 25%">
         <span className="eyebrow">Nosotros</span>
         <Words as="h1" className="d1" text="El brazo de capital de Redesign Lab" />
         <p className="lead">Redesign Lab es un venture studio que diseña, escala e invierte en empresas de impacto en América Latina desde 2021.</p>

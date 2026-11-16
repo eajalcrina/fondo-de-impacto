@@ -1,4 +1,4 @@
-/* Componentes compartidos: listas con marca, ficha de teaser, texto legal y consultas. */
+/* Componentes compartidos: listas con marca, texto legal y consultas. */
 @layer componentes {
   /* Listas con marca */
   .check { display: grid; gap: 12px; }
@@ -7,27 +7,6 @@
   .check.x li::before { height: 0; border-left: 0; border-bottom-color: var(--linea-2); transform: none; margin-top: 11px; }
   .dk .check li { color: var(--sobre-oscuro); }
 
-  /* Ficha de empresa (teaser) */
-  .card { background: var(--blanco); color: var(--t1); border: 1px solid var(--linea); border-radius: var(--radio-tarjeta); padding: 24px; display: grid; gap: 16px; font-size: 14px; }
-  .card .top { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; font-weight: 500; color: var(--t2); }
-  .card .top b { color: var(--terracota); font-weight: 600; }
-  .card.dk { background: var(--lienzo); color: var(--blanco); border-color: var(--lienzo); }
-  .card.dk .top { color: var(--sobre-oscuro-2); }
-  .card.dk .top b { color: var(--naranja-claro); }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip { font-size: 13px; font-weight: 500; padding: 4px 12px; border-radius: var(--radio-pildora); background: var(--arena); color: var(--bosque); }
-  .chip.t { background: var(--arena); color: var(--terracota); }
-  .kv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; border-block: 1px solid var(--linea); padding-block: 16px; }
-  .kv span { display: block; font-size: 13px; color: var(--t2); }
-  .kv b { font-family: var(--f-sans); font-weight: 500; font-size: 22px; color: var(--bosque); }
-  .card.dk .kv { border-color: var(--linea-oscura); }
-  .card.dk .kv span { color: var(--sobre-oscuro-2); }
-  .card.dk .kv b { color: var(--blanco); }
-  .meter { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--t2); }
-  .meter i { display: flex; gap: 3px; flex: 1; }
-  .meter u { flex: 1; height: 5px; border-radius: 3px; background: var(--naranja); }
-  .meter u.o { background: var(--linea); }
-  .card.dk .meter { color: var(--sobre-oscuro); }
 
   /* Texto legal largo */
   .legal-doc { max-width: 760px; display: grid; gap: 18px; }
@@ -35,9 +14,6 @@
   .legal-doc p, .legal-doc li { color: var(--t2); font-size: 15px; }
   .legal-doc ul { list-style: disc; padding-left: 20px; display: grid; gap: 6px; }
 
-  .card .h4 { font-size: 18px; }
-  .meter b { color: var(--bosque); }
-  .card.dk .meter b { color: var(--blanco); }
   .consulta { margin-top: 40px; max-width: 640px; display: grid; gap: 16px; }
   .boton-lnk { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-size: 14px; font-weight: 600; justify-self: start; }
 }

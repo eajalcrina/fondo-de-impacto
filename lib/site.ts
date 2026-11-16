@@ -25,6 +25,9 @@ export type Persona = {
   linkedin: string;
   /** Web personal; con ella el schema usa el mismo @id que el resto de sus webs. */
   web?: string;
+  /** Foto y perfiles que publica su web, para que buscadores e IAs lo traten como una sola entidad. */
+  imagenWeb?: string;
+  perfiles?: string[];
   bio: string;
   logros: string[];
   formacion: string;
@@ -38,21 +41,23 @@ export function personaSchema(p: Persona) {
     "@id": `${p.web}/#person`,
     name: p.nombre,
     url: p.web,
-    image: `${p.web}/eddie-ajalcrina.jpg`,
+    ...(p.imagenWeb ? { image: p.imagenWeb } : {}),
     jobTitle: p.cargo,
-    sameAs: [p.web, p.linkedin, "https://eddieajalcrina.substack.com/", "https://biobusinessschool.org/autores/eddie-ajalcrina"],
+    sameAs: [p.web, p.linkedin, ...(p.perfiles ?? [])],
   };
 }
 
 export const EQUIPO: Persona[] = [
   {
     nombre: "Eddie Ajalcriña",
-    cargo: "CEO y cofundador",
+    cargo: "CEO y co-fundador",
     foco: "Estrategia, alianzas y relación con fondos",
     foto: "/img/equipo/eddie.jpg",
     linkedin: "https://www.linkedin.com/in/eddieajalcrina/",
     web: "https://eddieajalcrina.com",
-    bio: "Lleva más de quince años como ejecutivo corporativo en ingredientes marinos y nutrición acuícola, cofundador de empresas y director independiente. Trabaja en las dos puntas de la cadena de valor, con productores de la Amazonía y con marcas, compradores e inversionistas globales.",
+    imagenWeb: "https://eddieajalcrina.com/eddie-ajalcrina.jpg",
+    perfiles: ["https://eddieajalcrina.substack.com/", "https://biobusinessschool.org/autores/eddie-ajalcrina"],
+    bio: "Lleva más de quince años como ejecutivo corporativo en ingredientes marinos y nutrición acuícola, co-fundador de empresas y director independiente. Trabaja en las dos puntas de la cadena de valor, con productores de la Amazonía y con marcas, compradores e inversionistas globales.",
     logros: [
       "Participó en la estructuración de un green loan de USD 80 MM (Bank of America y Banco Mundial) en su etapa corporativa",
       "Coordinó el Programa Negocios Sostenibles y el Equipo Europa, Transición Circular de la Delegación de la Unión Europea en el Perú",
@@ -62,10 +67,11 @@ export const EQUIPO: Persona[] = [
   },
   {
     nombre: "Lorenzo Ortiz",
-    cargo: "COO y cofundador",
+    cargo: "COO y co-fundador",
     foco: "Operación del fondo, Bootcamp y plataforma",
     foto: "/img/equipo/lorenzo.jpg",
     linkedin: "https://www.linkedin.com/in/lorenzoortiz/",
+    web: "https://lorenzortiz.co",
     bio: "Pasó más de doce años en los grupos Breca y Gloria, en gerencia de operaciones y en proyectos de inversión e innovación.",
     logros: [
       "Integra el directorio del Grupo Cotton Nation y ha sido miembro independiente de directorios de otras empresas",
