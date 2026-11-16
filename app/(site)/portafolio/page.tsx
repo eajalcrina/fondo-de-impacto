@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: "Portafolio", description: t.meta, al
 
 export default function PortafolioPage() {
   return (
-    <>
+    <div className="portada oscuro interior">
       <Hero slides={[{ src: "/img/h03.jpg", cap: t.heroe.foto }]}>
         <span className="eyebrow">{t.heroe.rotulo}</span>
         <h1 className="d1"><Clave partes={t.heroe.titulo} /></h1>
@@ -21,20 +21,16 @@ export default function PortafolioPage() {
         <div className="cta-row"><Link className="btn btn-p" href="/inversionistas">{t.heroe.cta}</Link></div>
       </Hero>
 
-      <section className="sec"><div className="wrap">
-        <div className="titular">
-          <span className="eyebrow">{t.tesis.rotulo}</span>
-          <h2 className="d2"><Clave partes={t.tesis.titulo} /></h2>
-          <p className="p2">{t.tesis.texto}</p>
+      <section className="seccion"><div className="wrap">
+        <div className="seccion-cabeza">
+          <h2 className="d2 seccion-titulo"><Clave partes={t.tesis.titulo} /></h2>
+          <p className="seccion-texto">{t.tesis.texto}</p>
         </div>
         <Cifras items={t.cifras} />
       </div></section>
 
-      <section className="sec arena"><div className="wrap">
-        <div className="titular">
-          <span className="eyebrow">{t.empresas.rotulo}</span>
-          <h2 className="d2">{t.empresas.titulo}</h2>
-        </div>
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">{t.empresas.titulo}</h2>
         <div className="portafolio">
           {PORTAFOLIO.map((p) => (
             <article key={p.nombre} className="ficha">
@@ -45,15 +41,11 @@ export default function PortafolioPage() {
         </div>
       </div></section>
 
-      <section className="sec final">
-        <div className="wrap">
-          <div className="titular sin-margen">
-            <h2 className="d2">{t.cierre.titulo}</h2>
-            <p className="lead">{t.cierre.texto}</p>
-          </div>
-          <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">{t.cierre.cta}</a></div>
-        </div>
-      </section>
-    </>
+      <section className="sec final"><div className="wrap">
+        <h2 className="d2">{t.cierre.titulo}</h2>
+        <p className="lead">{t.cierre.texto}</p>
+        <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">{t.cierre.cta}</a></div>
+      </div></section>
+    </div>
   );
 }

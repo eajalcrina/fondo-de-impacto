@@ -1,38 +1,45 @@
 import Image from "next/image";
-import { EQUIPO } from "@/lib/site";
+import { EQUIPO, type Persona } from "@/lib/site";
 
+function Cabeza({ p }: { p: Persona }) {
+  return (
+    <div className="persona-cabeza">
+      <div className="persona-foto"><Image src={p.foto} alt={p.nombre} fill sizes="88px" /></div>
+      <div>
+        <h3 className="persona-nombre">{p.nombre}</h3>
+        <span className="persona-cargo">{p.cargo}</span>
+        <span className="persona-foco">{p.foco}</span>
+      </div>
+    </div>
+  );
+}
+
+/** Equipo en tarjetas cortas: foto, nombre, cargo y foco. */
 export function TeamMini() {
   return (
-    <div className="mini-team">
+    <div className="equipo">
       {EQUIPO.map((p) => (
-        <article key={p.nombre} className="mt">
-          <div className="avw"><Image src={p.foto} alt={p.nombre} width={72} height={72} /></div>
-          <div className="mt-texto">
-            <b className="h4">{p.nombre}</b>
-            <span className="role">{p.cargo}</span>
-            <span className="xs">{p.foco}</span>
-          </div>
-        </article>
+        <article key={p.nombre} className="persona"><Cabeza p={p} /></article>
       ))}
     </div>
   );
 }
 
+/** Equipo completo: las filas de biografía, logros y formación quedan alineadas entre tarjetas. */
 export function TeamFull() {
   return (
-    <div className="trio">
+    <div className="equipo completo">
       {EQUIPO.map((p) => (
-        <article key={p.nombre} className="pc">
-          <div className="ph-img"><Image src={p.foto} alt={p.nombre} fill sizes="(max-width:860px) 100vw, 33vw" /></div>
-          <div className="body">
-            <div className="pc-cabeza">
-              <h3 className="d3">{p.nombre}</h3>
-              <span className="role">{p.cargo}</span>
-              <span className="focus">{p.foco}</span>
-            </div>
-            <p className="p2 sm">{p.bio}</p>
-            <ul>{p.logros.map((l) => <li key={l}>{l}</li>)}</ul>
-            <span className="xs">{p.formacion}<i className="sep" /><a href={p.linkedin} target="_blank" rel="noopener noreferrer" className="pc-enlace">LinkedIn</a>{p.web && <><i className="sep" /><a href={p.web} target="_blank" rel="noopener" className="pc-enlace">Web</a></>}</span>
+        <article key={p.nombre} className="persona">
+          <Cabeza p={p} />
+          <p className="persona-bio">{p.bio}</p>
+          <ul className="persona-logros">{p.logros.map((l) => <li key={l}>{l}</li>)}</ul>
+          <div className="persona-formacion">
+            <span>{p.formacion}</span>
+            <span className="persona-enlaces">
+              <a href={p.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              {p.web && <a href={p.web} target="_blank" rel="noopener">Web</a>}
+            </span>
           </div>
         </article>
       ))}

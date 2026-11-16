@@ -1,4 +1,4 @@
-/* Sistema visual del rediseño 2026 (camino B3). Cada componente vive en su archivo dentro de estilos/. */
+/* Sistema visual del rediseño 2026 (inspirado en fosterandpartners.com). Cada componente vive en su archivo dentro de estilos/. */
 @import "./estilos/tokens.css";
 @import "./estilos/base.css";
 @import "./estilos/botones.css";
@@ -7,5 +7,6 @@
 @import "./estilos/componentes.css";
 @import "./estilos/formularios.css";
 @import "./estilos/inicio.css";
+@import "./estilos/interior.css";
 @import "./estilos/pie.css";
 @import "./estilos/movimiento.css";

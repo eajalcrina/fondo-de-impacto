@@ -87,7 +87,7 @@
   .card.dk .kv b { color: var(--blanco); }
   .meter { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--t2); }
   .meter i { display: flex; gap: 3px; flex: 1; }
-  .meter u { flex: 1; height: 5px; background: var(--salvia); }
+  .meter u { flex: 1; height: 5px; border-radius: 3px; background: var(--naranja); }
   .meter u.o { background: var(--linea); }
   .card.dk .meter { color: var(--sobre-oscuro); }
 

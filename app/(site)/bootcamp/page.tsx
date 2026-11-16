@@ -5,137 +5,136 @@ import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
 import { LeadForm } from "@/components/site/LeadForm";
 import { Consultas } from "@/components/site/Consultas";
+import { TeamMini } from "@/components/site/Team";
 import { PAISES, RANGOS_OPC, RUBROS } from "@/lib/catalogo";
 
 const VENTAS: [string, string][] = [["menos-50k", "Menos de USD 50 mil"], ["50k-250k", "USD 50 mil a 250 mil"], ["250k-1m", "USD 250 mil a 1 MM"], ["mas-1m", "Más de USD 1 MM"]];
-import { TeamMini } from "@/components/site/Team";
+
+const SEMANAS: [string, string, string][] = [
+  ["Semanas 1 y 2", "Diagnóstico y tesis", "Punto de partida con tu Pasaporte de Inversión. Definimos la tesis de inversión y cuánto capital buscas y para qué."],
+  ["Semanas 3 y 4", "Finanzas y estructura", "Modelo financiero, uso de fondos e instrumento adecuado: deuda, equity o blended."],
+  ["Semanas 5 y 6", "Teaser, data room y ESG", "Documentos con estándar de comité, métricas de impacto y gestión de riesgos ESG."],
+  ["Semanas 7 y 8", "Pitch y comité simulado", "Ensayos con feedback directo y evaluación final ante un comité simulado."],
+];
 
 export const metadata: Metadata = { title: "Bootcamp de Levantamiento de Capital", description: "Ocho semanas de investment readiness aplicado para empresas de impacto. Inicio: lunes 1 de febrero de 2027. 15 cupos." };
 
 export default function BootcampPage() {
   return (
-    <>
+    <div className="portada oscuro interior">
+      <Hero slides={[{ src: "/img/rl/feria.jpg", cap: "Empresas de impacto en una feria comercial" }]} posicion="50% 35%">
+        <span className="eyebrow">Bootcamp de Levantamiento de Capital</span>
+        <Words as="h1" className="d1" text="Levanta capital con quienes ya lo han hecho" />
+        <p className="lead">Ocho semanas de trabajo personalizado con un equipo que desde 2021 ha levantado USD 2.7 MM para empresas de impacto.</p>
+        <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="lnk" href="/bootcamp#como-funciona">Ver cómo funciona</Link></div>
+      </Hero>
 
-  <Hero slides={[{ src: "/img/rl/feria.jpg", cap: "Empresas de impacto en una feria comercial" }]}>
-    <span className="eyebrow">Bootcamp de Levantamiento de Capital</span>
-    <Words as="h1" className="d1" text="Levanta capital con quienes ya lo han hecho" />
-    <p className="lead">Ocho semanas de trabajo personalizado con un equipo que desde 2021 ha levantado USD 2.7 MM para empresas de impacto.</p>
-    <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="lnk" href="/bootcamp#como-funciona">Ver cómo funciona</Link></div>
-  </Hero>
+      <section className="seccion"><div className="wrap">
+        <div className="seccion-cabeza">
+          <h2 className="d2 seccion-titulo">Próxima cohorte</h2>
+          <p className="seccion-texto">Postulaciones abiertas hasta completar {SITE.cohorte.cupos} cupos. Evaluamos a cada postulante antes de confirmar su lugar.</p>
+        </div>
+        <div className="datos d6">
+          <div className="dato"><span>Inicio</span><b>{SITE.cohorte.corto}</b></div>
+          <div className="dato"><span>Duración</span><b>8 semanas</b></div>
+          <div className="dato"><span>Formato</span><b>Virtual y 1:1</b></div>
+          <div className="dato"><span>Cupos</span><b>{SITE.cohorte.cupos} empresas</b></div>
+          <div className="dato"><span>Inversión</span><b>{SITE.cohorte.precio}</b></div>
+          <div className="dato naranja"><span>Precio anticipado hasta el {SITE.cohorte.fechaAnticipado}</span><b>{SITE.cohorte.precioAnticipado}</b></div>
+        </div>
+        <ul className="condiciones">
+          <li>Pagas después de que confirmamos tu cupo, en dos cuotas: la mitad al confirmarlo y la otra mitad en la semana 4.</li>
+          <li>Becas parciales para empresas con ventas anuales menores a USD 300 mil, cofinanciadas por fondos y organizaciones de cooperación aliadas.</li>
+        </ul>
+      </div></section>
 
-  <section className="sec"><div className="wrap hero-2">
-    <div className="stack">
-      <span className="eyebrow">Próxima cohorte</span>
-      <Words as="h2" className="d2" text="Fechas, formato e inversión" />
-      <p className="lead">Postulaciones abiertas hasta completar {SITE.cohorte.cupos} cupos. Evaluamos a cada postulante antes de confirmar su lugar.</p>
-      <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link></div>
+      <section className="seccion" id="como-funciona"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Qué haces cada semana</h2>
+        <ol className="tarjetas t4">
+          {SEMANAS.map(([r, t, x]) => (
+            <li key={r} className="tarjeta"><span className="tarjeta-r">{r}</span><h3 className="tarjeta-t">{t}</h3><p className="tarjeta-x">{x}</p></li>
+          ))}
+        </ol>
+      </div></section>
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Sales con tu empresa lista para una ronda</h2>
+        <div className="bloques">
+          <div className="tarjeta c8">
+            <span className="tarjeta-r">Lo que consigues</span>
+            <ul className="check">
+              <li>Tesis de inversión y estructura de capital definidas</li>
+              <li>Modelo financiero y plan de uso de fondos</li>
+              <li>Teaser y pitch deck con estándar de comité</li>
+              <li>Data room ordenado, con indicadores ESG y de impacto</li>
+              <li>Tu teaser en nuestro portafolio privado, con el distintivo del Bootcamp</li>
+            </ul>
+          </div>
+          <div className="cita c4 naranja">
+            <p className="cita-rotulo">Sesión con fondos aliados</p>
+            <p className="cita-texto">Las empresas que aprueben la evaluación final presentan ante fondos de impacto aliados.</p>
+            <p className="nota">La sesión no garantiza financiamiento.</p>
+          </div>
+        </div>
+      </div></section>
+
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Quién te acompaña</h2>
+        <TeamMini />
+      </div></section>
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">¿Es tu momento?</h2>
+        <div className="tarjetas">
+          <article className="tarjeta">
+            <span className="tarjeta-r">Este programa es para ti si</span>
+            <ul className="check"><li>Tienes operación comercial activa y ventas verificables.</li><li>Sabes para qué necesitas el capital, o quieres definirlo con nosotros.</li><li>Puedes dedicarle horas cada semana.</li><li>Quieres feedback directo sobre tu caso.</li></ul>
+          </article>
+          <article className="tarjeta">
+            <span className="tarjeta-r">Todavía no es tu momento si</span>
+            <ul className="check x"><li>Aún estás validando tu producto o no tienes ventas.</li><li>No podrás dedicar horas semanales durante el programa.</li></ul>
+            <p className="tarjeta-x">Empieza por tu Pasaporte de Inversión. Recibes tu diagnóstico y te avisamos cuando estés listo para una cohorte.</p>
+            <div className="cta-row"><Link className="lnk" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
+          </article>
+        </div>
+      </div></section>
+
+      <section className="seccion claro" id="postular"><div className="wrap split">
+        <div className="stack">
+          <span className="eyebrow">Postulación</span>
+          <Words as="h2" className="d2" text={`Postula a la cohorte de ${SITE.cohorte.mes}`} />
+          <p className="p2">Empieza el {SITE.cohorte.inicio.toLowerCase()}. {SITE.cohorte.cupos} cupos.</p>
+        </div>
+        <LeadForm
+          form="bootcamp"
+          idPrefix="bc"
+          submit="Enviar postulación"
+          success={`Gracias. Recibimos tu postulación y te enviamos una confirmación por correo. Te escribimos ${SITE.respuesta}.`}
+          fields={[
+            { name: "empresa", label: "Empresa", required: true, autoComplete: "organization", half: true },
+            { name: "nombre", label: "Nombre completo", required: true, autoComplete: "name", half: true },
+            { name: "correo", label: "Correo", type: "email", required: true, autoComplete: "email", half: true },
+            { name: "celular", label: "Celular", type: "tel", required: true, autoComplete: "tel", half: true },
+            { name: "pais", label: "País", type: "select", options: PAISES, required: true, half: true },
+            { name: "rubro", label: "Rubro", type: "select", options: RUBROS, half: true },
+            { name: "ventas", label: "Ventas de los últimos 12 meses (USD)", type: "select", options: VENTAS, half: true },
+            { name: "capital", label: "Capital que buscas", type: "select", options: RANGOS_OPC, half: true },
+            { name: "mensaje", label: "¿Para qué necesitas el capital?", type: "textarea" },
+          ]}
+        />
+      </div></section>
+
+      <section className="seccion claro"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Cooperativas, consultores y fondos</h2>
+        <Consultas />
+      </div></section>
+
+      <section className="sec final"><div className="wrap">
+        <Words as="h2" className="d2" text="Mira cuántos fondos calzan con tu empresa" />
+        <p className="lead">El buscador revisa 456 fuentes de capital de impacto y te muestra cuántas financian a empresas como la tuya.</p>
+        <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
+      </div></section>
     </div>
-    <div className="card num dk">
-      <div className="top"><span>Próxima cohorte</span><b>Febrero 2027</b></div>
-      <div className="kv sin-borde">
-        <div><span>Inicio</span><b>{SITE.cohorte.corto}</b></div><div><span>Duración</span><b>8 semanas</b></div>
-        <div><span>Formato</span><b>Virtual y 1:1</b></div><div><span>Cupos</span><b>{SITE.cohorte.cupos} empresas</b></div>
-        <div><span>Inversión</span><b>{SITE.cohorte.precio}</b></div><div><span>Precio anticipado</span><b>{SITE.cohorte.precioAnticipado}</b></div>
-      </div>
-    </div>
-  </div></section>
-
-  <section className="sec tint"><div className="wrap">
-    <div className="head"><span className="eyebrow">Método</span><Words as="h2" className="d2" text="Trabajas sobre tu propia empresa" /></div>
-    <div className="cols-3">
-      <div className="rule"><h3 className="h4">Aplicado</h3><p className="p2 sm">Cada semana avanzas en tu propio caso: estructura de capital, teaser, data room y pitch.</p></div>
-      <div className="rule"><h3 className="h4">Asesoría personalizada</h3><p className="p2 sm">Un equipo que ha levantado capital y evaluado créditos trabaja contigo, empresa por empresa.</p></div>
-      <div className="rule"><h3 className="h4">Selección previa</h3><p className="p2 sm">Evaluamos a todas las postulantes para que el grupo esté al nivel del programa y de los fondos que lo reciben.</p></div>
-    </div>
-  </div></section>
-
-  <section className="sec" id="como-funciona"><div className="wrap">
-    <div className="head"><span className="eyebrow">Cómo funciona</span><Words as="h2" className="d2" text="Qué haces cada semana" /></div>
-    <ol className="steps">
-      <li><span className="n">Semanas 1 y 2</span><b className="h4">Diagnóstico y tesis</b><p>Punto de partida con tu Pasaporte de Inversión. Definimos la tesis de inversión y cuánto capital buscas y para qué.</p></li>
-      <li><span className="n">Semanas 3 y 4</span><b className="h4">Finanzas y estructura</b><p>Modelo financiero, uso de fondos e instrumento adecuado: deuda, equity o blended.</p></li>
-      <li><span className="n">Semanas 5 y 6</span><b className="h4">Teaser, data room y ESG</b><p>Documentos con estándar de comité, métricas de impacto y gestión de riesgos ESG.</p></li>
-      <li><span className="n">Semanas 7 y 8</span><b className="h4">Pitch y comité simulado</b><p>Ensayos con feedback directo y evaluación final ante un comité simulado.</p></li>
-    </ol>
-  </div></section>
-
-  <section className="sec tint"><div className="wrap cols-2 arriba-inicio">
-    <div className="stack">
-      <span className="eyebrow">Lo que consigues</span>
-      <Words as="h2" className="d2" text="Sales con tu empresa lista para una ronda" />
-      <ul className="check"><li>Tesis de inversión y estructura de capital definidas</li><li>Modelo financiero y plan de uso de fondos</li><li>Teaser y pitch deck con estándar de comité</li><li>Data room ordenado, con indicadores ESG y de impacto</li><li>Tu teaser en nuestro portafolio privado, con el distintivo del Bootcamp</li></ul>
-    </div>
-    <div className="feature dk una">
-      <span className="eyebrow">Sesión con fondos aliados</span>
-      <h3 className="d3">Las empresas que aprueben la evaluación final presentan ante fondos de impacto aliados</h3>
-      
-      <p className="xs nota-linea">La sesión no garantiza financiamiento.</p>
-    </div>
-  </div></section>
-
-  <section className="sec" id="inversion"><div className="wrap split">
-    <div className="stack">
-      <span className="eyebrow">Inversión</span>
-      <Words as="h2" className="d2" text={`${SITE.cohorte.precio} por empresa`} />
-      <p className="p2">Incluye las sesiones 1:1, el comité simulado y, si apruebas la evaluación final, la sesión con fondos aliados.</p>
-    </div>
-    <ul className="check">
-      <li><span><b>Precio anticipado: {SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el {SITE.cohorte.fechaAnticipado}.</span></li>
-      <li>Pagas en dos cuotas: la mitad al confirmar el cupo y la otra mitad en la semana 4.</li>
-      <li>Becas parciales para empresas con ventas anuales menores a USD 300 mil, cofinanciadas por fondos y organizaciones de cooperación aliadas.</li>
-      <li>Pagas después de que confirmamos tu cupo.</li>
-    </ul>
-  </div></section>
-
-  <section className="sec tint"><div className="wrap">
-    <div className="head"><span className="eyebrow">Equipo</span><Words as="h2" className="d2" text="Quién te acompaña" /></div>
-    <TeamMini />
-  </div></section>
-
-  <section className="sec"><div className="wrap">
-    <div className="head"><span className="eyebrow">Perfil</span><Words as="h2" className="d2" text="Para empresas que quieren levantar capital ahora" /></div>
-    <div className="cols-2">
-      <div className="rule"><span className="eyebrow s">Este programa es para ti si</span><ul className="check"><li>Tienes operación comercial activa y ventas verificables.</li><li>Sabes para qué necesitas el capital, o quieres definirlo con nosotros.</li><li>Puedes dedicarle horas cada semana.</li><li>Quieres feedback directo sobre tu caso.</li></ul><div><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular</Link></div></div>
-      <div className="rule l"><span className="eyebrow s">Todavía no es tu momento si</span><ul className="check x"><li>Aún estás validando tu producto o no tienes ventas.</li><li>No podrás dedicar horas semanales durante el programa.</li></ul><p className="p2 sm">Empieza por tu Pasaporte de Inversión. Recibes tu diagnóstico y te avisamos cuando estés listo para una cohorte.</p><Link className="lnk" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link></div>
-    </div>
-  </div></section>
-
-  <section className="sec tint" id="postular"><div className="wrap split">
-    <div className="stack">
-      <span className="eyebrow">Postulación</span>
-      <Words as="h2" className="d2" text={`Postula a la cohorte de ${SITE.cohorte.mes}`} />
-      <p className="p2">Empieza el {SITE.cohorte.inicio.toLowerCase()}. {SITE.cohorte.cupos} cupos.</p>
-    </div>
-    <LeadForm
-      form="bootcamp"
-      idPrefix="bc"
-      submit="Enviar postulación"
-      success={`Gracias. Recibimos tu postulación y te enviamos una confirmación por correo. Te escribimos ${SITE.respuesta}.`}
-      fields={[
-        { name: "empresa", label: "Empresa", required: true, autoComplete: "organization", half: true },
-        { name: "nombre", label: "Nombre completo", required: true, autoComplete: "name", half: true },
-        { name: "correo", label: "Correo", type: "email", required: true, autoComplete: "email", half: true },
-        { name: "celular", label: "Celular", type: "tel", required: true, autoComplete: "tel", half: true },
-        { name: "pais", label: "País", type: "select", options: PAISES, required: true, half: true },
-        { name: "rubro", label: "Rubro", type: "select", options: RUBROS, half: true },
-        { name: "ventas", label: "Ventas de los últimos 12 meses (USD)", type: "select", options: VENTAS, half: true },
-        { name: "capital", label: "Capital que buscas", type: "select", options: RANGOS_OPC, half: true },
-        { name: "mensaje", label: "¿Para qué necesitas el capital?", type: "textarea" },
-      ]}
-    />
-  </div></section>
-
-  <section className="sec"><div className="wrap">
-    <div className="head"><span className="eyebrow">Otros perfiles</span><Words as="h2" className="d2" text="Cuéntanos qué necesitas" /></div>
-    <Consultas />
-  </div></section>
-
-  <section className="sec final"><div className="wrap">
-    <Words as="h2" className="d2" text={`La próxima cohorte empieza el ${SITE.cohorte.inicio.toLowerCase()}`} />
-    <p className="lead">Si aún no sabes si es tu momento, mira cuántos fondos calzan con tu empresa.</p>
-    <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="lnk" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
-  </div></section>
-
-    </>
   );
 }

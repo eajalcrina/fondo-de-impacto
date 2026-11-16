@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
 import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
@@ -7,92 +6,107 @@ import { TeamMini } from "@/components/site/Team";
 
 export const metadata: Metadata = { title: "Inversionistas", description: "Inversión paciente en empresas de impacto de América Latina, con due diligence financiero y ESG y reporte mensual." };
 
+const TERMINOS: [string, string][] = [
+  ["Enfoque", "Inversión paciente de impacto, a través de un instrumento de deuda"],
+  ["Dilución", "Ninguna. El inversionista no adquiere participación en las empresas"],
+  ["Rendimiento", "Objetivo definido en los términos de cada ronda. No está garantizado y depende del desempeño de las empresas financiadas"],
+  ["Garantías", "Las operaciones con empresas se respaldan con garantía hipotecaria"],
+  ["Formalización", "Contrato privado con firmas legalizadas ante notario"],
+  ["Reporte", "Mensual: caja, ventas, indicadores operativos y de impacto de cada empresa"],
+];
+
+const ORIGINACION: [string, string][] = [
+  ["Originación", "Empresas acompañadas o preparadas por Redesign Lab, y referidas por fondos aliados."],
+  ["Screening", "Historial de repago con terceros, ventas recurrentes y estados financieros."],
+  ["Due diligence", "Revisión financiera, operativa, ESG y de impacto con nuestra metodología propia."],
+  ["Comité y monitoreo", "Aprobación en comité, desembolso y seguimiento mensual hasta el repago."],
+];
+
+const PROCESO: [string, string][] = [
+  ["Reunión inicial", "30 minutos con el equipo sobre la tesis y tu perfil."],
+  ["NDA", "Acuerdo de confidencialidad para acceder a los términos."],
+  ["Data room", "Términos, estados financieros, proyecciones y uso de fondos."],
+  ["Contrato", "Firma legalizada, desembolso y primer reporte al cierre del mes."],
+];
+
 export default function InversionistasPage() {
   return (
-    <>
+    <div className="portada oscuro interior">
+      <Hero slides={[{ src: "/img/rl/pescador.jpg", cap: "Pescador artesanal en la costa peruana" }]}>
+        <span className="eyebrow">Inversionistas</span>
+        <Words as="h1" className="d1" text="Inversión paciente en empresas de impacto de América Latina" />
+        <p className="lead">Canalizamos capital privado hacia empresas de Perú y Colombia con historial de repago, con due diligence financiero y ESG y reporte mensual.</p>
+        <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a></div>
+      </Hero>
 
-  <Hero slides={[{ src: "/img/n2.jpg", cap: "Amazonía" }]}>
-<span className="eyebrow">Inversionistas</span>
-    <Words as="h1" className="d1" text="Inversión paciente en empresas de impacto de América Latina" />
-    <p className="lead">Canalizamos capital privado hacia empresas de impacto de Perú y Colombia con historial de repago. Cada operación pasa por due diligence financiero y ESG, y reportamos cada mes.</p>
-    <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a></div>
-  </Hero>
-
-  <section className="sec"><div className="wrap">
-    <div className="head"><span className="eyebrow">Tesis</span><Words as="h2" className="d2" text="Por qué invertimos en estas empresas" /></div>
-    <div className="faq">
-      <div><b className="d3">El negocio llega antes que el capital</b><p className="p2">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. Lo que suele faltar es un perfil de inversión bien construido.</p></div>
-      <div><b className="d3">La demanda de liquidez está validada</b><p className="p2">Hoy acceden a crédito caro, y aun así lo repagan y siguen siendo rentables.</p></div>
-      <div><b className="d3">Complementamos a otros fondos</b><p className="p2">Financiamos a empresas que ya repagaron a otros fondos de impacto. El historial con terceros es nuestro primer filtro de riesgo.</p></div>
-    </div>
-  </div></section>
-
-  <section className="sec tint"><div className="wrap">
-    <div className="head"><span className="eyebrow">Términos</span><Words as="h2" className="d2" text="Cómo se estructura la inversión" /></div>
-    <div className="tw"><table className="tbl"><tbody>
-      <tr><td>Enfoque</td><td>Inversión paciente de impacto, a través de un instrumento de deuda</td></tr>
-      <tr><td>Dilución</td><td>Ninguna. El inversionista no adquiere participación en las empresas</td></tr>
-      <tr><td>Rendimiento</td><td>Objetivo definido en los términos de cada ronda. No está garantizado y depende del desempeño de las empresas financiadas</td></tr>
-      <tr><td>Garantías</td><td>Las operaciones con empresas se respaldan con garantía hipotecaria</td></tr>
-      <tr><td>Formalización</td><td>Contrato privado con firmas legalizadas ante notario</td></tr>
-      <tr><td>Reporte</td><td>Mensual: caja, ventas, indicadores operativos y de impacto de cada empresa</td></tr>
-      <tr><td>Tasa, plazo y ticket</td><td className="lock">Se comparten en reunión, después de firmar el NDA</td></tr>
-    </tbody></table></div>
-  </div></section>
-
-  <section className="sec"><div className="wrap">
-    <div className="head"><span className="eyebrow">Originación</span><Words as="h2" className="d2" text="Cómo llega una empresa al fondo" /></div>
-    <ol className="steps">
-      <li><span className="n">01</span><b className="h4">Originación</b><p>Empresas acompañadas o preparadas por Redesign Lab, y referidas por fondos aliados.</p></li>
-      <li><span className="n">02</span><b className="h4">Screening</b><p>Historial de repago con terceros, ventas recurrentes y estados financieros.</p></li>
-      <li><span className="n">03</span><b className="h4">Due diligence</b><p>Revisión financiera, operativa, ESG y de impacto con nuestra metodología propia.</p></li>
-      <li><span className="n">04</span><b className="h4">Comité y monitoreo</b><p>Aprobación en comité, desembolso y seguimiento mensual hasta el repago.</p></li>
-    </ol>
-  </div></section>
-
-  <section className="sec tint"><div className="wrap">
-    <div className="head"><span className="eyebrow">Equipo</span><Words as="h2" className="d2" text="Quiénes evalúan cada operación" /></div>
-    <TeamMini />
-  </div></section>
-
-  <section className="sec"><div className="wrap">
-    <div className="head"><span className="eyebrow">Diligencia</span><Words as="h2" className="d2" text="Cuatro riesgos y cómo los mitigamos" /></div>
-    <div className="cols-2">
-      <div className="rule l"><span className="eyebrow s">Riesgos del instrumento</span>
-        <div className="stack">
-          <div><b className="h4">Riesgo de crédito</b><p className="p2 sm">La empresa puede no repagar en el plazo pactado.</p></div>
-          <div><b className="h4">Concentración</b><p className="p2 sm">Cada ronda financia a un número reducido de empresas.</p></div>
-          <div><b className="h4">Liquidez</b><p className="p2 sm">No existe mercado secundario. El capital queda comprometido hasta el vencimiento.</p></div>
-          <div><b className="h4">ESG e impacto</b><p className="p2 sm">Incumplimientos socioambientales en la operación o en la cadena de suministro, y desvíos frente a los resultados de impacto comprometidos.</p></div>
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Por qué invertimos en estas empresas</h2>
+        <div className="tarjetas t3">
+          <article className="tarjeta"><h3 className="tarjeta-t">El negocio llega antes que el capital</h3><p className="tarjeta-x">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. Lo que suele faltar es un perfil de inversión bien construido.</p></article>
+          <article className="tarjeta"><h3 className="tarjeta-t">La demanda de liquidez está validada</h3><p className="tarjeta-x">Hoy acceden a crédito caro, y aun así lo repagan y siguen siendo rentables.</p></article>
+          <article className="tarjeta naranja"><h3 className="tarjeta-t">Complementamos a otros fondos</h3><p className="tarjeta-x">Financiamos a empresas que ya repagaron a otros fondos de impacto. El historial con terceros es nuestro primer filtro de riesgo.</p></article>
         </div>
-      </div>
-      <div className="rule"><span className="eyebrow s">Cómo los mitigamos</span>
-        <div className="stack">
-          <div><b className="h4">Historial previo</b><p className="p2 sm">Solo financiamos a empresas que ya repagaron a otros financiadores.</p></div>
-          <div><b className="h4">Conocimiento operativo</b><p className="p2 sm">Acompañamos a las empresas antes y después de invertir, y vemos la operación antes que los estados financieros.</p></div>
-          <div><b className="h4">Garantía hipotecaria</b><p className="p2 sm">Cada operación de financiamiento directo cuenta con garantía real sobre un inmueble.</p></div>
-          <div><b className="h4">Due diligence ESG</b><p className="p2 sm">Evaluación socioambiental y de impacto antes de invertir, con indicadores que se reportan junto a los financieros.</p></div>
-          <div><b className="h4">Reporte mensual</b><p className="p2 sm">Caja, ventas e indicadores para detectar desvíos a tiempo.</p></div>
+      </div></section>
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Cómo se estructura la inversión</h2>
+        <div className="terminos">
+          {TERMINOS.map(([r, v]) => <div key={r} className="termino"><span>{r}</span><p>{v}</p></div>)}
+          <div className="termino naranja ancho"><span>Tasa, plazo y ticket</span><p>Se comparten en reunión, después de firmar el NDA</p></div>
         </div>
-      </div>
+      </div></section>
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Cómo llega una empresa al fondo</h2>
+        <ol className="tarjetas t4">
+          {ORIGINACION.map(([t, x], i) => (
+            <li key={t} className={`tarjeta${i === 2 ? " naranja" : ""}`}><span className="tarjeta-n">0{i + 1}</span><h3 className="tarjeta-t">{t}</h3><p className="tarjeta-x">{x}</p></li>
+          ))}
+        </ol>
+      </div></section>
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Quiénes evalúan cada operación</h2>
+        <TeamMini />
+      </div></section>
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Riesgos del instrumento y cómo los mitigamos</h2>
+        <div className="tarjetas">
+          <article className="tarjeta">
+            <span className="tarjeta-r">Riesgos</span>
+            <ul className="lista-tarjeta">
+              <li><b>Riesgo de crédito</b>La empresa puede no repagar en el plazo pactado.</li>
+              <li><b>Concentración</b>Cada ronda financia a un número reducido de empresas.</li>
+              <li><b>Liquidez</b>No existe mercado secundario. El capital queda comprometido hasta el vencimiento.</li>
+              <li><b>ESG e impacto</b>Incumplimientos socioambientales en la operación o en la cadena de suministro, y desvíos frente a los resultados de impacto comprometidos.</li>
+            </ul>
+          </article>
+          <article className="tarjeta naranja">
+            <span className="tarjeta-r">Cómo los mitigamos</span>
+            <ul className="lista-tarjeta">
+              <li><b>Historial previo</b>Solo financiamos a empresas que ya repagaron a otros financiadores.</li>
+              <li><b>Conocimiento operativo</b>Acompañamos a las empresas antes y después de invertir, y vemos la operación antes que los estados financieros.</li>
+              <li><b>Garantía hipotecaria</b>Cada operación de financiamiento directo cuenta con garantía real sobre un inmueble.</li>
+              <li><b>Due diligence ESG</b>Evaluación socioambiental y de impacto antes de invertir, con indicadores que se reportan junto a los financieros.</li>
+            </ul>
+          </article>
+        </div>
+      </div></section>
+
+      <section className="seccion"><div className="wrap">
+        <h2 className="d2 seccion-titulo">Pasos hasta la firma del contrato</h2>
+        <ol className="tarjetas t4">
+          {PROCESO.map(([t, x], i) => (
+            <li key={t} className="tarjeta"><span className="tarjeta-n">0{i + 1}</span><h3 className="tarjeta-t">{t}</h3><p className="tarjeta-x">{x}</p></li>
+          ))}
+        </ol>
+      </div></section>
+
+      <section className="sec final"><div className="wrap">
+        <Words as="h2" className="d2" text="Conversemos sobre la tesis y la ronda activa" />
+        <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a><a className="lnk" href={`mailto:${SITE.email}`}>{SITE.email}</a></div>
+      </div></section>
     </div>
-  </div></section>
-
-  <section className="sec tint"><div className="wrap">
-    <div className="head"><span className="eyebrow">Proceso</span><Words as="h2" className="d2" text="Pasos hasta la firma del contrato" /></div>
-    <ol className="steps">
-      <li><span className="n">01</span><b className="h4">Reunión inicial</b><p>30 minutos con el equipo sobre la tesis y tu perfil.</p></li>
-      <li><span className="n">02</span><b className="h4">NDA</b><p>Acuerdo de confidencialidad para acceder a los términos.</p></li>
-      <li><span className="n">03</span><b className="h4">Data room</b><p>Términos, estados financieros, proyecciones y uso de fondos.</p></li>
-      <li><span className="n">04</span><b className="h4">Contrato</b><p>Firma legalizada, desembolso y primer reporte al cierre del mes.</p></li>
-    </ol>
-  </div></section>
-
-  <section className="sec final"><div className="wrap">
-    <Words as="h2" className="d2" text="Conversemos sobre la tesis y la ronda activa" />
-    <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a><a className="lnk" href={`mailto:${SITE.email}`}>{SITE.email}</a></div>
-  </div></section>
-
-    </>
   );
 }
