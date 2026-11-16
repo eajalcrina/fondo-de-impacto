@@ -93,7 +93,7 @@ export const EQUIPO: Persona[] = [
     foto: "/img/equipo/lorenzo.jpg",
     linkedin: "https://www.linkedin.com/in/lorenzoortiz/",
     web: "https://lorenzoortiz.co",
-    bio: "Más de 13 años en operaciones industriales, proyectos de inversión y bionegocios, con una trayectoria en los grupos Breca y Gloria y como COO de Cotton Nation y Neofibers. Hoy es Technical Lead de Impact Investing de Swisscontact en Colombia y ha acompañado a más de 100 organizaciones en su preparación para la inversión.",
+    bio: "Más de 13 años en operaciones industriales, proyectos de inversión y bionegocios, con una trayectoria en los grupos Breca y Gloria y como COO de Cotton Nation y Neofibers. Ha acompañado a más de 100 organizaciones en su preparación para la inversión.",
     logros: [
       "Ha evaluado USD 85 MM de CAPEX industrial en proyectos de 7 países",
       "Integra el directorio del Grupo Cotton Nation y el Consejo CEIBA",
@@ -104,7 +104,7 @@ export const EQUIPO: Persona[] = [
     en: {
       cargo: "COO and co-founder",
       foco: "Fund operations, Bootcamp and platform",
-      bio: "He has more than 13 years of experience in industrial operations, investment projects and biobusiness, at the Breca and Gloria groups and as COO of Cotton Nation and Neofibers. He is currently Technical Lead for Impact Investing at Swisscontact in Colombia and has supported more than 100 organizations on investment readiness.",
+      bio: "He has more than 13 years of experience in industrial operations, investment projects and biobusiness, at the Breca and Gloria groups and as COO of Cotton Nation and Neofibers. He has supported more than 100 organizations on investment readiness.",
       logros: [
         "Has assessed USD 85 M of industrial CAPEX in projects across 7 countries",
         "Board member of Grupo Cotton Nation and member of the CEIBA Council",
