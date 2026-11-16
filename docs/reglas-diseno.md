@@ -63,13 +63,19 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - 16-11-2026: logos de organizaciones a la misma altura (34 px; 50 px los cuadrados) y en un solo tono (escala de grises), con la disposición de la web anterior: cuatro columnas por grupo. Se quitaron los fondos blancos de PRODUCE y WWF.
 - 16-11-2026: se mantiene el cinturón de fotos bajo el héroe de la web anterior (pedido del dueño; se detiene con movimiento reducido).
 - 16-11-2026: en los flujos, diagramas propios con la paleta. Ningún texto redundante.
+- 16-11-2026: los arcos punteados se quedan solo en las fotos (recorte anillo) y en las tarjetas del portafolio.
+- 16-11-2026: ninguna autoexplicación ni sobreexplicación en todo el sitio («Es gratis y toma dos minutos», «Sin costo y sin compromiso» fuera).
+- 16-11-2026: la sección previa al pie nunca comparte color con el pie. Los cierres de página van en naranja; la 404 va en arena.
+- 16-11-2026: el pie solo lleva el aviso legal de oferta pública; sin la nota de cifras con asterisco. Las cifras de la portada van sin nota debajo.
+- 16-11-2026: la ruta del capital se muestra como tres etapas numeradas sobre una línea, con dos destinos marcados con cuadrados (bosque y naranja).
+- 16-11-2026: la próxima cohorte se destaca en una etiqueta bosque dentro del cierre.
 - 16-11-2026: pasada de narrativa y voz sin IA sobre todos los textos, en la fase 3, cuando los textos pasen al archivo por idioma.
 - 16-11-2026: `vercel.json` apaga las vistas previas automáticas de las ramas `claude/*`.
 - 16-11-2026: el dueño pide ver la combinación que recomienda el asesor (B2 con el encabezado sólido y los dos botones de B1) como lámina B3, con la foto del río en el héroe.
 - 16-11-2026: el acento se acerca más al naranja de la referencia. Naranja `#c94e10` (4,6:1 con blanco) para botón, bloques de color, banda de cierre, pictogramas y palabra clave sobre claro; naranja claro `#f07a3e` (5,7:1 sobre bosque) para la palabra clave sobre bosque. `#994215` queda para texto pequeño sobre claro. Reemplaza a la propuesta `#c0541c`.
 - 16-11-2026: el dueño confirma que Cotton Nation, Endemics, Rare by, GreenProd y Ecovive también son inversiones de Fondo de Impacto. Se muestran todos los logos de organizaciones. Las fotos actuales se pueden usar: no hay problema de permisos.
 - 16-11-2026: el encabezado se mantiene verde (no negro). Aprobado: bosque profundo `#123524` en lugar de `#132617` para encabezado y superficies oscuras (blanco 13,5:1; naranja claro 4,8:1).
-- 16-11-2026: el bosque profundo no se usa liso en superficies grandes. Lleva como textura los anillos de puntos del isotipo, al 12 a 16% de opacidad, detrás del texto (héroe, tarjeta oscura y pie).
+- 16-11-2026 (reemplazada el mismo día): el dueño rechazó la textura de anillos de puntos en héroe, tarjetas, cierres y pie. Las superficies de color llevan como marca editorial un cuadrado sólido de 16 px (20 px en escritorio) en la esquina superior izquierda: naranja claro sobre bosque y salvia, bosque sobre naranja.
 - 16-11-2026: se comparan cuatro recortes de foto (hoja, anillo, pendiente y ventana). Recomendado: anillo, que sale del isotipo. Elegido por el dueño: anillo, cuidando que el arco no corte caras.
 
 ## 8. Plantillas para contenido en serie
@@ -89,4 +95,5 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - Pendiente (fase 4): rediseñar Empresas, Bootcamp, Pasaporte, Inversionistas, Nosotros y Privacidad con el sistema; pasar sus textos a `lib/i18n/es.ts` con la pasada de voz; imágenes para compartir por página; fila desalineada en /empresas.
 - Revisión del asesor sobre el piloto: 27 hallazgos; corregidos los de orden de la portada, textos redundantes, cifras, logos, diagrama de la ruta, anillos, selector de idioma en celular y estilos en línea.
 - Línea base de capturas: carpeta de trabajo de la sesión (16-11-2026), 9 rutas en escritorio y celular.
-- Esperando decisión del dueño: aprobación del piloto; datos por empresa del portafolio (país, año, instrumento); fuente de «+120 comunidades»; recrear el logo con la firma «by Redesign Lab».
+- Ronda de pedidos sobre el piloto (16-11-2026) aplicada: marca de esquina, cierres en naranja, ruta del capital, cohorte destacada, auditoría de voz del asesor.
+- Esperando decisión del dueño: datos por empresa del portafolio (país, año, instrumento); fuente de «+120 comunidades»; recrear el logo con la firma «by Redesign Lab».

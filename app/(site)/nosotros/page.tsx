@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
-import { Ring } from "@/components/site/Ring";
 import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
 import { TeamFull } from "@/components/site/Team";
@@ -29,7 +28,7 @@ export default function NosotrosPage() {
     <div className="stats num">
       <div><b>USD 1.2 MM</b><span>en fondos no reembolsables</span></div>
       <div><b>USD 1.5 MM</b><span>en capital de impacto, principalmente deuda</span></div>
-      <div><b>+10</b><span>empresas invertidas en América Latina</span></div>
+      <div><b>+10</b><span>empresas en nuestro portafolio en América Latina</span></div>
       <div><b>USD 26 MM</b><span>facturación del portafolio en 2025 (28% más que en 2024)</span></div>
       <div><b>+120</b><span>comunidades con impacto directo</span></div>
     </div>

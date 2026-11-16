@@ -16,9 +16,7 @@
     border: 3px dotted var(--naranja-claro); border-radius: 50%;
     clip-path: inset(0 0 50% 50%); pointer-events: none;
   }
-  .tarjeta-cuerpo { position: relative; overflow: hidden; background: var(--c); padding: 28px 24px 32px; display: grid; gap: 12px; align-content: start; }
-  .tarjeta-cuerpo > :not(.anillos) { position: relative; }
-  .tarjeta-cuerpo .anillos { width: 300px; right: -130px; bottom: -130px; top: auto; opacity: 0.16; }
+  .tarjeta-cuerpo { background: var(--c); padding: 28px 24px 32px; display: grid; gap: 12px; align-content: start; }
   @media (min-width: 900px) { .tarjeta-cuerpo { grid-row: span 4; grid-template-rows: subgrid; padding: 36px 32px 40px; row-gap: 14px; } }
   .tarjeta-cuerpo .eyebrow { color: var(--blanco); }
   .tarjeta-cuerpo p { font-size: 15px; line-height: 1.6; }
@@ -32,7 +30,7 @@
   @media (min-width: 640px) { .cifras { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; } }
   @media (min-width: 1100px) { .cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .cifra-item { display: grid; grid-template-columns: 60px 1fr; column-gap: 16px; row-gap: 4px; align-items: center; }
-  .cifra-item .pict { grid-row: span 2; width: 60px; height: 60px; border-radius: 50%; background: var(--blanco); display: grid; place-items: center; }
+  .cifra-item .pict { grid-row: span 2; width: 60px; height: 60px; border-radius: 50%; background: var(--arena); display: grid; place-items: center; }
   .cifra-item .pict svg { width: 28px; height: 28px; }
   .cifra-item .cifra { font-size: 38px; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
   .cifra-item .mas { font-family: var(--f-sans); font-size: 0.72em; line-height: 0; position: relative; top: -0.12em; margin-right: 0.04em; }
@@ -41,8 +39,8 @@
   @media (min-width: 1100px) {
     .cifras { grid-template-rows: auto auto auto; row-gap: 0; }
     .cifra-item { grid-row: span 3; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); row-gap: 14px; align-items: start; }
-    .cifra-item .pict { grid-row: auto; width: 80px; height: 80px; }
-    .cifra-item .pict svg { width: 38px; height: 38px; }
+    .cifra-item .pict { grid-row: auto; width: 64px; height: 64px; }
+    .cifra-item .pict svg { width: 30px; height: 30px; }
     .cifra-item .cifra { font-size: 50px; }
     .cifra-item > span:last-child { font-size: 15px; }
   }
@@ -68,6 +66,12 @@
   @media (min-width: 1100px) { .portafolio { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
   .empresa { background: var(--blanco); padding: 24px; display: grid; grid-template-rows: auto 1fr auto; gap: 10px; border-radius: 0 calc(var(--hoja) / 2) 0 0; }
   @media (min-width: 1100px) { .empresa { min-height: 180px; } }
+  .empresa { position: relative; }
+  .empresa::after {
+    content: ""; position: absolute; top: 8px; right: 8px;
+    width: calc(var(--hoja) - 16px); height: calc(var(--hoja) - 16px);
+    border: 3px dotted var(--naranja); border-radius: 50%; clip-path: inset(0 0 50% 50%); pointer-events: none;
+  }
   .empresa h3 { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 26px; line-height: 1.1; }
   .empresa p { font-size: 14px; line-height: 1.5; color: var(--t2); }
 
@@ -86,6 +90,9 @@
   .cierre { background: var(--naranja); color: var(--blanco); padding-block: 72px; }
   .cierre .wrap { display: grid; gap: 24px; align-items: end; }
   .cierre .eyebrow { color: var(--blanco); }
+  .cohorte { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; justify-self: start; background: var(--bosque); color: var(--blanco); padding: 10px 16px; font-size: 15px; }
+  .cohorte span { color: var(--naranja-claro); font-weight: 600; }
+  .cohorte b { font-weight: 600; }
   .cierre h2 { max-width: 18ch; }
   .cierre .btn { background: var(--blanco); color: var(--terracota); }
   .cierre .btn:hover { background: var(--arena); }
@@ -105,23 +112,28 @@
   .titular.con-accion { max-width: none; grid-template-columns: minmax(0, 1fr); align-items: end; }
   @media (min-width: 860px) { .titular.con-accion { grid-template-columns: minmax(0, 1fr) auto; } }
 
-  /* Ruta del capital: diagrama con los puntos del isotipo */
-  .ruta { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--linea-2); display: flex; flex-direction: column; gap: 0; }
-  .ruta-nodo { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; }
-  .ruta-nodo i { flex-shrink: 0; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--salvia); background: var(--blanco); }
-  .ruta-nodo.prep i { background: var(--salvia); }
-  .ruta-nodo.red i { background: var(--bosque); border-color: var(--bosque); }
-  .ruta-nodo.fondo i { background: var(--naranja); border-color: var(--naranja); }
-  .ruta-linea { width: 0; height: 32px; margin-left: 7px; border-left: 2px dotted var(--salvia); }
-  .ruta-destinos { display: grid; gap: 16px; padding-left: 7px; border-left: 2px dotted var(--salvia); margin-left: 7px; }
-  .ruta-destinos .ruta-nodo { margin-left: -9px; }
+  /* Ruta del capital: tres etapas numeradas sobre una línea, con flecha entre etapas */
+  .ruta { margin: 64px 0 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; counter-reset: etapa; }
+  .ruta-etapa { position: relative; display: grid; gap: 6px; align-content: start; padding: 20px 0 28px; border-top: 2px solid var(--bosque); }
+  .ruta-n { font-size: 13px; font-weight: 500; color: var(--terracota); font-variant-numeric: tabular-nums; }
+  .ruta-t { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 26px; line-height: 1.12; }
+  .ruta-d { font-size: 15px; color: var(--t2); }
+  .ruta-destinos { display: grid; gap: 10px; margin-top: 10px; }
+  .ruta-destinos li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; }
+  .ruta-destinos li::before { content: ""; flex-shrink: 0; width: 12px; height: 12px; background: var(--bosque); }
+  .ruta-destinos li.fondo::before { background: var(--naranja); }
   @media (min-width: 900px) {
-    .ruta { flex-direction: row; align-items: center; }
-    .ruta-linea { flex: 1; width: auto; height: 0; margin: 0 16px; border-left: 0; border-top: 2px dotted var(--salvia); min-width: 40px; }
-    .ruta-destinos { gap: 24px; padding: 8px 0 8px 16px; margin-left: 0; }
-    .ruta-destinos .ruta-nodo { margin-left: -25px; }
+    .ruta { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 48px; }
+    .ruta-t { font-size: 30px; }
+    /* Flecha que une las etapas sobre la línea */
+    .ruta-etapa:not(:last-child)::after {
+      content: ""; position: absolute; top: -7px; right: -36px; width: 12px; height: 12px;
+      border-top: 2px solid var(--bosque); border-right: 2px solid var(--bosque); transform: rotate(45deg);
+    }
+    .ruta-etapa:last-child { border-top-color: var(--naranja); }
   }
 }
 @layer componentes {
   .titular.sin-margen { margin-bottom: 0; }
 }
+@layer componentes { .tint .cifra-item .pict { background: var(--blanco); } }

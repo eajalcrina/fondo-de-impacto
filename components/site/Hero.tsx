@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Anillos } from "./Ring";
 
 export type Slide = { src: string; cap: string };
 
@@ -12,7 +11,6 @@ export function Hero({ slides, split = false, children }: { slides: Slide[]; spl
   if (split) {
     return (
       <section className="hero dk">
-        <Anillos donde="arriba" />
         <div className="wrap hero-2">{children}</div>
       </section>
     );
@@ -24,7 +22,6 @@ export function Hero({ slides, split = false, children }: { slides: Slide[]; spl
         <Image src={foto.src} alt={foto.cap} fill priority sizes="(min-width: 900px) 58vw, 100vw" />
       </div>
       <div className="heroe-panel">
-        <Anillos donde="abajo" />
         {children}
       </div>
     </section>

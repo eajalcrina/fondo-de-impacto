@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
-import { Ring } from "@/components/site/Ring";
 import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
 import { TeamMini } from "@/components/site/Team";
@@ -89,7 +88,7 @@ export default function InversionistasPage() {
     </ol>
   </div></section>
 
-  <section className="sec final dk"><Ring size={1400} /><div className="wrap">
+  <section className="sec final dk"><div className="wrap">
     <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text="Conversemos sobre la tesis y la ronda activa" />
     <p className="lead">Al terminar la reunión recibes el NDA para acceder a los términos.</p>
     <div className="cta-row" style={{ justifyContent: "center" }}><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a><a className="btn btn-g" href={`mailto:${SITE.email}`}>fondodeimpacto@redesignlab.org</a></div>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
-import { Ring } from "@/components/site/Ring";
 import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
 import { LeadForm } from "@/components/site/LeadForm";
@@ -62,7 +61,6 @@ export default function BootcampPage() {
       <ul className="check"><li>Tesis de inversión y estructura de capital definidas</li><li>Modelo financiero y plan de uso de fondos</li><li>Teaser y pitch deck con estándar de comité</li><li>Data room ordenado, con indicadores ESG y de impacto</li><li>Tu teaser en el FI Deal Room, con el distintivo del Bootcamp</li></ul>
     </div>
     <div className="feature dk" style={{ gridTemplateColumns: "1fr", gap: "16px" }}>
-      <Ring size={1120} />
       <span className="eyebrow">Sesión con fondos aliados</span>
       <h3 className="d3">Las empresas que aprueben la evaluación final presentan ante fondos de impacto aliados</h3>
       <p className="p2">Una sesión con inversionistas de nuestra red, preparada para que cada empresa llegue con su caso completo.</p>
@@ -127,7 +125,7 @@ export default function BootcampPage() {
     <Consultas />
   </div></section>
 
-  <section className="sec final"><Ring size={1400} /><div className="wrap">
+  <section className="sec final"><div className="wrap">
     <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text={`La próxima cohorte empieza el ${SITE.cohorte.inicio.toLowerCase()}, con ${SITE.cohorte.cupos} cupos`} />
     <p className="lead">¿No sabes si es tu momento? Mira primero cuántos fondos calzan con tu empresa.</p>
     <div className="cta-row" style={{ justifyContent: "center" }}><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="btn btn-g" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>

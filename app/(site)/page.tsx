@@ -6,7 +6,6 @@ import { es } from "@/lib/i18n/es";
 import { Ranges } from "@/components/site/Ranges";
 import { PhotoBelt } from "@/components/site/PhotoBelt";
 import { Allies } from "@/components/site/Allies";
-import { Anillos } from "@/components/site/Ring";
 import { Cifras } from "@/components/site/Cifras";
 import { Clave } from "@/components/site/Clave";
 
@@ -15,7 +14,6 @@ const t = es.inicio;
 export const metadata: Metadata = { description: t.meta };
 
 export default function HomePage() {
-  const nodos = t.proceso.nodos;
   return (
     <>
       <section className="heroe">
@@ -23,7 +21,6 @@ export default function HomePage() {
           <Image src="/img/n2.jpg" alt={t.heroe.foto} fill priority sizes="(min-width: 900px) 58vw, 100vw" style={{ objectPosition: "30% 60%" }} />
         </div>
         <div className="heroe-panel">
-          <Anillos donde="abajo" />
           <span className="eyebrow">{t.heroe.rotulo}</span>
           <h1 className="d1"><Clave partes={t.heroe.titulo} /></h1>
           <p className="lead">{t.heroe.bajada}</p>
@@ -38,7 +35,6 @@ export default function HomePage() {
       <section className="sec tint"><div className="wrap">
         <div className="titular"><span className="eyebrow">{t.cifras.rotulo}</span></div>
         <Cifras items={t.cifras.items} />
-        <p className="nota-cifras">{t.cifras.nota}</p>
       </div></section>
 
       <section className="sec"><div className="wrap">
@@ -51,7 +47,6 @@ export default function HomePage() {
             <article key={c.titulo} className={`tarjeta ${c.clase}`}>
               <div className="tarjeta-foto"><div className="marco"><Image src={c.foto} alt={c.alt} fill sizes="(min-width: 900px) 33vw, 100vw" style={{ objectPosition: c.pos }} /></div></div>
               <div className="tarjeta-cuerpo">
-                {c.clase === "" && <Anillos donde="abajo" />}
                 <span className="eyebrow">{c.rotulo}</span>
                 <h3 className="d3">{c.titulo}</h3>
                 <p>{c.texto}</p>
@@ -80,16 +75,20 @@ export default function HomePage() {
           </div>
           <div className="foto-anillo"><div className="marco"><Image src="/img/h09.jpg" alt={t.porQue.foto} fill sizes="(min-width: 900px) 55vw, 100vw" style={{ objectPosition: "50% 42%" }} /></div></div>
         </div>
-        <div className="ruta" role="img" aria-label={`${t.proceso.etiqueta}: ${nodos.join(", ")}`}>
-          <div className="ruta-nodo"><i />{nodos[0]}</div>
-          <span className="ruta-linea" />
-          <div className="ruta-nodo prep"><i />{nodos[1]}</div>
-          <span className="ruta-linea" />
-          <div className="ruta-destinos">
-            <div className="ruta-nodo red"><i />{nodos[2]}</div>
-            <div className="ruta-nodo fondo"><i />{nodos[3]}</div>
-          </div>
-        </div>
+        <figure className="ruta" aria-label={t.proceso.etiqueta}>
+          {t.proceso.etapas.map((e, i) => (
+            <div key={e.n} className="ruta-etapa">
+              <span className="ruta-n">{e.n}</span>
+              <span className="ruta-t">{e.t}</span>
+              {e.d && <span className="ruta-d">{e.d}</span>}
+              {i === t.proceso.etapas.length - 1 && (
+                <ul className="ruta-destinos">
+                  {t.proceso.destinos.map((d, j) => <li key={d} className={j === 0 ? "red" : "fondo"}>{d}</li>)}
+                </ul>
+              )}
+            </div>
+          ))}
+        </figure>
       </div></section>
 
       <section className="sec arena"><div className="wrap">
@@ -118,7 +117,7 @@ export default function HomePage() {
 
       <section className="cierre"><div className="wrap">
         <div className="titular sin-margen">
-          <span className="eyebrow">{t.cierre.rotuloPrefijo}{SITE.cohorte.inicio.toLowerCase()}</span>
+          <p className="cohorte"><span>{t.cierre.cohorte}</span><b>{SITE.cohorte.inicio}</b></p>
           <h2 className="d2">{t.cierre.titulo}</h2>
         </div>
         <div className="cta-row">

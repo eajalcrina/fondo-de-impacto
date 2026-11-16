@@ -1,16 +1,13 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { es } from "@/lib/i18n/es";
-import fuentes from "@/lib/fuentes.json";
 import { Logo } from "./Logo";
-import { Anillos } from "./Ring";
 
 const t = es.pie;
 
 export function Footer() {
   return (
     <footer className="foot">
-      <Anillos donde="abajo" />
       <div className="wrap">
         <div className="grid">
           <div>
@@ -22,8 +19,7 @@ export function Footer() {
           <div><b>{t.contacto}</b><ul><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li><a href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer">{es.nav.agendar}</a></li></ul></div>
         </div>
         <div className="legal">
-          <p>{t.legalCifras} {t.legalFuentes(fuentes.length)}</p>
-          <p>{t.legalOferta} © {new Date().getFullYear()} Redesign Ventures SAC.</p>
+          <p>{t.legalOferta} {t.derechos(new Date().getFullYear())}</p>
         </div>
       </div>
     </footer>

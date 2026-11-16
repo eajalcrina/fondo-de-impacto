@@ -7,7 +7,6 @@ import { report, TIPOS, type Fuente, type Query } from "@/lib/matching";
 import { SITE } from "@/lib/site";
 import { sendLead } from "./LeadForm";
 import { track } from "@/lib/analytics";
-import { Ring } from "./Ring";
 
 const F = fuentes as Fuente[];
 const EJEMPLO: Query = { rubro: "alimentos_bebidas", pais: "PE", tipo: "de", rango: 1 };
@@ -73,7 +72,6 @@ export function Finder() {
       </form>
 
       <div className="report dk" id="reporte" aria-live="polite">
-        <Ring size={1040} />
         <div className="rep-top"><span>{ejemplo ? "Ejemplo de reporte preliminar" : "Reporte preliminar"}</span><b>{datos?.razon_social || "Tu empresa"}</b></div>
         <div className="rep-chips">
           <span>{etiqueta(RUBROS, q.rubro)}</span><span>{etiqueta(PAISES, q.pais)}</span><span>{etiqueta(TIPOS_OPC, q.tipo)}</span><span>{etiqueta(RANGOS_OPC, String(q.rango))}</span>

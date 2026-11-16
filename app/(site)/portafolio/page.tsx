@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
-import { Anillos } from "@/components/site/Ring";
 import { Cifras } from "@/components/site/Cifras";
 import { Clave } from "@/components/site/Clave";
 import { SITE, PORTAFOLIO } from "@/lib/site";
@@ -34,7 +33,6 @@ export default function PortafolioPage() {
         <div className="titular">
           <span className="eyebrow">{t.empresas.rotulo}</span>
           <h2 className="d2">{t.empresas.titulo}</h2>
-          <p className="p2">{t.empresas.bajada}</p>
         </div>
         <div className="portafolio">
           {PORTAFOLIO.map((p) => (
@@ -44,7 +42,6 @@ export default function PortafolioPage() {
       </div></section>
 
       <section className="sec final dk">
-        <Anillos donde="centro" />
         <div className="wrap">
           <div className="titular sin-margen">
             <h2 className="d2">{t.cierre.titulo}</h2>

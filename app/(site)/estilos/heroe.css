@@ -1,13 +1,10 @@
-/* Héroe partido: una sola foto fija y el mensaje en un panel bosque con textura de anillos. */
+/* Héroe partido: una sola foto fija y el mensaje en un panel bosque con la marca de esquina. */
 @layer componentes {
   .hero { position: relative; }
   .heroe { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--bosque); color: var(--blanco); }
   .heroe-foto { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
   .heroe-foto img { object-fit: cover; }
   .heroe-panel { position: relative; overflow: hidden; display: grid; align-content: center; gap: 20px; padding: 40px var(--gut) 48px; }
-  .heroe-panel > :not(.anillos) { position: relative; }
-  .heroe-panel .anillos { width: min(300px, 80vw); right: -190px; bottom: -190px; }
-  @media (min-width: 900px) { .heroe-panel .anillos { width: 520px; right: -290px; bottom: -300px; } }
   .heroe-panel h1 { max-width: 14ch; }
   .heroe-panel .eyebrow { color: var(--sobre-oscuro); }
   .heroe-panel .kw { color: var(--naranja-claro); }
@@ -23,7 +20,9 @@
 
   /* Héroe de páginas interiores: panel bosque con título y foto a la derecha */
   .hero.dk { padding-block: 56px 64px; }
-  .hero.dk .hero-in { display: grid; gap: 20px; max-width: 860px; position: relative; }
+  .hero-in { display: grid; gap: 20px; max-width: 860px; position: relative; }
+  .hero.claro { background: var(--arena); padding-block: 72px; }
+  @media (min-width: 860px) { .hero.claro { padding-block: 120px; } }
   .hero-2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: center; position: relative; }
   @media (min-width: 860px) {
     .hero.dk { padding-block: 96px; }

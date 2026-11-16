@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
-import { Ring } from "@/components/site/Ring";
 import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
 import { LeadForm } from "@/components/site/LeadForm";
@@ -18,7 +17,7 @@ export default function PasaportePage() {
 
   <Hero slides={[{ src: "/img/h04.jpg", cap: "Cacao" }]} split>
 <div className="stack" style={{ gap: "26px" }}>
-      <span className="eyebrow">Pasaporte de Inversión sin costo</span>
+      <span className="eyebrow">Pasaporte de Inversión</span>
       <Words as="h1" className="d1" style={{ fontSize: "clamp(40px,5.8vw,72px)" }} text="Un solo perfil. Más de 50 fondos de impacto" />
       <p className="lead">Completa el Pasaporte de Inversión de tu empresa una sola vez y abre la puerta al capital que estás buscando. No pagas nada: solo inviertes unos 40 minutos. Con esa información preparamos un teaser confidencial con estándar de comité y lo presentamos a los fondos de nuestra red cuya tesis coincide con tu empresa.</p>
       <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><Link className="lnk q" href="/pasaporte#buscador">Ver fondos disponibles</Link></div>
@@ -88,7 +87,7 @@ export default function PasaportePage() {
 
   <section className="sec tint" id="completar"><div className="wrap split">
     <div className="stack" style={{ gap: 14 }}>
-      <span className="eyebrow">Acceso anticipado sin costo</span>
+      <span className="eyebrow">Acceso anticipado</span>
       <Words as="h2" className="d2" text="Solicita acceso al Pasaporte de Inversión" />
       <p className="p2">El Pasaporte de Inversión abre por etapas. Déjanos tus datos y te avisamos cuando tu acceso esté listo. No cuesta nada: solo inviertes tu tiempo, y abre la puerta al capital que estás buscando.</p>
     </div>
@@ -108,7 +107,7 @@ export default function PasaportePage() {
     />
   </div></section>
 
-  <section className="sec final dk"><Ring size={1400} /><div className="wrap">
+  <section className="sec final dk"><div className="wrap">
     <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text="Más de 50 fondos buscan empresas de impacto en América Latina" />
     <p className="lead">Haz que conozcan la tuya. Cuesta USD 0, solo tu tiempo.</p>
     <Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link>

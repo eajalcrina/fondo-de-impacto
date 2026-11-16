@@ -52,7 +52,7 @@ export const EQUIPO: Persona[] = [
     foto: "/img/eddie.jpg",
     linkedin: "https://www.linkedin.com/in/eddieajalcrina/",
     web: "https://eddieajalcrina.com",
-    bio: "Lleva más de quince años demostrando que sostenibilidad y rentabilidad son la misma apuesta: como ejecutivo corporativo en ingredientes marinos y nutrición acuícola, como cofundador de empresas y como director independiente. Trabaja en las dos puntas de la cadena de valor, con productores de la Amazonía y con marcas, compradores e inversionistas globales. En Fondo de Impacto lidera la estrategia y la relación con fondos de impacto, agencias de cooperación e inversionistas.",
+    bio: "Lleva más de quince años como ejecutivo corporativo en ingredientes marinos y nutrición acuícola, cofundador de empresas y director independiente. Trabaja en las dos puntas de la cadena de valor, con productores de la Amazonía y con marcas, compradores e inversionistas globales.",
     logros: [
       "Participó en la estructuración de un green loan de USD 80 MM (Bank of America y Banco Mundial) en su etapa corporativa",
       "Coordinó el Programa Negocios Sostenibles y el Equipo Europa, Transición Circular de la Delegación de la Unión Europea en el Perú",
@@ -66,7 +66,7 @@ export const EQUIPO: Persona[] = [
     foco: "Operación del fondo, Bootcamp y plataforma",
     foto: "/img/lorenzo.jpg",
     linkedin: "https://www.linkedin.com/in/lorenzoortiz/",
-    bio: "Llegó al ecosistema de impacto desde las operaciones de los grupos Breca y Gloria, donde pasó más de doce años en gerencia de operaciones y en proyectos de inversión e innovación. Sabe que la diferencia entre una buena idea y una empresa que funciona es operativa. En Fondo de Impacto dirige la operación del fondo, el Bootcamp y la plataforma del Pasaporte de Inversión.",
+    bio: "Pasó más de doce años en los grupos Breca y Gloria, en gerencia de operaciones y en proyectos de inversión e innovación.",
     logros: [
       "Integra el directorio del Grupo Cotton Nation y ha sido miembro independiente de directorios de otras empresas",
       "LATAM Fellow de Singularity University",
@@ -80,7 +80,7 @@ export const EQUIPO: Persona[] = [
     foco: "Due diligence, comité de inversión y cartera",
     foto: "/img/eduardo.jpg",
     linkedin: "https://www.linkedin.com/in/eduardo-mari%C3%B1os-2aa467a6/",
-    bio: "Más de 8 años en finanzas corporativas, crédito e inversión de impacto en América Latina. Originó y estructuró inversiones de deuda en empresas de impacto de Perú y Colombia para un fondo de impacto internacional, y gestionó carteras de crédito en banca corporativa y comercial.",
+    bio: "Más de ocho años en finanzas corporativas, crédito e inversión de impacto en América Latina. Originó y estructuró inversiones de deuda en empresas de impacto de Perú y Colombia para un fondo de impacto internacional, y gestionó carteras de crédito en banca corporativa y comercial.",
     logros: [
       "Más de 100 empresas evaluadas para inversión",
       "Cerca de USD 100 MM en operaciones de crédito aprobadas",

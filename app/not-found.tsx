@@ -2,7 +2,6 @@ import Link from "next/link";
 import "./(site)/site.css";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { Anillos } from "@/components/site/Ring";
 
 export const metadata = { title: "Página no encontrada | Fondo de Impacto", robots: { index: false } };
 
@@ -11,8 +10,7 @@ export default function NotFound() {
     <>
       <Nav />
       <main>
-        <section className="hero dk">
-          <Anillos donde="arriba" />
+        <section className="hero claro">
           <div className="wrap">
             <div className="hero-in">
               <span className="eyebrow">Error 404</span>

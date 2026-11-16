@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
-import { Ring } from "@/components/site/Ring";
 import { Words } from "@/components/site/Words";
 import { SITE } from "@/lib/site";
 import { Teaser } from "@/components/site/Teaser";
@@ -23,8 +22,8 @@ export default function EmpresasPage() {
       <span className="eyebrow">Empieza aquí: ¿cuánto capital necesitas?</span>
       <Words as="h2" className="d2" text="Mira cuántos fondos financian a empresas como la tuya" />
       <p className="lead">Indica tu rubro, tu país y el capital que buscas. El buscador revisa 456 fuentes públicas de capital de impacto y te dice cuántas calzan contigo y cuántas tienen convocatoria abierta.</p>
-      <ul className="check"><li>Gratis y en dos minutos.</li><li>Recibes una copia del reporte por correo.</li><li>Según el resultado, te recomendamos la ruta: Bootcamp o financiamiento directo.</li><li>Te respondemos {SITE.respuesta}.</li></ul>
-      <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#buscador">Ver fondos para mi empresa</Link><span className="xs">Sin costo y sin compromiso.</span></div>
+      <ul className="check"><li>Recibes una copia del reporte por correo.</li><li>Según el resultado, te recomendamos la ruta: Bootcamp o financiamiento directo.</li><li>Te respondemos {SITE.respuesta}.</li></ul>
+      <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
     </div>
     <Teaser />
   </div></section>
@@ -74,7 +73,7 @@ export default function EmpresasPage() {
   </div></section>
 
   <section className="sec" style={{ paddingTop: 0, borderTop: 0 }}><div className="wrap">
-    <div className="band dk"><Ring size={880} />
+    <div className="band dk">
       <div className="band-in"><span className="eyebrow">Para fondos y cooperación</span><Words as="h2" className="d3" text="Accede a nuestro portafolio privado de empresas con investment readiness" /><p className="p2 sm">Opera con nosotros programas de asistencia técnica para tu cartera y co-invierte en esquemas de blended finance.</p></div>
       <a className="btn btn-g" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Solicitar acceso al portafolio</a>
     </div>

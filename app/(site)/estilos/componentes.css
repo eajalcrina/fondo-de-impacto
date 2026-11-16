@@ -1,11 +1,17 @@
 /* Componentes de contenido compartidos por las páginas. Bordes rectos y líneas de 1 px. */
 @layer componentes {
-  /* Textura de anillos del isotipo sobre bosque */
-  .anillos { position: absolute; pointer-events: none; opacity: 0.14; color: var(--salvia); }
-  .dk .anillos, .heroe .anillos, .feature .anillos, .band .anillos, .report .anillos, .foot .anillos { color: var(--blanco); }
-  .anillos.d-abajo { right: -180px; bottom: -200px; width: min(520px, 130vw); aspect-ratio: 1; }
-  .anillos.d-arriba { right: -160px; top: -180px; width: min(460px, 120vw); aspect-ratio: 1; }
-  .anillos.d-centro { left: 50%; top: 50%; width: min(900px, 220vw); aspect-ratio: 1; transform: translate(-50%, -50%); opacity: 0.08; }
+  /*
+   * Marca editorial: un cuadrado sólido en la esquina superior izquierda de cada superficie de color.
+   * Reemplaza a la textura de anillos (rechazada por el dueño el 16-11-2026).
+   */
+  :is(.heroe-panel, .tarjeta-cuerpo, .foot, .final, .cierre, .hero.dk, .feature, .band, .report) { position: relative; }
+  :is(.heroe-panel, .tarjeta-cuerpo, .foot, .final, .cierre, .hero.dk, .feature, .band, .report)::before {
+    content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 16px; background: var(--marca, var(--naranja-claro));
+  }
+  @media (min-width: 900px) {
+    :is(.heroe-panel, .tarjeta-cuerpo, .foot, .final, .cierre, .hero.dk, .feature, .band, .report)::before { width: 20px; height: 20px; }
+  }
+  .final, .cierre, .tarjeta.naranja .tarjeta-cuerpo { --marca: var(--bosque); }
 
   /* Puente empresas, fondo y capital */
   .bridge { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }
@@ -33,7 +39,6 @@
 
   /* Bloque destacado (Bootcamp) */
   .feature { position: relative; overflow: hidden; background: var(--bosque); color: var(--blanco); padding: 32px 24px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .feature > :not(.anillos) { position: relative; }
   @media (min-width: 860px) { .feature { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 40px 56px; padding: 56px; } }
   .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; border: 1px solid var(--linea-oscura); padding: 6px 12px; }
   .badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--naranja-claro); }
@@ -45,7 +50,6 @@
 
   /* Franja de cierre de sección */
   .band { position: relative; overflow: hidden; padding: 32px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; background: var(--bosque); color: var(--blanco); }
-  .band > :not(.anillos) { position: relative; }
   @media (min-width: 860px) { .band { padding: 48px; } }
   .band-in { display: grid; gap: 12px; max-width: 620px; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
