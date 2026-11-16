@@ -1,0 +1,46 @@
+/* Héroe partido: una sola foto fija y el mensaje en un panel bosque con textura de anillos. */
+@layer componentes {
+  .hero { position: relative; }
+  .heroe { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--bosque); color: var(--blanco); }
+  .heroe-foto { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+  .heroe-foto img { object-fit: cover; }
+  .heroe-panel { position: relative; overflow: hidden; display: grid; align-content: center; gap: 20px; padding: 40px var(--gut) 48px; }
+  .heroe-panel > :not(.anillos) { position: relative; }
+  .heroe-panel .anillos { width: min(300px, 80vw); right: -150px; bottom: -150px; }
+  @media (min-width: 900px) { .heroe-panel .anillos { width: 520px; right: -200px; bottom: -220px; } }
+  .heroe-panel h1 { max-width: 14ch; }
+  .heroe-panel .eyebrow { color: var(--sobre-oscuro); }
+  .heroe-panel .kw { color: var(--naranja-claro); }
+  .heroe-panel .btn-g { border-color: rgba(255, 255, 255, 0.7); color: var(--blanco); }
+  .heroe-panel .btn-g:hover { background: var(--blanco); color: var(--bosque); }
+  .heroe-panel .lead { color: var(--sobre-oscuro); max-width: 44ch; }
+  @media (min-width: 900px) {
+    .heroe { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); min-height: min(740px, calc(100vh - var(--alto-nav))); }
+    .heroe-foto { aspect-ratio: auto; }
+    .heroe-panel { padding: 64px var(--gut) 64px 56px; gap: 28px; }
+  }
+  @media (min-width: 1100px) { .heroe-panel h1 { font-size: 62px; line-height: 1.02; } }
+
+  /* Héroe de páginas interiores: panel bosque con título y foto a la derecha */
+  .hero.dk { padding-block: 56px 64px; }
+  .hero.dk .hero-in { display: grid; gap: 20px; max-width: 860px; position: relative; }
+  .hero-2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: center; position: relative; }
+  @media (min-width: 860px) {
+    .hero.dk { padding-block: 96px; }
+    .hero-2 { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; }
+  }
+
+  /* Cifras del héroe interior */
+  .facts { display: flex; flex-wrap: wrap; gap: 20px 32px; margin-top: 16px; padding-top: 20px; border-top: 1px solid var(--linea-oscura); }
+  .facts div { display: grid; gap: 2px; }
+  .facts b { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 30px; line-height: 1.1; color: var(--blanco); white-space: nowrap; }
+  .facts span { font-size: 13px; color: var(--sobre-oscuro-2); }
+
+  /* Cinturón de fotos bajo el héroe, como en la web anterior */
+  .belt { overflow: hidden; padding-block: 16px; background: var(--blanco); border-bottom: 1px solid var(--linea); }
+  .belt-track { display: flex; width: max-content; animation: cinturon 120s linear infinite; }
+  .belt:hover .belt-track { animation-play-state: paused; }
+  .belt-set { display: flex; flex-shrink: 0; }
+  .belt img { height: 96px; width: 144px; object-fit: cover; margin-right: 12px; }
+  @keyframes cinturon { to { transform: translateX(-50%); } }
+}

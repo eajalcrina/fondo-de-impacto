@@ -1,0 +1,54 @@
+/* Orden de la cascada: se declara una sola vez. Cada archivo escribe en su capa. */
+@layer tokens, fundamento, componentes, paginas, utilidades;
+
+/*
+ * Tokens del sitio. Único lugar con colores escritos a mano.
+ * Decisiones en docs/reglas-diseno.md (16-11-2026).
+ */
+@layer tokens {
+  :root {
+    color-scheme: light;
+
+    /* Verdes */
+    --bosque: #123524;          /* bosque profundo: encabezado, superficies oscuras y texto principal (13,5:1 con blanco) */
+    --salvia: #7ca07f;          /* líneas, puntos y anillos */
+    --salvia-profundo: #4a6b4e; /* bloque de color (6:1 con blanco) */
+    --salvia-claro: #f1f5f1;    /* bloques alternos */
+
+    /* Naranjas y terracota */
+    --naranja: #c94e10;         /* botón, bloques, pictogramas y palabra clave sobre claro (4,6:1 con blanco) */
+    --naranja-hover: #a8410d;
+    --naranja-claro: #f07a3e;   /* palabra clave y acentos sobre bosque (4,8:1) */
+    --terracota: #994215;       /* texto pequeño en naranja sobre claro (6,6:1) */
+
+    /* Neutros */
+    --blanco: #ffffff;
+    --arena: #f4f2ed;
+    --t1: var(--bosque);
+    --t2: #556259;              /* texto secundario (6,4:1 sobre blanco) */
+    --linea: #e3e8e3;
+    --linea-2: #cfd8cf;
+    --sobre-oscuro: rgba(255, 255, 255, 0.82);
+    --sobre-oscuro-2: rgba(255, 255, 255, 0.7);
+    --linea-oscura: rgba(255, 255, 255, 0.18);
+
+    /* Tipografía */
+    --f-serif: var(--font-serif), Georgia, serif;
+    --f-sans: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    /* Retícula y ritmo (múltiplos de 8) */
+    --ancho: 1280px;
+    --gut: 20px;
+    --sec: 72px;
+    --alto-nav: 72px;
+    --hoja: 96px; /* radio del arco del recorte «anillo» */
+  }
+
+  @media (min-width: 768px) {
+    :root { --gut: 40px; --sec: 96px; }
+  }
+
+  @media (min-width: 1100px) {
+    :root { --gut: 80px; --sec: 112px; --alto-nav: 88px; }
+  }
+}

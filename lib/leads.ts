@@ -68,16 +68,16 @@ type Envelope = {
 };
 
 function shell(titulo: string, cuerpo: string): string {
-  return `<div style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#132617;max-width:560px;margin:0 auto;padding:32px 24px;">
-<p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8a4a2b;margin:0 0 12px;">Fondo de Impacto</p>
+  return `<div style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#123524;max-width:560px;margin:0 auto;padding:32px 24px;">
+<p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#994215;margin:0 0 12px;">Fondo de Impacto</p>
 <h1 style="font-size:24px;line-height:1.2;margin:0 0 20px;">${titulo}</h1>
 ${cuerpo}
-<p style="font-size:12px;color:#8a958c;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">Fondo de Impacto, una división de Redesign Lab, desde Lima y Bogotá<br>${SITE.email} | <a href="${SITE.url}/privacidad" style="color:#8a958c;">Política de privacidad</a></p>
+<p style="font-size:12px;color:#556259;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">Fondo de Impacto, una división de Redesign Lab, desde Lima y Bogotá<br>${SITE.email} | <a href="${SITE.url}/privacidad" style="color:#556259;">Política de privacidad</a></p>
 </div>`;
 }
 
 function boton(href: string, texto: string, oscuro = true): string {
-  const estilo = oscuro ? "background:#132617;color:#ffffff;" : "background:#ffffff;color:#132617;border:1px solid #132617;";
+  const estilo = oscuro ? "background:#123524;color:#ffffff;" : "background:#ffffff;color:#123524;border:1px solid #123524;";
   return `<a href="${href}" style="${estilo}display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;font-size:14px;text-decoration:none;margin:4px 8px 4px 0;">${texto}</a>`;
 }
 
@@ -104,8 +104,8 @@ export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: 
       const cuerpo = r
         ? `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, este es el reporte preliminar para <b>${escapeHtml(d.razon_social)}</b> (${escapeHtml(rubro)}, ${escapeHtml(pais)}, ${escapeHtml(tipo)}, ${escapeHtml(rango)}).</p>
 <table style="width:100%;border-collapse:collapse;margin:20px 0;"><tr>
-<td style="padding:16px;background:#132617;color:#fff;border-radius:8px 0 0 8px;"><div style="font-size:36px;font-weight:600;">${r.total}</div><div style="font-size:13px;opacity:.75;">fuentes de capital de impacto compatibles con tu perfil</div></td>
-<td style="padding:16px;background:#1b3323;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con llamada activa: convocatoria abierta o ventanilla permanente</div></td>
+<td style="padding:16px;background:#123524;color:#fff;border-radius:8px 0 0 8px;"><div style="font-size:36px;font-weight:600;">${r.total}</div><div style="font-size:13px;opacity:.75;">fuentes de capital de impacto compatibles con tu perfil</div></td>
+<td style="padding:16px;background:#123524;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con llamada activa: convocatoria abierta o ventanilla permanente</div></td>
 </tr></table>
 <p style="font-size:14px;color:#556259;">No reembolsable: ${r.porTipo.nr}<br>Deuda y garantías: ${r.porTipo.de}<br>Equity: ${r.porTipo.eq}<br>Blended o mixto: ${r.porTipo.bl}${r.sinTicket ? `<br>${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso.` : ""}</p>
 <p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Siguiente paso recomendado: el Bootcamp de Levantamiento de Capital.</b> En ocho semanas preparas tu tesis, tu modelo financiero, tu teaser y tu pitch, y al final presentas ante fondos aliados. ${SITE.cohorte.nombre}: inicio ${SITE.cohorte.inicio.toLowerCase()}, ${SITE.cohorte.cupos} cupos.</p>

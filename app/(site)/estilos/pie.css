@@ -1,0 +1,24 @@
+/* Cierre de páginas interiores, pie y aviso de medición. */
+@layer componentes {
+  .final { position: relative; overflow: hidden; }
+  .final .wrap { position: relative; display: grid; justify-items: start; gap: 24px; }
+
+  .foot { position: relative; overflow: hidden; background: var(--bosque); color: var(--sobre-oscuro); padding-block: 56px 40px; font-size: 14px; }
+  .foot > .wrap { position: relative; }
+  .foot .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  @media (min-width: 560px) { .foot .grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .foot .grid { grid-template-columns: 1.2fr 0.9fr 0.9fr 1.2fr; } }
+  .foot .grid > div { min-width: 0; }
+  .foot b { display: block; font-size: 14px; font-weight: 600; color: var(--blanco); margin-bottom: 10px; }
+  .foot li { padding-block: 3px; }
+  .foot a { overflow-wrap: anywhere; }
+  .foot a:hover { color: var(--blanco); }
+  .legal { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--linea-oscura); font-size: 13px; line-height: 1.7; color: var(--sobre-oscuro-2); display: grid; gap: 8px; }
+
+  /* Aviso de medición */
+  .ck { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 900; max-width: 560px; background: var(--bosque); color: var(--blanco); padding: 20px 22px; box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.55); display: grid; gap: 14px; }
+  .ck p { font-size: 14px; color: var(--sobre-oscuro); line-height: 1.55; }
+  .ck a { color: var(--naranja-claro); text-decoration: underline; text-underline-offset: 2px; }
+  .ck-a { display: flex; gap: 10px; flex-wrap: wrap; }
+  .ck .btn-g { border-color: rgba(255, 255, 255, 0.6); color: var(--blanco); }
+}

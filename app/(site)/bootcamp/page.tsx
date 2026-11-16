@@ -20,8 +20,8 @@ export default function BootcampPage() {
   <Hero slides={[{ src: "/img/h16.jpg", cap: "Mapeo de cadena de valor" }]} split>
 <div className="stack" style={{ gap: "26px" }}>
       <span className="eyebrow">Bootcamp de Levantamiento de Capital</span>
-      <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)" }} text="Sal a levantar capital acompañado por quienes ya lo han hecho." />
-      <p className="lead">Investment readiness aplicado. Ocho semanas de trabajo intensivo y personalizado para empresas de impacto listas para buscar inversión, con un equipo que, desde 2021, ha levantado USD 1,5MM en capital de impacto y USD 1,2MM en fondos no reembolsables para empresas de la región.</p>
+      <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)" }} text="Sal a levantar capital acompañado por quienes ya lo han hecho" />
+      <p className="lead">Investment readiness aplicado. Ocho semanas de trabajo intensivo y personalizado para empresas de impacto listas para buscar inversión, con un equipo que, desde 2021, ha levantado USD 1.5 MM en capital de impacto y USD 1.2 MM en fondos no reembolsables para empresas de la región.</p>
       <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="lnk q" href="/bootcamp#como-funciona">Ver cómo funciona</Link></div>
     </div>
     <div className="card num dk">
@@ -37,7 +37,7 @@ export default function BootcampPage() {
   </Hero>
 
   <section className="sec"><div className="wrap">
-    <div className="head"><span className="eyebrow">Por qué es distinto</span><Words as="h2" className="d2" text="Trabajas tu empresa, no un caso de estudio." /></div>
+    <div className="head"><span className="eyebrow">Por qué es distinto</span><Words as="h2" className="d2" text="Trabajas tu empresa, no un caso de estudio" /></div>
     <div className="cols-3">
       <div className="rule"><h3 className="h4">Aplicado, no teórico</h3><p className="p2 sm">Cada semana avanzas en tu propio caso: estructura de capital, teaser, data room y pitch.</p></div>
       <div className="rule"><h3 className="h4">Asesoría personalizada</h3><p className="p2 sm">Un equipo que ha levantado capital y evaluado créditos trabaja contigo, empresa por empresa.</p></div>
@@ -64,7 +64,7 @@ export default function BootcampPage() {
     <div className="feature dk" style={{ gridTemplateColumns: "1fr", gap: "16px" }}>
       <Ring size={1120} />
       <span className="eyebrow">Sesión con fondos aliados</span>
-      <h3 className="d3">Las empresas que aprueben la evaluación final presentan ante fondos de impacto aliados.</h3>
+      <h3 className="d3">Las empresas que aprueben la evaluación final presentan ante fondos de impacto aliados</h3>
       <p className="p2">Una sesión con inversionistas de nuestra red, preparada para que cada empresa llegue con su caso completo.</p>
       <p className="xs" style={{ borderTop: "1px solid rgba(255,255,255,.16)", paddingTop: "14px" }}>Es una presentación ante quienes pueden financiarte, no una promesa de financiamiento.</p>
     </div>
@@ -79,7 +79,7 @@ export default function BootcampPage() {
     <ul className="check">
       <li><span><b>Precio anticipado: {SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el {SITE.cohorte.fechaAnticipado}.</span></li>
       <li>Pagas en dos cuotas: la mitad al confirmar el cupo y la otra mitad en la semana 4.</li>
-      <li>Becas parciales para empresas con ventas anuales menores a USD 300,000, cofinanciadas por fondos y organizaciones de cooperación aliadas.</li>
+      <li>Becas parciales para empresas con ventas anuales menores a USD 300 mil, cofinanciadas por fondos y organizaciones de cooperación aliadas.</li>
       <li>Solo pagas después de que revisamos tu postulación y confirmamos que el programa es para tu empresa.</li>
     </ul>
   </div></section>
@@ -128,7 +128,7 @@ export default function BootcampPage() {
   </div></section>
 
   <section className="sec final"><Ring size={1400} /><div className="wrap">
-    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text={`La próxima cohorte empieza el ${SITE.cohorte.inicio.toLowerCase()}, con ${SITE.cohorte.cupos} cupos.`} />
+    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text={`La próxima cohorte empieza el ${SITE.cohorte.inicio.toLowerCase()}, con ${SITE.cohorte.cupos} cupos`} />
     <p className="lead">¿No sabes si es tu momento? Mira primero cuántos fondos calzan con tu empresa.</p>
     <div className="cta-row" style={{ justifyContent: "center" }}><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="btn btn-g" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
   </div></section>

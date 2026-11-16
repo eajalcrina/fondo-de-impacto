@@ -6,7 +6,7 @@ export function Teaser() {
       <h3 className="h4" style={{ fontSize: 18 }}>Empresa peruana de alimentos de origen amazónico</h3>
       <div className="chips"><span className="chip">Crecimiento</span><span className="chip">Deuda</span><span className="chip t">Busca USD 250–400K</span></div>
       <div className="kv">
-        <div><span>Ventas últimos 12 meses</span><b>USD 1,1M</b></div>
+        <div><span>Ventas últimos 12 meses</span><b>USD 1.1 MM</b></div>
         <div><span>Crecimiento anual</span><b>38%</b></div>
         <div><span>Margen bruto</span><b>42%</b></div>
         <div><span>Historial con fondos</span><b>2 créditos repagados</b></div>

@@ -19,7 +19,7 @@ export default function PasaportePage() {
   <Hero slides={[{ src: "/img/h04.jpg", cap: "Cacao" }]} split>
 <div className="stack" style={{ gap: "26px" }}>
       <span className="eyebrow">Pasaporte de Inversión sin costo</span>
-      <Words as="h1" className="d1" style={{ fontSize: "clamp(40px,5.8vw,72px)" }} text="Un solo perfil. Más de 50 fondos de impacto." />
+      <Words as="h1" className="d1" style={{ fontSize: "clamp(40px,5.8vw,72px)" }} text="Un solo perfil. Más de 50 fondos de impacto" />
       <p className="lead">Completa el Pasaporte de Inversión de tu empresa una sola vez y abre la puerta al capital que estás buscando. No pagas nada: solo inviertes unos 40 minutos. Con esa información preparamos un teaser confidencial con estándar de comité y lo presentamos a los fondos de nuestra red cuya tesis coincide con tu empresa.</p>
       <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><Link className="lnk q" href="/pasaporte#buscador">Ver fondos disponibles</Link></div>
       <div className="facts num" style={{ marginTop: "4px" }}><div><b>USD 0</b><span>costo para tu empresa</span></div><div><b>Por etapas</b><span>acceso anticipado</span></div><div><b>+50</b><span>fondos en nuestra red</span></div></div>
@@ -40,7 +40,7 @@ export default function PasaportePage() {
   </div></section>
 
   <section className="sec"><div className="wrap">
-    <div className="head"><span className="eyebrow">Por qué solicitarlo</span><Words as="h2" className="d2" text="Los fondos de impacto no invierten en empresas que no conocen." /></div>
+    <div className="head"><span className="eyebrow">Por qué solicitarlo</span><Words as="h2" className="d2" text="Los fondos de impacto no invierten en empresas que no conocen" /></div>
     <div className="cols-2" style={{ gap: "40px 64px" }}>
       <div className="rule"><h3 className="h4">Llegas a fondos que ya están buscando</h3><p className="p2 sm">Nuestra red reúne más de 50 fondos de impacto de América Latina, Norteamérica y Europa, con tesis en deuda, equity y blended finance. Tu teaser les llega solo si coincides con lo que buscan.</p></div>
       <div className="rule"><h3 className="h4">Tu empresa, en el formato que usa un comité</h3><p className="p2 sm">Convertimos tu información en un teaser de una página con los indicadores que un analista revisa primero: tracción, márgenes, historial de repago e impacto.</p></div>
@@ -109,7 +109,7 @@ export default function PasaportePage() {
   </div></section>
 
   <section className="sec final dk"><Ring size={1400} /><div className="wrap">
-    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text="Más de 50 fondos buscan empresas de impacto en América Latina." />
+    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text="Más de 50 fondos buscan empresas de impacto en América Latina" />
     <p className="lead">Haz que conozcan la tuya. Cuesta USD 0, solo tu tiempo.</p>
     <Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link>
   </div></section>

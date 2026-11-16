@@ -10,7 +10,7 @@ const SECT: Record<string, string> = {
   biomateriales: "Biomateriales", agritech: "Agritech", bioinsumos: "Bioinsumos",
 };
 const FILTROS: [string, string][] = [["*", "Todos"], ["PE", "Perú"], ["CO", "Colombia"], ["EC", "Ecuador"], ["BO", "Bolivia"], ["BR", "Brasil"], ["MX", "México"], ["CA", "Centroamérica"]];
-const RLAB = ["Hasta 50K", "50K – 150K", "150K – 300K", "300K – 500K", "500K – 2M", "Más de 2M"];
+const RLAB = ["Hasta 50K", "50K a 150K", "150K a 300K", "300K a 500K", "500K a 2M", "Más de 2M"];
 
 function Bars({ items, unit = "" }: { items: [string, number, string?][]; unit?: string }) {
   const [on, setOn] = useState(false);

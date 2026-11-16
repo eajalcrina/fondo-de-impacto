@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Newsreader, Schibsted_Grotesk } from "next/font/google";
 import { CONSENT_DEFAULT } from "@/lib/consent";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-montserrat",
+/** Titulares, cifras y citas. Siempre 400, con el eje de tamaño óptico al máximo. */
+const serif = Newsreader({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal"],
+  axes: ["opsz"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+/** Texto, rótulos, menú, botones y cifras tabulares. */
+const sans = Schibsted_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -15,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={montserrat.variable}>
+    <html lang="es" className={`${serif.variable} ${sans.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT }} />
       </head>

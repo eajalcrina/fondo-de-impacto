@@ -14,14 +14,14 @@ export default function EmpresasPage() {
 
   <Hero slides={[{ src: "/img/h17.jpg", cap: "Taller con empresas" }]}>
 <span className="eyebrow">Para empresas</span>
-    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "16ch" }} text="Del diagnóstico al capital, según la etapa de tu empresa." />
+    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "16ch" }} text="Del diagnóstico al capital, según la etapa de tu empresa" />
     <p className="lead" style={{ maxWidth: "56ch" }}>Trabajamos con empresas de impacto en Perú y Colombia. Todo empieza con una pregunta: ¿cuánto capital necesitas? El buscador te muestra cuántas fuentes calzan con tu empresa y, según el resultado, te recomendamos la ruta: prepararte en el Bootcamp y levantar capital con fondos de nuestra red, o recibir financiamiento directo del fondo.</p>
   </Hero>
 
   <section className="sec tint"><div className="wrap hero-2">
     <div className="stack" style={{ gap: "22px" }}>
       <span className="eyebrow">Empieza aquí: ¿cuánto capital necesitas?</span>
-      <Words as="h2" className="d2" text="Mira cuántos fondos financian a empresas como la tuya." />
+      <Words as="h2" className="d2" text="Mira cuántos fondos financian a empresas como la tuya" />
       <p className="lead">Indica tu rubro, tu país y el capital que buscas. El buscador revisa 456 fuentes públicas de capital de impacto y te dice cuántas calzan contigo y cuántas tienen convocatoria abierta.</p>
       <ul className="check"><li>Gratis y en dos minutos.</li><li>Recibes una copia del reporte por correo.</li><li>Según el resultado, te recomendamos la ruta: Bootcamp o financiamiento directo.</li><li>Te respondemos {SITE.respuesta}.</li></ul>
       <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#buscador">Ver fondos para mi empresa</Link><span className="xs">Sin costo y sin compromiso.</span></div>
@@ -34,14 +34,14 @@ export default function EmpresasPage() {
     <div className="cols-2">
       <div className="rule" style={{ gap: "16px" }}>
         <span className="eyebrow s">Modalidad 1<i className="sep" />Investment readiness</span>
-        <h3 className="d3">Te preparamos para levantar capital y te acompañamos hasta el cierre.</h3>
+        <h3 className="d3">Te preparamos para levantar capital y te acompañamos hasta el cierre</h3>
         <p className="p2">Para empresas que buscan capital de fondos de impacto, banca de desarrollo o cooperación internacional y aún no tienen un perfil de inversión completo.</p>
         <ul className="check"><li>Diagnóstico con nuestra metodología propietaria: finanzas, gobernanza, ESG e impacto.</li><li>Bootcamp de Levantamiento de Capital, con asesoría personalizada y comité simulado.</li><li>Presentación a nuestra red de más de 50 fondos de impacto.</li><li>Acompañamiento en due diligence y negociación del term sheet.</li></ul>
         <div className="cta-row"><Link className="btn btn-p btn-sm" href="/bootcamp#postular">Postular al Bootcamp</Link><Link className="lnk" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
       </div>
       <div className="rule" style={{ gap: "16px" }}>
         <span className="eyebrow s">Modalidad 2<i className="sep" />Financiamiento directo</span>
-        <h3 className="d3">Financiamos tu capital de trabajo con condiciones claras desde el inicio.</h3>
+        <h3 className="d3">Financiamos tu capital de trabajo con condiciones claras desde el inicio</h3>
         <p className="p2">Para empresas con historial validado en el ecosistema de impacto que necesitan liquidez para inventario, órdenes de compra o expansión comercial.</p>
         <ul className="check"><li>Ventas recurrentes durante al menos 12 meses.</li><li>Historial de repago con un fondo de impacto u otro financiador.</li><li>Estados financieros del último ejercicio.</li><li>Uso de fondos ligado al ciclo operativo.</li><li>Garantía hipotecaria sobre un inmueble de la empresa o de sus accionistas.</li></ul>
         <div className="cta-row"><a className="btn btn-g btn-sm" href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer">Ver si califico</a></div>
@@ -75,7 +75,7 @@ export default function EmpresasPage() {
 
   <section className="sec" style={{ paddingTop: 0, borderTop: 0 }}><div className="wrap">
     <div className="band dk"><Ring size={880} />
-      <div className="band-in"><span className="eyebrow">Para fondos y cooperación</span><Words as="h2" className="d3" text="Accede a nuestro portafolio privado de empresas con investment readiness." /><p className="p2 sm">Opera con nosotros programas de asistencia técnica para tu cartera y co-invierte en esquemas de blended finance.</p></div>
+      <div className="band-in"><span className="eyebrow">Para fondos y cooperación</span><Words as="h2" className="d3" text="Accede a nuestro portafolio privado de empresas con investment readiness" /><p className="p2 sm">Opera con nosotros programas de asistencia técnica para tu cartera y co-invierte en esquemas de blended finance.</p></div>
       <a className="btn btn-g" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Solicitar acceso al portafolio</a>
     </div>
   </div></section>

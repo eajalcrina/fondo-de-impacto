@@ -14,7 +14,7 @@ export default function InversionistasPage() {
 
   <Hero slides={[{ src: "/img/n2.jpg", cap: "Amazonía" }]}>
 <span className="eyebrow">Para inversionistas<i className="sep" />Tesis de inversión</span>
-    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "17ch" }} text="Inversión paciente en empresas de impacto de América Latina." />
+    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "17ch" }} text="Inversión paciente en empresas de impacto de América Latina" />
     <p className="lead" style={{ maxWidth: "58ch" }}>Canalizamos capital privado hacia empresas de impacto con historial verificado en Perú y Colombia. Sin dilución, con due diligence financiero y ESG, y reporte financiero y de impacto cada mes.</p>
     <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a></div>
   </Hero>
@@ -29,7 +29,7 @@ export default function InversionistasPage() {
   </div></section>
 
   <section className="sec" style={{ borderTop: 0, paddingTop: 0 }}><div className="wrap">
-    <div className="head"><span className="eyebrow">Estructura</span><Words as="h2" className="d3" text="Cómo se estructura la inversión" /></div>
+    <div className="head"><span className="eyebrow">Términos</span><Words as="h2" className="d3" text="Cómo se estructura la inversión" /></div>
     <div className="tw"><table className="tbl"><tbody>
       <tr><td>Enfoque</td><td>Inversión paciente de impacto, a través de un instrumento de deuda</td></tr>
       <tr><td>Dilución</td><td>Ninguna. El inversionista no adquiere participación en las empresas</td></tr>
@@ -90,7 +90,7 @@ export default function InversionistasPage() {
   </div></section>
 
   <section className="sec final dk"><Ring size={1400} /><div className="wrap">
-    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text="Conversemos sobre la tesis y la ronda activa." />
+    <Words as="h2" className="d2" style={{ maxWidth: "20ch" }} text="Conversemos sobre la tesis y la ronda activa" />
     <p className="lead">Al terminar la reunión recibes el NDA para acceder a los términos.</p>
     <div className="cta-row" style={{ justifyContent: "center" }}><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a><a className="btn btn-g" href={`mailto:${SITE.email}`}>fondodeimpacto@redesignlab.org</a></div>
   </div></section>

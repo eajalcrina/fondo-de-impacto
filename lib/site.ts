@@ -54,8 +54,8 @@ export const EQUIPO: Persona[] = [
     web: "https://eddieajalcrina.com",
     bio: "Lleva más de quince años demostrando que sostenibilidad y rentabilidad son la misma apuesta: como ejecutivo corporativo en ingredientes marinos y nutrición acuícola, como cofundador de empresas y como director independiente. Trabaja en las dos puntas de la cadena de valor, con productores de la Amazonía y con marcas, compradores e inversionistas globales. En Fondo de Impacto lidera la estrategia y la relación con fondos de impacto, agencias de cooperación e inversionistas.",
     logros: [
-      "Participó en la estructuración de un green loan de USD 80M (Bank of America y Banco Mundial) en su etapa corporativa",
-      "Coordinó el Programa Negocios Sostenibles y el Equipo Europa – Transición Circular de la Delegación de la Unión Europea en el Perú",
+      "Participó en la estructuración de un green loan de USD 80 MM (Bank of America y Banco Mundial) en su etapa corporativa",
+      "Coordinó el Programa Negocios Sostenibles y el Equipo Europa, Transición Circular de la Delegación de la Unión Europea en el Perú",
       "Ha articulado cadenas de valor amazónicas con marcas globales como Patagonia, Lacoste, Lululemon y Hugo Boss",
     ],
     formacion: "MBA (ESAN) y Maestría en Biocomercio y Desarrollo Sostenible (PUCP)",
@@ -83,9 +83,18 @@ export const EQUIPO: Persona[] = [
     bio: "Más de 8 años en finanzas corporativas, crédito e inversión de impacto en América Latina. Originó y estructuró inversiones de deuda en empresas de impacto de Perú y Colombia para un fondo de impacto internacional, y gestionó carteras de crédito en banca corporativa y comercial.",
     logros: [
       "Más de 100 empresas evaluadas para inversión",
-      "Cerca de USD 100MM en operaciones de crédito aprobadas",
+      "Cerca de USD 100 MM en operaciones de crédito aprobadas",
       "Estructuró un financiamiento garantizado a cinco años para una cadena de valor agrícola con más de 3.000 productores",
     ],
     formacion: "Economista (Universidad del Pacífico) y MBA (EUDE Business School)",
   },
+];
+
+/** Empresas del portafolio de Fondo de Impacto (confirmadas por el dueño el 16-11-2026; fuente: redesignlab.org/ventures). */
+export const PORTAFOLIO = [
+  { nombre: "Cotton Nation", que: "Algodón regenerativo amazónico", sector: "Textil" },
+  { nombre: "Endemics", que: "Cosmética natural", sector: "Cosmética" },
+  { nombre: "Rare by", que: "Suplementos de la biodiversidad", sector: "Suplementos" },
+  { nombre: "GreenProd", que: "Bioinsumos de residuos de pesca artesanal", sector: "Bioinsumos" },
+  { nombre: "Ecovive", que: "Alimentos saludables de la biodiversidad", sector: "Alimentos" },
 ];

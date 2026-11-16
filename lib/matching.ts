@@ -25,10 +25,10 @@ export type Fuente = {
 
 export const RANGOS = [
   { key: "Inicial", label: "Hasta USD 50 mil", a: 0, b: 5e4 },
-  { key: "Pequeño", label: "USD 50 mil – 150 mil", a: 5e4, b: 1.5e5 },
-  { key: "Mediano", label: "USD 150 mil – 300 mil", a: 1.5e5, b: 3e5 },
-  { key: "Mediano alto", label: "USD 300 mil – 500 mil", a: 3e5, b: 5e5 },
-  { key: "Crecimiento", label: "USD 500 mil – 2 millones", a: 5e5, b: 2e6 },
+  { key: "Pequeño", label: "USD 50 mil a 150 mil", a: 5e4, b: 1.5e5 },
+  { key: "Mediano", label: "USD 150 mil a 300 mil", a: 1.5e5, b: 3e5 },
+  { key: "Mediano alto", label: "USD 300 mil a 500 mil", a: 3e5, b: 5e5 },
+  { key: "Crecimiento", label: "USD 500 mil a 2 millones", a: 5e5, b: 2e6 },
   { key: "Gran escala", label: "Más de USD 2 millones", a: 2e6, b: 1e13 },
 ] as const;
 

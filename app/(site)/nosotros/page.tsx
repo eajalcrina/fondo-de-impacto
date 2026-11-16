@@ -14,7 +14,7 @@ export default function NosotrosPage() {
 
   <Hero slides={[{ src: "/img/h09.jpg", cap: "Comunidad productora" }]}>
 <span className="eyebrow">Nosotros</span>
-    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "15ch" }} text="El brazo de capital de Redesign Lab." />
+    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "15ch" }} text="El brazo de capital de Redesign Lab" />
     <p className="lead" style={{ maxWidth: "60ch" }}>Redesign Lab es un venture studio que diseña, escala e invierte en empresas de impacto en América Latina desde 2021. Fondo de Impacto es su vehículo especializado en capital de impacto. Prepara a las empresas para recibir inversión y canaliza capital privado hacia las que tienen historial validado.</p>
   </Hero>
 
@@ -27,10 +27,10 @@ export default function NosotrosPage() {
   <section className="sec tint"><div className="wrap">
     <div className="head"><span className="eyebrow">Track record</span><Words as="h2" className="d3" text="Desde 2021, con empresas de impacto en Perú y la región" /></div>
     <div className="stats num">
-      <div><b>USD 1,2MM</b><span>en fondos no reembolsables</span></div>
-      <div><b>USD 1,5MM</b><span>en capital de impacto, principalmente deuda</span></div>
+      <div><b>USD 1.2 MM</b><span>en fondos no reembolsables</span></div>
+      <div><b>USD 1.5 MM</b><span>en capital de impacto, principalmente deuda</span></div>
       <div><b>+10</b><span>empresas invertidas en América Latina</span></div>
-      <div><b>USD 26MM</b><span>facturación del portafolio en 2025 (+28 % frente a 2024)</span></div>
+      <div><b>USD 26 MM</b><span>facturación del portafolio en 2025 (28% más que en 2024)</span></div>
       <div><b>+120</b><span>comunidades con impacto directo</span></div>
     </div>
   </div></section>

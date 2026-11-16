@@ -16,7 +16,7 @@ function renderFieldsHtml(fields: [string, string][]): string {
   const rows = fields
     .map(([label, value]) => {
       const display = value ? escapeHtml(value).replace(/\n/g, "<br/>") : "Sin dato";
-      return `<tr><td style="padding:6px 12px 6px 0;color:#8a958c;font-size:13px;vertical-align:top;white-space:nowrap;">${escapeHtml(label)}</td><td style="padding:6px 0;color:#132617;font-size:14px;">${display}</td></tr>`;
+      return `<tr><td style="padding:6px 12px 6px 0;color:#556259;font-size:13px;vertical-align:top;white-space:nowrap;">${escapeHtml(label)}</td><td style="padding:6px 0;color:#123524;font-size:14px;">${display}</td></tr>`;
     })
     .join("");
   return `<table cellpadding="0" cellspacing="0" style="font-family:Helvetica,Arial,sans-serif;">${rows}</table>`;

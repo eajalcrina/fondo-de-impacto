@@ -1,0 +1,92 @@
+/* Piezas nuevas del rediseño: tarjetas con recorte anillo, cifras con pictogramas, portafolio y organizaciones. */
+@layer componentes {
+  /* Tarjetas: foto con recorte anillo y velo suave, bloque de color abajo */
+  .tarjetas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  @media (min-width: 900px) { .tarjetas { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto 1fr auto; gap: 0 24px; } }
+  .tarjeta { --c: var(--bosque); display: grid; color: var(--blanco); }
+  @media (min-width: 900px) { .tarjeta { grid-row: span 5; grid-template-rows: subgrid; } }
+  .tarjeta-foto { position: relative; aspect-ratio: 4 / 3; }
+  .tarjeta-foto .marco { position: absolute; inset: 0; overflow: hidden; border-radius: 0 var(--hoja) 0 0; }
+  .tarjeta-foto .marco::after { content: ""; position: absolute; inset: 0; background: var(--c); opacity: 0.32; }
+  .tarjeta-foto img { object-fit: cover; }
+  /* Línea de puntos del isotipo alrededor del arco, sin tocar la foto */
+  .tarjeta-foto::after {
+    content: ""; position: absolute; top: -12px; right: -12px;
+    width: calc(2 * var(--hoja) + 24px); height: calc(2 * var(--hoja) + 24px);
+    border: 3px dotted var(--naranja); border-radius: 50%;
+    clip-path: inset(0 0 50% 50%); pointer-events: none;
+  }
+  .tarjeta-cuerpo { background: var(--c); padding: 28px 24px 32px; display: grid; gap: 12px; align-content: start; }
+  @media (min-width: 900px) { .tarjeta-cuerpo { grid-row: span 4; grid-template-rows: subgrid; padding: 36px 32px 40px; row-gap: 14px; } }
+  .tarjeta-cuerpo .eyebrow { color: var(--blanco); }
+  .tarjeta-cuerpo p { font-size: 15px; line-height: 1.6; }
+  .tarjeta-cuerpo .lnk { justify-self: start; color: var(--blanco); }
+  .tarjeta-cuerpo .lnk::after { color: var(--blanco); }
+  .tarjeta.salvia { --c: var(--salvia-profundo); }
+  .tarjeta.naranja { --c: var(--naranja); }
+
+  /* Cifras con pictogramas */
+  .cifras { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  @media (min-width: 640px) { .cifras { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; } }
+  @media (min-width: 1100px) { .cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .cifra-item { display: grid; grid-template-columns: 60px 1fr; column-gap: 16px; row-gap: 4px; align-items: center; }
+  .cifra-item .pict { grid-row: span 2; width: 60px; height: 60px; border-radius: 50%; background: var(--blanco); display: grid; place-items: center; }
+  .cifra-item .pict svg { width: 28px; height: 28px; }
+  .cifra-item .cifra { font-size: 38px; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+  .cifra-item .mas { font-family: var(--f-sans); font-size: 0.72em; position: relative; top: -0.12em; margin-right: 0.04em; }
+  .cifra-item > span:last-child { font-size: 14px; line-height: 1.45; color: var(--t2); }
+  @media (min-width: 1100px) {
+    .cifra-item { grid-template-columns: minmax(0, 1fr); row-gap: 14px; align-items: start; }
+    .cifra-item .pict { grid-row: auto; width: 80px; height: 80px; }
+    .cifra-item .pict svg { width: 38px; height: 38px; }
+    .cifra-item .cifra { font-size: 50px; }
+    .cifra-item > span:last-child { font-size: 15px; }
+  }
+  .nota-cifras { margin-top: 32px; font-size: 13px; color: var(--t2); max-width: 90ch; }
+
+  /* Foto suelta con recorte anillo y su línea de puntos */
+  .foto-anillo { position: relative; }
+  .foto-anillo .marco { position: relative; overflow: hidden; border-radius: 0 var(--hoja) 0 0; aspect-ratio: 2 / 1; }
+  .foto-anillo .marco img { object-fit: cover; }
+  .foto-anillo::after {
+    content: ""; position: absolute; top: -12px; right: -12px;
+    width: calc(2 * var(--hoja) + 24px); height: calc(2 * var(--hoja) + 24px);
+    border: 3px dotted var(--naranja); border-radius: 50%;
+    clip-path: inset(0 0 50% 50%); pointer-events: none;
+  }
+  @media (min-width: 900px) { .foto-anillo .marco { aspect-ratio: 2.6 / 1; } }
+  .por-que { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: center; }
+  @media (min-width: 900px) { .por-que { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; } }
+
+  /* Portafolio */
+  .portafolio { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  @media (min-width: 640px) { .portafolio { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
+  @media (min-width: 1100px) { .portafolio { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+  .empresa { background: var(--blanco); padding: 24px; display: grid; grid-template-rows: auto 1fr auto; gap: 10px; min-height: 180px; border-radius: 0 48px 0 0; }
+  .empresa h3 { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 26px; line-height: 1.1; }
+  .empresa p { font-size: 14px; line-height: 1.5; color: var(--t2); }
+  .empresa span { font-size: 13px; font-weight: 500; color: var(--terracota); }
+
+  /* Organizaciones con las que hemos trabajado: grupos en columnas, filas de igual alto, un solo tono */
+  .allies { gap: 32px 24px; }
+  .allies h3 { margin: 0 0 14px; font-size: 14px; font-weight: 500; color: var(--t2); }
+  .allies li { display: flex; align-items: center; height: 76px; border-top: 1px solid var(--linea); }
+  .allies li:last-child { border-bottom: 1px solid var(--linea); }
+  .allies { --logo-alto: 34px; --logo-alto-cuadrado: 50px; }
+  .allies img { width: auto; max-width: min(100%, 150px); object-fit: contain; object-position: left center; filter: grayscale(1) contrast(1.1); opacity: 0.68; transition: filter 0.3s, opacity 0.3s; }
+  .allies li:hover img { filter: none; opacity: 1; }
+  @media (max-width: 859px) { .allies li { height: 64px; } }
+
+  /* Cierre en naranja */
+  .cierre { background: var(--naranja); color: var(--blanco); padding-block: 72px; }
+  .cierre .wrap { display: grid; gap: 24px; align-items: end; }
+  .cierre .eyebrow { color: var(--blanco); }
+  .cierre h2 { max-width: 18ch; }
+  .cierre .btn { background: var(--blanco); color: var(--terracota); }
+  .cierre .btn:hover { background: var(--arena); }
+  @media (min-width: 900px) {
+    .cierre { padding-block: 96px; }
+    .cierre .wrap { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); }
+    .cierre .cta-row { justify-content: flex-end; }
+  }
+}
