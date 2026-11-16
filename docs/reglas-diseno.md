@@ -61,6 +61,9 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - 16-11-2026: se suma la página Portafolio, con datos de redesignlab.org (Cotton Nation, Endemics, Rare by, GreenProd, Ecovive; USD 26 MM de facturación del portafolio en 2025, 28% más que en 2024). Entra al menú como «Portafolio».
 - 16-11-2026: pasada de narrativa y voz sin IA sobre todos los textos, en la fase 3, cuando los textos pasen al archivo por idioma.
 - 16-11-2026: `vercel.json` apaga las vistas previas automáticas de las ramas `claude/*`.
+- 16-11-2026: el dueño pide ver la combinación que recomienda el asesor (B2 con el encabezado sólido y los dos botones de B1) como lámina B3, con la foto del río en el héroe.
+- 16-11-2026: el acento se acerca más al naranja de la referencia. Naranja `#c94e10` (4,6:1 con blanco) para botón, bloques de color, banda de cierre, pictogramas y palabra clave sobre claro; naranja claro `#f07a3e` (5,7:1 sobre bosque) para la palabra clave sobre bosque. `#994215` queda para texto pequeño sobre claro. Reemplaza a la propuesta `#c0541c`.
+- 16-11-2026: el dueño confirma que Cotton Nation, Endemics, Rare by, GreenProd y Ecovive también son inversiones de Fondo de Impacto. Se muestran todos los logos de organizaciones.
 
 ## 8. Plantillas para contenido en serie
 - Ninguna por ahora.
