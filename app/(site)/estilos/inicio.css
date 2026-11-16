@@ -85,17 +85,19 @@
   .cifras { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sep); }
   @media (min-width: 640px) { .cifras { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (min-width: 1100px) { .cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-  .cifra-item { display: grid; gap: 10px; align-content: start; padding: 28px 28px 32px; background: var(--bosque-superficie); }
+  .cifra-item { display: grid; gap: 10px; align-content: start; padding: 28px 28px 32px; background: var(--bosque-superficie); border-radius: var(--radio-tarjeta); }
   .cifra-item .pict { color: var(--naranja-claro); }
   .cifra-item .pict svg { width: 32px; height: 32px; display: block; }
   .cifra-item .cifra { font-size: clamp(30px, 1.6rem + 1vw, 40px); font-weight: 500; line-height: 1.1; white-space: nowrap; }
   .cifra-item .mas { color: var(--naranja-claro); margin-right: 2px; }
-  .cifra-item > span:last-child { font-size: 14px; font-weight: 400; color: var(--sobre-oscuro); white-space: nowrap; }
+  .cifra-item > span:last-child { font-size: 14px; font-weight: 400; color: var(--sobre-oscuro); }
+  @media (min-width: 1100px) { .cifras:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   /* En páginas claras */
   .claro .cifra-item, .sec .cifra-item { background: var(--arena); }
   .sec .cifra-item .pict, .sec .cifra-item .mas { color: var(--naranja); }
   .sec .cifra-item > span:last-child { color: var(--t2); }
   .sec.dk .cifra-item { background: var(--bosque-superficie); }
+  .tint .cifra-item, .arena .cifra-item { background: var(--blanco); }
 
   /* Organizaciones: grupos en columnas, filas de igual alto, un solo tono */
   .allies { gap: 32px 24px; }
@@ -105,6 +107,7 @@
   .allies li:last-child { border-bottom: 1px solid var(--linea-2); }
   .allies { --logo-alto: 34px; --logo-alto-cuadrado: 50px; }
   .allies img { width: auto; max-width: min(100%, 150px); object-fit: contain; object-position: left center; filter: grayscale(1) brightness(0.8) contrast(1.3); opacity: 0.78; transition: filter 0.3s, opacity 0.3s; }
+  /* Al pasar el cursor, cada logo recupera su color original (los monocromos de origen quedan en negro) */
   .allies li:hover img { filter: none; opacity: 1; }
   @media (max-width: 859px) { .allies li { height: 64px; } }
 
@@ -117,10 +120,10 @@
   .ficha { display: grid; border-radius: var(--radio-tarjeta); overflow: hidden; color: var(--bosque); }
   .ficha-foto { position: relative; aspect-ratio: 3 / 2; background: var(--linea); }
   .ficha-foto img { object-fit: cover; }
-  .ficha-cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) 40px; align-items: center; gap: 4px 16px; padding: 20px 26px; background: var(--arena); }
+  .ficha-cuerpo { display: grid; gap: 4px; padding: 20px 26px; background: var(--arena); }
+  .arena .ficha-cuerpo, .tint .ficha-cuerpo { background: var(--blanco); }
   .ficha-cuerpo h3 { font-size: 21px; font-weight: 500; line-height: 1.2; }
-  .ficha-cuerpo p { grid-column: 1; font-size: 14px; font-weight: 500; color: var(--t2); }
-  .ficha-cuerpo .redondo { grid-column: 2; grid-row: 1 / span 2; }
+  .ficha-cuerpo p { font-size: 14px; font-weight: 500; color: var(--t2); }
   @media (min-width: 1100px) { .ficha-cuerpo { padding: 25px 30px; } }
 
   /* Cabecera de sección en páginas internas */

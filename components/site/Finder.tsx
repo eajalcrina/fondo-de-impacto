@@ -50,7 +50,7 @@ export function Finder() {
   return (
     <div className="finder">
       <form className="fform" onSubmit={onSubmit}>
-        <span className="sep" style={{ border: 0, padding: 0 }}>Tu empresa</span>
+        <span className="sep primero">Tu empresa</span>
         <label htmlFor="f-rs">Razón social<input id="f-rs" name="razon_social" required autoComplete="organization" /></label>
         <div className="frow">
           <label htmlFor="f-rubro">Rubro<select id="f-rubro" name="rubro" defaultValue="alimentos_bebidas">{RUBROS.map(([v, t]) => <option key={v} value={v}>{t}</option>)}</select></label>
@@ -66,9 +66,9 @@ export function Finder() {
           <label htmlFor="f-mail">Correo<input id="f-mail" name="correo" type="email" required autoComplete="email" /></label>
           <label htmlFor="f-cel">Celular<input id="f-cel" name="celular" type="tel" required autoComplete="tel" /></label>
         </div>
-        <div className="hp" aria-hidden="true" style={{ position: "absolute", left: -9999 }}><label>Sitio web<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
-        <label className="consent" htmlFor="f-ok"><input id="f-ok" name="consentimiento" type="checkbox" required /> <span>Acepto la <Link href="/privacidad" style={{ textDecoration: "underline" }}>política de privacidad</Link> y que Fondo de Impacto me contacte sobre oportunidades de financiamiento.</span></label>
-        <button className="btn btn-p" type="submit" style={{ justifySelf: "start" }}>Ver cuántos fondos calzan conmigo</button>
+        <div className="hp" aria-hidden="true"><label>Sitio web<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
+        <label className="consent" htmlFor="f-ok"><input id="f-ok" name="consentimiento" type="checkbox" required /> <span>Acepto la <Link href="/privacidad">política de privacidad</Link> y que Fondo de Impacto me contacte sobre oportunidades de financiamiento.</span></label>
+        <button className="btn btn-p" type="submit">Ver cuántos fondos calzan conmigo</button>
       </form>
 
       <div className="report dk" id="reporte" aria-live="polite">
@@ -87,18 +87,18 @@ export function Finder() {
         </div>
         <p className="xs">
           {r.sinTicket ? `${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso. ` : ""}
-          No mostramos nombres ni condiciones: dependen de tu perfil y los revisamos contigo.
+          Los nombres y las condiciones los revisamos contigo.
           {envio === "ok" && ` Te enviamos una copia de este reporte por correo y te escribimos ${SITE.respuesta}.`}
           {envio === "err" && ` No pudimos enviarte la copia por correo (${error}).`}
         </p>
         <div className="rep-cta">
-          <span className="flag">Siguiente paso recomendado: {SITE.cohorte.nombre}</span>
-          <p><b>¿Quieres llegar a estos fondos con un perfil que un comité pueda aprobar?</b> En el Bootcamp de Levantamiento de Capital preparas tu tesis, tu modelo financiero, tu teaser y tu pitch en ocho semanas, y al final presentas ante fondos aliados. Inicio: {SITE.cohorte.inicio.toLowerCase()}. {SITE.cohorte.cupos} cupos.</p>
-          <a className="btn btn-p" href="/bootcamp#postular" style={{ justifySelf: "start" }}>Postular al Bootcamp</a>
+          <span className="flag">{SITE.cohorte.nombre}</span>
+          <p><b>Prepara tu perfil de inversión en el Bootcamp.</b> Ocho semanas para tu tesis, tu modelo financiero, tu teaser y tu pitch. Inicio: {SITE.cohorte.inicio.toLowerCase()}.</p>
+          <a className="btn btn-p" href="/bootcamp#postular">Postular al Bootcamp</a>
         </div>
-        <div className="rep-cta" style={{ background: "transparent" }}>
-          <p><b>¿Quieres empezar hoy a levantar capital?</b> Conversemos 30 minutos con el equipo.</p>
-          <a className="btn btn-g" href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer" onClick={() => track("cta_calendar", { location: "reporte", calendario: "empresas" })} style={{ justifySelf: "start" }}>Agendar una reunión</a>
+        <div className="rep-cta abierta">
+          <p><b>¿Prefieres conversar?</b> Agenda 30 minutos con el equipo.</p>
+          <a className="btn btn-g" href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer" onClick={() => track("cta_calendar", { location: "reporte", calendario: "empresas" })}>Agendar una reunión</a>
         </div>
       </div>
     </div>

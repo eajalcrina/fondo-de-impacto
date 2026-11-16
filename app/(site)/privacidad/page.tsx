@@ -36,7 +36,7 @@ export default function PrivacidadPage() {
           <p>No vendemos tus datos. Solo compartimos la información de tu empresa con fondos o inversionistas si tú lo autorizas de forma expresa.</p>
 
           <h2>Con quién trabajamos para tratarlos</h2>
-          <p>Usamos proveedores que tratan los datos por encargo nuestro: Vercel (alojamiento del sitio), Brevo (envío de correos y lista de contactos), Google (almacenamiento en hojas de cálculo y medición del sitio). Algunos de estos servicios pueden almacenar información fuera de tu país, con medidas de seguridad adecuadas.</p>
+          <p>Usamos proveedores que tratan los datos por encargo nuestro: Vercel (alojamiento del sitio), Brevo (envío de correos y lista de contactos) y Google (almacenamiento en hojas de cálculo y medición del sitio). Algunos de estos servicios pueden almacenar información fuera de tu país, con medidas de seguridad adecuadas.</p>
 
           <h2 id="cookies">Cookies y medición</h2>
           <p>Usamos Google Tag Manager y Google Analytics para medir visitas y el uso de botones y formularios. Solo guardamos cookies de medición si las aceptas en el aviso que aparece al entrar; si eliges «Solo necesarias», la medición funciona sin cookies y de forma anónima. No usamos cookies publicitarias. Puedes cambiar tu elección borrando los datos del sitio en tu navegador.</p>

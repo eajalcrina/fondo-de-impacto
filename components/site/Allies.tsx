@@ -3,6 +3,7 @@ import { es } from "@/lib/i18n/es";
 
 const g = es.comun.aliados;
 
+
 /** [nombre, archivo en /public/aliados, ancho, alto] */
 type Logo = [string, string, number, number];
 
@@ -21,7 +22,7 @@ const GRUPOS: { titulo: string; logos: Logo[] }[] = [
   {
     titulo: g.academia,
     logos: [
-      ["MIT", "mit.svg", 354, 200],
+      ["MIT", "mit.svg", 321, 166],
       ["Singularity University", "singularity-university.svg", 134, 32],
       ["IMD", "imd.png", 376, 138],
       ["Tecnológico de Monterrey", "tec-de-monterrey.svg", 96, 25],

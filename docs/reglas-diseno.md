@@ -5,30 +5,29 @@ Estado: **en curso** (16-11-2026). Camino visual: rediseño completo inspirado e
 Público: empresas de impacto de América Latina que ya demostraron tracción y buscan capital; en segundo lugar, fondos e inversionistas. Tono: fondo de impacto de primer nivel, de América Latina para el mundo. Sobrio, preciso y con datos.
 
 ## 1. Color
-Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota; ningún color fuera de esa familia sin preguntar.
-- Bosque `#132617`: color oscuro de marca, un solo tono, con texto blanco encima. Sin degradados.
-- Terracota `#994215`: botón principal y palabra clave sobre fondo claro (6,6:1 sobre blanco).
-- Terracota claro `#c7a28c`: palabra clave y acentos sobre bosque.
-- Salvia `#7ca07f`: líneas, puntos y marcas de diagrama.
-- Salvia claro `#f1f5f1` y arena `#f4f2ed`: bloques alternos.
-- Texto secundario `#556259` (6,4:1 sobre blanco). El gris `#8a958c` no se usa para texto: no pasa el contraste.
-- El logo PNG mide `#131e16`; el CSS manda con `#132617` (diferencia mínima, sin efecto visible).
+Paleta propia de Fondo de Impacto. Tokens en `app/(site)/estilos/tokens.css`; ningún color fuera de ellos.
+- Lienzo petróleo `#0d1c19` y superficie `#18302b`: fondo oscuro (portada, pie, tarjetas oscuras). `--lienzo-superficie` solo para piezas sobre lienzo.
+- Naranja `#c94e10` (hover `#a8410d`): acento, botón principal y cierre de cada página. Naranja claro `#f07a3e` sobre oscuro.
+- Bosque `#123524`: texto y títulos sobre claro. Arena `#f4f2ed`: secciones `.tint` alternadas con blanco, nunca dos del mismo fondo seguidas.
+- Texto secundario `#556259`. El gris `#8a958c` no se usa para texto.
+- Logos de organizaciones en gris; al pasar el cursor recuperan su color original (MIT rojo y gris, Tec azul, Singularity degradado; los monocromos de origen quedan en negro).
 
 ## 2. Tipografía (congelada el 16-11-2026)
-- Titulares (H1, H2, títulos de tarjeta), cifras grandes y citas: Newsreader 400, sin cursiva, `opsz` 72, cifras *lining*.
-- Texto, subtítulos, rótulos, menú y botones: Schibsted Grotesk 400 (texto), 500 (rótulos y números), 600 (subtítulos y nombres de tarjeta), 700 (logo). Cifras tabulares.
-- Sin monoespaciada. Escala de redesignlab.org: `.h-display` 44 a 84 px, `.h-hero` 40 a 62, `.h-section` 30 a 42, `.h-card` 26 a 34, `.h-sub` 20 a 24, `.lead` 17 a 19, `.body` 15 a 16, `.small` 13 a 14, `.label` 13 a 14, `.stat-lg` hasta 52 px.
-- Signo «+» de las cifras en la sans, al 72%, subido 0,12em.
-- `text-wrap: balance` en títulos y `pretty` en párrafos. Espacio duro entre cifra y unidad.
-- Se pueden cambiar tipografías secundarias si el camino lo pide; Newsreader queda fija.
+- Solo Open Sans 300, 400, 500 y 600, como la referencia.
+- `.d1` 32 a 52 px, `.d2` 25 a 33 px (todo h2 de sección), `.d3` 21 px, `.h4` títulos de tarjeta, cuerpo 16/300, `.lead` 19/300, rótulo 16/500.
+- Sin punto final en títulos. Espacio duro entre cifra y unidad.
 
 ## 3. Retícula y ritmo
-- Ancho máximo 1280 px de contenido, márgenes de 20 px en celular y 80 px en escritorio, 12 columnas, ritmo en múltiplos de 8.
+- Márgenes de 24, 40 y 56 px; separación entre piezas de 24 px; encabezado fijo de 64 y 75 px.
+- Orden de fondos: cabecera con foto, luego blanco y arena alternados, cierre `.final` naranja y pie petróleo.
 
 ## 4. Componentes
-- Rótulos sin mayúsculas sostenidas: mayúscula solo inicial, Schibsted 500, con número en terracota cuando la sección es numerada.
-- Palabra clave: solo color (terracota sobre claro, terracota claro sobre bosque), 1 a 3 palabras, solo donde haga falta.
-- Selector de idioma ES / EN en el encabezado desde el diseño, aunque el inglés llegue después.
+- Botones en píldora (radio 25). Principal naranja; el botón blanco se pinta naranja al pasar el cursor o al tocarlo. En cabecera y cierre: botón principal más enlace `.lnk`.
+- Tarjetas con radio 5, sin barra superior de color. Chips, etiquetas y filtros en píldora.
+- Cabeceras interiores con foto a sangre, velo petróleo y texto abajo a la izquierda; bajada de una oración.
+- Pines del pie como aguja: círculo y palito.
+- Tarjetas paralelas alineadas con `subgrid` (`.filas-5`).
+- Sin estilos en línea salvo anchos dinámicos de barras.
 
 ## 5. Imágenes y diagramas
 - Fotos propias de Redesign Lab y de la Amazonía (licencia Unsplash). Cada foto acompaña su tema.
@@ -107,12 +106,7 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - Contenido que no se toca y se excluye de los barridos: `app/call-2026`, `components/call`, `public-mockups`, `lib/fuentes.json`, `docs`.
 
 ## 10. Estado del rediseño
-- Ciclo con el dueño: 1 (camino y piloto). Fase en curso: 3, piloto en código.
-- Cerrado: fases 0, 1 y 2. Camino B3 con recorte anillo, verde bosque profundo con textura y naranja.
-- Piloto: sistema nuevo aplicado a todo el sitio; portada y Portafolio rediseñadas; encabezado, pie, logos y 404 nuevos.
-- Pendiente (fase 4): rediseñar Empresas, Bootcamp, Pasaporte, Inversionistas, Nosotros y Privacidad con el sistema; pasar sus textos a `lib/i18n/es.ts` con la pasada de voz; imágenes para compartir por página; fila desalineada en /empresas.
-- Revisión del asesor sobre el piloto: 27 hallazgos; corregidos los de orden de la portada, textos redundantes, cifras, logos, diagrama de la ruta, anillos, selector de idioma en celular y estilos en línea.
-- Línea base de capturas: carpeta de trabajo de la sesión (16-11-2026), 9 rutas en escritorio y celular.
-- Ronda de pedidos sobre el piloto (16-11-2026) aplicada: marca de esquina, cierres en naranja, ruta del capital, cohorte destacada, auditoría de voz del asesor.
-- Última publicación: 16-11-2026, commit 8a49b70 (piloto). En vivo tras 60 s; marcador «Preparamos, conectamos e»; Portafolio, cohorte y pie sin nota comprobados; imágenes para compartir con 200 en producción.
-- Esperando decisión del dueño: comentarios sobre el piloto en vivo; datos por empresa del portafolio (país, año, instrumento); fuente de «+120 comunidades»; recrear el logo con la firma «by Redesign Lab».
+- Sistema inspirado en fosterandpartners.com aplicado a todas las páginas (16-11-2026): portada, Portafolio, Empresas, Bootcamp, Pasaporte, Inversionistas, Nosotros, Privacidad y 404.
+- Revisión de coherencia del asesor Fable: 12 hallazgos aplicados (velo de cabecera, cifras, fichas, rastros verdes en formularios, jerarquía de h2, ritmo de fondos, voz y nombres).
+- Pendiente: pasar los textos de las páginas internas a `lib/i18n/es.ts` antes de la versión en inglés; imágenes para compartir por página.
+- Esperando decisión del dueño: fuente de «ronda activa» y de «25 y 40% anual»; datos por empresa del portafolio; color del encabezado interior (blanco o petróleo).

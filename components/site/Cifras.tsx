@@ -3,7 +3,7 @@ import { Pictograma } from "./Pictograma";
 
 export type Cifra = { icono: string; mas: boolean; valor: string; texto: string };
 
-/** Fila de cifras con pictograma, cifra en Newsreader y descripción. */
+/** Fila de cifras con pictograma, cifra en Open Sans y descripción. */
 export function Cifras({ items }: { items: Cifra[] }) {
   return (
     <div className="cifras">

@@ -77,12 +77,12 @@ export function LeadForm({ form, fields, submit, hidden = {}, success, idPrefix 
         ),
       )}
       <div className="hp" aria-hidden="true"><label>Sitio web<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
-      <label className="consent" htmlFor={`${idPrefix}-ok`} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontWeight: 400, fontSize: 12.5 }}>
-        <input id={`${idPrefix}-ok`} name="consentimiento" type="checkbox" required style={{ width: "auto", marginTop: 2 }} />
+      <label className="consent" htmlFor={`${idPrefix}-ok`}>
+        <input id={`${idPrefix}-ok`} name="consentimiento" type="checkbox" required />
         <span>Acepto la <Link href="/privacidad">política de privacidad</Link> y que Fondo de Impacto me contacte sobre esta solicitud.</span>
       </label>
       {st.s === "err" && <p className="form-msg err" role="alert">{st.msg}</p>}
-      <button className="btn btn-p" type="submit" disabled={st.s === "sending"} style={{ justifySelf: "start" }}>
+      <button className="btn btn-p" type="submit" disabled={st.s === "sending"}>
         {st.s === "sending" ? "Enviando…" : submit}
       </button>
       <span className="xs">Te respondemos {SITE.respuesta}.</span>

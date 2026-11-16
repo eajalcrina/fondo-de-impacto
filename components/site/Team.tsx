@@ -7,7 +7,7 @@ export function TeamMini() {
       {EQUIPO.map((p) => (
         <article key={p.nombre} className="mt">
           <div className="avw"><Image src={p.foto} alt={p.nombre} width={72} height={72} /></div>
-          <div style={{ display: "grid", gap: 3 }}>
+          <div className="mt-texto">
             <b className="h4">{p.nombre}</b>
             <span className="role">{p.cargo}</span>
             <span className="xs">{p.foco}</span>
@@ -25,14 +25,14 @@ export function TeamFull() {
         <article key={p.nombre} className="pc">
           <div className="ph-img"><Image src={p.foto} alt={p.nombre} fill sizes="(max-width:860px) 100vw, 33vw" /></div>
           <div className="body">
-            <div style={{ display: "grid", gap: 4 }}>
-              <h3 className="d3" style={{ fontSize: 24 }}>{p.nombre}</h3>
+            <div className="pc-cabeza">
+              <h3 className="d3">{p.nombre}</h3>
               <span className="role">{p.cargo}</span>
               <span className="focus">{p.foco}</span>
             </div>
             <p className="p2 sm">{p.bio}</p>
             <ul>{p.logros.map((l) => <li key={l}>{l}</li>)}</ul>
-            <span className="xs">{p.formacion}<i className="sep" /><a href={p.linkedin} target="_blank" rel="noopener noreferrer" className="lnk q" style={{ fontSize: 12.5 }}>LinkedIn</a>{p.web && <><i className="sep" /><a href={p.web} target="_blank" rel="noopener" className="lnk q" style={{ fontSize: 12.5 }}>Web</a></>}</span>
+            <span className="xs">{p.formacion}<i className="sep" /><a href={p.linkedin} target="_blank" rel="noopener noreferrer" className="pc-enlace">LinkedIn</a>{p.web && <><i className="sep" /><a href={p.web} target="_blank" rel="noopener" className="pc-enlace">Web</a></>}</span>
           </div>
         </article>
       ))}

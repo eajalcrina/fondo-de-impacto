@@ -17,18 +17,18 @@ export function Consultas() {
     <>
       <div className="cols-3">
         {PUBLICOS.map(([v, t]) => (
-          <div key={v} className="rule l" style={{ gap: 14 }}>
+          <div key={v} className="rule l">
             <span className="h4">{t}</span>
             <p className="p2 sm">{TEXTO[v]}</p>
-            <button type="button" className="lnk" style={{ background: "none", border: 0, borderBottom: "1px solid var(--linea-2)", cursor: "pointer", font: "inherit", fontWeight: 600, fontSize: 14, justifySelf: "start", padding: "0 0 2px" }} aria-expanded={pub === v} onClick={() => setPub(v)}>
+            <button type="button" className="lnk boton-lnk" aria-expanded={pub === v} onClick={() => setPub(v)}>
               Consultar
             </button>
           </div>
         ))}
       </div>
       {pub && (
-        <div id="consulta" style={{ marginTop: 40, maxWidth: 640 }}>
-          <p className="eyebrow s" style={{ marginBottom: 16 }}>Consulta para {PUBLICOS.find(([v]) => v === pub)?.[1]}</p>
+        <div id="consulta" className="consulta">
+          <p className="eyebrow s">Consulta para {PUBLICOS.find(([v]) => v === pub)?.[1]}</p>
           <LeadForm
             key={pub}
             form="consulta"
@@ -45,8 +45,8 @@ export function Consultas() {
             ]}
           />
           {pub === "agencia_fondo" && (
-            <p className="xs" style={{ marginTop: 14 }}>
-              ¿Prefieres conversar? <a className="lnk" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5 }}>Agenda una reunión</a>
+            <p className="xs">
+              ¿Prefieres conversar? <a className="lnk" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agenda una reunión</a>
             </p>
           )}
         </div>

@@ -45,7 +45,7 @@ export default function PortafolioPage() {
         </div>
       </div></section>
 
-      <section className="sec final dk">
+      <section className="sec final">
         <div className="wrap">
           <div className="titular sin-margen">
             <h2 className="d2">{t.cierre.titulo}</h2>
