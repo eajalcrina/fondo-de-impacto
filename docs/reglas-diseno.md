@@ -64,7 +64,9 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - 16-11-2026: el dueño pide ver la combinación que recomienda el asesor (B2 con el encabezado sólido y los dos botones de B1) como lámina B3, con la foto del río en el héroe.
 - 16-11-2026: el acento se acerca más al naranja de la referencia. Naranja `#c94e10` (4,6:1 con blanco) para botón, bloques de color, banda de cierre, pictogramas y palabra clave sobre claro; naranja claro `#f07a3e` (5,7:1 sobre bosque) para la palabra clave sobre bosque. `#994215` queda para texto pequeño sobre claro. Reemplaza a la propuesta `#c0541c`.
 - 16-11-2026: el dueño confirma que Cotton Nation, Endemics, Rare by, GreenProd y Ecovive también son inversiones de Fondo de Impacto. Se muestran todos los logos de organizaciones. Las fotos actuales se pueden usar: no hay problema de permisos.
-- 16-11-2026: el encabezado se mantiene verde (no negro). Propuesta en B3, pendiente de aprobación: bosque profundo `#123524` en lugar de `#132617` para encabezado y superficies oscuras (blanco 13,5:1; naranja claro 4,8:1).
+- 16-11-2026: el encabezado se mantiene verde (no negro). Aprobado: bosque profundo `#123524` en lugar de `#132617` para encabezado y superficies oscuras (blanco 13,5:1; naranja claro 4,8:1).
+- 16-11-2026: el bosque profundo no se usa liso en superficies grandes. Lleva como textura los anillos de puntos del isotipo, al 12 a 16% de opacidad, detrás del texto (héroe, tarjeta oscura y pie).
+- 16-11-2026: se comparan cuatro recortes de foto (hoja, anillo, pendiente y ventana). Recomendado: anillo, que sale del isotipo. Pendiente de elección del dueño.
 
 ## 8. Plantillas para contenido en serie
 - Ninguna por ahora.
