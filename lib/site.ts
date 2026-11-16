@@ -49,7 +49,7 @@ export const EQUIPO: Persona[] = [
     nombre: "Eddie Ajalcriña",
     cargo: "CEO y cofundador",
     foco: "Estrategia, alianzas y relación con fondos",
-    foto: "/img/eddie.jpg",
+    foto: "/img/equipo/eddie.jpg",
     linkedin: "https://www.linkedin.com/in/eddieajalcrina/",
     web: "https://eddieajalcrina.com",
     bio: "Lleva más de quince años como ejecutivo corporativo en ingredientes marinos y nutrición acuícola, cofundador de empresas y director independiente. Trabaja en las dos puntas de la cadena de valor, con productores de la Amazonía y con marcas, compradores e inversionistas globales.",
@@ -64,7 +64,7 @@ export const EQUIPO: Persona[] = [
     nombre: "Lorenzo Ortiz",
     cargo: "COO y cofundador",
     foco: "Operación del fondo, Bootcamp y plataforma",
-    foto: "/img/lorenzo.jpg",
+    foto: "/img/equipo/lorenzo.jpg",
     linkedin: "https://www.linkedin.com/in/lorenzoortiz/",
     bio: "Pasó más de doce años en los grupos Breca y Gloria, en gerencia de operaciones y en proyectos de inversión e innovación.",
     logros: [
@@ -78,7 +78,7 @@ export const EQUIPO: Persona[] = [
     nombre: "Eduardo Mariños",
     cargo: "Director de Inversiones y Riesgo",
     foco: "Due diligence, comité de inversión y cartera",
-    foto: "/img/eduardo.jpg",
+    foto: "/img/equipo/eduardo.jpg",
     linkedin: "https://www.linkedin.com/in/eduardo-mari%C3%B1os-2aa467a6/",
     bio: "Más de ocho años en finanzas corporativas, crédito e inversión de impacto en América Latina. Originó y estructuró inversiones de deuda en empresas de impacto de Perú y Colombia para un fondo de impacto internacional, y gestionó carteras de crédito en banca corporativa y comercial.",
     logros: [
