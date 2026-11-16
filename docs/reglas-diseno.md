@@ -55,6 +55,12 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
   - SEO, GEO e imágenes para compartir optimizadas en todas las páginas.
   - Lorenzo Ortiz revisa y dice «publícalo» en esta sesión. Producción se despliega desde `main` con GitHub Actions.
 - 16-11-2026: se exploran tres caminos visuales en Claude Design (https://claude.ai/artifact/KuKr26i7QbA6XDYDBLNg1X).
+- 16-11-2026: el dueño prefiere el camino B (Territorio). Pide dos derivados (B1 y B2) con referencia de beneficialreturns.com: una sola foto fija en el héroe con el texto a la derecha, tarjetas con foto y velo de color, cifras con pictogramas en color y fila de organizaciones con las que hemos trabajado.
+- 16-11-2026: el terracota se acerca al naranja de esa referencia sin copiarlo. Propuesta: `#c0541c` (color primario histórico de Fondo de Impacto, 4,6:1 con blanco) para relleno y texto sobre claro, y `#e8875a` sobre bosque. Salvia profundo `#4a6b4e` como tercer color de panel.
+- 16-11-2026: fotos sueltas nunca cuadradas, con un tratamiento propio (esquina cortada en B1, forma de hoja en B2). La foto de la comunidad se recorta para enfocar a las personas, sin la franja de tierra.
+- 16-11-2026: se suma la página Portafolio, con datos de redesignlab.org (Cotton Nation, Endemics, Rare by, GreenProd, Ecovive; USD 26 MM de facturación del portafolio en 2025, 28% más que en 2024). Entra al menú como «Portafolio».
+- 16-11-2026: pasada de narrativa y voz sin IA sobre todos los textos, en la fase 3, cuando los textos pasen al archivo por idioma.
+- 16-11-2026: `vercel.json` apaga las vistas previas automáticas de las ramas `claude/*`.
 
 ## 8. Plantillas para contenido en serie
 - Ninguna por ahora.
