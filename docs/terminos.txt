@@ -1,0 +1,11 @@
+# Nombres y formatos oficiales de fondodeimpacto.pe (malo => bueno)
+startup => empresa de impacto
+startups => empresas de impacto
+1,5MM => 1.5 MM
+1,2MM => 1.2 MM
+1,1M => 1.1 MM
+26MM => 26 MM
+100MM => 100 MM
+80M => 80 MM
+80MM => 80 MM
+USD 300,000 => USD 300 mil
