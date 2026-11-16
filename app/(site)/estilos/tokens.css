@@ -14,8 +14,10 @@
     --salvia: #7ca07f;          /* líneas y puntos */
     --salvia-profundo: #4a6b4e; /* bloque de color (6:1 con blanco) */
     --salvia-claro: #f1f5f1;    /* bloques alternos */
-    --bosque-superficie: #1e4a34; /* bloques de cita y cifras sobre bosque (variante del bosque) */
-    --bosque-claro: #2a5a42;      /* hover sobre superficies oscuras */
+    --lienzo: #0d1c19;            /* verde petróleo profundo: lienzo de la portada, encabezado y pie (17,5:1 con blanco) */
+    --lienzo-superficie: #18302b; /* bloques de cita, cifras y tarjetas sobre el lienzo (14:1 con blanco) */
+    --lienzo-linea: rgba(255, 255, 255, 0.14);
+    --bosque-superficie: var(--lienzo-superficie);
 
     /* Naranjas y terracota */
     --naranja: #c94e10;         /* botón, bloques, pictogramas y palabra clave sobre claro (4,6:1 con blanco) */

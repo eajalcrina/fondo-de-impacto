@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 /** Bloques que entran una sola vez al llegar a la pantalla. */
-const REVEAL = ".seccion-titulo,.bloque,.cita,.cifra-item,.escalon,.ficha,.allies > div,.head,.rule,.pc,.mt,.feature,.band,.steps > li,.flow > li,.tiles,.stats,.faq > div";
+const REVEAL = ".seccion-titulo,.bloque,.cita,.cifra-item,.rango,.ficha,.allies > div,.head,.rule,.pc,.mt,.feature,.band,.steps > li,.flow > li,.tiles,.stats,.faq > div";
 
 /**
  * Movimiento del sitio: entradas bajo el pliegue, títulos que suben y pictogramas que se dibujan.

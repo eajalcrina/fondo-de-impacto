@@ -3,12 +3,12 @@
  * y bloques de foto con el texto abajo sobre un velo, bloques de cita en superficie lisa. Retícula de 12 columnas.
  */
 @layer componentes {
-  .portada { background: var(--bosque); color: var(--blanco); }
+  .portada { background: var(--lienzo); color: var(--blanco); }
 
   /* Héroe a pantalla completa con el texto abajo a la izquierda */
   .portada-heroe { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; }
   .portada-heroe img { object-fit: cover; }
-  .portada-heroe::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0) 40%, rgba(10, 30, 20, 0.85) 100%); }
+  .portada-heroe::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0) 40%, rgba(13, 28, 25, 0.9) 100%); }
   .portada-heroe-texto { position: relative; z-index: 1; width: 100%; display: grid; gap: 16px; padding-bottom: 72px; }
   .portada-heroe-texto h1 { max-width: 20ch; }
   .portada-heroe-texto .lead { color: var(--sobre-oscuro); max-width: 52ch; }
@@ -57,21 +57,29 @@
   .cita .btn { margin-top: 8px; }
   @media (min-width: 1100px) { .cita { height: 335px; padding: 32px 40px; } }
 
-  /* Rangos de capital en filas */
-  .escala { display: grid; border-bottom: 1px solid var(--linea-oscura); }
-  .escalon { display: grid; grid-template-columns: minmax(0, 1fr) auto 40px; grid-template-areas: "rango dato flecha" "barra barra barra"; align-items: center; gap: 10px 16px; padding-block: 16px; border-top: 1px solid var(--linea-oscura); color: var(--blanco); }
-  .escalon-rango { grid-area: rango; font-size: clamp(17px, 5vw, 21px); font-weight: 500; line-height: 1.2; white-space: nowrap; }
-  .escalon-barra { grid-area: barra; height: 4px; background: rgba(255, 255, 255, 0.15); border-radius: 2px; overflow: hidden; }
-  .escalon-barra i { display: block; height: 100%; width: calc(var(--f) * 100%); background: var(--naranja-claro); border-radius: 2px; }
-  .escalon-dato { grid-area: dato; font-size: 14px; font-weight: 400; color: var(--sobre-oscuro); white-space: nowrap; }
-  .escalon-dato strong { font-weight: 600; color: var(--blanco); }
-  .escalon .redondo { grid-area: flecha; transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out; }
-  .escalon:hover .redondo, .escalon:focus-visible .redondo { background: var(--naranja); }
-  .escalon:focus-visible { outline: 2px solid var(--blanco); outline-offset: 2px; }
-  @media (min-width: 900px) {
-    .escalon { grid-template-columns: 280px minmax(0, 1fr) 140px 40px; grid-template-areas: "rango barra dato flecha"; padding-block: 18px; gap: 24px; }
-    .escalon-dato { text-align: right; }
+  /* Rangos de capital en tarjetas: monto en grande, fuentes en naranja; la tarjeta se llena de naranja al pasar el cursor */
+  .rangos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  @media (min-width: 900px) { .rangos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sep); } }
+  @media (min-width: 1280px) { .rangos { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+  .rango {
+    display: grid; grid-template-rows: auto auto auto 1fr; height: 100%; min-height: 200px;
+    padding: 20px 18px 18px; border-radius: var(--radio-tarjeta);
+    background: var(--lienzo-superficie); color: var(--blanco); border-top: 3px solid var(--naranja);
+    transition: background-color 0.2s ease-in-out;
   }
+  .rango-pre { font-size: 14px; font-weight: 500; color: var(--sobre-oscuro-2); }
+  .rango-monto { font-size: clamp(32px, 1.6rem + 1.4vw, 44px); font-weight: 500; line-height: 1.1; white-space: nowrap; }
+  .rango-hasta { font-size: 16px; font-weight: 400; color: var(--naranja-claro); }
+  .rango-pie { align-self: end; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 20px; }
+  .rango-fuentes { font-size: 14px; color: var(--sobre-oscuro); }
+  .rango-fuentes strong { display: block; font-size: 21px; font-weight: 500; color: var(--naranja-claro); line-height: 1.1; }
+  .rango .redondo { background: var(--naranja); color: var(--blanco); }
+  .rango:hover, .rango:focus-visible { background: var(--naranja); }
+  .rango:hover .rango-pre, .rango:hover .rango-hasta, .rango:hover .rango-fuentes, .rango:hover .rango-fuentes strong,
+  .rango:focus-visible .rango-pre, .rango:focus-visible .rango-hasta, .rango:focus-visible .rango-fuentes, .rango:focus-visible .rango-fuentes strong { color: var(--blanco); }
+  .rango:hover .redondo, .rango:focus-visible .redondo { background: var(--blanco); color: var(--naranja); }
+  .rango:focus-visible { outline: 2px solid var(--blanco); outline-offset: 2px; }
+  @media (max-width: 639px) { .rango { min-height: 176px; padding: 16px 14px 14px; } .rango-monto { font-size: 30px; } }
 
   /* Cifras en bloques de superficie */
   .cifras { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sep); }

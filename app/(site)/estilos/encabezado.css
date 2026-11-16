@@ -4,10 +4,10 @@
  * El menú se abre en un panel a pantalla completa: foto a la izquierda y enlaces grandes a la derecha.
  */
 @layer componentes {
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: var(--alto-nav); color: var(--blanco); background: rgba(18, 53, 36, 0.35); transition: top 0.3s linear, background-color 0.6s; }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: var(--alto-nav); color: var(--blanco); background: rgba(13, 28, 25, 0.4); transition: top 0.3s linear, background-color 0.6s; }
   .nav.oculto { top: calc(-1 * var(--alto-nav)); }
   .nav.claro { background: var(--blanco); color: var(--bosque); border-bottom: 1px solid var(--linea); }
-  .nav.solido { background: var(--bosque); }
+  .nav.solido { background: var(--lienzo); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 100%; }
   .logo { display: flex; align-items: center; }
   .logo img { display: block; height: auto; width: 128px; }
@@ -30,7 +30,7 @@
   .panel-foto { display: none; position: relative; overflow: hidden; }
   .panel-foto img { object-fit: cover; transition: opacity 0.3s ease-in 0.2s; }
   .panel-cuerpo { display: grid; grid-template-rows: auto 1fr auto; gap: 32px; padding: 20px var(--gut) 32px; min-height: 100%; }
-  .panel-cerrar { justify-self: end; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--bosque); color: var(--blanco); border: 0; cursor: pointer; }
+  .panel-cerrar { justify-self: end; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--lienzo); color: var(--blanco); border: 0; cursor: pointer; }
   .panel-cerrar svg { width: 16px; height: 16px; }
   .panel-listas { display: grid; gap: 32px; align-content: start; }
   .panel-titulo { font-size: 16px; font-weight: 500; color: var(--t2); }

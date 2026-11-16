@@ -2,9 +2,9 @@
 @layer componentes {
   .hero { position: relative; }
   /* Cabecera de páginas internas: foto a sangre al 65% del alto de la pantalla y texto abajo sobre un velo */
-  .cabecera { position: relative; min-height: 65svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--bosque); color: var(--blanco); }
+  .cabecera { position: relative; min-height: 65svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--lienzo); color: var(--blanco); }
   .cabecera img { object-fit: cover; }
-  .cabecera::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(10, 30, 20, 0.85) 100%); }
+  .cabecera::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(13, 28, 25, 0.9) 100%); }
   .cabecera-texto { position: relative; z-index: 1; width: 100%; display: grid; gap: 16px; padding-top: 120px; padding-bottom: 48px; }
   .cabecera-texto h1 { max-width: 22ch; }
   .cabecera-texto .eyebrow, .cabecera-texto .lead { color: var(--sobre-oscuro); }

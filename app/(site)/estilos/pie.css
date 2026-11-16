@@ -9,7 +9,7 @@
   .final .lnk, .final .tc, .final .kw { color: var(--blanco); }
 
   /* Pie: dos filas separadas por líneas punteadas, como la referencia */
-  .foot { background: var(--bosque); color: var(--blanco); font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0; }
+  .foot { background: var(--lienzo); color: var(--blanco); font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0; }
   .pie-fila { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 40px; border-top: 1px dotted rgba(255, 255, 255, 0.35); }
   .pie-marca { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; }
   .paises { display: flex; gap: 24px; font-size: 14px; font-weight: 500; color: var(--sobre-oscuro); }
@@ -23,7 +23,7 @@
   .legal { display: grid; gap: 4px; max-width: 560px; font-size: 14px; color: rgba(255, 255, 255, 0.6); }
 
   /* Aviso de medición */
-  .ck { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 990; max-width: 560px; background: var(--bosque); color: var(--blanco); padding: 20px 22px; border-radius: var(--radio-tarjeta); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.55); display: grid; gap: 14px; }
+  .ck { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 990; max-width: 560px; background: var(--lienzo); color: var(--blanco); padding: 20px 22px; border-radius: var(--radio-tarjeta); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.55); display: grid; gap: 14px; }
   .ck p { font-size: 14px; color: var(--sobre-oscuro); line-height: 1.55; }
   .ck a { color: var(--naranja-claro); text-decoration: underline; text-underline-offset: 2px; }
   .ck-a { display: flex; gap: 10px; flex-wrap: wrap; }

@@ -85,6 +85,8 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
   - Pie mínimo con línea punteada: logo, pines de Perú y Colombia, volver arriba; enlaces y aviso legal.
   - Se retiran el motivo diagonal, los arcos, el cuadrado de esquina, el cinturón de fotos y el diagrama de la ruta del capital.
   - Fotos de redesignlab.org (ventures y héroes) para el portafolio y los bloques, en `public/img/rl/`.
+- 16-11-2026: el lienzo de la portada, el encabezado y el pie pasan a **verde petróleo profundo `#0d1c19`** (17,5:1 con blanco), con superficie `#18302b`, más editorial y en la línea del gris casi negro de la referencia. El bosque `#123524` queda para texto y acentos en páginas claras.
+- 16-11-2026: «¿Cuánto capital necesitas?» vuelve a tarjetas: monto grande, tope naranja, fuentes en naranja claro y flecha naranja; la tarjeta se llena de naranja al pasar el cursor.
 - 16-11-2026: pasada de narrativa y voz sin IA sobre todos los textos, en la fase 3, cuando los textos pasen al archivo por idioma.
 - 16-11-2026: `vercel.json` apaga las vistas previas automáticas de las ramas `claude/*`.
 - 16-11-2026: el dueño pide ver la combinación que recomienda el asesor (B2 con el encabezado sólido y los dos botones de B1) como lámina B3, con la foto del río en el héroe.
