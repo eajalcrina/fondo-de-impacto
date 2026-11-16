@@ -13,7 +13,7 @@ const TX = {
     sect: { agricultura: "Agricultura", alimentos_bebidas: "Alimentos y bebidas", agroforestal: "Agroforestal", bioeconomia: "Bioeconomía", bionegocios: "Bionegocios", economia_circular: "Economía circular", turismo: "Turismo", biotech: "Biotecnología", biomateriales: "Biomateriales", agritech: "Agritech", bioinsumos: "Bioinsumos" } as Record<string, string>,
     filtros: [["*", "Todos"], ["PE", "Perú"], ["CO", "Colombia"], ["EC", "Ecuador"], ["BO", "Bolivia"], ["BR", "Brasil"], ["MX", "México"], ["CA", "Centroamérica"]] as [string, string][],
     rangos: ["Hasta 50K", "50K a 150K", "150K a 300K", "300K a 500K", "500K a 2 MM", "Más de 2 MM"],
-    mapeadas: "fuentes de capital de impacto mapeadas", nr: "con capital no reembolsable", de: "con deuda de impacto o garantías", activa: "con llamada activa", red: "fondos en nuestra red de contacto directo",
+    mapeadas: "fuentes de capital de impacto mapeadas", nr: "con capital no reembolsable", de: "con deuda de impacto o garantías", activa: "con postulación abierta", red: "fondos en nuestra red de contacto directo",
     filtrar: "Filtrar por país", pais: "País", ticket: "Rangos de ticket", ticketSub: "% de las fuentes que financian empresas y publican su ticket", de_: (n: number, t: number) => `${n} de ${t} fuentes`,
     tipo: "Tipo de capital", tipoSub: "Número de fuentes por instrumento", sectores: "Sectores con más oferta", sectoresSub: "Número de fuentes por sector de foco",
   },

@@ -106,7 +106,7 @@ export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: 
         ? `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, este es el reporte preliminar para <b>${escapeHtml(d.razon_social)}</b> (${escapeHtml(rubro)}, ${escapeHtml(pais)}, ${escapeHtml(tipo)}, ${escapeHtml(rango)}).</p>
 <table style="width:100%;border-collapse:collapse;margin:20px 0;"><tr>
 <td style="padding:16px;background:#123524;color:#fff;border-radius:8px 0 0 8px;"><div style="font-size:36px;font-weight:600;">${r.total}</div><div style="font-size:13px;opacity:.75;">fuentes de capital de impacto compatibles con tu perfil</div></td>
-<td style="padding:16px;background:#123524;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con llamada activa: convocatoria abierta o ventanilla permanente</div></td>
+<td style="padding:16px;background:#123524;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con postulación abierta: convocatoria vigente o ventanilla permanente</div></td>
 </tr></table>
 <p style="font-size:14px;color:#556259;">No reembolsable: ${r.porTipo.nr}<br>Deuda y garantías: ${r.porTipo.de}<br>Equity: ${r.porTipo.eq}<br>Blended o mixto: ${r.porTipo.bl}${r.sinTicket ? `<br>${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso.` : ""}</p>
 <p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Siguiente paso recomendado: el Bootcamp de Levantamiento de Capital.</b> En ocho semanas preparas tu tesis, tu modelo financiero, tu teaser y tu pitch, y, si apruebas la evaluación final, presentas ante fondos aliados. ${SITE.cohorte.nombre}: inicio ${SITE.cohorte.inicio.toLowerCase()}, ${SITE.cohorte.cupos} cupos.</p>
@@ -119,7 +119,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         fields: [
           ["Razón social", d.razon_social], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular],
           ["Rubro", rubro], ["País", pais], ["Tipo de fondo", tipo], ["Capital", rango],
-          ["Compatibles", String(r?.total ?? "")], ["Con llamada activa", String(r?.activas ?? "")],
+          ["Compatibles", String(r?.total ?? "")], ["Con postulación abierta", String(r?.activas ?? "")],
         ],
         tab: "Buscador",
         row: [ts, d.razon_social, d.nombre, d.correo, d.celular, rubro, pais, tipo, rango, String(r?.total ?? ""), String(r?.activas ?? ""), ...tail(d)],

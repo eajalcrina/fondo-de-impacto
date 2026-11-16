@@ -34,7 +34,7 @@ const T: Record<Lang, {
     ],
     cuantas: "¿Cuántas fuentes de capital de impacto hay para tu empresa?", cuantasX: "Ingresa los datos de tu empresa y recibe un reporte preliminar.",
     mapa: "Fuentes de capital de impacto en América Latina", mapaX: "Fondos de impacto, banca de desarrollo, cooperación y fondos públicos con convocatorias para empresas de la región.",
-    metodo: "Base propia con fuentes públicas, actualizada en octubre de 2026. Una fuente puede financiar más de un rango, instrumento o sector. «Llamada activa» incluye convocatorias abiertas y ventanillas permanentes.",
+    metodo: "Base propia con fuentes públicas, actualizada en octubre de 2026. Una fuente puede financiar más de un rango, instrumento o sector. «Postulación abierta» incluye convocatorias vigentes y ventanillas permanentes.",
     despues: "Qué pasa después de completarlo",
     pasos: [
       ["Completas tu Pasaporte", "Empresa, tracción, finanzas, impacto y necesidad de capital."],

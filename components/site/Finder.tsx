@@ -19,7 +19,7 @@ const TX = {
     contacto: "Tus datos de contacto", nombre: "Nombre completo", correo: "Correo", celular: "Celular", web: "Sitio web",
     acepto: "Acepto la", politica: "política de privacidad", contacte: "y que Fondo de Impacto me contacte sobre oportunidades de financiamiento.",
     enviar: "Ver cuántos fondos calzan conmigo", ejemplo: "Ejemplo de reporte preliminar", reporte: "Reporte preliminar",
-    compatibles: "fuentes de capital de impacto compatibles con tu perfil", activas: "con llamada activa: convocatoria abierta o ventanilla permanente",
+    compatibles: "fuentes de capital de impacto compatibles con tu perfil", activas: "con postulación abierta: convocatoria vigente o ventanilla permanente",
     sinTicket: (n: number) => `${n} de estas fuentes no publican su ticket y las revisamos caso por caso. `,
     revisamos: "Los nombres y las condiciones los revisamos contigo.",
     ok: ` Te enviamos una copia de este reporte por correo y te escribimos ${SITE.respuesta}.`,
