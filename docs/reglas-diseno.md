@@ -1,6 +1,6 @@
 # Reglas de diseño de fondodeimpacto.pe
 
-Estado: **en curso** (16-11-2026). Camino visual: por elegir entre A, B y C. Referencia: redesignlab.org (tipografía de la cuarta capa del rediseño, commit b1493d1).
+Estado: **en curso** (16-11-2026). Camino visual: B3 (B2 con el encabezado y los botones de B1). Referencia: redesignlab.org (tipografía de la cuarta capa del rediseño, commit b1493d1).
 
 Público: empresas de impacto de América Latina que ya demostraron tracción y buscan capital; en segundo lugar, fondos e inversionistas. Tono: fondo de impacto de primer nivel, de América Latina para el mundo. Sobrio, preciso y con datos.
 
@@ -59,6 +59,10 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - 16-11-2026: el terracota se acerca al naranja de esa referencia sin copiarlo. Propuesta: `#c0541c` (color primario histórico de Fondo de Impacto, 4,6:1 con blanco) para relleno y texto sobre claro, y `#e8875a` sobre bosque. Salvia profundo `#4a6b4e` como tercer color de panel.
 - 16-11-2026: fotos sueltas nunca cuadradas, con un tratamiento propio (esquina cortada en B1, forma de hoja en B2). La foto de la comunidad se recorta para enfocar a las personas, sin la franja de tierra.
 - 16-11-2026: se suma la página Portafolio, con datos de redesignlab.org (Cotton Nation, Endemics, Rare by, GreenProd, Ecovive; USD 26 MM de facturación del portafolio en 2025, 28% más que en 2024). Entra al menú como «Portafolio».
+- 16-11-2026: rótulo del héroe de portada: «Capital de impacto en Perú y Colombia», como en la web anterior.
+- 16-11-2026: logos de organizaciones a la misma altura (34 px; 50 px los cuadrados) y en un solo tono (escala de grises), con la disposición de la web anterior: cuatro columnas por grupo. Se quitaron los fondos blancos de PRODUCE y WWF.
+- 16-11-2026: se mantiene el cinturón de fotos bajo el héroe de la web anterior (pedido del dueño; se detiene con movimiento reducido).
+- 16-11-2026: en los flujos, diagramas propios con la paleta. Ningún texto redundante.
 - 16-11-2026: pasada de narrativa y voz sin IA sobre todos los textos, en la fase 3, cuando los textos pasen al archivo por idioma.
 - 16-11-2026: `vercel.json` apaga las vistas previas automáticas de las ramas `claude/*`.
 - 16-11-2026: el dueño pide ver la combinación que recomienda el asesor (B2 con el encabezado sólido y los dos botones de B1) como lámina B3, con la foto del río en el héroe.
@@ -66,19 +70,21 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - 16-11-2026: el dueño confirma que Cotton Nation, Endemics, Rare by, GreenProd y Ecovive también son inversiones de Fondo de Impacto. Se muestran todos los logos de organizaciones. Las fotos actuales se pueden usar: no hay problema de permisos.
 - 16-11-2026: el encabezado se mantiene verde (no negro). Aprobado: bosque profundo `#123524` en lugar de `#132617` para encabezado y superficies oscuras (blanco 13,5:1; naranja claro 4,8:1).
 - 16-11-2026: el bosque profundo no se usa liso en superficies grandes. Lleva como textura los anillos de puntos del isotipo, al 12 a 16% de opacidad, detrás del texto (héroe, tarjeta oscura y pie).
-- 16-11-2026: se comparan cuatro recortes de foto (hoja, anillo, pendiente y ventana). Recomendado: anillo, que sale del isotipo. Pendiente de elección del dueño.
+- 16-11-2026: se comparan cuatro recortes de foto (hoja, anillo, pendiente y ventana). Recomendado: anillo, que sale del isotipo. Elegido por el dueño: anillo, cuidando que el arco no corte caras.
 
 ## 8. Plantillas para contenido en serie
 - Ninguna por ahora.
 
 ## 9. Estructura del código
-- Archivo de tokens: por crear en la fase 3. Hoy los tokens viven en `app/(site)/site.css`.
-- Textos por idioma: por crear en la fase 3 (`lib/i18n/es.ts`).
-- Línea base al empezar (16-11-2026): 14 `!important` y 35 colores escritos a mano. Solo puede bajar.
+- Archivo de tokens: `app/(site)/estilos/tokens.css`. Capas: `tokens, fundamento, componentes, paginas, utilidades` (el nombre `base` lo reserva Tailwind).
+- Estilos por componente en `app/(site)/estilos/*.css`; `app/(site)/site.css` solo los importa.
+- Textos por idioma: `lib/i18n/es.ts` (encabezado, pie, portada y portafolio; el resto de páginas pasa en la fase 4).
+- Línea base al empezar (16-11-2026): 14 `!important` y 35 colores escritos a mano. Tras la fase 3: 0 `!important`; colores a mano solo en los correos (`lib/leads.ts`, `lib/lead-notify.ts`), con los valores de los tokens.
 - Contenido que no se toca y se excluye de los barridos: `app/call-2026`, `components/call`, `public-mockups`, `lib/fuentes.json`, `docs`.
 
 ## 10. Estado del rediseño
-- Ciclo con el dueño: preparación, fase 2 (caminos visuales).
-- Cerrado: fase 0 (cuestionario) y fase 1 (diagnóstico).
-- Diagnóstico del sitio actual: 31 títulos y etiquetas con punto final, rangos con raya, rótulos en mayúsculas, gris de 2,6:1, radios de 2 a 14 px mezclados, carrusel y contadores, 7 anchos fijos fuera de `@media`.
-- Esperando decisión del dueño: camino visual.
+- Ciclo con el dueño: 1 (camino y piloto). Fase en curso: 3, piloto en código.
+- Cerrado: fases 0, 1 y 2. Camino B3 con recorte anillo, verde bosque profundo con textura y naranja.
+- Piloto: sistema nuevo aplicado a todo el sitio; portada y Portafolio rediseñadas; encabezado, pie, logos y 404 nuevos.
+- Pendiente (fase 4): rediseñar Empresas, Bootcamp, Pasaporte, Inversionistas, Nosotros y Privacidad con el sistema; pasar sus textos a `lib/i18n/es.ts` con la pasada de voz; imágenes para compartir por página; fila desalineada en /empresas.
+- Esperando decisión del dueño: aprobación del piloto.
