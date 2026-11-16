@@ -10,16 +10,17 @@
   .nav.solido { background: var(--lienzo); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 100%; }
   /* Logo: el nombre en dos líneas ocupa la misma altura que el isotipo; la firma va debajo, pequeña y discreta */
-  .logo { display: grid; grid-template-columns: auto auto; grid-template-areas: "icono nombre" ". firma"; column-gap: 10px; align-items: center; color: var(--bosque); }
+  .logo { --logo-t: 18px; display: grid; grid-template-columns: auto auto; grid-template-areas: "icono nombre" ". firma"; column-gap: 10px; align-items: center; color: var(--bosque); }
   .logo-icono { grid-area: icono; width: 40px; height: 40px; }
   .logo-texto { display: contents; }
-  .logo-nombre { grid-area: nombre; display: grid; font-size: 17.5px; font-weight: 600; line-height: 1.14; letter-spacing: 0.06em; text-transform: uppercase; }
+  .logo-nombre { grid-area: nombre; display: grid; font-size: var(--logo-t); font-weight: 600; line-height: 1.14; letter-spacing: 0.175em; text-transform: uppercase; }
   .logo-clave { display: block; }
-  .logo-firma { grid-area: firma; margin-top: 3px; font-size: 11px; font-weight: 400; line-height: 1.2; letter-spacing: 0.01em; color: var(--t2); white-space: nowrap; }
+  /* La firma ocupa el mismo ancho que «FONDO DE»: va de la F a la E, en proporción al tamaño del nombre */
+  .logo-firma { grid-area: firma; margin-top: 3px; font-size: calc(var(--logo-t) * 0.528); font-weight: 400; line-height: 1.2; letter-spacing: 0; color: var(--t2); white-space: nowrap; }
   .logo-firma b { font-weight: 600; }
   .logo-white { color: var(--blanco); }
   .logo-white .logo-firma { color: var(--sobre-oscuro-2); }
-  @media (min-width: 1100px) { .logo-icono { width: 44px; height: 44px; } .logo-nombre { font-size: 19.3px; } .logo-firma { font-size: 11.5px; } }
+  @media (min-width: 1100px) { .logo { --logo-t: 19.3px; } .logo-icono { width: 44px; height: 44px; } }
   .acciones { display: flex; align-items: center; gap: 8px; }
   .acciones .btn { display: none; }
   @media (min-width: 900px) { .acciones .btn { display: inline-flex; margin-right: 8px; } }
