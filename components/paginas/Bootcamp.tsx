@@ -10,8 +10,8 @@ import fuentes from "@/lib/fuentes.json";
 import { ruta, type Lang } from "@/lib/i18n";
 
 export const META = {
-  es: { title: "Bootcamp de Levantamiento de Capital", description: "Ocho semanas de investment readiness aplicado para empresas de impacto. Inicio: lunes 1 de febrero de 2027. 15 cupos." },
-  en: { title: "Capital Raising Bootcamp", description: "Eight weeks of hands-on investment readiness for impact companies. Starts Monday, February 1, 2027. 15 seats." },
+  es: { title: "Bootcamp de Levantamiento de Capital", description: `Ocho semanas de preparación para la inversión para empresas de impacto. Inicio: ${SITE.cohorte.inicio.toLowerCase()}. ${SITE.cohorte.cupos} cupos.` },
+  en: { title: "Capital Raising Bootcamp", description: `Eight weeks of hands-on investment readiness for impact companies. Starts ${SITE.cohorteEn.inicio}. ${SITE.cohorte.cupos} seats.` },
 };
 
 const C = SITE.cohorte;
@@ -34,7 +34,7 @@ const T = {
       ["Semanas 7 y 8", "Pitch y comité simulado", "Ensayos con feedback directo y evaluación final ante un comité simulado."],
     ],
     terminar: "Al terminar",
-    t1: ["Portafolio privado", "Tu teaser queda disponible para los fondos de nuestra red, con el distintivo del Bootcamp"],
+    t1: ["Red de fondos", "Tu teaser queda disponible para los fondos de nuestra red, con el distintivo del Bootcamp"],
     t2: ["Sesión con fondos aliados", "Las empresas que aprueben la evaluación final presentan ante fondos de impacto aliados", "La sesión no garantiza financiamiento."],
     equipo: "Quién te acompaña",
     quien: "Para quién es",
@@ -57,13 +57,13 @@ const T = {
     condiciones: ["You pay after we confirm your seat, in two installments: half on confirmation and half in week 4.", "Partial scholarships for companies with annual sales below USD 300K, co-funded by partner funds and cooperation organizations."],
     semanas: "What you do each week",
     lista: [
-      ["Weeks 1 and 2", "Diagnosis and thesis", "Starting point with your Investment Passport. We define the investment thesis, how much capital you need and what for."],
+      ["Weeks 1 and 2", "Diagnostic and thesis", "Starting point with your Investment Passport. We define the investment thesis, how much capital you need and what for."],
       ["Weeks 3 and 4", "Finance and structure", "Financial model, use of funds and the right instrument: debt, equity or blended."],
       ["Weeks 5 and 6", "Teaser, data room and ESG", "Committee-grade documents, impact metrics and ESG risk management."],
       ["Weeks 7 and 8", "Pitch and mock committee", "Rehearsals with direct feedback and a final assessment before a mock investment committee."],
     ],
     terminar: "When you finish",
-    t1: ["Private portfolio", "Your teaser becomes available to the funds in our network, with the Bootcamp badge"],
+    t1: ["Fund network", "Your teaser becomes available to the funds in our network, with the Bootcamp badge"],
     t2: ["Session with partner funds", "Companies that pass the final assessment pitch to partner impact funds", "The session does not guarantee financing."],
     equipo: "Who works with you",
     quien: "Who it is for",

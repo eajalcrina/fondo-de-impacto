@@ -89,7 +89,7 @@ export const es = {
     tesis: {
       rotulo: "Tesis",
       titulo: "Resultados del portafolio",
-      texto: "Invertimos en empresas con ventas, una cadena de valor en la biodiversidad y un equipo que conocemos desde la preparación.",
+      texto: "Buscamos ventas, una cadena de valor en la biodiversidad y un equipo que conocemos desde la preparación.",
     },
     cifras: [
       { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025" },

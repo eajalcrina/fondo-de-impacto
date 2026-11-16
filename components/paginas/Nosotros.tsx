@@ -5,8 +5,8 @@ import { SITE } from "@/lib/site";
 import type { Lang } from "@/lib/i18n";
 
 export const META = {
-  es: { title: "Nosotros", description: "Fondo de Impacto es el brazo de capital de Redesign Lab. Conoce al equipo." },
-  en: { title: "About us", description: "Fondo de Impacto is the capital arm of Redesign Lab. Meet the team." },
+  es: { title: "Nosotros", description: "Fondo de Impacto es el brazo de capital de Redesign Lab, venture studio que invierte en empresas de impacto en América Latina desde 2021. Conoce al equipo." },
+  en: { title: "About us", description: "Fondo de Impacto is the capital arm of Redesign Lab, a venture studio that has invested in impact companies in Latin America since 2021. Meet the team." },
 };
 
 const T = {
@@ -20,7 +20,7 @@ const T = {
   },
   en: {
     foto: "Producer community", rotulo: "About us", titulo: "The capital arm of Redesign Lab",
-    bajada: "Redesign Lab is a venture studio that designs, scales and invests in impact companies in Latin America since 2021.",
+    bajada: "Redesign Lab is a venture studio that has designed, scaled and invested in impact companies in Latin America since 2021.",
     hacemos: "What we do",
     lineas: [["Investment readiness", "Our own methodology, the Bootcamp and the investment profile."], ["Capital structuring", "A network of more than 50 impact funds, development banks and cooperation agencies."], ["Impact investing", "Private capital with financial and ESG due diligence."]],
     equipo: "Strategy, operations and investment in one team",

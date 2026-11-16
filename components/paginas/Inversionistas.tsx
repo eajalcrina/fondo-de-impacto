@@ -21,8 +21,8 @@ const T: Record<Lang, {
     bajada: "Canalizamos capital privado hacia empresas de Perú y Colombia con historial de repago.", agendar: "Agendar una reunión de inversión",
     porque: "Por qué invertimos en estas empresas",
     tesis: [
-      ["Son rentables antes de tener un perfil de inversión", "Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. Lo que suele faltar es un perfil de inversión bien construido."],
-      ["Complementamos a otros fondos", "Financiamos a empresas que ya repagaron a otros fondos de impacto. El historial con terceros es nuestro primer filtro de riesgo."],
+      ["Son rentables antes de tener un perfil de inversión", "Muchas empresas de impacto de Perú y Colombia ya son rentables cuando el capital tradicional todavía no las identifica. Les suele faltar un perfil de inversión bien construido."],
+      ["Complementamos a otros fondos", "Financiamos a empresas que ya repagaron a otros fondos de impacto."],
     ],
     estructura: "Cómo se estructura la inversión",
     terminos: [
@@ -70,19 +70,19 @@ const T: Record<Lang, {
     bajada: "We channel private capital to companies in Peru and Colombia with a repayment track record.", agendar: "Book an investment meeting",
     porque: "Why we invest in these companies",
     tesis: [
-      ["Profitable before they have an investment profile", "Impact businesses in Peru and Colombia become profitable before traditional capital notices them. What they usually lack is a well-built investment profile."],
-      ["We complement other funds", "We finance companies that have already repaid other impact funds. Their track record with third parties is our first risk filter."],
+      ["Profitable before they have an investment profile", "Many impact companies in Peru and Colombia are already profitable when traditional capital has yet to notice them. They usually lack a well-built investment profile."],
+      ["We complement other funds", "We finance companies that have already repaid other impact funds."],
     ],
     estructura: "How the investment is structured",
     terminos: [
       ["Approach", "Patient impact investment through a debt instrument"],
       ["Dilution", "None. Investors do not take equity in the companies"],
       ["Return", "Target set in the terms of each round. It is not guaranteed and depends on the performance of the financed companies"],
-      ["Collateral", "Operations with companies are backed by a mortgage guarantee"],
-      ["Formalization", "Private contract with notarized signatures"],
+      ["Collateral", "Loans to companies are secured by a mortgage"],
+      ["Documentation", "Private contract with notarized signatures"],
       ["Reporting", "Monthly: cash, sales, operating and impact indicators for each company"],
     ],
-    clave: ["Rate, term and ticket", "Shared in a meeting, after signing the NDA"],
+    clave: ["Rate, term and ticket size", "Shared in a meeting, after signing the NDA"],
     llega: "How a company reaches the fund",
     originacion: [
       ["Origination", "Companies supported or prepared by Redesign Lab, and referrals from partner funds."],
@@ -90,7 +90,7 @@ const T: Record<Lang, {
       ["Due diligence", "Financial, operational, ESG and impact review with our own methodology."],
       ["Committee and monitoring", "Committee approval, disbursement and monthly follow-up until repayment."],
     ],
-    equipo: "Who assesses each operation",
+    equipo: "Who assesses each deal",
     riesgos: "Risks of the instrument and how we mitigate them", r: "Risks",
     rl: [
       ["Credit risk", "The company may not repay within the agreed term."],
@@ -102,7 +102,7 @@ const T: Record<Lang, {
     ml: [
       ["Prior track record", "We only finance companies that have already repaid other lenders."],
       ["Operational knowledge", "We support companies before and after investing, and we look at operations before financial statements."],
-      ["Mortgage guarantee", "Every direct financing operation is backed by real collateral on a property."],
+      ["Mortgage", "Every direct financing loan is secured by a mortgage on real estate."],
       ["ESG due diligence", "Social, environmental and impact assessment before investing, with indicators reported alongside the financials."],
     ],
     pasos: "Steps to signing the contract",

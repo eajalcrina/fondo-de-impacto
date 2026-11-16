@@ -21,9 +21,9 @@ const TX = {
     sect: { agricultura: "Agriculture", alimentos_bebidas: "Food and beverages", agroforestal: "Agroforestry", bioeconomia: "Bioeconomy", bionegocios: "Biobusiness", economia_circular: "Circular economy", turismo: "Tourism", biotech: "Biotech", biomateriales: "Biomaterials", agritech: "Agritech", bioinsumos: "Bio-inputs" } as Record<string, string>,
     filtros: [["*", "All"], ["PE", "Peru"], ["CO", "Colombia"], ["EC", "Ecuador"], ["BO", "Bolivia"], ["BR", "Brazil"], ["MX", "Mexico"], ["CA", "Central America"]] as [string, string][],
     rangos: ["Up to 50K", "50K to 150K", "150K to 300K", "300K to 500K", "500K to 2 M", "More than 2 M"],
-    mapeadas: "impact capital sources mapped", nr: "with non-reimbursable capital", de: "with impact debt or guarantees", activa: "with an active call", red: "funds in our direct contact network",
-    filtrar: "Filter by country", pais: "Country", ticket: "Ticket ranges", ticketSub: "% of sources that finance companies and publish their ticket", de_: (n: number, t: number) => `${n} of ${t} sources`,
-    tipo: "Type of capital", tipoSub: "Number of sources per instrument", sectores: "Sectors with the most supply", sectoresSub: "Number of sources per focus sector",
+    mapeadas: "impact capital sources mapped", nr: "offering grants", de: "with impact debt or guarantees", activa: "open for applications", red: "funds we are in direct contact with",
+    filtrar: "Filter by country", pais: "Country", ticket: "Ticket sizes", ticketSub: "% of sources that finance companies and publish their ticket size", de_: (n: number, t: number) => `${n} of ${t} sources`,
+    tipo: "Type of capital", tipoSub: "Number of sources per instrument", sectores: "Sectors with the most sources", sectoresSub: "Number of sources per focus sector",
   },
 };
 

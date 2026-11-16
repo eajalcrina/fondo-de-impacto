@@ -3,7 +3,7 @@ import type { Lang } from "@/lib/i18n";
 const TX = {
   es: { aria: "Ejemplo ilustrativo de teaser confidencial", rotulo: "Teaser confidencial", empresa: "Empresa peruana de alimentos de origen amazónico", chips: ["Crecimiento", "Deuda"], busca: "Busca USD 250K a 400K",
     kpi: [["Ventas últimos 12 meses", "USD 1.1 MM"], ["Crecimiento anual", "38%"], ["Margen bruto", "42%"], ["Historial con fondos", "2 créditos repagados"], ["Productores en su cadena", "180"], ["ODS principales", "1, 8 y 15"]],
-    nivel: "Investment readiness", alto: "Alto", nota: "Ejemplo ilustrativo. Los fondos ven tu nombre solo si lo apruebas." },
+    nivel: "Preparación para la inversión", alto: "Alto", nota: "Ejemplo ilustrativo. Los fondos ven tu nombre solo si lo apruebas." },
   en: { aria: "Illustrative sample of a confidential teaser", rotulo: "Confidential teaser", empresa: "Peruvian food company with Amazon-sourced products", chips: ["Growth", "Debt"], busca: "Seeking USD 250K to 400K",
     kpi: [["Sales, last 12 months", "USD 1.1 M"], ["Annual growth", "38%"], ["Gross margin", "42%"], ["Track record with funds", "2 loans repaid"], ["Producers in its chain", "180"], ["Main SDGs", "1, 8 and 15"]],
     nivel: "Investment readiness", alto: "High", nota: "Illustrative sample. Funds see your name only if you approve it." },

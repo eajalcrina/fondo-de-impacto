@@ -68,11 +68,11 @@ type Envelope = {
 };
 
 function shell(titulo: string, cuerpo: string, en = false): string {
-  return `<div style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#123524;max-width:560px;margin:0 auto;padding:32px 24px;">
-<p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#994215;margin:0 0 12px;">Fondo de Impacto</p>
+  return `<div style="font-family:'Open Sans',Helvetica,Arial,sans-serif;color:#123524;max-width:560px;margin:0 auto;padding:32px 24px;">
+<p style="font-size:14px;font-weight:600;color:#c94e10;margin:0 0 12px;">Fondo de Impacto</p>
 <h1 style="font-size:24px;line-height:1.2;margin:0 0 20px;">${titulo}</h1>
 ${cuerpo}
-<p style="font-size:12px;color:#556259;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">${en ? "Fondo de Impacto, a division of Redesign Lab, from Lima and Bogotá" : "Fondo de Impacto, una división de Redesign Lab, desde Lima y Bogotá"}<br>${SITE.email} | <a href="${SITE.url}${en ? "/en/privacy" : "/privacidad"}" style="color:#556259;">${en ? "Privacy policy" : "Política de privacidad"}</a></p>
+<p style="font-size:12px;color:#556259;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">${en ? "Fondo de Impacto, by Redesign Lab, from Lima and Bogotá" : "Fondo de Impacto, by Redesign Lab, desde Lima y Bogotá"}<br>${SITE.email} | <a href="${SITE.url}${en ? "/en/privacy" : "/privacidad"}" style="color:#556259;">${en ? "Privacy policy" : "Política de privacidad"}</a></p>
 </div>`;
 }
 
@@ -109,9 +109,9 @@ export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: 
 <td style="padding:16px;background:#123524;color:#fff;border-radius:0 8px 8px 0;"><div style="font-size:36px;font-weight:600;">${r.activas}</div><div style="font-size:13px;opacity:.75;">con llamada activa: convocatoria abierta o ventanilla permanente</div></td>
 </tr></table>
 <p style="font-size:14px;color:#556259;">No reembolsable: ${r.porTipo.nr}<br>Deuda y garantías: ${r.porTipo.de}<br>Equity: ${r.porTipo.eq}<br>Blended o mixto: ${r.porTipo.bl}${r.sinTicket ? `<br>${r.sinTicket} de estas fuentes no publican su ticket y las revisamos caso por caso.` : ""}</p>
-<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Siguiente paso recomendado: el Bootcamp de Levantamiento de Capital.</b> En ocho semanas preparas tu tesis, tu modelo financiero, tu teaser y tu pitch, y al final presentas ante fondos aliados. ${SITE.cohorte.nombre}: inicio ${SITE.cohorte.inicio.toLowerCase()}, ${SITE.cohorte.cupos} cupos.</p>
+<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Siguiente paso recomendado: el Bootcamp de Levantamiento de Capital.</b> En ocho semanas preparas tu tesis, tu modelo financiero, tu teaser y tu pitch, y, si apruebas la evaluación final, presentas ante fondos aliados. ${SITE.cohorte.nombre}: inicio ${SITE.cohorte.inicio.toLowerCase()}, ${SITE.cohorte.cupos} cupos.</p>
 ${boton(`${SITE.url}/bootcamp#postular`, "Postular al Bootcamp")}
-<p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>¿Quieres empezar hoy a levantar capital?</b> Conversemos 30 minutos.</p>
+<p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>¿Prefieres conversar?</b> Agenda 30 minutos con el equipo.</p>
 ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         : `<p>Hola ${nombre}, recibimos tu solicitud.</p>`;
       return {
@@ -124,13 +124,13 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         tab: "Buscador",
         row: [ts, d.razon_social, d.nombre, d.correo, d.celular, rubro, pais, tipo, rango, String(r?.total ?? ""), String(r?.activas ?? ""), ...tail(d)],
         userEmail: en
-          ? { to: d.correo, subject: `Your report of available funds for ${d.razon_social}`, html: shell("Funds available for your company", r
+          ? { to: d.correo, subject: `Your fund report for ${d.razon_social}`, html: shell("Funds available for your company", r
             ? `<p style="font-size:15px;line-height:1.6;">Hi ${nombre}, here is the preliminary report for <b>${escapeHtml(d.razon_social)}</b>.</p>
-<p style="font-size:15px;line-height:1.6;"><b>${r.total}</b> impact capital sources match your profile and <b>${r.activas}</b> have an active call.</p>
-<p style="font-size:14px;color:#556259;">Non-reimbursable: ${r.porTipo.nr}<br>Debt and guarantees: ${r.porTipo.de}<br>Equity: ${r.porTipo.eq}<br>Blended: ${r.porTipo.bl}</p>
-<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Recommended next step: the Capital Raising Bootcamp.</b> In eight weeks you build your thesis, financial model, teaser and pitch, and at the end you present to partner funds. ${SITE.cohorteEn.nombre}: starts ${SITE.cohorteEn.inicio}, ${SITE.cohorte.cupos} seats.</p>
+<p style="font-size:15px;line-height:1.6;"><b>${r.total}</b> impact capital sources match your profile and <b>${r.activas}</b> are open for applications.</p>
+<p style="font-size:14px;color:#556259;">Grants: ${r.porTipo.nr}<br>Debt and guarantees: ${r.porTipo.de}<br>Equity: ${r.porTipo.eq}<br>Blended: ${r.porTipo.bl}</p>
+<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Recommended next step: the Capital Raising Bootcamp.</b> In eight weeks you build your thesis, financial model, teaser and pitch, and, if you pass the final assessment, you pitch to partner funds. ${SITE.cohorteEn.nombre}: starts ${SITE.cohorteEn.inicio}, ${SITE.cohorte.cupos} seats.</p>
 ${boton(`${SITE.url}/en/bootcamp#postular`, "Apply to the Bootcamp")}
-<p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>Want to start raising capital today?</b> Let’s talk for 30 minutes.</p>
+<p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>Prefer to talk?</b> Book 30 minutes with the team.</p>
 ${boton(SITE.calEmpresas, "Book a meeting", false)}`
             : `<p>Hi ${nombre}, we received your request.</p>`, true) }
           : { to: d.correo, subject: `Tu reporte de fondos disponibles para ${d.razon_social}`, html: shell("Fondos disponibles para tu empresa", cuerpo) },
@@ -152,7 +152,7 @@ ${boton(SITE.calEmpresas, "Book a meeting", false)}`
           html: shell(
             "We received your application",
             `<p style="font-size:15px;line-height:1.6;">Hi ${nombre}, thank you for applying with <b>${escapeHtml(d.empresa)}</b> to the Capital Raising Bootcamp (${SITE.cohorteEn.nombre}, starting ${SITE.cohorteEn.inicio}). We review every application and will write to you within 24 hours to set up a conversation.</p>
-<p style="font-size:15px;line-height:1.6;">Price: <b>${SITE.cohorte.precio}</b> per company, or <b>${SITE.cohorte.precioAnticipado}</b> if you confirm your seat by ${SITE.cohorteEn.fechaAnticipado}. It is paid in two installments and only after your seat is confirmed. Partial scholarships are available for companies with annual sales below USD 300,000.</p>
+<p style="font-size:15px;line-height:1.6;">Price: <b>${SITE.cohorte.precio}</b> per company, or <b>${SITE.cohorte.precioAnticipado}</b> if you confirm your seat by ${SITE.cohorteEn.fechaAnticipado}. It is paid in two installments and only after your seat is confirmed. Partial scholarships are available for companies with annual sales below USD 300K.</p>
 <p style="font-size:15px;line-height:1.6;">In the meantime, you can book a meeting with the team.</p>${boton(SITE.calEmpresas, "Book a meeting")}`,
             true,
           ),
@@ -161,8 +161,8 @@ ${boton(SITE.calEmpresas, "Book a meeting", false)}`
           subject: "Recibimos tu postulación al Bootcamp de Levantamiento de Capital",
           html: shell(
             "Recibimos tu postulación",
-            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, gracias por postular a <b>${escapeHtml(d.empresa)}</b> al Bootcamp de Levantamiento de Capital (${SITE.cohorte.nombre}, inicio: ${SITE.cohorte.inicio}). Revisamos cada postulación y te escribiremos ${SITE.respuesta} para coordinar una conversación.</p>
-<p style="font-size:15px;line-height:1.6;">Inversión: <b>${SITE.cohorte.precio}</b> por empresa, o <b>${SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el ${SITE.cohorte.fechaAnticipado}. Se paga en dos cuotas y solo después de confirmar tu cupo. Hay becas parciales para empresas con ventas anuales menores a USD 300,000.</p>
+            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, gracias por postular a <b>${escapeHtml(d.empresa)}</b> al Bootcamp de Levantamiento de Capital (${SITE.cohorte.nombre}, inicio: ${SITE.cohorte.inicio.toLowerCase()}). Revisamos cada postulación y te escribiremos ${SITE.respuesta} para coordinar una conversación.</p>
+<p style="font-size:15px;line-height:1.6;">Inversión: <b>${SITE.cohorte.precio}</b> por empresa, o <b>${SITE.cohorte.precioAnticipado}</b> si confirmas tu cupo hasta el ${SITE.cohorte.fechaAnticipado}. Se paga en dos cuotas y solo después de confirmar tu cupo. Hay becas parciales para empresas con ventas anuales menores a USD 300 mil.</p>
 <p style="font-size:15px;line-height:1.6;">Mientras tanto, puedes agendar una reunión con el equipo.</p>${boton(SITE.calEmpresas, "Agendar una reunión")}`,
           ),
         },
@@ -196,7 +196,7 @@ ${boton(SITE.calEmpresas, "Book a meeting", false)}`
           subject: "Recibimos tu solicitud de acceso al Pasaporte de Inversión",
           html: shell(
             "Recibimos tu solicitud de acceso",
-            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, recibimos la solicitud de <b>${escapeHtml(d.empresa)}</b> para acceder al Pasaporte de Inversión. El Pasaporte abre por etapas y cuesta USD 0: solo inviertes tiempo. Te escribiremos cuando tu acceso esté listo.</p>`,
+            `<p style="font-size:15px;line-height:1.6;">Hola ${nombre}, recibimos la solicitud de <b>${escapeHtml(d.empresa)}</b> para acceder al Pasaporte de Inversión. El Pasaporte abre por etapas y no tiene costo para tu empresa. Te escribiremos cuando tu acceso esté listo.</p>`,
           ),
         },
       };

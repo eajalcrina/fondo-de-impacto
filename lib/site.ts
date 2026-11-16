@@ -77,7 +77,7 @@ export const EQUIPO: Persona[] = [
     en: {
       cargo: "CEO and co-founder",
       foco: "Strategy, partnerships and fund relations",
-      bio: "More than fifteen years as a corporate executive in marine ingredients and aquaculture nutrition, co-founder of companies and independent director. He works at both ends of the value chain, with producers in the Amazon and with global brands, buyers and investors.",
+      bio: "He has spent more than fifteen years as a corporate executive in marine ingredients and aquaculture nutrition, and is a company co-founder and independent director. He works at both ends of the value chain, with producers in the Amazon and with global brands, buyers and investors.",
       logros: [
         "Took part in structuring a USD 80 M green loan (Bank of America and World Bank) during his corporate career",
         "Coordinated the Sustainable Business Program and Team Europe, Circular Transition, at the Delegation of the European Union in Peru",
@@ -122,7 +122,7 @@ export const EQUIPO: Persona[] = [
     logros: [
       "Más de 100 empresas evaluadas para inversión",
       "Cerca de USD 100 MM en operaciones de crédito aprobadas",
-      "Estructuró un financiamiento garantizado a cinco años para una cadena de valor agrícola con más de 3.000 productores",
+      "Estructuró un financiamiento garantizado a cinco años para una cadena de valor agrícola con más de 3,000 productores",
     ],
     formacion: "Economista (Universidad del Pacífico) y MBA (EUDE Business School)",
     en: {
@@ -131,7 +131,7 @@ export const EQUIPO: Persona[] = [
       bio: "More than eight years in corporate finance, credit and impact investing in Latin America. He originated and structured debt investments in impact companies in Peru and Colombia for an international impact fund, and managed credit portfolios in corporate and commercial banking.",
       logros: [
         "More than 100 companies assessed for investment",
-        "Close to USD 100 M in approved credit operations",
+        "Close to USD 100 M in approved loans",
         "Structured a five-year guaranteed financing for an agricultural value chain with more than 3,000 producers",
       ],
       formacion: "Economist (Universidad del Pacífico) and MBA (EUDE Business School)",

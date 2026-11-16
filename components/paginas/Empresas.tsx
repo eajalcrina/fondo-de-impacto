@@ -6,7 +6,7 @@ import { ruta, type Lang } from "@/lib/i18n";
 
 export const META = {
   es: { title: "Para empresas", description: "Del diagnóstico al capital: buscador de fondos, Bootcamp de Levantamiento de Capital y financiamiento directo para empresas de impacto en Perú y Colombia." },
-  en: { title: "For companies", description: "From diagnosis to capital: fund finder, Capital Raising Bootcamp and direct financing for impact companies in Peru and Colombia." },
+  en: { title: "For companies", description: "From diagnostic to capital: fund finder, Capital Raising Bootcamp and direct financing for impact companies in Peru and Colombia." },
 };
 
 const T = {
@@ -21,13 +21,13 @@ const T = {
     cierre: `Postula a la cohorte de ${SITE.cohorte.mes}`, cierreX: `El Bootcamp empieza el ${SITE.cohorte.inicio.toLowerCase()}.`, postular: "Postular al Bootcamp",
   },
   en: {
-    foto: "Producer in his field", rotulo: "For companies", titulo: "From diagnosis to capital",
-    bajada: "We prepare impact companies in Peru and Colombia to raise capital from the funds in our network. We finance directly those that already have a repayment track record.",
+    foto: "Producer in his field", rotulo: "For companies", titulo: "From diagnostic to capital",
+    bajada: "We prepare impact companies in Peru and Colombia to raise capital from the funds in our network. Those that already have a repayment track record can get direct financing from us.",
     fondos: "See funds for my company", modalidades: "Two options depending on your company’s stage",
     a: { r: "Getting ready to raise capital", t: "We prepare you to raise capital and stay with you until closing", x: "For companies looking for capital from impact funds, development banks or international cooperation that do not yet have a complete investment profile.",
-      l: ["Diagnosis with our own methodology: finance, governance, ESG and impact.", "Capital Raising Bootcamp, with one-on-one advice and a mock investment committee.", "Introduction to our network of more than 50 impact funds.", "Support through due diligence and term sheet negotiation."], cta: "Apply to the Bootcamp" },
+      l: ["Diagnostic with our own methodology: finance, governance, ESG and impact.", "Capital Raising Bootcamp, with one-on-one advice and a mock investment committee.", "Introduction to our network of more than 50 impact funds.", "Support through due diligence and term sheet negotiation."], cta: "Apply to the Bootcamp" },
     b: { r: "Direct financing", t: "We finance your working capital", x: "For companies with a repayment track record that need liquidity for inventory, purchase orders or commercial expansion.",
-      l: ["Recurring sales for at least 12 months.", "Repayment track record with an impact fund or another lender.", "Financial statements for the last fiscal year.", "Use of funds tied to the operating cycle.", "Mortgage guarantee on a property of the company or its shareholders."], cta: "Check if I qualify" },
+      l: ["Recurring sales for at least 12 months.", "Repayment track record with an impact fund or another lender.", "Financial statements for the last fiscal year.", "Use of funds tied to the operating cycle.", "A mortgage on real estate owned by the company or its shareholders."], cta: "Check if I qualify" },
     cierre: `Apply to the ${SITE.cohorteEn.mes} cohort`, cierreX: `The Bootcamp starts on ${SITE.cohorteEn.inicio}.`, postular: "Apply to the Bootcamp",
   },
 };

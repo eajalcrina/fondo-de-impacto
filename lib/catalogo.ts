@@ -29,7 +29,7 @@ export const PAISES: [string, string][] = [
 ];
 
 export const TIPOS_OPC: [string, string][] = [
-  ["*", "No estoy seguro"],
+  ["*", "Aún no lo sé"],
   ["nr", "No reembolsable"],
   ["de", "Deuda"],
   ["eq", "Equity"],
@@ -41,8 +41,8 @@ export const RANGOS_OPC: [string, string][] = [
   ["1", "USD 50 mil a 150 mil"],
   ["2", "USD 150 mil a 300 mil"],
   ["3", "USD 300 mil a 500 mil"],
-  ["4", "USD 500 mil a 2 millones"],
-  ["5", "Más de USD 2 millones"],
+  ["4", "USD 500 mil a 2 MM"],
+  ["5", "Más de USD 2 MM"],
 ];
 
 export const PUBLICOS: [string, string][] = [
@@ -74,7 +74,7 @@ const RUBROS_EN: [string, string][] = [
 const PAISES_EN: [string, string][] = [
   ["PE", "Peru"], ["CO", "Colombia"], ["EC", "Ecuador"], ["BO", "Bolivia"], ["BR", "Brazil"], ["MX", "Mexico"], ["CL", "Chile"], ["CA", "Central America"], ["OT", "Other Latin American country"],
 ];
-const TIPOS_OPC_EN: [string, string][] = [["*", "Not sure"], ["nr", "Non-reimbursable"], ["de", "Debt"], ["eq", "Equity"], ["bl", "Blended"]];
+const TIPOS_OPC_EN: [string, string][] = [["*", "Not sure"], ["nr", "Grants"], ["de", "Debt"], ["eq", "Equity"], ["bl", "Blended"]];
 const RANGOS_OPC_EN: [string, string][] = [
   ["0", "Up to USD 50K"], ["1", "USD 50K to 150K"], ["2", "USD 150K to 300K"], ["3", "USD 300K to 500K"], ["4", "USD 500K to 2 M"], ["5", "More than USD 2 M"],
 ];
@@ -82,7 +82,7 @@ const PUBLICOS_EN: [string, string][] = [["cooperativa", "Association or coopera
 /** Labels of the capital types used in the finder and the map. */
 export const TIPOS_LABEL: Record<"es" | "en", Record<string, string>> = {
   es: { nr: "No reembolsable", de: "Deuda y garantías", eq: "Equity", bl: "Blended o mixto" },
-  en: { nr: "Non-reimbursable", de: "Debt and guarantees", eq: "Equity", bl: "Blended" },
+  en: { nr: "Grants", de: "Debt and guarantees", eq: "Equity", bl: "Blended" },
 };
 
 /** Listas de opciones en el idioma pedido. */

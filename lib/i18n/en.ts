@@ -38,9 +38,9 @@ export const en: Textos = {
       titulo: "Capital for Latin America’s impact companies",
       bajada: "If your company already has traction, we prepare you to raise capital and introduce you to the funds that can finance you.",
       cta: "See funds for my company",
-      inversionista: "I am an investor",
+      inversionista: "I’m an investor",
       foto: "Amazon river at sunset with a canoe",
-      bajar: "Go to content",
+      bajar: "Skip to content",
     },
     empresas: {
       titulo: "For companies",
@@ -90,14 +90,14 @@ export const en: Textos = {
     tesis: {
       rotulo: "Thesis",
       titulo: "Portfolio results",
-      texto: "We invest in companies with sales, a biodiversity value chain and a team we know from the preparation stage.",
+      texto: "We look for sales, a biodiversity value chain and a team we have known since the preparation stage.",
     },
     cifras: [
       { icono: "barras", mas: false, valor: "USD 26 M", texto: "portfolio revenue in 2025" },
       { icono: "alza", mas: false, valor: "28%", texto: "revenue growth over 2024" },
       { icono: "brote", mas: true, valor: "10", texto: "companies in our portfolio" },
     ],
-    empresas: { rotulo: "Investments", titulo: "Some of the most relevant companies in our portfolio" },
+    empresas: { rotulo: "Investments", titulo: "Selected portfolio companies" },
     cierre: { titulo: "Want to see the portfolio in detail?", texto: "We share metrics, financial statements and the active round in a private conversation, under a confidentiality agreement.", cta: "Book a meeting" },
   },
   comun: {

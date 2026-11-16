@@ -15,7 +15,7 @@ const EJEMPLO: Query = { rubro: "alimentos_bebidas", pais: "PE", tipo: "de", ran
 
 const TX = {
   es: {
-    empresa: "Tu empresa", razon: "Razón social", rubro: "Rubro", pais: "País", tipo: "Tipo de fondo que buscas", capital: "Capital que buscas",
+    empresa: "Tu empresa", razon: "Razón social", rubro: "Rubro", pais: "País", tipo: "Tipo de capital que buscas", capital: "Capital que buscas",
     contacto: "Tus datos de contacto", nombre: "Nombre completo", correo: "Correo", celular: "Celular", web: "Sitio web",
     acepto: "Acepto la", politica: "política de privacidad", contacte: "y que Fondo de Impacto me contacte sobre oportunidades de financiamiento.",
     enviar: "Ver cuántos fondos calzan conmigo", ejemplo: "Ejemplo de reporte preliminar", reporte: "Reporte preliminar",
@@ -33,13 +33,13 @@ const TX = {
     contacto: "Your contact details", nombre: "Full name", correo: "Email", celular: "Mobile", web: "Website",
     acepto: "I accept the", politica: "privacy policy", contacte: "and agree that Fondo de Impacto may contact me about financing opportunities.",
     enviar: "See how many funds match", ejemplo: "Sample preliminary report", reporte: "Preliminary report",
-    compatibles: "impact capital sources that match your profile", activas: "with an active call: open call or permanent window",
+    compatibles: "impact capital sources that match your profile", activas: "open for applications: open call or rolling applications",
     sinTicket: (n: number) => `${n} of these sources do not publish their ticket size and we review them case by case. `,
     revisamos: "We go over names and terms with you.",
     ok: " We sent you a copy of this report by email and will write to you within 24 hours.",
     err: (e: string) => ` We could not email you a copy (${e}).`,
-    cohorte: "February 2027 cohort",
-    prepara: "Build your investment profile in the Bootcamp.", preparaX: "Eight weeks for your thesis, financial model, teaser and pitch. Starts Monday, February 1, 2027.",
+    cohorte: SITE.cohorteEn.nombre,
+    prepara: "Build your investment profile in the Bootcamp.", preparaX: `Eight weeks for your thesis, financial model, teaser and pitch. Starts ${SITE.cohorteEn.inicio}.`,
     postular: "Apply to the Bootcamp", conversar: "Prefer to talk?", conversarX: "Book 30 minutes with the team.", agendar: "Book a meeting",
   },
 };

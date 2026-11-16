@@ -28,7 +28,11 @@ Paleta propia de Fondo de Impacto. Tokens en `app/(site)/estilos/tokens.css`; ni
 - Naranja de relleno solo donde el lector decide algo (financiamiento directo, precio anticipado, tasa y ticket); nunca en pasos numerados.
 - Retratos del equipo con el mismo encuadre (cabeza a la misma altura y tamaño) sobre `--retrato`; originales sin fondo en `docs/fotos-equipo-originales/`.
 - Sin repetir un dato o una acción en la misma página ni entre páginas: rangos y cifras viven en la portada.
-- Pines del pie como aguja: círculo y palito.
+- Pie: logo, ubicaciones (punto blanco con anillo fino) y «Volver arriba» en la misma línea base inferior; aviso legal en tres líneas a todo lo ancho, 12,5 px.
+- Logo armado en código: isotipo de puntos y «FONDO DE IMPACTO» en dos líneas con la misma altura que el isotipo, todo en un color; debajo «Powered by **Redesign Lab**» en peso normal con Redesign Lab en seminegrita, del mismo ancho que «FONDO DE» (factor 0,528 del tamaño del nombre).
+- Sobre fondo naranja, el botón blanco pasa al tono oscuro del lienzo al pasar el cursor; nunca a naranja.
+- Tarjetas vecinas comparten filas con subgrid (número o rótulo, título y texto), aunque los títulos ocupen distintas líneas.
+- Logos de organizaciones en gris al 50%; al pasar el cursor, color original con opacidad plena (monocromos de origen en negro).
 - Tarjetas paralelas alineadas con `subgrid` (`.filas-5`).
 - Sin estilos en línea salvo anchos dinámicos de barras.
 
@@ -111,5 +115,6 @@ Paleta propia de Fondo de Impacto. Tokens en `app/(site)/estilos/tokens.css`; ni
 ## 10. Estado del rediseño
 - Sistema inspirado en fosterandpartners.com aplicado a todas las páginas (16-11-2026): portada, Portafolio, Empresas, Bootcamp, Pasaporte, Inversionistas, Nosotros, Privacidad y 404.
 - Revisión de coherencia del asesor Fable: 12 hallazgos aplicados (velo de cabecera, cifras, fichas, rastros verdes en formularios, jerarquía de h2, ritmo de fondos, voz y nombres).
-- Pendiente: pasar los textos de las páginas internas a `lib/i18n/es.ts` antes de la versión en inglés; imágenes para compartir por página.
+- Bilingüe: español en las rutas actuales e inglés en `/en` (`/en/companies`, `/en/bootcamp`, `/en/passport`, `/en/investors`, `/en/portfolio`, `/en/about`, `/en/privacy`). Cada página es un componente en `components/paginas/` con sus textos en los dos idiomas; los compartidos viven en `lib/i18n/es.ts` y `en.ts`. Selector ES / EN con la página equivalente, hreflang, sitemap con pares, correos de confirmación en el idioma del formulario e imágenes para compartir `og.png` y `og-en.png`.
+- Cifras en inglés con «M» (USD 2.7 M); en español con «MM».
 - Esperando decisión del dueño: fuente de «ronda activa» y de «25 y 40% anual»; datos por empresa del portafolio; color del encabezado interior (blanco o petróleo).

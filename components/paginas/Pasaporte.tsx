@@ -30,7 +30,7 @@ const T: Record<Lang, {
     gana: "Qué ganas con el Pasaporte de Inversión",
     beneficios: [
       ["Llegas a fondos que ya están buscando", "Tu teaser les llega solo a los fondos de la red cuya tesis coincide con tu empresa."],
-      ["Conoces tus brechas", "Recibes un diagnóstico de investment readiness con las brechas que conviene cerrar antes de levantar capital. Si te conviene, te invitamos a la siguiente cohorte del Bootcamp."],
+      ["Conoces tus brechas", "Recibes un diagnóstico de preparación para la inversión con las brechas que conviene cerrar antes de levantar capital. Si te conviene, te invitamos a la próxima cohorte del Bootcamp."],
     ],
     cuantas: "¿Cuántas fuentes de capital de impacto hay para tu empresa?", cuantasX: "Ingresa los datos de tu empresa y recibe un reporte preliminar.",
     mapa: "Fuentes de capital de impacto en América Latina", mapaX: "Fondos de impacto, banca de desarrollo, cooperación y fondos públicos con convocatorias para empresas de la región.",
@@ -39,7 +39,7 @@ const T: Record<Lang, {
     pasos: [
       ["Completas tu Pasaporte", "Empresa, tracción, finanzas, impacto y necesidad de capital."],
       ["Lo revisamos contigo", "Validamos la información, te pedimos lo que falte y te enviamos tu diagnóstico."],
-      ["Entras al portafolio", "Tu teaser queda disponible para los fondos de la red con tesis compatible."],
+      ["Tu teaser entra a la red", "Queda disponible para los fondos, sin el nombre de tu empresa."],
       ["Te conectamos", "Si un fondo muestra interés, te acompañamos en la reunión, el NDA y el due diligence."],
     ],
     antes: "Antes de empezar",
@@ -62,21 +62,21 @@ const T: Record<Lang, {
     gana: "What you get from the Investment Passport",
     beneficios: [
       ["You reach funds that are already looking", "Your teaser only goes to the funds in the network whose thesis matches your company."],
-      ["You learn your gaps", "You receive an investment readiness diagnosis with the gaps worth closing before raising capital. If it helps, we invite you to the next Bootcamp cohort."],
+      ["You see where your gaps are", "You receive an investment readiness diagnostic with the gaps worth closing before raising capital. If it makes sense for you, we invite you to the next Bootcamp cohort."],
     ],
     cuantas: "How many impact capital sources are there for your company?", cuantasX: "Enter your company details and get a preliminary report.",
     mapa: "Impact capital sources in Latin America", mapaX: "Impact funds, development banks, cooperation agencies and public funds with calls for companies in the region.",
-    metodo: "Our own database built from public sources, updated in October 2026. A source can finance more than one range, instrument or sector. “Active call” includes open calls and permanent windows.",
+    metodo: "Our own database built from public sources, updated in October 2026. A source can finance more than one range, instrument or sector. “Open for applications” includes open calls and rolling applications.",
     despues: "What happens after you complete it",
     pasos: [
       ["You complete your Passport", "Company, traction, finance, impact and capital needs."],
-      ["We review it with you", "We validate the information, ask for anything missing and send you your diagnosis."],
-      ["You join the portfolio", "Your teaser becomes available to the network funds with a compatible thesis."],
+      ["We review it with you", "We validate the information, ask for anything missing and send you your diagnostic."],
+      ["Your teaser joins the network", "It becomes available to the funds, without your company name."],
       ["We connect you", "If a fund shows interest, we support you through the meeting, the NDA and due diligence."],
     ],
     antes: "Before you start",
     preguntas: [
-      ["Does it guarantee financing?", "No. The Passport gives you a diagnosis and visibility with funds that have a compatible thesis. Each fund makes its own investment decision."],
+      ["Does it guarantee financing?", "No. The Passport gives you a diagnostic and visibility with funds that have a compatible thesis. Each fund makes its own investment decision."],
       ["Can I withdraw my information?", "Yes. You can withdraw your Passport whenever you want."],
       ["Which companies can apply?", "Impact companies operating in Latin America with at least 12 months of sales."],
     ],
@@ -84,7 +84,7 @@ const T: Record<Lang, {
     solicitaX: "The Investment Passport opens in stages. Leave your details and we will let you know when your access is ready. Have at hand your financial statements for the last two years, your pitch deck if you have one and the impact metrics you already track.",
     enviar: "Request access", gracias: "Done. We received your request and will write to you within 24 hours.",
     campos: { empresa: "Company", nombre: "Full name", correo: "Email", celular: "Mobile", pais: "Country", rubro: "Sector" },
-    cierre: "Prepare your company before presenting it", cierreX: "In the Bootcamp you close the gaps from your diagnosis with the team, in eight weeks.", postular: "Apply to the Bootcamp",
+    cierre: "Prepare your company before presenting it", cierreX: "In the Bootcamp you close the gaps from your diagnostic with the team, in eight weeks.", postular: "Apply to the Bootcamp",
   },
 };
 
