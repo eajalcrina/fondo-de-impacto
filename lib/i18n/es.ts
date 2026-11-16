@@ -58,7 +58,6 @@ export const es = {
       ],
     },
     rangos: {
-      rotulo: "Buscador de fondos",
       titulo: "¿Cuánto capital necesitas?",
       texto: "Elige un rango para descubrir las fuentes de capital de impacto adecuadas para tu empresa.",
     },

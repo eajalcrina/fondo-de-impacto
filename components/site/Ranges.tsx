@@ -4,22 +4,26 @@ import { countByRange, RANGOS, type Fuente } from "@/lib/matching";
 import { es } from "@/lib/i18n/es";
 
 const t = es.comun.rangos;
-const AMT = t.montos;
 
-/** Tarjetas de rango del Home: llevan al buscador con el rango elegido. */
+/** Escalera de rangos de capital: cada barra es proporcional a las fuentes del rango y lleva al buscador. */
 export function Ranges() {
   const cnts = countByRange(fuentes as Fuente[]);
   const max = Math.max(...cnts);
   return (
-    <div className="ranges">
-      {RANGOS.map((r, i) => (
-        <Link key={r.key} href={`/pasaporte?rango=${i}#buscador`} className="rng">
-          <span className="amt"><small>{AMT[i][0]}</small><b>{AMT[i][1]}</b><em className="to">{AMT[i][2]}</em></span>
-          <span className="meter2"><u style={{ width: `${Math.round((100 * cnts[i]) / max)}%` }} /></span>
-          <span className="cnt"><strong>{cnts[i]}</strong> {t.fuentes(cnts[i])}</span>
-          <span className="go">{t.ir}</span>
-        </Link>
-      ))}
-    </div>
+    <ol className="escala">
+      {RANGOS.map((r, i) => {
+        const [antes, monto, despues] = t.montos[i];
+        const rango = [antes, monto, despues].filter(Boolean).join(" ");
+        return (
+          <li key={r.key}>
+            <Link href={`/pasaporte?rango=${i}#buscador`} className="escalon" style={{ "--f": (cnts[i] / max).toFixed(3) } as React.CSSProperties}>
+              <span className="escalon-barra" aria-hidden="true" />
+              <span className="escalon-rango">{rango}</span>
+              <span className="escalon-dato"><span><strong>{cnts[i]}</strong> {t.fuentes(cnts[i])}</span></span>
+            </Link>
+          </li>
+        );
+      })}
+    </ol>
   );
 }

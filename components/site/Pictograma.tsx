@@ -9,7 +9,7 @@ const TRAZOS: Record<string, React.ReactNode> = {
 export function Pictograma({ nombre }: { nombre: string }) {
   return (
     <span className="pict" aria-hidden="true">
-      <svg viewBox="0 0 40 40" fill="none" stroke="var(--naranja)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         {TRAZOS[nombre]}
       </svg>
     </span>

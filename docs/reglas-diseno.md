@@ -69,6 +69,12 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - 16-11-2026: el pie solo lleva el aviso legal de oferta pública; sin la nota de cifras con asterisco. Las cifras de la portada van sin nota debajo.
 - 16-11-2026: la ruta del capital se muestra como tres etapas numeradas sobre una línea, con dos destinos marcados con cuadrados (bosque y naranja).
 - 16-11-2026: la próxima cohorte se destaca en una etiqueta bosque dentro del cierre.
+- 16-11-2026 (segunda ronda): **motivo diagonal único de 6° en sentido «/»** (10,5 px de caída por cada 100 px; tokens `--corte` y `--corte-tan`). Va en el borde inferior de las fotos, la unión del héroe, el borde derecho de botones y barras, y los separadores del portafolio. Nunca en bandas a todo el ancho ni en contenedores de texto; sin radios, arcos ni chaflanes de 45°. Reemplaza al recorte anillo, a los arcos punteados y al cuadrado de esquina.
+- 16-11-2026: héroe con doble diagonal (banda translúcida, filete naranja claro y panel). Excepción a «sin degradados»: solo el panel del héroe lleva facetas de corte duro en salvia al 10 y 18% para no verse plano.
+- 16-11-2026: «¿Cuánto capital necesitas?» como escalera de barras proporcionales, sin tarjetas ni rótulo «Buscador de fondos».
+- 16-11-2026: portafolio de la portada como franja tipográfica con separadores diagonales; «Resultados desde 2021» en banda bosque con cifras blancas y descripciones de una línea.
+- 16-11-2026: próxima cohorte como línea de fecha editorial (rótulo y fecha en Newsreader) con filete blanco, sobre el título del cierre.
+- 16-11-2026: encabezado fijo. Pie con pines de Perú y Colombia y el aviso legal en dos líneas.
 - 16-11-2026: pasada de narrativa y voz sin IA sobre todos los textos, en la fase 3, cuando los textos pasen al archivo por idioma.
 - 16-11-2026: `vercel.json` apaga las vistas previas automáticas de las ramas `claude/*`.
 - 16-11-2026: el dueño pide ver la combinación que recomienda el asesor (B2 con el encabezado sólido y los dos botones de B1) como lámina B3, con la foto del río en el héroe.

@@ -1,23 +1,16 @@
-/* Piezas nuevas del rediseño: tarjetas con recorte anillo, cifras con pictogramas, portafolio y organizaciones. */
+/* Piezas de la portada: tarjetas y fotos con corte diagonal, cifras, escalera de rangos, portafolio y organizaciones. */
 @layer componentes {
-  /* Tarjetas: foto con recorte anillo y velo suave, bloque de color abajo */
+  /* Tarjetas: foto con borde inferior en diagonal de 6°; el color de la tarjeta llena el triángulo */
   .tarjetas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
   @media (min-width: 900px) { .tarjetas { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto 1fr auto; gap: 0 24px; } }
   .tarjeta { --c: var(--bosque); display: grid; color: var(--blanco); }
   @media (min-width: 900px) { .tarjeta { grid-row: span 5; grid-template-rows: subgrid; } }
-  .tarjeta-foto { position: relative; aspect-ratio: 4 / 3; }
-  .tarjeta-foto .marco { position: absolute; inset: 0; overflow: hidden; border-radius: 0 var(--hoja) 0 0; }
+  .tarjeta-foto { position: relative; aspect-ratio: 4 / 3; background: var(--c); container-type: inline-size; }
+  .tarjeta-foto .marco { position: absolute; inset: 0; overflow: hidden; }
+  .tarjeta-foto .marco img { object-fit: cover; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10.5cqw), 0 100%); }
   .tarjeta-foto .marco::after { content: ""; position: absolute; inset: 0; background: var(--c); opacity: 0.32; }
-  .tarjeta-foto img { object-fit: cover; }
-  /* Línea de puntos del isotipo alrededor del arco, sin tocar la foto */
-  .tarjeta-foto::after {
-    content: ""; position: absolute; top: 12px; right: 12px;
-    width: calc(2 * var(--hoja) - 24px); height: calc(2 * var(--hoja) - 24px);
-    border: 3px dotted var(--naranja-claro); border-radius: 50%;
-    clip-path: inset(0 0 50% 50%); pointer-events: none;
-  }
-  .tarjeta-cuerpo { background: var(--c); padding: 28px 24px 32px; display: grid; gap: 12px; align-content: start; }
-  @media (min-width: 900px) { .tarjeta-cuerpo { grid-row: span 4; grid-template-rows: subgrid; padding: 36px 32px 40px; row-gap: 14px; } }
+  .tarjeta-cuerpo { background: var(--c); padding: 20px 24px 32px; display: grid; gap: 12px; align-content: start; }
+  @media (min-width: 900px) { .tarjeta-cuerpo { grid-row: span 4; grid-template-rows: subgrid; padding: 24px 32px 40px; row-gap: 14px; } }
   .tarjeta-cuerpo .eyebrow { color: var(--blanco); }
   .tarjeta-cuerpo p { font-size: 15px; line-height: 1.6; }
   .tarjeta-cuerpo .lnk { justify-self: start; color: var(--blanco); }
@@ -25,55 +18,71 @@
   .tarjeta.salvia { --c: var(--salvia-profundo); }
   .tarjeta.naranja { --c: var(--naranja); }
 
-  /* Cifras con pictogramas */
-  .cifras { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  /* Cifras con pictogramas. Sobre bosque (portada) se destacan por color */
+  .cifras { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
   @media (min-width: 640px) { .cifras { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; } }
-  @media (min-width: 1100px) { .cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-  .cifra-item { display: grid; grid-template-columns: 60px 1fr; column-gap: 16px; row-gap: 4px; align-items: center; }
-  .cifra-item .pict { grid-row: span 2; width: 60px; height: 60px; border-radius: 50%; background: var(--arena); display: grid; place-items: center; }
-  .cifra-item .pict svg { width: 28px; height: 28px; }
-  .cifra-item .cifra { font-size: 38px; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+  @media (min-width: 1100px) { .cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: auto auto auto; row-gap: 0; } }
+  .cifra-item { display: grid; grid-template-columns: 40px 1fr; column-gap: 16px; row-gap: 4px; align-items: center; padding-block: 20px; border-top: 1px solid var(--linea-2); }
+  @media (min-width: 640px) { .cifra-item { padding-block: 0; border-top: 0; } }
+  .cifra-item .pict { grid-row: span 2; color: var(--naranja); }
+  .cifra-item .pict svg { width: 40px; height: 40px; display: block; }
+  .cifra-item .cifra { font-size: 40px; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
   .cifra-item .mas { font-family: var(--f-sans); font-size: 0.72em; line-height: 0; position: relative; top: -0.12em; margin-right: 0.04em; }
-  .cifra-item sup { font-family: var(--f-sans); font-size: 0.4em; line-height: 0; vertical-align: super; color: var(--t2); }
-  .cifra-item > span:last-child { font-size: 14px; line-height: 1.45; color: var(--t2); }
+  .cifra-item > span:last-child { font-size: 14px; line-height: 1.45; color: var(--t2); white-space: nowrap; }
   @media (min-width: 1100px) {
-    .cifras { grid-template-rows: auto auto auto; row-gap: 0; }
-    .cifra-item { grid-row: span 3; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); row-gap: 14px; align-items: start; }
-    .cifra-item .pict { grid-row: auto; width: 64px; height: 64px; }
-    .cifra-item .pict svg { width: 30px; height: 30px; }
-    .cifra-item .cifra { font-size: 50px; }
-    .cifra-item > span:last-child { font-size: 15px; }
+    .cifra-item { grid-row: span 3; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); row-gap: 16px; align-items: start; }
+    .cifra-item .pict { grid-row: auto; }
+    .cifra-item .cifra { font-size: 52px; }
   }
-  .nota-cifras { margin-top: 32px; font-size: 13px; color: var(--t2); max-width: 90ch; }
+  .dk .cifra-item { border-top-color: var(--linea-oscura); }
+  .dk .cifra-item .pict, .dk .cifra-item .mas { color: var(--naranja-claro); }
+  .dk .cifra-item .cifra { color: var(--blanco); }
+  .dk .cifra-item > span:last-child { color: var(--sobre-oscuro); }
 
-  /* Foto suelta con recorte anillo y su línea de puntos */
-  .foto-anillo { position: relative; }
-  .foto-anillo .marco { position: relative; overflow: hidden; border-radius: 0 var(--hoja) 0 0; aspect-ratio: 2 / 1; }
-  .foto-anillo .marco img { object-fit: cover; }
-  .foto-anillo::after {
-    content: ""; position: absolute; top: 12px; right: 12px;
-    width: calc(2 * var(--hoja) - 24px); height: calc(2 * var(--hoja) - 24px);
-    border: 3px dotted var(--naranja-claro); border-radius: 50%;
-    clip-path: inset(0 0 50% 50%); pointer-events: none;
-  }
-  @media (min-width: 900px) { .foto-anillo .marco { aspect-ratio: 2.6 / 1; } }
+  /* Foto suelta con borde inferior en diagonal */
+  .foto-corte .marco { position: relative; overflow: hidden; aspect-ratio: 2 / 1; container-type: inline-size; }
+  .foto-corte .marco img { object-fit: cover; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10.5cqw), 0 100%); }
   .por-que { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: center; }
   @media (min-width: 900px) { .por-que { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; } }
 
-  /* Portafolio */
-  .portafolio { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  @media (min-width: 640px) { .portafolio { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
-  @media (min-width: 1100px) { .portafolio { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-  .empresa { background: var(--blanco); padding: 24px; display: grid; grid-template-rows: auto 1fr auto; gap: 10px; border-radius: 0 calc(var(--hoja) / 2) 0 0; }
-  @media (min-width: 1100px) { .empresa { min-height: 180px; } }
-  .empresa { position: relative; }
-  .empresa::after {
-    content: ""; position: absolute; top: 8px; right: 8px;
-    width: calc(var(--hoja) - 16px); height: calc(var(--hoja) - 16px);
-    border: 3px dotted var(--naranja); border-radius: 50%; clip-path: inset(0 0 50% 50%); pointer-events: none;
+  /* Rangos de capital: escalera de barras proporcionales, sin cajas */
+  .escala { display: grid; gap: 0; }
+  .escalon {
+    --f: 1;
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "rango dato" "barra barra";
+    align-items: center; gap: 10px 16px; padding-block: 18px; border-bottom: 1px solid var(--linea-2); color: var(--bosque);
   }
-  .empresa h3 { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 26px; line-height: 1.1; }
+  .escalon-rango { grid-area: rango; font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: clamp(20px, 6vw, 24px); line-height: 1.1; white-space: nowrap; }
+  .escalon-barra { grid-area: barra; height: 12px; width: calc(var(--f) * 100%); background: var(--bosque); clip-path: polygon(0 0, 100% 0, calc(100% - 1.3px) 100%, 0 100%); transition: background-color 0.25s; }
+  .escalon-dato { grid-area: dato; font-size: 15px; font-weight: 600; white-space: nowrap; display: inline-flex; gap: 8px; align-items: center; }
+  .escalon-dato::after { content: "→"; color: var(--naranja); transition: transform 0.25s; }
+  .escalon:hover .escalon-barra, .escalon:focus-visible .escalon-barra { background: var(--naranja); }
+  .escalon:hover .escalon-dato::after, .escalon:focus-visible .escalon-dato::after { transform: translateX(4px); }
+  @media (min-width: 900px) {
+    .escala { gap: 8px; }
+    .escalon {
+      grid-template-columns: max(calc((100% - 200px) * var(--f)), 320px) 1fr; grid-template-areas: "barra dato";
+      gap: 0 16px; padding-block: 0; border-bottom: 0;
+    }
+    .escalon-barra { grid-area: barra; height: 64px; width: auto; clip-path: polygon(0 0, 100% 0, calc(100% - 7px) 100%, 0 100%); }
+    .escalon-rango { grid-area: barra; z-index: 1; padding-left: 24px; font-size: 28px; color: var(--blanco); }
+  }
+
+  /* Portafolio: franja tipográfica con separadores diagonales */
+  .portafolio { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .empresa { display: grid; gap: 6px; padding-block: 20px; border-top: 1px solid var(--linea-2); }
+  .empresa:last-child { border-bottom: 1px solid var(--linea-2); }
+  .empresa h3 { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 24px; line-height: 1.1; }
   .empresa p { font-size: 14px; line-height: 1.5; color: var(--t2); }
+  @media (min-width: 1100px) {
+    .portafolio { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: auto 1fr; }
+    .empresa { position: relative; grid-row: span 2; grid-template-rows: subgrid; align-content: start; gap: 12px; min-height: 168px; padding: 8px 24px 8px 32px; border: 0; }
+    .empresa:last-child { border-bottom: 0; }
+    .empresa:first-child { padding-left: 0; }
+    .empresa:not(:first-child)::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--bosque); transform-origin: bottom; transform: skewX(calc(-1 * var(--corte))); }
+    .empresa h3 { font-size: 30px; }
+    .empresa p { font-size: 15px; }
+  }
 
   /* Organizaciones con las que hemos trabajado: grupos en columnas, filas de igual alto, un solo tono */
   .allies { gap: 32px 24px; }
@@ -90,9 +99,11 @@
   .cierre { background: var(--naranja); color: var(--blanco); padding-block: 72px; }
   .cierre .wrap { display: grid; gap: 24px; align-items: end; }
   .cierre .eyebrow { color: var(--blanco); }
-  .cohorte { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; justify-self: start; background: var(--bosque); color: var(--blanco); padding: 10px 16px; font-size: 15px; }
-  .cohorte span { color: var(--naranja-claro); font-weight: 600; }
-  .cohorte b { font-weight: 600; }
+  /* Próxima cohorte: línea de fecha editorial sobre el título */
+  .cohorte { display: grid; gap: 4px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.45); color: var(--blanco); }
+  .cohorte span { font-size: 14px; font-weight: 500; }
+  .cohorte b { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 24px; line-height: 1.15; }
+  @media (min-width: 640px) { .cohorte { display: flex; align-items: baseline; gap: 16px; } .cohorte b { font-size: 26px; } }
   .cierre h2 { max-width: 18ch; }
   .cierre .btn { background: var(--blanco); color: var(--terracota); }
   .cierre .btn:hover { background: var(--arena); }
@@ -110,6 +121,7 @@
   .titular .p2 { max-width: 60ch; }
   @media (min-width: 860px) { .titular { margin-bottom: 56px; } }
   .titular.con-accion { max-width: none; grid-template-columns: minmax(0, 1fr); align-items: end; }
+  .titular.con-accion > .lnk { justify-self: start; }
   @media (min-width: 860px) { .titular.con-accion { grid-template-columns: minmax(0, 1fr) auto; } }
 
   /* Ruta del capital: tres etapas numeradas sobre una línea, con flecha entre etapas */
@@ -136,4 +148,3 @@
 @layer componentes {
   .titular.sin-margen { margin-bottom: 0; }
 }
-@layer componentes { .tint .cifra-item .pict { background: var(--blanco); } }

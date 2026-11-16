@@ -32,7 +32,7 @@ export default function HomePage() {
       </section>
       <PhotoBelt />
 
-      <section className="sec tint"><div className="wrap">
+      <section className="sec dk"><div className="wrap">
         <div className="titular"><span className="eyebrow">{t.cifras.rotulo}</span></div>
         <Cifras items={t.cifras.items} />
       </div></section>
@@ -72,7 +72,7 @@ export default function HomePage() {
             <h2 className="d2"><Clave partes={t.porQue.titulo} /></h2>
             <p className="p2">{t.porQue.texto}</p>
           </div>
-          <div className="foto-anillo"><div className="marco"><Image src="/img/h09.jpg" alt={t.porQue.foto} fill sizes="(min-width: 900px) 55vw, 100vw" style={{ objectPosition: "50% 42%" }} /></div></div>
+          <div className="foto-corte"><div className="marco"><Image src="/img/h09.jpg" alt={t.porQue.foto} fill sizes="(min-width: 900px) 55vw, 100vw" style={{ objectPosition: "50% 42%" }} /></div></div>
         </div>
         <figure className="ruta" aria-label={t.proceso.etiqueta}>
           {t.proceso.etapas.map((e, i) => (

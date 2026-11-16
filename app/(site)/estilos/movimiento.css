@@ -28,6 +28,5 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .belt-track { animation: none; }
-    .rng::before, .rng .go::after { transition: none; }
   }
 }

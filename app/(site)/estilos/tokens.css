@@ -41,7 +41,9 @@
     --gut: 20px;
     --sec: 72px;
     --alto-nav: 72px;
-    --hoja: 96px; /* radio del arco del recorte «anillo» */
+    /* Motivo diagonal único del sitio: 6°, sentido «/» (10,5 px de caída por cada 100 px) */
+    --corte: 6deg;
+    --corte-tan: 0.105;
   }
 
   @media (min-width: 768px) {
