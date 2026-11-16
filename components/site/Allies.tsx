@@ -1,13 +1,13 @@
 import Image from "next/image";
-import { es } from "@/lib/i18n/es";
-
-const g = es.comun.aliados;
+import { dic, type Lang } from "@/lib/i18n";
 
 
 /** [nombre, archivo en /public/aliados, ancho, alto] */
 type Logo = [string, string, number, number];
 
-const GRUPOS: { titulo: string; logos: Logo[] }[] = [
+function grupos(lang: Lang): { titulo: string; logos: Logo[] }[] {
+  const g = dic(lang).comun.aliados;
+  return [
   {
     titulo: g.cooperacion,
     logos: [
@@ -52,10 +52,12 @@ const GRUPOS: { titulo: string; logos: Logo[] }[] = [
       ["Instituto Nacional de Calidad (INACAL)", "inacal.png", 256, 85],
     ],
   },
-];
+  ];
+}
 
 /** Instituciones con las que ha trabajado Redesign Lab, agrupadas, todos a la misma altura y en escala de grises hasta pasar el cursor. */
-export function Allies() {
+export function Allies({ lang = "es" }: { lang?: Lang }) {
+  const GRUPOS = grupos(lang);
   return (
     <div className="cols-4 allies">
       {GRUPOS.map((grupo) => (

@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
-import { es } from "@/lib/i18n/es";
+import { dic, ruta, type Lang } from "@/lib/i18n";
 import { Logo } from "./Logo";
 
-const t = es.pie;
 
 /** Marca de ubicación: un punto blanco con un anillo fino. */
 function Punto() {
@@ -16,22 +15,24 @@ function Punto() {
 }
 
 /** Pie mínimo: logo, países y volver arriba; enlaces y aviso legal debajo. */
-export function Footer() {
+export function Footer({ lang = "es" }: { lang?: Lang }) {
+  const d = dic(lang);
+  const t = d.pie;
   const enlaces = [
-    { href: "/bootcamp", t: t.bootcamp },
-    { href: "/pasaporte", t: t.pasaporte },
-    { href: "/empresas", t: t.financiamiento },
-    { href: "/inversionistas", t: es.nav.inversionistas },
-    { href: "/portafolio", t: es.nav.portafolio },
-    { href: "/nosotros", t: es.nav.nosotros },
+    { href: ruta(lang, "/bootcamp"), t: t.bootcamp },
+    { href: ruta(lang, "/pasaporte"), t: t.pasaporte },
+    { href: ruta(lang, "/empresas"), t: t.financiamiento },
+    { href: ruta(lang, "/inversionistas"), t: d.nav.inversionistas },
+    { href: ruta(lang, "/portafolio"), t: d.nav.portafolio },
+    { href: ruta(lang, "/nosotros"), t: d.nav.nosotros },
   ];
   return (
     <footer className="foot">
       <div className="wrap">
         <div className="pie-fila">
           <div className="pie-marca">
-            <Logo tone="white" />
-            <ul className="paises">{es.marca.paises.map((p) => <li key={p}><Punto />{p}</li>)}</ul>
+            <Logo tone="white" lang={lang} />
+            <ul className="paises">{d.marca.paises.map((p) => <li key={p}><Punto />{p}</li>)}</ul>
           </div>
           <a className="arriba" href="#top">{t.arriba} <span aria-hidden="true">↑</span></a>
         </div>
@@ -45,7 +46,7 @@ export function Footer() {
           <div className="legal">
             <p>{t.legalOferta}</p>
             <p>{t.legalPrivado}</p>
-            <p><Link href="/privacidad">{t.privacidad}</Link> {t.derechos(new Date().getFullYear())}</p>
+            <p><Link href={ruta(lang, "/privacidad")}>{t.privacidad}</Link> {t.derechos(new Date().getFullYear())}</p>
           </div>
         </div>
       </div>

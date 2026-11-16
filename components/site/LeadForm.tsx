@@ -1,8 +1,15 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { attribution, track } from "@/lib/analytics";
 import { SITE } from "@/lib/site";
+import { langDe, ruta } from "@/lib/i18n";
+
+const TX = {
+  es: { noEnvio: "No pudimos enviar tu solicitud.", sinRed: "No pudimos conectarnos. Revisa tu conexión e inténtalo de nuevo.", web: "Sitio web", acepto: "Acepto la", politica: "política de privacidad", contacte: "y que Fondo de Impacto me contacte sobre esta solicitud.", enviando: "Enviando…", respondemos: `Te respondemos ${SITE.respuesta}.` },
+  en: { noEnvio: "We could not send your request.", sinRed: "We could not connect. Check your connection and try again.", web: "Website", acepto: "I accept the", politica: "privacy policy", contacte: "and agree that Fondo de Impacto may contact me about this request.", enviando: "Sending…", respondemos: "We reply within 24 hours." },
+};
 
 export type Field = {
   name: string;
@@ -17,14 +24,15 @@ export type Field = {
 
 type Estado = { s: "idle" | "sending" | "ok" | "err"; msg?: string };
 
-export async function sendLead(form: string, data: Record<string, string>): Promise<{ ok: boolean; error?: string }> {
+export async function sendLead(form: string, data: Record<string, string>, lang: "es" | "en" = "es"): Promise<{ ok: boolean; error?: string }> {
+  const tx = TX[lang];
   try {
     const res = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form, data: { ...attribution(), ...data } }) });
     const j = await res.json().catch(() => ({}));
     if (res.ok) track("generate_lead", { form });
-    return res.ok ? { ok: true } : { ok: false, error: j.error || "No pudimos enviar tu solicitud." };
+    return res.ok ? { ok: true } : { ok: false, error: lang === "es" ? j.error || tx.noEnvio : tx.noEnvio };
   } catch {
-    return { ok: false, error: "No pudimos conectarnos. Revisa tu conexión e inténtalo de nuevo." };
+    return { ok: false, error: tx.sinRed };
   }
 }
 
@@ -50,14 +58,16 @@ export function LeadForm({ form, fields, submit, hidden = {}, success, idPrefix 
   form: string; fields: Field[]; submit: string; hidden?: Record<string, string>; success: string; idPrefix: string;
 }) {
   const [st, setSt] = useState<Estado>({ s: "idle" });
+  const lang = langDe(usePathname());
+  const tx = TX[lang];
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
-    const data: Record<string, string> = { ...hidden, origen: window.location.pathname };
+    const data: Record<string, string> = { ...hidden, origen: window.location.pathname, idioma: lang };
     fd.forEach((v, k) => { data[k] = String(v); });
     data.consentimiento = fd.get("consentimiento") ? "si" : "";
     setSt({ s: "sending" });
-    const r = await sendLead(form, data);
+    const r = await sendLead(form, data, lang);
     setSt(r.ok ? { s: "ok" } : { s: "err", msg: r.error });
   }
   if (st.s === "ok") return <p className="form-msg ok" role="status">{success}</p>;
@@ -76,16 +86,16 @@ export function LeadForm({ form, fields, submit, hidden = {}, success, idPrefix 
           <Input key={i} f={r} idp={idPrefix} />
         ),
       )}
-      <div className="hp" aria-hidden="true"><label>Sitio web<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
+      <div className="hp" aria-hidden="true"><label>{tx.web}<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
       <label className="consent" htmlFor={`${idPrefix}-ok`}>
         <input id={`${idPrefix}-ok`} name="consentimiento" type="checkbox" required />
-        <span>Acepto la <Link href="/privacidad">política de privacidad</Link> y que Fondo de Impacto me contacte sobre esta solicitud.</span>
+        <span>{tx.acepto} <Link href={ruta(lang, "/privacidad")}>{tx.politica}</Link> {tx.contacte}</span>
       </label>
       {st.s === "err" && <p className="form-msg err" role="alert">{st.msg}</p>}
       <button className="btn btn-p" type="submit" disabled={st.s === "sending"}>
-        {st.s === "sending" ? "Enviando…" : submit}
+        {st.s === "sending" ? tx.enviando : submit}
       </button>
-      <span className="xs">Te respondemos {SITE.respuesta}.</span>
+      <span className="xs">{tx.respondemos}</span>
     </form>
   );
 }

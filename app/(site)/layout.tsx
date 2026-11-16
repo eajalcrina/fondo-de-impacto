@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./site.css";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
 import { Motion } from "@/components/site/Motion";
 import { Analytics } from "@/components/site/Analytics";
 import { EQUIPO, SITE, personaSchema } from "@/lib/site";
@@ -11,7 +9,7 @@ export const metadata: Metadata = {
   description: "Preparamos a empresas de impacto de América Latina para levantar capital y las presentamos a los fondos que pueden financiarlas. Bootcamp de Levantamiento de Capital, Pasaporte de Inversión y financiamiento directo.",
   openGraph: { type: "website", locale: "es_PE", siteName: "Fondo de Impacto", url: "https://fondodeimpacto.pe", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Fondo de Impacto: capital para las empresas de impacto de América Latina" }] },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "es-PE": "/", en: "/en" } },
 };
 
 const JSON_LD = {
@@ -38,9 +36,7 @@ const JSON_LD = {
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Nav />
-      <main>{children}</main>
-      <Footer />
+      {children}
       <Motion />
       <Analytics />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />

@@ -4,22 +4,38 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/site";
-import { es } from "@/lib/i18n/es";
+import { dic, langDe, ruta, rutaPar } from "@/lib/i18n";
 import { track } from "@/lib/analytics";
 import { Logo } from "./Logo";
 
-const t = es.nav;
-
 /** Entradas del menú con la foto que se muestra al pasar el cursor. */
-const ENTRADAS = [
-  { href: "/empresas", t: t.empresas, foto: "/img/rl/feria.jpg", hijos: t.soluciones },
-  { href: "/inversionistas", t: t.inversionistas, foto: "/img/rl/cacao-manos.jpg" },
-  { href: "/portafolio", t: t.portafolio, foto: "/img/rl/cotton-nation.jpg" },
-  { href: "/nosotros", t: t.nosotros, foto: "/img/rl/productor.jpg" },
-];
+function entradas(lang: "es" | "en") {
+  const t = dic(lang).nav;
+  return [
+    { href: ruta(lang, "/empresas"), t: t.empresas, foto: "/img/rl/feria.jpg", hijos: t.soluciones },
+    { href: ruta(lang, "/inversionistas"), t: t.inversionistas, foto: "/img/rl/cacao-manos.jpg" },
+    { href: ruta(lang, "/portafolio"), t: t.portafolio, foto: "/img/rl/cotton-nation.jpg" },
+    { href: ruta(lang, "/nosotros"), t: t.nosotros, foto: "/img/rl/productor.jpg" },
+  ];
+}
+
+/** Selector de idioma: enlaza a la misma página en el otro idioma. */
+function Idioma({ lang, path, etiqueta }: { lang: "es" | "en"; path: string; etiqueta: string }) {
+  const par = rutaPar(path);
+  return (
+    <span className="idioma" role="group" aria-label={etiqueta}>
+      {lang === "es" ? <b lang="es" aria-current="true">ES</b> : <Link href={par.es} lang="es" hrefLang="es">ES</Link>}
+      <span aria-hidden="true">/</span>
+      {lang === "en" ? <b lang="en" aria-current="true">EN</b> : <Link href={par.en} lang="en" hrefLang="en">EN</Link>}
+    </span>
+  );
+}
 
 export function Nav() {
-  const path = usePathname();
+  const path = usePathname() ?? "/";
+  const lang = langDe(path);
+  const t = dic(lang).nav;
+  const ENTRADAS = entradas(lang);
   const [abierto, setAbierto] = useState(false);
   const [oculto, setOculto] = useState(false);
   const [foto, setFoto] = useState(ENTRADAS[0].foto);
@@ -27,6 +43,8 @@ export function Nav() {
   const cerrar = useRef<HTMLButtonElement>(null);
 
   useEffect(() => setAbierto(false), [path]);
+  /* Atributo de idioma del documento al cambiar de página dentro del sitio */
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
   /* Se oculta al bajar y vuelve al subir */
   useEffect(() => {
@@ -49,7 +67,7 @@ export function Nav() {
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
   }, [abierto]);
 
-  const inv = path === "/inversionistas";
+  const inv = path === "/inversionistas" || path === "/en/investors";
   const cal = inv ? SITE.calInversionistas : SITE.calEmpresas;
   const agendar = (lugar: string) => track("cta_calendar", { location: lugar, calendario: inv ? "inversionistas" : "empresas" });
   const clase = ["nav", "claro", oculto && !abierto ? "oculto" : ""].filter(Boolean).join(" ");
@@ -58,11 +76,9 @@ export function Nav() {
     <>
       <header className={clase}>
         <div className="wrap">
-          <Logo tone="dark" />
+          <Logo tone="dark" lang={lang} />
           <div className="acciones">
-            <span className="idioma" role="group" aria-label={t.idioma}>
-              <b lang="es">ES</b><span aria-hidden="true">/</span><span className="pronto" lang="en" title={t.enPronto}>EN</span>
-            </span>
+            <Idioma lang={lang} path={path} etiqueta={t.idioma} />
             <a className="btn btn-sm btn-p" href={cal} target="_blank" rel="noopener noreferrer" onClick={() => agendar("nav")}>{t.agendar}</a>
             <button type="button" className="icono" aria-expanded={abierto} aria-controls="menu-principal" onClick={() => setAbierto(true)}>
               <span className="sr">{t.abrir}</span>
@@ -100,9 +116,7 @@ export function Nav() {
           <div className="panel-pie">
             <a className="btn btn-p" href={cal} target="_blank" rel="noopener noreferrer" onClick={() => agendar("menu")}>{t.agendar}</a>
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            <span className="idioma" role="group" aria-label={t.idioma}>
-              <b lang="es">ES</b><span aria-hidden="true">/</span><span className="pronto" lang="en" title={t.enPronto}>EN</span>
-            </span>
+            <Idioma lang={lang} path={path} etiqueta={t.idioma} />
           </div>
         </div>
       </div>

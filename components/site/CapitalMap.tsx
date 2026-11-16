@@ -1,16 +1,31 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import fuentes from "@/lib/fuentes.json";
 import { inRange, matchPais, RANGOS, TIPOS, type Fuente } from "@/lib/matching";
+import { TIPOS_LABEL } from "@/lib/catalogo";
+import { langDe } from "@/lib/i18n";
 
 const F = fuentes as Fuente[];
-const SECT: Record<string, string> = {
-  agricultura: "Agricultura", alimentos_bebidas: "Alimentos y bebidas", agroforestal: "Agroforestal", bioeconomia: "Bioeconomía",
-  bionegocios: "Bionegocios", economia_circular: "Economía circular", turismo: "Turismo", biotech: "Biotecnología",
-  biomateriales: "Biomateriales", agritech: "Agritech", bioinsumos: "Bioinsumos",
+
+const TX = {
+  es: {
+    sect: { agricultura: "Agricultura", alimentos_bebidas: "Alimentos y bebidas", agroforestal: "Agroforestal", bioeconomia: "Bioeconomía", bionegocios: "Bionegocios", economia_circular: "Economía circular", turismo: "Turismo", biotech: "Biotecnología", biomateriales: "Biomateriales", agritech: "Agritech", bioinsumos: "Bioinsumos" } as Record<string, string>,
+    filtros: [["*", "Todos"], ["PE", "Perú"], ["CO", "Colombia"], ["EC", "Ecuador"], ["BO", "Bolivia"], ["BR", "Brasil"], ["MX", "México"], ["CA", "Centroamérica"]] as [string, string][],
+    rangos: ["Hasta 50K", "50K a 150K", "150K a 300K", "300K a 500K", "500K a 2 MM", "Más de 2 MM"],
+    mapeadas: "fuentes de capital de impacto mapeadas", nr: "con capital no reembolsable", de: "con deuda de impacto o garantías", activa: "con llamada activa", red: "fondos en nuestra red de contacto directo",
+    filtrar: "Filtrar por país", pais: "País", ticket: "Rangos de ticket", ticketSub: "% de las fuentes que financian empresas y publican su ticket", de_: (n: number, t: number) => `${n} de ${t} fuentes`,
+    tipo: "Tipo de capital", tipoSub: "Número de fuentes por instrumento", sectores: "Sectores con más oferta", sectoresSub: "Número de fuentes por sector de foco",
+  },
+  en: {
+    sect: { agricultura: "Agriculture", alimentos_bebidas: "Food and beverages", agroforestal: "Agroforestry", bioeconomia: "Bioeconomy", bionegocios: "Biobusiness", economia_circular: "Circular economy", turismo: "Tourism", biotech: "Biotech", biomateriales: "Biomaterials", agritech: "Agritech", bioinsumos: "Bio-inputs" } as Record<string, string>,
+    filtros: [["*", "All"], ["PE", "Peru"], ["CO", "Colombia"], ["EC", "Ecuador"], ["BO", "Bolivia"], ["BR", "Brazil"], ["MX", "Mexico"], ["CA", "Central America"]] as [string, string][],
+    rangos: ["Up to 50K", "50K to 150K", "150K to 300K", "300K to 500K", "500K to 2 M", "More than 2 M"],
+    mapeadas: "impact capital sources mapped", nr: "with non-reimbursable capital", de: "with impact debt or guarantees", activa: "with an active call", red: "funds in our direct contact network",
+    filtrar: "Filter by country", pais: "Country", ticket: "Ticket ranges", ticketSub: "% of sources that finance companies and publish their ticket", de_: (n: number, t: number) => `${n} of ${t} sources`,
+    tipo: "Type of capital", tipoSub: "Number of sources per instrument", sectores: "Sectors with the most supply", sectoresSub: "Number of sources per focus sector",
+  },
 };
-const FILTROS: [string, string][] = [["*", "Todos"], ["PE", "Perú"], ["CO", "Colombia"], ["EC", "Ecuador"], ["BO", "Bolivia"], ["BR", "Brasil"], ["MX", "México"], ["CA", "Centroamérica"]];
-const RLAB = ["Hasta 50K", "50K a 150K", "150K a 300K", "300K a 500K", "500K a 2 MM", "Más de 2 MM"];
 
 function Bars({ items, unit = "" }: { items: [string, number, string?][]; unit?: string }) {
   const [on, setOn] = useState(false);
@@ -32,41 +47,43 @@ function Bars({ items, unit = "" }: { items: [string, number, string?][]; unit?:
 
 /** Mapa de capital: cifras y gráficos filtrables por país. */
 export function CapitalMap() {
+  const lang = langDe(usePathname());
+  const tx = TX[lang];
   const [p, setP] = useState("*");
   const set = F.filter((f) => matchPais(f, p));
   const tk = set.filter((f) => f.e === 1 && inRange(f, 0) !== null);
   const sc: Record<string, number> = {};
-  set.forEach((f) => f.s.forEach((x) => { if (SECT[x]) sc[x] = (sc[x] || 0) + 1; }));
+  set.forEach((f) => f.s.forEach((x) => { if (tx.sect[x]) sc[x] = (sc[x] || 0) + 1; }));
   return (
     <>
       <div className="tiles num">
-        <div><b>{set.length}</b><span>fuentes de capital de impacto mapeadas</span></div>
-        <div><b>{set.filter((f) => f.t.includes("nr")).length}</b><span>con capital no reembolsable</span></div>
-        <div><b>{set.filter((f) => f.t.includes("de")).length}</b><span>con deuda de impacto o garantías</span></div>
-        <div><b>{set.filter((f) => f.a === 1).length}</b><span>con llamada activa</span></div>
-        <div><b>+50</b><span>fondos en nuestra red de contacto directo</span></div>
+        <div><b>{set.length}</b><span>{tx.mapeadas}</span></div>
+        <div><b>{set.filter((f) => f.t.includes("nr")).length}</b><span>{tx.nr}</span></div>
+        <div><b>{set.filter((f) => f.t.includes("de")).length}</b><span>{tx.de}</span></div>
+        <div><b>{set.filter((f) => f.a === 1).length}</b><span>{tx.activa}</span></div>
+        <div><b>+50</b><span>{tx.red}</span></div>
       </div>
-      <div className="filters" role="group" aria-label="Filtrar por país">
-        <span className="lbl">País</span>
-        {FILTROS.map(([v, t]) => (
+      <div className="filters" role="group" aria-label={tx.filtrar}>
+        <span className="lbl">{tx.pais}</span>
+        {tx.filtros.map(([v, t]) => (
           <button key={v} type="button" className={`fbtn${p === v ? " on" : ""}`} aria-pressed={p === v} onClick={() => setP(v)}>{t}</button>
         ))}
       </div>
       <div className="charts">
         <div className="chart">
-          <h3>Rangos de ticket</h3>
-          <p className="sub">% de las fuentes que financian empresas y publican su ticket</p>
-          <Bars key={`r${p}`} unit="%" items={RANGOS.map((_, i) => { const n = tk.filter((f) => inRange(f, i) === true).length; return [RLAB[i], tk.length ? Math.round((100 * n) / tk.length) : 0, `${n} de ${tk.length} fuentes`]; })} />
+          <h3>{tx.ticket}</h3>
+          <p className="sub">{tx.ticketSub}</p>
+          <Bars key={`r${p}`} unit="%" items={RANGOS.map((_, i) => { const n = tk.filter((f) => inRange(f, i) === true).length; return [tx.rangos[i], tk.length ? Math.round((100 * n) / tk.length) : 0, tx.de_(n, tk.length)]; })} />
         </div>
         <div className="chart">
-          <h3>Tipo de capital</h3>
-          <p className="sub">Número de fuentes por instrumento</p>
-          <Bars key={`t${p}`} items={TIPOS.map(([k, t]) => [t, set.filter((f) => f.t.includes(k)).length])} />
+          <h3>{tx.tipo}</h3>
+          <p className="sub">{tx.tipoSub}</p>
+          <Bars key={`t${p}`} items={TIPOS.map(([k]) => [TIPOS_LABEL[lang][k], set.filter((f) => f.t.includes(k)).length])} />
         </div>
         <div className="chart">
-          <h3>Sectores con más oferta</h3>
-          <p className="sub">Número de fuentes por sector de foco</p>
-          <Bars key={`s${p}`} items={Object.keys(sc).sort((a, b) => sc[b] - sc[a]).slice(0, 6).map((k) => [SECT[k], sc[k]])} />
+          <h3>{tx.sectores}</h3>
+          <p className="sub">{tx.sectoresSub}</p>
+          <Bars key={`s${p}`} items={Object.keys(sc).sort((a, b) => sc[b] - sc[a]).slice(0, 6).map((k) => [tx.sect[k], sc[k]])} />
         </div>
       </div>
     </>

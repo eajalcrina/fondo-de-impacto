@@ -13,6 +13,14 @@ export const SITE = {
     precioAnticipado: "USD 1,450",
     fechaAnticipado: "15 de diciembre de 2026",
   },
+  /** La misma cohorte en inglés. */
+  cohorteEn: {
+    nombre: "February 2027 cohort",
+    mes: "February",
+    inicio: "Monday, February 1, 2027",
+    corto: "Mon, Feb 1, 2027",
+    fechaAnticipado: "December 15, 2026",
+  },
   /** Plazo de respuesta que prometen los formularios. */
   respuesta: "en menos de 24 horas",
 };
@@ -31,6 +39,8 @@ export type Persona = {
   bio: string;
   logros: string[];
   formacion: string;
+  /** Versión en inglés de los textos visibles. */
+  en: { cargo: string; foco: string; bio: string; logros: string[]; formacion: string };
 };
 
 /** Nodo Person para el schema. Eddie lleva el @id de eddieajalcrina.com para que buscadores e IAs lo traten como una sola entidad. */
@@ -64,6 +74,17 @@ export const EQUIPO: Persona[] = [
       "Ha articulado cadenas de valor amazónicas con marcas globales como Patagonia, Lacoste, Lululemon y Hugo Boss",
     ],
     formacion: "MBA (ESAN) y Maestría en Biocomercio y Desarrollo Sostenible (PUCP)",
+    en: {
+      cargo: "CEO and co-founder",
+      foco: "Strategy, partnerships and fund relations",
+      bio: "More than fifteen years as a corporate executive in marine ingredients and aquaculture nutrition, co-founder of companies and independent director. He works at both ends of the value chain, with producers in the Amazon and with global brands, buyers and investors.",
+      logros: [
+        "Took part in structuring a USD 80 M green loan (Bank of America and World Bank) during his corporate career",
+        "Coordinated the Sustainable Business Program and Team Europe, Circular Transition, at the Delegation of the European Union in Peru",
+        "Has connected Amazon value chains with global brands such as Patagonia, Lacoste, Lululemon and Hugo Boss",
+      ],
+      formacion: "MBA (ESAN) and Master’s in Biotrade and Sustainable Development (PUCP)",
+    },
   },
   {
     nombre: "Lorenzo Ortiz",
@@ -79,6 +100,17 @@ export const EQUIPO: Persona[] = [
       "Coautor del Bio Business Playbook y del Playbook Circular LatAm",
     ],
     formacion: "Ingeniero industrial con posgrados en Finanzas y Business Analytics (Universidad del Pacífico, INCAE y MIT)",
+    en: {
+      cargo: "COO and co-founder",
+      foco: "Fund operations, Bootcamp and platform",
+      bio: "More than twelve years at the Breca and Gloria groups, in operations management and in investment and innovation projects.",
+      logros: [
+        "Board member of Grupo Cotton Nation and former independent board member of other companies",
+        "LATAM Fellow at Singularity University",
+        "Co-author of the Bio Business Playbook and the Playbook Circular LatAm",
+      ],
+      formacion: "Industrial engineer with graduate studies in Finance and Business Analytics (Universidad del Pacífico, INCAE and MIT)",
+    },
   },
   {
     nombre: "Eduardo Mariños",
@@ -93,14 +125,25 @@ export const EQUIPO: Persona[] = [
       "Estructuró un financiamiento garantizado a cinco años para una cadena de valor agrícola con más de 3.000 productores",
     ],
     formacion: "Economista (Universidad del Pacífico) y MBA (EUDE Business School)",
+    en: {
+      cargo: "Director of Investments and Risk",
+      foco: "Due diligence, investment committee and portfolio",
+      bio: "More than eight years in corporate finance, credit and impact investing in Latin America. He originated and structured debt investments in impact companies in Peru and Colombia for an international impact fund, and managed credit portfolios in corporate and commercial banking.",
+      logros: [
+        "More than 100 companies assessed for investment",
+        "Close to USD 100 M in approved credit operations",
+        "Structured a five-year guaranteed financing for an agricultural value chain with more than 3,000 producers",
+      ],
+      formacion: "Economist (Universidad del Pacífico) and MBA (EUDE Business School)",
+    },
   },
 ];
 
 /** Empresas del portafolio de Fondo de Impacto (confirmadas por el dueño el 16-11-2026; fuente: redesignlab.org/ventures). */
 export const PORTAFOLIO = [
-  { nombre: "Cotton Nation", foto: "/img/rl/cotton-nation.jpg", que: "Algodón regenerativo amazónico" },
-  { nombre: "Endemics", foto: "/img/rl/endemics.jpg", que: "Cosmética natural" },
-  { nombre: "Rare by", foto: "/img/rl/rare-by.jpg", que: "Suplementos de la biodiversidad" },
-  { nombre: "GreenProd", foto: "/img/rl/greenprod.jpg", que: "Bioinsumos de residuos de pesca artesanal" },
-  { nombre: "Ecovive", foto: "/img/rl/ecovive.jpg", que: "Alimentos saludables de la biodiversidad" },
+  { nombre: "Cotton Nation", foto: "/img/rl/cotton-nation.jpg", que: "Algodón regenerativo amazónico", queEn: "Regenerative Amazon cotton" },
+  { nombre: "Endemics", foto: "/img/rl/endemics.jpg", que: "Cosmética natural", queEn: "Natural cosmetics" },
+  { nombre: "Rare by", foto: "/img/rl/rare-by.jpg", que: "Suplementos de la biodiversidad", queEn: "Biodiversity-based supplements" },
+  { nombre: "GreenProd", foto: "/img/rl/greenprod.jpg", que: "Bioinsumos de residuos de pesca artesanal", queEn: "Bio-inputs from artisanal fishing waste" },
+  { nombre: "Ecovive", foto: "/img/rl/ecovive.jpg", que: "Alimentos saludables de la biodiversidad", queEn: "Healthy foods from biodiversity" },
 ];

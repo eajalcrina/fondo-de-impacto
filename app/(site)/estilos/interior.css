@@ -43,7 +43,13 @@
   .tarjeta.naranja { background: var(--naranja); }
   .tarjeta.naranja .tarjeta-r, .tarjeta.naranja .tarjeta-x, .tarjeta.naranja .check li { color: var(--blanco); }
   .tarjeta.naranja .check li::before { border-color: var(--blanco); }
-  /* Tarjetas paralelas con las mismas filas: rótulo, título, texto, lista y acción */
+  /* Regla general: tarjetas vecinas comparten filas (número o rótulo, título y texto), aunque los títulos ocupen distintas líneas */
+  @media (min-width: 640px) {
+    .tarjetas { row-gap: 0; }
+    .tarjetas > .tarjeta { grid-row: span 3; grid-template-rows: subgrid; row-gap: 12px; margin-bottom: var(--sep); }
+    .tarjetas > .tarjeta > .tarjeta-n { margin-bottom: 0; padding-bottom: 12px; }
+  }
+  /* Tarjetas paralelas con cinco filas: rótulo, título, texto, lista y acción */
   @media (min-width: 640px) {
     .tarjetas.filas { row-gap: 0; }
     .tarjetas.filas > .tarjeta { grid-row: span 5; grid-template-rows: subgrid; row-gap: 12px; margin-bottom: var(--sep); }

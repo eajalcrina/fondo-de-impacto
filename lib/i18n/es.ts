@@ -103,7 +103,7 @@ export const es = {
     masDe: "más de",
     aliados: { cooperacion: "Cooperación internacional", academia: "Academia", redes: "Fondos y redes de impacto", publico: "Sector público" },
     rangos: {
-      fuentes: (n: number) => (n === 1 ? "fuente" : "fuentes"),
+      fuentes: (n: number): string => (n === 1 ? "fuente" : "fuentes"),
       ir: "Ver fuentes",
       montos: [
         ["Hasta USD", "50K", ""],

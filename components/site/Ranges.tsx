@@ -1,12 +1,11 @@
 import Link from "next/link";
 import fuentes from "@/lib/fuentes.json";
 import { countByRange, RANGOS, type Fuente } from "@/lib/matching";
-import { es } from "@/lib/i18n/es";
-
-const t = es.comun.rangos;
+import { dic, ruta, type Lang } from "@/lib/i18n";
 
 /** Tarjetas de rango de capital: monto, fuentes que calzan y acceso al buscador con ese rango. */
-export function Ranges() {
+export function Ranges({ lang = "es" }: { lang?: Lang }) {
+  const t = dic(lang).comun.rangos;
   const cnts = countByRange(fuentes as Fuente[]);
   return (
     <ul className="rangos">
@@ -14,7 +13,7 @@ export function Ranges() {
         const [antes, monto, despues] = t.montos[i];
         return (
           <li key={r.key}>
-            <Link href={`/pasaporte?rango=${i}#buscador`} className="rango">
+            <Link href={`${ruta(lang, "/pasaporte")}?rango=${i}#buscador`} className="rango">
               <span className="rango-pre">{antes}</span>
               <span className="rango-monto">{monto}</span>
               <span className="rango-hasta">{despues || " "}</span>

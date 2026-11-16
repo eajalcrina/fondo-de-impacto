@@ -22,7 +22,7 @@ const REQUERIDOS: Record<LeadForm, string[]> = {
   pasaporte: [...COMUNES, "empresa"],
 };
 
-const OPCIONALES = ["referente", "utm_source", "utm_medium", "utm_campaign", "navegador", "celular", "empresa", "pais", "rubro", "ventas", "capital", "mensaje", "origen", "rango", "tipo", "razon_social", "publico"];
+const OPCIONALES = ["referente", "utm_source", "utm_medium", "utm_campaign", "navegador", "celular", "empresa", "pais", "rubro", "ventas", "capital", "mensaje", "origen", "rango", "tipo", "razon_social", "publico", "idioma"];
 
 const MAX = 1000;
 const CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -67,12 +67,12 @@ type Envelope = {
   userEmail?: { to: string; subject: string; html: string };
 };
 
-function shell(titulo: string, cuerpo: string): string {
+function shell(titulo: string, cuerpo: string, en = false): string {
   return `<div style="font-family:Montserrat,Helvetica,Arial,sans-serif;color:#123524;max-width:560px;margin:0 auto;padding:32px 24px;">
 <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#994215;margin:0 0 12px;">Fondo de Impacto</p>
 <h1 style="font-size:24px;line-height:1.2;margin:0 0 20px;">${titulo}</h1>
 ${cuerpo}
-<p style="font-size:12px;color:#556259;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">Fondo de Impacto, una división de Redesign Lab, desde Lima y Bogotá<br>${SITE.email} | <a href="${SITE.url}/privacidad" style="color:#556259;">Política de privacidad</a></p>
+<p style="font-size:12px;color:#556259;margin-top:32px;border-top:1px solid #e3e8e3;padding-top:16px;">${en ? "Fondo de Impacto, a division of Redesign Lab, from Lima and Bogotá" : "Fondo de Impacto, una división de Redesign Lab, desde Lima y Bogotá"}<br>${SITE.email} | <a href="${SITE.url}${en ? "/en/privacy" : "/privacidad"}" style="color:#556259;">${en ? "Privacy policy" : "Política de privacidad"}</a></p>
 </div>`;
 }
 
@@ -93,6 +93,7 @@ function tail(d: Record<string, string>): string[] {
 export function buildEnvelope(form: LeadForm, d: Record<string, string>, extra: { reporte?: Report } = {}): Envelope {
   const ts = nowLima();
   const nombre = escapeHtml(d.nombre ?? "");
+  const en = d.idioma === "en";
 
   switch (form) {
     case "buscador": {
@@ -114,7 +115,7 @@ ${boton(`${SITE.url}/bootcamp#postular`, "Postular al Bootcamp")}
 ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         : `<p>Hola ${nombre}, recibimos tu solicitud.</p>`;
       return {
-        subject: `Buscador: ${d.razon_social} (${pais}, ${rango})`,
+        subject: `${en ? "[EN] " : ""}Buscador: ${d.razon_social} (${pais}, ${rango})`,
         fields: [
           ["Razón social", d.razon_social], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular],
           ["Rubro", rubro], ["País", pais], ["Tipo de fondo", tipo], ["Capital", rango],
@@ -122,20 +123,40 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
         ],
         tab: "Buscador",
         row: [ts, d.razon_social, d.nombre, d.correo, d.celular, rubro, pais, tipo, rango, String(r?.total ?? ""), String(r?.activas ?? ""), ...tail(d)],
-        userEmail: { to: d.correo, subject: `Tu reporte de fondos disponibles para ${d.razon_social}`, html: shell("Fondos disponibles para tu empresa", cuerpo) },
+        userEmail: en
+          ? { to: d.correo, subject: `Your report of available funds for ${d.razon_social}`, html: shell("Funds available for your company", r
+            ? `<p style="font-size:15px;line-height:1.6;">Hi ${nombre}, here is the preliminary report for <b>${escapeHtml(d.razon_social)}</b>.</p>
+<p style="font-size:15px;line-height:1.6;"><b>${r.total}</b> impact capital sources match your profile and <b>${r.activas}</b> have an active call.</p>
+<p style="font-size:14px;color:#556259;">Non-reimbursable: ${r.porTipo.nr}<br>Debt and guarantees: ${r.porTipo.de}<br>Equity: ${r.porTipo.eq}<br>Blended: ${r.porTipo.bl}</p>
+<p style="font-size:15px;line-height:1.6;margin-top:24px;"><b>Recommended next step: the Capital Raising Bootcamp.</b> In eight weeks you build your thesis, financial model, teaser and pitch, and at the end you present to partner funds. ${SITE.cohorteEn.nombre}: starts ${SITE.cohorteEn.inicio}, ${SITE.cohorte.cupos} seats.</p>
+${boton(`${SITE.url}/en/bootcamp#postular`, "Apply to the Bootcamp")}
+<p style="font-size:15px;line-height:1.6;margin-top:20px;"><b>Want to start raising capital today?</b> Let’s talk for 30 minutes.</p>
+${boton(SITE.calEmpresas, "Book a meeting", false)}`
+            : `<p>Hi ${nombre}, we received your request.</p>`, true) }
+          : { to: d.correo, subject: `Tu reporte de fondos disponibles para ${d.razon_social}`, html: shell("Fondos disponibles para tu empresa", cuerpo) },
       };
     }
     case "bootcamp": {
       const pais = etiqueta(PAISES, d.pais);
       return {
-        subject: `Postulación al Bootcamp: ${d.empresa} (${pais})`,
+        subject: `${en ? "[EN] " : ""}Postulación al Bootcamp: ${d.empresa} (${pais})`,
         fields: [
           ["Empresa", d.empresa], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular], ["País", pais],
           ["Rubro", d.rubro ? etiqueta(RUBROS, d.rubro) : ""], ["Ventas últimos 12 meses", d.ventas ?? ""], ["Capital que busca", d.capital ?? ""], ["Mensaje", d.mensaje ?? ""],
         ],
         tab: "Bootcamp",
         row: [ts, d.empresa, d.nombre, d.correo, d.celular, pais, d.rubro ? etiqueta(RUBROS, d.rubro) : "", d.ventas ?? "", d.capital ?? "", d.mensaje ?? "", ...tail(d)],
-        userEmail: {
+        userEmail: en ? {
+          to: d.correo,
+          subject: "We received your application to the Capital Raising Bootcamp",
+          html: shell(
+            "We received your application",
+            `<p style="font-size:15px;line-height:1.6;">Hi ${nombre}, thank you for applying with <b>${escapeHtml(d.empresa)}</b> to the Capital Raising Bootcamp (${SITE.cohorteEn.nombre}, starting ${SITE.cohorteEn.inicio}). We review every application and will write to you within 24 hours to set up a conversation.</p>
+<p style="font-size:15px;line-height:1.6;">Price: <b>${SITE.cohorte.precio}</b> per company, or <b>${SITE.cohorte.precioAnticipado}</b> if you confirm your seat by ${SITE.cohorteEn.fechaAnticipado}. It is paid in two installments and only after your seat is confirmed. Partial scholarships are available for companies with annual sales below USD 300,000.</p>
+<p style="font-size:15px;line-height:1.6;">In the meantime, you can book a meeting with the team.</p>${boton(SITE.calEmpresas, "Book a meeting")}`,
+            true,
+          ),
+        } : {
           to: d.correo,
           subject: "Recibimos tu postulación al Bootcamp de Levantamiento de Capital",
           html: shell(
@@ -150,7 +171,7 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
     case "consulta": {
       const publico = etiqueta(PUBLICOS, d.publico);
       return {
-        subject: `Consulta de ${d.nombre} (${publico})`,
+        subject: `${en ? "[EN] " : ""}Consulta de ${d.nombre} (${publico})`,
         fields: [["Público", publico], ["Nombre", d.nombre], ["Organización", d.empresa ?? ""], ["Correo", d.correo], ["Celular", d.celular ?? ""], ["Mensaje", d.mensaje]],
         tab: "Consultas",
         row: [ts, publico, d.nombre, d.empresa ?? "", d.correo, d.celular ?? "", d.mensaje, ...tail(d)],
@@ -158,11 +179,19 @@ ${boton(SITE.calEmpresas, "Agendar una reunión", false)}`
     }
     case "pasaporte": {
       return {
-        subject: `Pasaporte de Inversión: ${d.empresa}, de ${d.nombre}`,
+        subject: `${en ? "[EN] " : ""}Pasaporte de Inversión: ${d.empresa}, de ${d.nombre}`,
         fields: [["Empresa", d.empresa], ["Nombre", d.nombre], ["Correo", d.correo], ["Celular", d.celular ?? ""], ["País", d.pais ? etiqueta(PAISES, d.pais) : ""], ["Rubro", d.rubro ? etiqueta(RUBROS, d.rubro) : ""], ["Mensaje", d.mensaje ?? ""]],
         tab: "Pasaporte",
         row: [ts, d.empresa, d.nombre, d.correo, d.celular ?? "", d.pais ? etiqueta(PAISES, d.pais) : "", d.rubro ? etiqueta(RUBROS, d.rubro) : "", d.mensaje ?? "", ...tail(d)],
-        userEmail: {
+        userEmail: en ? {
+          to: d.correo,
+          subject: "We received your request to access the Investment Passport",
+          html: shell(
+            "We received your access request",
+            `<p style="font-size:15px;line-height:1.6;">Hi ${nombre}, we received the request from <b>${escapeHtml(d.empresa)}</b> to access the Investment Passport. The Passport opens in stages and is free for your company. We will write to you when your access is ready.</p>`,
+            true,
+          ),
+        } : {
           to: d.correo,
           subject: "Recibimos tu solicitud de acceso al Pasaporte de Inversión",
           html: shell(
