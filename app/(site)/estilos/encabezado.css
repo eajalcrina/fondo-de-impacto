@@ -1,6 +1,6 @@
 /*
  * Encabezado fijo con logo, idioma, un botón y el menú. Se oculta al bajar y vuelve al subir.
- * En la portada va translúcido sobre la foto; en las páginas internas, blanco con línea inferior.
+ * Blanco con línea inferior en todas las páginas, con «Agendar reunión» en naranja.
  * El menú se abre en un panel a pantalla completa: foto a la izquierda y enlaces grandes a la derecha.
  */
 @layer componentes {

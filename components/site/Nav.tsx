@@ -20,7 +20,6 @@ const ENTRADAS = [
 
 export function Nav() {
   const path = usePathname();
-  const portada = path === "/";
   const [abierto, setAbierto] = useState(false);
   const [oculto, setOculto] = useState(false);
   const [foto, setFoto] = useState(ENTRADAS[0].foto);
@@ -53,18 +52,18 @@ export function Nav() {
   const inv = path === "/inversionistas";
   const cal = inv ? SITE.calInversionistas : SITE.calEmpresas;
   const agendar = (lugar: string) => track("cta_calendar", { location: lugar, calendario: inv ? "inversionistas" : "empresas" });
-  const clase = ["nav", portada ? "" : "claro", oculto && !abierto ? "oculto" : ""].filter(Boolean).join(" ");
+  const clase = ["nav", "claro", oculto && !abierto ? "oculto" : ""].filter(Boolean).join(" ");
 
   return (
     <>
       <header className={clase}>
         <div className="wrap">
-          <Logo tone={portada ? "white" : "dark"} />
+          <Logo tone="dark" />
           <div className="acciones">
             <span className="idioma" role="group" aria-label={t.idioma}>
               <b lang="es">ES</b><span aria-hidden="true">/</span><span className="pronto" lang="en" title={t.enPronto}>EN</span>
             </span>
-            <a className={`btn btn-sm ${portada ? "btn-b" : "btn-p"}`} href={cal} target="_blank" rel="noopener noreferrer" onClick={() => agendar("nav")}>{t.agendar}</a>
+            <a className="btn btn-sm btn-p" href={cal} target="_blank" rel="noopener noreferrer" onClick={() => agendar("nav")}>{t.agendar}</a>
             <button type="button" className="icono" aria-expanded={abierto} aria-controls="menu-principal" onClick={() => setAbierto(true)}>
               <span className="sr">{t.abrir}</span>
               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" strokeWidth="1.4" fill="none" /></svg>

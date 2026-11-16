@@ -22,7 +22,7 @@ export default function InversionistasPage() {
     <div className="head"><span className="eyebrow">Tesis</span><Words as="h2" className="d2" text="Por qué invertimos en estas empresas" /></div>
     <div className="faq">
       <div><b className="d3">El negocio llega antes que el capital</b><p className="p2">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. Lo que suele faltar es un perfil de inversión bien construido.</p></div>
-      <div><b className="d3">La demanda de liquidez está validada</b><p className="p2">Hoy, el crédito al que acceden estas empresas suele costarles entre 25 y 40% anual, y aun así lo repagan y siguen siendo rentables.</p></div>
+      <div><b className="d3">La demanda de liquidez está validada</b><p className="p2">Hoy acceden a crédito caro, y aun así lo repagan y siguen siendo rentables.</p></div>
       <div><b className="d3">Complementamos a otros fondos</b><p className="p2">Financiamos a empresas que ya repagaron a otros fondos de impacto. El historial con terceros es nuestro primer filtro de riesgo.</p></div>
     </div>
   </div></section>
