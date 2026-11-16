@@ -18,6 +18,9 @@
   .foot li { padding-block: 3px; }
   .foot a { overflow-wrap: anywhere; }
   .foot a:hover { color: var(--blanco); }
+  .paises { display: flex; gap: 20px; margin-top: 20px; font-size: 14px; font-weight: 500; color: var(--blanco); }
+  .paises li { display: inline-flex; align-items: center; gap: 8px; padding: 0; }
+  .paises svg { width: 14px; height: 18px; color: var(--naranja-claro); }
   .legal { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--linea-oscura); font-size: 13px; line-height: 1.7; color: var(--sobre-oscuro-2); display: grid; gap: 8px; }
 
   /* Aviso de medición */

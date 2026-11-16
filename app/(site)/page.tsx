@@ -59,7 +59,6 @@ export default function HomePage() {
 
       <section className="sec arena" id="rangos"><div className="wrap">
         <div className="titular">
-          <span className="eyebrow">{t.rangos.rotulo}</span>
           <h2 className="d2">{t.rangos.titulo}</h2>
           <p className="p2">{t.rangos.texto}</p>
         </div>

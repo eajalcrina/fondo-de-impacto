@@ -1,7 +1,7 @@
 /* Base: reinicio, tipografía y retícula. Celular primero; los anchos fijos van dentro de @media. */
 @layer fundamento {
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--alto-nav) + 16px); }
   body {
     margin: 0;
     background: var(--blanco);

@@ -1,17 +1,5 @@
 /* Componentes de contenido compartidos por las páginas. Bordes rectos y líneas de 1 px. */
 @layer componentes {
-  /*
-   * Marca editorial: un cuadrado sólido en la esquina superior izquierda de cada superficie de color.
-   * Reemplaza a la textura de anillos (rechazada por el dueño el 16-11-2026).
-   */
-  :is(.heroe-panel, .tarjeta-cuerpo, .foot, .final, .cierre, .hero.dk, .feature, .band, .report) { position: relative; }
-  :is(.heroe-panel, .tarjeta-cuerpo, .foot, .final, .cierre, .hero.dk, .feature, .band, .report)::before {
-    content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 16px; background: var(--marca, var(--naranja-claro));
-  }
-  @media (min-width: 900px) {
-    :is(.heroe-panel, .tarjeta-cuerpo, .foot, .final, .cierre, .hero.dk, .feature, .band, .report)::before { width: 20px; height: 20px; }
-  }
-  .final, .cierre, .tarjeta.naranja .tarjeta-cuerpo { --marca: var(--bosque); }
 
   /* Puente empresas, fondo y capital */
   .bridge { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }

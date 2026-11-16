@@ -9,6 +9,7 @@ export const es = {
     firma: "by Redesign Lab",
     alt: "Fondo de Impacto, by Redesign Lab",
     sede: "Desde Lima, Perú, y Bogotá, Colombia",
+    paises: ["Perú", "Colombia"],
   },
   nav: {
     principal: "Principal",
@@ -42,7 +43,7 @@ export const es = {
       rotulo: "Resultados desde 2021",
       items: [
         { icono: "red", mas: true, valor: "50", texto: "fondos de impacto en nuestra red" },
-        { icono: "brote", mas: true, valor: "10", texto: "empresas en nuestro portafolio en América Latina" },
+        { icono: "brote", mas: true, valor: "10", texto: "empresas en nuestro portafolio" },
         { icono: "alza", mas: false, valor: "USD\u00a02.7\u00a0MM", texto: "levantados para empresas acompañadas" },
         { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025" },
       ],
@@ -102,7 +103,7 @@ export const es = {
     cifras: [
       { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025" },
       { icono: "alza", mas: false, valor: "28%", texto: "crecimiento de la facturación frente a 2024" },
-      { icono: "brote", mas: true, valor: "10", texto: "empresas en nuestro portafolio en América Latina" },
+      { icono: "brote", mas: true, valor: "10", texto: "empresas en nuestro portafolio" },
     ],
     empresas: { rotulo: "Inversiones", titulo: "Algunas de las empresas más relevantes de nuestro portafolio" },
     cierre: { titulo: "¿Quieres ver el portafolio en detalle?", texto: "Compartimos métricas, estados financieros y la ronda activa en una conversación privada, bajo acuerdo de confidencialidad.", cta: "Agendar reunión" },
@@ -132,7 +133,8 @@ export const es = {
     financiamiento: "Financiamiento directo",
     privacidad: "Política de privacidad",
     derechos: (anio: number) => `© ${anio} Redesign Ventures SAC.`,
-    legalOferta: "Este sitio es informativo y no constituye una oferta pública de valores ni una invitación a captar fondos del público. Las oportunidades de inversión se presentan solo en conversaciones privadas, bajo acuerdo de confidencialidad.",
+    legalOferta: "Este sitio es informativo y no constituye una oferta pública de valores ni una invitación a captar fondos del público.",
+    legalPrivado: "Las oportunidades de inversión se presentan solo en conversaciones privadas, bajo acuerdo de confidencialidad.",
   },
 };
 

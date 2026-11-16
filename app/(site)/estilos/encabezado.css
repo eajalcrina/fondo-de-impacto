@@ -1,6 +1,6 @@
 /* Encabezado sólido en bosque profundo: logo, menú, idioma y un botón. */
 @layer componentes {
-  .nav { background: var(--bosque); color: var(--blanco); position: relative; z-index: 40; border-bottom: 1px solid var(--linea-oscura); }
+  .nav { background: var(--bosque); color: var(--blanco); position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--linea-oscura); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--alto-nav); }
   .logo { display: flex; align-items: center; }
   .logo img { display: block; height: auto; width: 128px; }
