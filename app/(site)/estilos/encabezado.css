@@ -9,15 +9,14 @@
   .nav.claro { background: var(--blanco); color: var(--bosque); border-bottom: 1px solid var(--linea); }
   .nav.solido { background: var(--lienzo); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 100%; }
-  /* Logo: isotipo y «FONDO DE / IMPACTO» en Open Sans 500; «IMPACTO» crece hasta el ancho de «FONDO DE» (factor 1,15)
-     y el isotipo mide lo mismo que el nombre. La firma va debajo, desde el isotipo y con el ancho total del logo. */
+  /* Logo con la composición del original: «FONDO DE / IMPACTO» en Montserrat 400 (opción 1 elegida por el dueño), las dos
+     líneas del mismo tamaño y el isotipo de la misma altura que el nombre. La firma va debajo, en Open Sans, desde el
+     isotipo y con el ancho total del logo. */
   .logo { --logo-t: 15px; display: grid; grid-template-columns: auto auto; grid-template-areas: "icono nombre" "firma firma"; column-gap: 10px; align-items: center; color: var(--bosque); }
-  .logo-icono { grid-area: icono; width: calc(var(--logo-t) * 2.385); height: calc(var(--logo-t) * 2.385); }
+  .logo-icono { grid-area: icono; width: calc(var(--logo-t) * 2.24); height: calc(var(--logo-t) * 2.24); }
   .logo-texto { display: contents; }
-  .logo-nombre { grid-area: nombre; display: grid; justify-items: start; font-weight: 500; line-height: 1.1; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
-  .logo-l1 { font-size: var(--logo-t); }
-  .logo-l2 { font-size: calc(var(--logo-t) * var(--logo-k2, 1.1685)); }
-  .logo-firma { grid-area: firma; justify-self: start; margin-top: 4px; font-size: calc(var(--logo-t) * var(--logo-kf, 0.7)); font-weight: 400; line-height: 1.2; letter-spacing: 0; color: var(--t2); white-space: nowrap; }
+  .logo-nombre { grid-area: nombre; display: grid; justify-items: start; font-family: var(--font-logo), var(--f-sans); font-size: var(--logo-t); font-weight: 400; line-height: 1.12; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+  .logo-firma { grid-area: firma; justify-self: start; margin-top: 5px; font-size: calc(var(--logo-t) * var(--logo-kf, 0.74)); font-weight: 400; line-height: 1.2; letter-spacing: 0; color: var(--t2); white-space: nowrap; }
   .logo-firma b { font-weight: 600; }
   .logo-white { color: var(--blanco); }
   .logo-white .logo-firma { color: var(--sobre-oscuro-2); }

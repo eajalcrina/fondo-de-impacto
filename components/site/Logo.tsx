@@ -3,8 +3,8 @@ import Link from "next/link";
 import { dic, ruta, type Lang } from "@/lib/i18n";
 
 /**
- * Logo armado en código: isotipo de puntos y «FONDO DE / IMPACTO» en Open Sans 500, con «IMPACTO» del mismo ancho
- * que «FONDO DE». Debajo, la firma de Redesign Lab desde el isotipo y con el ancho total del logo.
+ * Logo armado en código con la composición del original: isotipo de puntos y «FONDO DE / IMPACTO» en Montserrat 400,
+ * las dos líneas del mismo tamaño. Debajo, la firma de Redesign Lab desde el isotipo y con el ancho total del logo.
  */
 export function Logo({ tone = "white", lang = "es" }: { tone?: "dark" | "white"; lang?: Lang }) {
   return (

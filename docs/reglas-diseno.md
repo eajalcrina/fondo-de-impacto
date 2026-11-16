@@ -29,7 +29,7 @@ Paleta propia de Fondo de Impacto. Tokens en `app/(site)/estilos/tokens.css`; ni
 - Retratos del equipo con el mismo encuadre (cabeza a la misma altura y tamaño) sobre `--retrato`; originales sin fondo en `docs/fotos-equipo-originales/`.
 - Sin repetir un dato o una acción en la misma página ni entre páginas: rangos y cifras viven en la portada.
 - Pie: logo, ubicaciones (punto blanco con anillo fino) y «Volver arriba» en la misma línea base inferior; aviso legal en tres líneas a todo lo ancho, 12,5 px.
-- Logo armado en código (variante B1 elegida por el dueño): isotipo de puntos y «FONDO DE / IMPACTO» en Open Sans 500, mayúsculas con espaciado 0,05em; «IMPACTO» a 1,1685 veces el tamaño de «FONDO DE» para que ambas líneas midan lo mismo; el isotipo mide lo mismo que el nombre. Debajo, «Powered by **Redesign Lab**» (400 y 600) desde el borde del isotipo y con el ancho total del logo (factor 0,7). Todo en un color.
+- Logo armado en código con la composición del original (opción 1 elegida por el dueño): isotipo de puntos y «FONDO DE / IMPACTO» en Montserrat 400 (solo el nombre del logo usa Montserrat), mayúsculas con espaciado 0,06em e interlineado 1,12, las dos líneas del mismo tamaño; el isotipo mide lo mismo que el nombre. Debajo, «Powered by **Redesign Lab**» en Open Sans (400 y 600), desde el borde del isotipo y con el ancho total del logo (factor 0,74). Todo en un color.
 - Sobre fondo naranja, el botón blanco pasa al tono oscuro del lienzo al pasar el cursor; nunca a naranja.
 - Tarjetas vecinas comparten filas con subgrid (número o rótulo, título y texto), aunque los títulos ocupen distintas líneas.
 - Logos de organizaciones en gris al 50%; al pasar el cursor, color original con opacidad plena (monocromos de origen en negro).
