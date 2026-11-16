@@ -5,7 +5,7 @@
   .lead-form label, .fform label, .field label { font-size: 13px; font-weight: 600; color: var(--bosque); display: grid; gap: 6px; }
   .lead-form input, .lead-form select, .lead-form textarea, .fform input, .fform select, .inp {
     font: inherit; font-size: 15px; font-weight: 400; color: var(--t1);
-    border: 1px solid var(--linea-2); border-radius: 0; padding: 12px; background: var(--blanco); width: 100%;
+    border: 1px solid var(--linea-2); border-radius: var(--radio-tarjeta); padding: 12px 14px; background: var(--blanco); width: 100%;
   }
   .lead-form textarea { min-height: 96px; resize: vertical; }
   .lead-form input:focus, .lead-form select:focus, .lead-form textarea:focus, .fform input:focus, .fform select:focus { outline: 2px solid var(--bosque); outline-offset: 1px; border-color: var(--bosque); }
@@ -36,7 +36,7 @@
   .sects li.cur { color: var(--bosque); font-weight: 600; }
   .sects li.cur::before { border-color: var(--bosque); color: var(--bosque); }
   .sects small { font-size: 13px; color: var(--t2); font-weight: 400; }
-  .fcard { border: 1px solid var(--linea); padding: 24px; display: grid; gap: 18px; background: var(--blanco); }
+  .fcard { border: 1px solid var(--linea); border-radius: var(--radio-tarjeta); padding: 24px; display: grid; gap: 18px; background: var(--blanco); }
   .prog { height: 3px; background: var(--linea); }
   .prog u { display: block; height: 100%; width: 42%; background: var(--naranja); }
   .factions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; border-top: 1px solid var(--linea); padding-top: 16px; }
@@ -44,10 +44,10 @@
   /* Buscador y reporte */
   .finder { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: stretch; }
   @media (min-width: 960px) { .finder { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
-  .fform { background: var(--blanco); border: 1px solid var(--linea); padding: 24px; align-content: start; }
+  .fform { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio-tarjeta); padding: 24px; align-content: start; }
   @media (min-width: 860px) { .fform { padding: 32px; } }
   .fform .sep { border-top: 1px solid var(--linea); padding-top: 14px; font-size: 13px; font-weight: 500; color: var(--t2); display: block; width: auto; height: auto; margin: 0; background: none; opacity: 1; }
-  .report { position: relative; overflow: hidden; padding: 24px; display: grid; gap: 20px; align-content: start; background: var(--bosque); color: var(--blanco); }
+  .report { position: relative; overflow: hidden; padding: 24px; display: grid; gap: 20px; align-content: start; background: var(--lienzo); color: var(--blanco); border-radius: var(--radio-tarjeta); }
   @media (min-width: 860px) { .report { padding: 32px; } }
   .rep-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; font-weight: 500; color: var(--sobre-oscuro-2); }
   .rep-top b { color: var(--naranja-claro); }

@@ -18,7 +18,7 @@ export default function PasaportePage() {
   <Hero slides={[{ src: "/img/h04.jpg", cap: "Cacao" }]} split>
 <div className="stack" style={{ gap: "26px" }}>
       <span className="eyebrow">Pasaporte de Inversión</span>
-      <Words as="h1" className="d1" style={{ fontSize: "clamp(40px,5.8vw,72px)" }} text="Un solo perfil. Más de 50 fondos de impacto" />
+      <Words as="h1" className="d1" text="Un solo perfil. Más de 50 fondos de impacto" />
       <p className="lead">Completa el Pasaporte de Inversión de tu empresa una sola vez y abre la puerta al capital que estás buscando. No pagas nada: solo inviertes unos 40 minutos. Con esa información preparamos un teaser confidencial con estándar de comité y lo presentamos a los fondos de nuestra red cuya tesis coincide con tu empresa.</p>
       <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><Link className="lnk q" href="/pasaporte#buscador">Ver fondos disponibles</Link></div>
       <div className="facts num" style={{ marginTop: "4px" }}><div><b>USD 0</b><span>costo para tu empresa</span></div><div><b>Por etapas</b><span>acceso anticipado</span></div><div><b>+50</b><span>fondos en nuestra red</span></div></div>
@@ -58,7 +58,7 @@ export default function PasaportePage() {
     </ol>
   </div></section>
 
-  <section className="sec" style={{ borderTop: 0 }}><div className="wrap">
+  <section className="sec"><div className="wrap">
     <div className="head"><span className="eyebrow">Vista previa<i className="sep" />Próximamente</span><div className="stack" style={{ gap: "10px" }}><Words as="h2" className="d2" text="Seis bloques, a tu ritmo" /><p className="p2">Ten a mano los estados financieros de los últimos dos años, tu pitch deck si lo tienes y las métricas de impacto que ya mides.</p></div></div>
     <div className="formwrap">
       <ol className="sects">

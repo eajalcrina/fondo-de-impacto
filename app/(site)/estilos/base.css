@@ -45,15 +45,14 @@
   /* Retícula */
   .wrap { max-width: calc(var(--ancho) + 2 * var(--gut)); margin: 0 auto; padding-inline: var(--gut); }
   .sec { padding-block: var(--sec); }
-  .sec.tint { background: var(--salvia-claro); }
+  .sec.tint { background: var(--arena); }
   .sec.arena { background: var(--arena); }
   .stack { display: grid; gap: 20px; align-content: start; }
   .split, .head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
-  .head { margin-bottom: 40px; }
+  .head { margin-bottom: 32px; gap: 12px; }
   @media (min-width: 860px) {
-    .split, .head { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 24px 64px; }
-    .head { margin-bottom: 56px; }
-    .head > .eyebrow, .split > .eyebrow { padding-top: 0.9em; }
+    .split { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 64px; }
+    .head { margin-bottom: 40px; max-width: 760px; }
   }
   .cols-2, .cols-3 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .cols-4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -62,15 +61,17 @@
     .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
     .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
   }
-  .rule { border-top: 1px solid var(--bosque); padding-top: 20px; display: grid; gap: 10px; align-content: start; }
-  .rule.l { border-top-color: var(--linea-2); }
+  /* Panel claro: superficie arena con radio de tarjeta (blanco dentro de secciones arena) */
+  .rule { background: var(--arena); border-radius: var(--radio-tarjeta); padding: 28px; display: grid; gap: 12px; align-content: start; }
+  .rule.l { background: var(--blanco); border: 1px solid var(--linea-2); }
+  .tint .rule, .arena .rule { background: var(--blanco); }
 
   /* Superficie oscura: bosque profundo con texto blanco */
-  .dk { background: var(--bosque); color: var(--blanco); position: relative; overflow: hidden; }
+  .dk { background: var(--lienzo); color: var(--blanco); position: relative; overflow: hidden; }
   .dk > .wrap { position: relative; }
   .dk .lead, .dk .p2 { color: var(--sobre-oscuro); }
   .dk .xs { color: var(--sobre-oscuro-2); }
   .dk .eyebrow { color: var(--sobre-oscuro-2); }
   .dk .eyebrow .n, .dk .tc, .dk .kw { color: var(--naranja-claro); }
-  .dk .rule { border-top-color: var(--linea-oscura); }
+  .dk .rule { background: var(--lienzo-superficie); }
 }

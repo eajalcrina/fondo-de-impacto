@@ -13,7 +13,7 @@ export default function EmpresasPage() {
 
   <Hero slides={[{ src: "/img/h17.jpg", cap: "Taller con empresas" }]}>
 <span className="eyebrow">Para empresas</span>
-    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "16ch" }} text="Del diagnóstico al capital, según la etapa de tu empresa" />
+    <Words as="h1" className="d1" style={{ maxWidth: "16ch" }} text="Del diagnóstico al capital, según la etapa de tu empresa" />
     <p className="lead" style={{ maxWidth: "56ch" }}>Trabajamos con empresas de impacto en Perú y Colombia. Todo empieza con una pregunta: ¿cuánto capital necesitas? El buscador te muestra cuántas fuentes calzan con tu empresa y, según el resultado, te recomendamos la ruta: prepararte en el Bootcamp y levantar capital con fondos de nuestra red, o recibir financiamiento directo del fondo.</p>
   </Hero>
 
@@ -28,7 +28,7 @@ export default function EmpresasPage() {
     <Teaser />
   </div></section>
 
-  <section className="sec" style={{ borderTop: 0 }}><div className="wrap">
+  <section className="sec"><div className="wrap">
     <div className="head"><span className="eyebrow">Después, elige tu ruta</span><Words as="h2" className="d2" text="Dos modalidades según la etapa de tu empresa" /></div>
     <div className="cols-2">
       <div className="rule" style={{ gap: "16px" }}>
@@ -72,7 +72,7 @@ export default function EmpresasPage() {
     </ol>
   </div></section>
 
-  <section className="sec" style={{ paddingTop: 0, borderTop: 0 }}><div className="wrap">
+  <section className="sec" style={{ paddingTop: 0 }}><div className="wrap">
     <div className="band dk">
       <div className="band-in"><span className="eyebrow">Para fondos y cooperación</span><Words as="h2" className="d3" text="Accede a nuestro portafolio privado de empresas con investment readiness" /><p className="p2 sm">Opera con nosotros programas de asistencia técnica para tu cartera y co-invierte en esquemas de blended finance.</p></div>
       <a className="btn btn-g" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Solicitar acceso al portafolio</a>

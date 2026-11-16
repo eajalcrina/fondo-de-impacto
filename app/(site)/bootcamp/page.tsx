@@ -19,7 +19,7 @@ export default function BootcampPage() {
   <Hero slides={[{ src: "/img/h16.jpg", cap: "Mapeo de cadena de valor" }]} split>
 <div className="stack" style={{ gap: "26px" }}>
       <span className="eyebrow">Bootcamp de Levantamiento de Capital</span>
-      <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)" }} text="Sal a levantar capital acompañado por quienes ya lo han hecho" />
+      <Words as="h1" className="d1" text="Sal a levantar capital acompañado por quienes ya lo han hecho" />
       <p className="lead">Investment readiness aplicado. Ocho semanas de trabajo intensivo y personalizado para empresas de impacto listas para buscar inversión, con un equipo que, desde 2021, ha levantado USD 1.5 MM en capital de impacto y USD 1.2 MM en fondos no reembolsables para empresas de la región.</p>
       <div className="cta-row"><Link className="btn btn-p" href="/bootcamp#postular">Postular a la próxima cohorte</Link><Link className="lnk q" href="/bootcamp#como-funciona">Ver cómo funciona</Link></div>
     </div>
@@ -47,14 +47,14 @@ export default function BootcampPage() {
   <section className="sec tint" id="como-funciona"><div className="wrap">
     <div className="head"><span className="eyebrow">Cómo funciona</span><Words as="h2" className="d2" text="Ocho semanas, de tu diagnóstico a la sesión con fondos" /></div>
     <ol className="steps">
-      <li><span className="n">SEMANAS 1–2</span><b className="h4">Diagnóstico y tesis</b><p>Punto de partida con tu pasaporte. Definimos la tesis de inversión y cuánto capital buscas y para qué.</p></li>
-      <li><span className="n">SEMANAS 3–4</span><b className="h4">Finanzas y estructura</b><p>Modelo financiero, uso de fondos e instrumento adecuado: deuda, equity o blended.</p></li>
-      <li><span className="n">SEMANAS 5–6</span><b className="h4">Teaser, data room y ESG</b><p>Documentos con estándar de comité, métricas de impacto y gestión de riesgos ESG.</p></li>
-      <li><span className="n">SEMANAS 7–8</span><b className="h4">Pitch y comité simulado</b><p>Ensayos con feedback directo y evaluación final ante un comité simulado.</p></li>
+      <li><span className="n">Semanas 1 y 2</span><b className="h4">Diagnóstico y tesis</b><p>Punto de partida con tu pasaporte. Definimos la tesis de inversión y cuánto capital buscas y para qué.</p></li>
+      <li><span className="n">Semanas 3 y 4</span><b className="h4">Finanzas y estructura</b><p>Modelo financiero, uso de fondos e instrumento adecuado: deuda, equity o blended.</p></li>
+      <li><span className="n">Semanas 5 y 6</span><b className="h4">Teaser, data room y ESG</b><p>Documentos con estándar de comité, métricas de impacto y gestión de riesgos ESG.</p></li>
+      <li><span className="n">Semanas 7 y 8</span><b className="h4">Pitch y comité simulado</b><p>Ensayos con feedback directo y evaluación final ante un comité simulado.</p></li>
     </ol>
   </div></section>
 
-  <section className="sec" style={{ borderTop: 0 }}><div className="wrap cols-2" style={{ alignItems: "start" }}>
+  <section className="sec"><div className="wrap cols-2" style={{ alignItems: "start" }}>
     <div className="stack">
       <span className="eyebrow">Lo que consigues</span>
       <Words as="h2" className="d2" text="Sales con tu empresa lista para una ronda" />

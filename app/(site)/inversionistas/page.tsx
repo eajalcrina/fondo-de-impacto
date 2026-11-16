@@ -13,7 +13,7 @@ export default function InversionistasPage() {
 
   <Hero slides={[{ src: "/img/n2.jpg", cap: "Amazonía" }]}>
 <span className="eyebrow">Para inversionistas<i className="sep" />Tesis de inversión</span>
-    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "17ch" }} text="Inversión paciente en empresas de impacto de América Latina" />
+    <Words as="h1" className="d1" style={{ maxWidth: "17ch" }} text="Inversión paciente en empresas de impacto de América Latina" />
     <p className="lead" style={{ maxWidth: "58ch" }}>Canalizamos capital privado hacia empresas de impacto con historial verificado en Perú y Colombia. Sin dilución, con due diligence financiero y ESG, y reporte financiero y de impacto cada mes.</p>
     <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a></div>
   </Hero>
@@ -21,9 +21,9 @@ export default function InversionistasPage() {
   <section className="sec"><div className="wrap">
     <div className="head"><span className="eyebrow">Tesis</span><Words as="h2" className="d2" text="Tres convicciones" /></div>
     <div className="faq">
-      <div><b className="d3" style={{ fontSize: "22px" }}>El negocio llega antes que el capital</b><p className="p2">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. El filtro casi nunca es el negocio. Es la falta de un perfil de inversión bien construido.</p></div>
-      <div><b className="d3" style={{ fontSize: "22px" }}>La demanda de liquidez está validada</b><p className="p2">Hoy, el crédito al que acceden estas empresas suele costarles entre 25 y 40% anual, y aun así lo repagan y siguen siendo rentables. La demanda existe. Lo que falta es capital paciente que llegue a tiempo.</p></div>
-      <div><b className="d3" style={{ fontSize: "22px" }}>Complementamos a otros fondos</b><p className="p2">Financiamos a empresas que ya repagaron a otros fondos de impacto, con plazos de decisión que el resto del ecosistema no ofrece. El historial con terceros es nuestro primer filtro de riesgo.</p></div>
+      <div><b className="d3">El negocio llega antes que el capital</b><p className="p2">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. El filtro casi nunca es el negocio. Es la falta de un perfil de inversión bien construido.</p></div>
+      <div><b className="d3">La demanda de liquidez está validada</b><p className="p2">Hoy, el crédito al que acceden estas empresas suele costarles entre 25 y 40% anual, y aun así lo repagan y siguen siendo rentables. La demanda existe. Lo que falta es capital paciente que llegue a tiempo.</p></div>
+      <div><b className="d3">Complementamos a otros fondos</b><p className="p2">Financiamos a empresas que ya repagaron a otros fondos de impacto, con plazos de decisión que el resto del ecosistema no ofrece. El historial con terceros es nuestro primer filtro de riesgo.</p></div>
     </div>
   </div></section>
 
@@ -50,12 +50,12 @@ export default function InversionistasPage() {
     </ol>
   </div></section>
 
-  <section className="sec" style={{ borderTop: 0 }}><div className="wrap">
+  <section className="sec"><div className="wrap">
     <div className="head"><span className="eyebrow">Equipo de inversión</span><Words as="h2" className="d3" text="Quiénes evalúan cada operación" /></div>
     <TeamMini />
   </div></section>
 
-  <section className="sec" style={{ borderTop: 0 }}><div className="wrap">
+  <section className="sec"><div className="wrap">
     <div className="head"><span className="eyebrow">Riesgos y mitigantes</span><Words as="h2" className="d2" text="Lo que evaluamos antes de cada operación" /></div>
     <div className="cols-2">
       <div className="rule l" style={{ gap: "18px" }}><span className="eyebrow s">Riesgos del instrumento</span>

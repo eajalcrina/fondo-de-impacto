@@ -18,10 +18,11 @@
   .btn-sm { min-height: 36px; padding: 0 18px; }
   /* Sobre bosque: píldora blanca y píldora translúcida */
   .dk .btn-g, .oscuro .btn-g { background: rgba(255, 255, 255, 0.15); color: var(--blanco); }
-  .dk .btn-g:hover, .oscuro .btn-g:hover { background: rgba(255, 255, 255, 0.25); }
+  .dk .btn-g:hover, .oscuro .btn-g:hover, .dk .btn-g:active, .oscuro .btn-g:active { background: var(--naranja); }
   .dk .btn:focus-visible, .oscuro .btn:focus-visible { outline-color: var(--blanco); }
   .btn-b { background: var(--blanco); color: var(--bosque); }
-  .btn-b:hover { background: var(--arena); }
+  /* Regla: todo botón blanco se pinta de naranja al pasar el cursor o al tocarlo */
+  .btn-b:hover, .btn-b:active, .btn-b:focus-visible { background: var(--naranja); color: var(--blanco); }
 
   /* Botón redondo con flecha */
   .redondo { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--blanco); color: var(--bosque); flex-shrink: 0; transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out; }

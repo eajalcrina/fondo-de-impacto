@@ -57,14 +57,14 @@
   .cita .btn { margin-top: 8px; }
   @media (min-width: 1100px) { .cita { height: 335px; padding: 32px 40px; } }
 
-  /* Rangos de capital en tarjetas: monto en grande, fuentes en naranja; la tarjeta se llena de naranja al pasar el cursor */
+  /* Rangos de capital en tarjetas: monto en grande, fuentes en naranja; la tarjeta se llena de naranja al pasar el cursor. Regla: las tarjetas no llevan barras de acento */
   .rangos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   @media (min-width: 900px) { .rangos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sep); } }
   @media (min-width: 1280px) { .rangos { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
   .rango {
     display: grid; grid-template-rows: auto auto auto 1fr; height: 100%; min-height: 200px;
     padding: 20px 18px 18px; border-radius: var(--radio-tarjeta);
-    background: var(--lienzo-superficie); color: var(--blanco); border-top: 3px solid var(--naranja);
+    background: var(--lienzo-superficie); color: var(--blanco);
     transition: background-color 0.2s ease-in-out;
   }
   .rango-pre { font-size: 14px; font-weight: 500; color: var(--sobre-oscuro-2); }

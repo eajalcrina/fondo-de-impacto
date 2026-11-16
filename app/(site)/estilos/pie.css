@@ -5,7 +5,8 @@
   .final .wrap { display: grid; justify-items: start; gap: 24px; }
   .final .eyebrow, .final .lead, .final .p2 { color: var(--blanco); }
   .final .btn-p, .final .btn { background: var(--blanco); color: var(--terracota); }
-  .final .btn-p:hover, .final .btn:hover { background: var(--arena); }
+  /* Sobre naranja, el botón blanco pasa a petróleo al tocarlo */
+  .final .btn-p:hover, .final .btn:hover, .final .btn:active { background: var(--lienzo); color: var(--blanco); }
   .final .lnk, .final .tc, .final .kw { color: var(--blanco); }
 
   /* Pie: dos filas separadas por líneas punteadas, como la referencia */
@@ -14,7 +15,7 @@
   .pie-marca { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; }
   .paises { display: flex; gap: 24px; font-size: 14px; font-weight: 500; color: var(--sobre-oscuro); }
   .paises li { display: inline-flex; align-items: center; gap: 8px; }
-  .paises svg { width: 14px; height: 18px; color: var(--naranja-claro); }
+  .paises svg { width: 8px; height: 16px; color: var(--naranja-claro); }
   .arriba { font-size: 14px; font-weight: 600; }
   .arriba:hover, .pie-menu a:hover, .legal a:hover { color: var(--naranja-claro); }
   .pie-enlaces { align-items: flex-start; }

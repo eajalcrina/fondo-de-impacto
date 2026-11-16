@@ -13,7 +13,7 @@ export default function NosotrosPage() {
 
   <Hero slides={[{ src: "/img/h09.jpg", cap: "Comunidad productora" }]}>
 <span className="eyebrow">Nosotros</span>
-    <Words as="h1" className="d1" style={{ fontSize: "clamp(38px,5.4vw,68px)", maxWidth: "15ch" }} text="El brazo de capital de Redesign Lab" />
+    <Words as="h1" className="d1" style={{ maxWidth: "15ch" }} text="El brazo de capital de Redesign Lab" />
     <p className="lead" style={{ maxWidth: "60ch" }}>Redesign Lab es un venture studio que diseña, escala e invierte en empresas de impacto en América Latina desde 2021. Fondo de Impacto es su vehículo especializado en capital de impacto. Prepara a las empresas para recibir inversión y canaliza capital privado hacia las que tienen historial validado.</p>
   </Hero>
 
@@ -34,7 +34,7 @@ export default function NosotrosPage() {
     </div>
   </div></section>
 
-  <section className="sec" style={{ borderTop: 0 }}><div className="wrap">
+  <section className="sec"><div className="wrap">
     <div className="head"><span className="eyebrow">Equipo</span><Words as="h2" className="d2" text="Estrategia, operación e inversión en un mismo equipo" /></div>
     <TeamFull />
   </div></section>
