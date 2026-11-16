@@ -12,13 +12,14 @@
   /* Pie: dos filas separadas por líneas punteadas, como la referencia */
   .foot { background: var(--lienzo); color: var(--blanco); font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0; }
   .pie-fila { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-block: 40px; border-top: 1px dotted var(--linea-sobre-naranja); }
-  .pie-fila:first-child { border-top: 0; }
+  .pie-fila:first-child { border-top: 0; align-items: last baseline; }
   /* Logo, ubicaciones y volver arriba comparten la misma línea base inferior */
-  .pie-marca { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 40px; }
-  .paises { display: flex; gap: 24px; font-size: 13px; font-weight: 500; line-height: 1; color: var(--sobre-oscuro); }
-  .paises li { display: inline-flex; align-items: center; gap: 8px; }
+  .pie-marca { display: flex; flex-wrap: wrap; align-items: last baseline; gap: 16px 40px; }
+  .paises { display: flex; gap: 24px; font-size: 13px; font-weight: 500; line-height: 1.2; color: var(--sobre-oscuro); }
+  .paises li { display: inline-flex; align-items: baseline; gap: 8px; }
+  .paises li svg { align-self: center; }
   .paises svg { width: 10px; height: 10px; color: var(--blanco); }
-  .arriba { font-size: 13px; font-weight: 600; line-height: 1; }
+  .arriba { font-size: 13px; font-weight: 600; line-height: 1.2; }
   .arriba:hover, .pie-menu a:hover, .legal a:hover { color: var(--naranja-claro); }
   .pie-enlaces { align-items: flex-start; padding-bottom: 24px; }
   .pie-legal { padding-top: 24px; border-top: 0; }

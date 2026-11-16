@@ -9,18 +9,18 @@
   .nav.claro { background: var(--blanco); color: var(--bosque); border-bottom: 1px solid var(--linea); }
   .nav.solido { background: var(--lienzo); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 100%; }
-  /* Logo: el nombre en dos líneas ocupa la misma altura que el isotipo; la firma va debajo, pequeña y discreta */
-  .logo { --logo-t: 18px; display: grid; grid-template-columns: auto auto; grid-template-areas: "icono nombre" ". firma"; column-gap: 10px; align-items: center; color: var(--bosque); }
-  .logo-icono { grid-area: icono; width: 40px; height: 40px; }
+  /* Logo: isotipo a la izquierda; a la derecha el nombre en una línea (Open Sans 500, como los títulos) y la firma
+     debajo, con el mismo ancho que el nombre. El bloque de dos líneas ocupa la altura del isotipo. */
+  .logo { --logo-t: 18px; display: grid; grid-template-columns: auto auto; grid-template-areas: "icono nombre" "icono firma"; column-gap: 10px; align-items: center; align-content: center; color: var(--bosque); }
+  /* El isotipo mide lo mismo que el bloque de nombre y firma, así sus bases coinciden */
+  .logo-icono { grid-area: icono; width: calc(var(--logo-t) * 2.06); height: calc(var(--logo-t) * 2.06); }
   .logo-texto { display: contents; }
-  .logo-nombre { grid-area: nombre; display: grid; font-size: var(--logo-t); font-weight: 600; line-height: 1.14; letter-spacing: 0.175em; text-transform: uppercase; }
-  .logo-clave { display: block; }
-  /* La firma ocupa el mismo ancho que «FONDO DE»: va de la F a la E, en proporción al tamaño del nombre */
-  .logo-firma { grid-area: firma; margin-top: 3px; font-size: calc(var(--logo-t) * 0.528); font-weight: 400; line-height: 1.2; letter-spacing: 0; color: var(--t2); white-space: nowrap; }
-  .logo-firma b { font-weight: 600; }
+  .logo-nombre { grid-area: nombre; align-self: end; font-size: var(--logo-t); font-weight: 500; line-height: 1.1; letter-spacing: 0; white-space: nowrap; }
+  .logo-firma { grid-area: firma; align-self: start; margin-top: 2px; font-size: calc(var(--logo-t) * 0.713); font-weight: 400; line-height: 1.2; letter-spacing: 0; color: var(--t2); white-space: nowrap; }
+  .logo-firma b { font-weight: 500; }
   .logo-white { color: var(--blanco); }
   .logo-white .logo-firma { color: var(--sobre-oscuro-2); }
-  @media (min-width: 1100px) { .logo { --logo-t: 19.3px; } .logo-icono { width: 44px; height: 44px; } }
+  @media (min-width: 1100px) { .logo { --logo-t: 20px; } }
   .acciones { display: flex; align-items: center; gap: 8px; }
   .acciones .btn { display: none; }
   @media (min-width: 900px) { .acciones .btn { display: inline-flex; margin-right: 8px; } }
