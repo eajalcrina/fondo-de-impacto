@@ -23,7 +23,7 @@ export default function PortafolioPage() {
 
       <section className="seccion"><div className="wrap">
         <div className="seccion-cabeza">
-          <h2 className="d2 seccion-titulo"><Clave partes={t.tesis.titulo} /></h2>
+          <h2 className="d2 seccion-titulo">{t.tesis.titulo}</h2>
           <p className="seccion-texto">{t.tesis.texto}</p>
         </div>
         <Cifras items={t.cifras} />

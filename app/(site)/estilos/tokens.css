@@ -36,6 +36,8 @@
     --sobre-oscuro: rgba(255, 255, 255, 0.82);
     --sobre-oscuro-2: rgba(255, 255, 255, 0.7);
     --linea-oscura: rgba(255, 255, 255, 0.18);
+    --linea-sobre-naranja: rgba(255, 255, 255, 0.35);
+    --retrato: #e9e6df;
 
     /* Tipografía */
     --f-sans: var(--font-sans), "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;

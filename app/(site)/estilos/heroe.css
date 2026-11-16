@@ -1,45 +1,27 @@
-/* Cabeceras de páginas internas y bloques asociados. */
+/* Cabeceras: la de páginas internas (texto a la izquierda y foto mediana a la derecha) y la clara del 404. */
 @layer componentes {
-  .hero { position: relative; }
-  /* Cabecera de páginas internas: foto a sangre al 65% del alto de la pantalla y texto abajo sobre un velo */
-  .cabecera { position: relative; min-height: 65svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--lienzo); color: var(--blanco); }
-  .cabecera img { object-fit: cover; }
-  .cabecera::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(13, 28, 25, 0.35) 0%, rgba(13, 28, 25, 0.92) 100%); }
-  .cabecera-texto { position: relative; z-index: 1; width: 100%; display: grid; gap: 16px; padding-top: 120px; padding-bottom: 48px; }
-  .cabecera-texto h1 { max-width: 22ch; }
-  .cabecera-texto .eyebrow, .cabecera-texto .lead { color: var(--sobre-oscuro); }
-  .cabecera-texto .kw { color: var(--naranja-claro); }
-  .cabecera-texto .lead { max-width: 56ch; }
-  .cabecera-texto .btn-g { background: rgba(255, 255, 255, 0.15); color: var(--blanco); }
-  .cabecera-texto .lnk { color: var(--blanco); }
-  .cabecera-texto .lnk:hover { color: var(--naranja-claro); }
-  .cabecera-texto .cta-row { margin-top: 8px; }
+  .intro { background: var(--lienzo); color: var(--blanco); padding-block: 48px 8px; }
+  .intro-in { display: grid; gap: 32px; align-items: start; }
+  .intro-texto { display: grid; gap: 16px; align-content: start; }
+  .intro-texto h1 { max-width: 18ch; }
+  .intro-texto .eyebrow { color: var(--sobre-oscuro-2); }
+  .intro-texto .lead { color: var(--sobre-oscuro); max-width: 52ch; }
+  .intro-texto .kw { color: var(--naranja-claro); }
+  .intro-texto .cta-row { margin-top: 8px; }
+  .intro-texto .lnk { color: var(--blanco); }
+  .intro-texto .lnk:hover { color: var(--naranja-claro); }
+  .intro-foto { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radio-tarjeta); overflow: hidden; background: var(--lienzo-superficie); }
+  .intro-foto img { object-fit: cover; }
+  @media (min-width: 900px) {
+    .intro { padding-block: 72px 8px; }
+    .intro-in { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--sep); }
+    .intro-texto { grid-column: span 7; }
+    .intro-foto { grid-column: 8 / span 5; }
+  }
 
-  /* Héroe de páginas interiores: panel bosque con título y foto a la derecha */
-  .hero.dk { padding-block: 56px 64px; }
+  /* 404 */
+  .hero { position: relative; }
   .hero-in { display: grid; gap: 20px; max-width: 860px; position: relative; }
   .hero.claro { background: var(--arena); padding-block: 72px; }
   @media (min-width: 860px) { .hero.claro { padding-block: 120px; } }
-  .hero-2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: center; position: relative; }
-  @media (min-width: 860px) {
-    .hero.dk { padding-block: 96px; }
-    .hero-2 { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; }
-  }
-
-  /* Cifras del héroe interior */
-  .facts { display: flex; flex-wrap: wrap; gap: 20px 32px; margin-top: 16px; padding-top: 20px; border-top: 1px solid var(--linea-2); }
-  .facts div { display: grid; gap: 2px; }
-  .facts b { font-family: var(--f-sans); font-weight: 500; font-size: 30px; line-height: 1.1; color: var(--bosque); white-space: nowrap; }
-  .facts span { font-size: 13px; color: var(--t2); }
-  .dk .facts { border-top-color: var(--linea-oscura); }
-  .dk .facts b { color: var(--blanco); }
-  .dk .facts span { color: var(--sobre-oscuro-2); }
-
-  /* Cinturón de fotos bajo el héroe, como en la web anterior */
-  .belt { overflow: hidden; padding-block: 16px; background: var(--blanco); border-bottom: 1px solid var(--linea); }
-  .belt-track { display: flex; width: max-content; animation: cinturon 120s linear infinite; }
-  .belt:hover .belt-track { animation-play-state: paused; }
-  .belt-set { display: flex; flex-shrink: 0; }
-  .belt img { height: 96px; width: 144px; object-fit: cover; margin-right: 12px; }
-  @keyframes cinturon { to { transform: translateX(-50%); } }
 }

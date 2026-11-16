@@ -12,7 +12,7 @@ import { CapitalMap } from "@/components/site/CapitalMap";
 export const metadata: Metadata = { title: "Pasaporte de Inversión", description: "Un solo perfil para más de 50 fondos de impacto. Revisa cuántas fuentes de capital hay para tu empresa y solicita acceso al Pasaporte de Inversión." };
 
 const BENEFICIOS: [string, string][] = [
-  ["Llegas a fondos que ya están buscando", "Nuestra red reúne más de 50 fondos de impacto de América Latina, Norteamérica y Europa, con tesis en deuda, equity y blended finance. Tu teaser les llega solo si coincides con lo que buscan."],
+  ["Llegas a fondos que ya están buscando", "Tu teaser les llega solo a los fondos de la red cuya tesis coincide con tu empresa."],
   ["Conoces tus brechas", "Recibes un diagnóstico de investment readiness con las brechas que conviene cerrar antes de levantar capital. Si te conviene, te invitamos a la siguiente cohorte del Bootcamp."],
 ];
 
@@ -23,7 +23,6 @@ const PASOS: [string, string][] = [
   ["Te conectamos", "Si un fondo muestra interés, te acompañamos en la reunión, el NDA y el due diligence."],
 ];
 
-const BLOQUES = ["Tu empresa", "Tracción y mercado", "Finanzas", "Impacto y ESG", "Necesidad de capital", "Documentos"];
 
 const PREGUNTAS: [string, string][] = [
   ["¿Me asegura financiamiento?", "No. El Pasaporte te da un diagnóstico y visibilidad ante fondos con tesis compatible. La decisión de invertir es de cada fondo."],
@@ -34,23 +33,18 @@ const PREGUNTAS: [string, string][] = [
 export default function PasaportePage() {
   return (
     <div className="portada oscuro interior">
-      <Hero slides={[{ src: "/img/rl/cacao-manos.jpg", cap: "Manos con granos de cacao" }]}>
+      <Hero slides={[{ src: "/img/h04.jpg", cap: "Mazorcas de cacao" }]}>
         <span className="eyebrow">Pasaporte de Inversión</span>
         <Words as="h1" className="d1" text="Un solo perfil para más de 50 fondos de impacto" />
         <p className="lead">Lo completas una vez y presentamos tu teaser confidencial a los fondos de nuestra red con tesis compatible.</p>
-        <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><Link className="lnk" href="/pasaporte#buscador">Ver fondos disponibles</Link></div>
+        <div className="cta-row"><Link className="btn btn-p" href="/pasaporte#completar">Solicitar acceso al Pasaporte</Link><Link className="lnk" href="/pasaporte#buscador">Ver fondos para mi empresa</Link></div>
       </Hero>
 
       <section className="seccion"><div className="wrap">
         <h2 className="d2 seccion-titulo">Así ven los fondos a tu empresa</h2>
         <div className="bloques">
           <div className="c6 teaser-lado">
-            <p className="lead">Una página anónima con los indicadores que un analista revisa primero. Tu nombre aparece solo si lo apruebas.</p>
-            <div className="datos">
-              <div className="dato naranja"><span>Costo para tu empresa</span><b>USD 0</b></div>
-              <div className="dato"><span>Fondos en nuestra red</span><b>+50</b></div>
-              <div className="dato"><span>Acceso</span><b>Por etapas</b></div>
-            </div>
+            <p className="lead">Una página anónima con los indicadores que un analista revisa primero: tracción, márgenes, historial de repago e impacto. El Pasaporte no tiene costo para tu empresa.</p>
           </div>
           <div className="c6"><Teaser /></div>
         </div>
@@ -84,20 +78,11 @@ export default function PasaportePage() {
         <h2 className="d2 seccion-titulo">Qué pasa después de completarlo</h2>
         <ol className="tarjetas t4">
           {PASOS.map(([t, x], i) => (
-            <li key={t} className={`tarjeta${i === 3 ? " naranja" : ""}`}><span className="tarjeta-n">0{i + 1}</span><h3 className="tarjeta-t">{t}</h3><p className="tarjeta-x">{x}</p></li>
+            <li key={t} className="tarjeta"><span className="tarjeta-n">0{i + 1}</span><h3 className="tarjeta-t">{t}</h3><p className="tarjeta-x">{x}</p></li>
           ))}
         </ol>
       </div></section>
 
-      <section className="seccion"><div className="wrap">
-        <div className="seccion-cabeza">
-          <h2 className="d2 seccion-titulo">Qué te pedimos en el Pasaporte</h2>
-          <p className="seccion-texto">Ten a mano los estados financieros de los últimos dos años, tu pitch deck si lo tienes y las métricas de impacto que ya mides.</p>
-        </div>
-        <ol className="datos d6">
-          {BLOQUES.map((t, i) => <li key={t} className="dato"><span>Bloque {i + 1}</span><b>{t}</b></li>)}
-        </ol>
-      </div></section>
 
       <section className="seccion"><div className="wrap">
         <h2 className="d2 seccion-titulo">Antes de empezar</h2>
@@ -110,7 +95,7 @@ export default function PasaportePage() {
         <div className="stack">
           <span className="eyebrow">Acceso anticipado</span>
           <Words as="h2" className="d2" text="Solicita acceso al Pasaporte de Inversión" />
-          <p className="p2">El Pasaporte de Inversión abre por etapas. Déjanos tus datos y te avisamos cuando tu acceso esté listo.</p>
+          <p className="p2">El Pasaporte de Inversión abre por etapas. Déjanos tus datos y te avisamos cuando tu acceso esté listo. Ten a mano los estados financieros de los últimos dos años, tu pitch deck si lo tienes y las métricas de impacto que ya mides.</p>
         </div>
         <LeadForm
           form="pasaporte"

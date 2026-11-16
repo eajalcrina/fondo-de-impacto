@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Nosotros", description: "Fondo de Im
 export default function NosotrosPage() {
   return (
     <div className="portada oscuro interior">
-      <Hero slides={[{ src: "/img/rl/textil.jpg", cap: "Artesana trabajando un textil" }]}>
+      <Hero slides={[{ src: "/img/h09.jpg", cap: "Comunidad productora" }]}>
         <span className="eyebrow">Nosotros</span>
         <Words as="h1" className="d1" text="El brazo de capital de Redesign Lab" />
         <p className="lead">Redesign Lab es un venture studio que diseña, escala e invierte en empresas de impacto en América Latina desde 2021.</p>
@@ -18,9 +18,9 @@ export default function NosotrosPage() {
       <section className="seccion"><div className="wrap">
         <h2 className="d2 seccion-titulo">Qué hacemos</h2>
         <div className="tarjetas t3">
-          <article className="tarjeta"><span className="tarjeta-n">01</span><h3 className="tarjeta-t">Investment readiness</h3><p className="tarjeta-x">Metodología propia, Bootcamp y perfil de inversión.</p></article>
+          <article className="tarjeta"><span className="tarjeta-n">01</span><h3 className="tarjeta-t">Preparación para la inversión</h3><p className="tarjeta-x">Metodología propia, Bootcamp y perfil de inversión.</p></article>
           <article className="tarjeta"><span className="tarjeta-n">02</span><h3 className="tarjeta-t">Estructuración de capital</h3><p className="tarjeta-x">Red de más de 50 fondos de impacto, banca de desarrollo y cooperación.</p></article>
-          <article className="tarjeta naranja"><span className="tarjeta-n">03</span><h3 className="tarjeta-t">Inversión de impacto</h3><p className="tarjeta-x">Capital privado con due diligence financiero y ESG.</p></article>
+          <article className="tarjeta"><span className="tarjeta-n">03</span><h3 className="tarjeta-t">Inversión de impacto</h3><p className="tarjeta-x">Capital privado con due diligence financiero y ESG.</p></article>
         </div>
       </div></section>
 

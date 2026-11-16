@@ -17,7 +17,7 @@ const TERMINOS: [string, string][] = [
 
 const ORIGINACION: [string, string][] = [
   ["Originación", "Empresas acompañadas o preparadas por Redesign Lab, y referidas por fondos aliados."],
-  ["Screening", "Historial de repago con terceros, ventas recurrentes y estados financieros."],
+  ["Filtro inicial", "Historial de repago con terceros, ventas recurrentes y estados financieros."],
   ["Due diligence", "Revisión financiera, operativa, ESG y de impacto con nuestra metodología propia."],
   ["Comité y monitoreo", "Aprobación en comité, desembolso y seguimiento mensual hasta el repago."],
 ];
@@ -26,25 +26,24 @@ const PROCESO: [string, string][] = [
   ["Reunión inicial", "30 minutos con el equipo sobre la tesis y tu perfil."],
   ["NDA", "Acuerdo de confidencialidad para acceder a los términos."],
   ["Data room", "Términos, estados financieros, proyecciones y uso de fondos."],
-  ["Contrato", "Firma legalizada, desembolso y primer reporte al cierre del mes."],
+  ["Contrato", "Firma legalizada y desembolso."],
 ];
 
 export default function InversionistasPage() {
   return (
     <div className="portada oscuro interior">
-      <Hero slides={[{ src: "/img/rl/pescador.jpg", cap: "Pescador artesanal en la costa peruana" }]}>
+      <Hero slides={[{ src: "/img/rl/pescador.jpg", cap: "Pescador artesanal en la costa peruana" }]} posicion="50% 8%">
         <span className="eyebrow">Inversionistas</span>
         <Words as="h1" className="d1" text="Inversión paciente en empresas de impacto de América Latina" />
-        <p className="lead">Canalizamos capital privado hacia empresas de Perú y Colombia con historial de repago, con due diligence financiero y ESG y reporte mensual.</p>
+        <p className="lead">Canalizamos capital privado hacia empresas de Perú y Colombia con historial de repago.</p>
         <div className="cta-row"><a className="btn btn-p" href={SITE.calInversionistas} target="_blank" rel="noopener noreferrer">Agendar una reunión de inversión</a></div>
       </Hero>
 
       <section className="seccion"><div className="wrap">
         <h2 className="d2 seccion-titulo">Por qué invertimos en estas empresas</h2>
-        <div className="tarjetas t3">
-          <article className="tarjeta"><h3 className="tarjeta-t">El negocio llega antes que el capital</h3><p className="tarjeta-x">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. Lo que suele faltar es un perfil de inversión bien construido.</p></article>
-          <article className="tarjeta"><h3 className="tarjeta-t">La demanda de liquidez está validada</h3><p className="tarjeta-x">Hoy acceden a crédito caro, y aun así lo repagan y siguen siendo rentables.</p></article>
-          <article className="tarjeta naranja"><h3 className="tarjeta-t">Complementamos a otros fondos</h3><p className="tarjeta-x">Financiamos a empresas que ya repagaron a otros fondos de impacto. El historial con terceros es nuestro primer filtro de riesgo.</p></article>
+        <div className="tarjetas">
+          <article className="tarjeta"><h3 className="tarjeta-t">Les falta un perfil, no un negocio</h3><p className="tarjeta-x">Los negocios de impacto de Perú y Colombia llegan a ser rentables antes de que el capital tradicional los identifique. Lo que suele faltar es un perfil de inversión bien construido.</p></article>
+          <article className="tarjeta"><h3 className="tarjeta-t">Complementamos a otros fondos</h3><p className="tarjeta-x">Financiamos a empresas que ya repagaron a otros fondos de impacto. El historial con terceros es nuestro primer filtro de riesgo.</p></article>
         </div>
       </div></section>
 
@@ -60,7 +59,7 @@ export default function InversionistasPage() {
         <h2 className="d2 seccion-titulo">Cómo llega una empresa al fondo</h2>
         <ol className="tarjetas t4">
           {ORIGINACION.map(([t, x], i) => (
-            <li key={t} className={`tarjeta${i === 2 ? " naranja" : ""}`}><span className="tarjeta-n">0{i + 1}</span><h3 className="tarjeta-t">{t}</h3><p className="tarjeta-x">{x}</p></li>
+            <li key={t} className="tarjeta"><span className="tarjeta-n">0{i + 1}</span><h3 className="tarjeta-t">{t}</h3><p className="tarjeta-x">{x}</p></li>
           ))}
         </ol>
       </div></section>
@@ -82,7 +81,7 @@ export default function InversionistasPage() {
               <li><b>ESG e impacto</b>Incumplimientos socioambientales en la operación o en la cadena de suministro, y desvíos frente a los resultados de impacto comprometidos.</li>
             </ul>
           </article>
-          <article className="tarjeta naranja">
+          <article className="tarjeta">
             <span className="tarjeta-r">Cómo los mitigamos</span>
             <ul className="lista-tarjeta">
               <li><b>Historial previo</b>Solo financiamos a empresas que ya repagaron a otros financiadores.</li>

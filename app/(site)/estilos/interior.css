@@ -1,6 +1,6 @@
 /*
- * Páginas internas con el mismo lenguaje de la portada: lienzo petróleo, tarjetas en superficie,
- * acentos naranjas y una sola tarjeta destacada en naranja por grupo. Formularios y herramientas en secciones claras.
+ * Páginas internas con el lenguaje de la portada: lienzo petróleo, tarjetas en superficie y naranja solo
+ * donde el lector decide algo. Formularios, buscador y mapa van en secciones claras.
  */
 @layer paginas {
   /* Texto sobre el lienzo */
@@ -8,35 +8,17 @@
   .interior .eyebrow { color: var(--sobre-oscuro-2); }
   .interior .check li { color: var(--sobre-oscuro); }
   .interior .check li::before { border-color: var(--naranja-claro); }
-  .interior .check.x li::before { border-bottom-color: var(--linea-oscura); }
+  .interior .final { margin-top: 60px; }
+  @media (min-width: 900px) { .interior .final { margin-top: 80px; } }
 
-  /* Secciones claras: formularios, buscador y mapa */
-  .interior .seccion.claro .lead, .interior .seccion.claro .p2 { color: var(--t2); }
-  .interior .seccion.claro .eyebrow { color: var(--t2); }
-  .interior .seccion.claro .check li { color: var(--t2); }
+  /* Secciones claras */
+  .interior .seccion.claro .lead, .interior .seccion.claro .p2, .interior .seccion.claro .eyebrow,
+  .interior .seccion.claro .seccion-texto, .interior .seccion.claro .check li { color: var(--t2); }
   .interior .seccion.claro .lnk { color: var(--bosque); }
   .interior .seccion.claro .lnk:hover { color: var(--naranja); }
   .interior .seccion.claro .rule { background: var(--blanco); }
   .interior .seccion.claro + .seccion.claro { margin-top: 0; padding-top: 0; }
-
-  /* Cabecera: texto a la izquierda y foto mediana a la derecha, sin estirar fotos a pantalla completa */
-  .intro { background: var(--lienzo); color: var(--blanco); padding-block: 48px 8px; }
-  .intro-in { display: grid; gap: 32px; }
-  .intro-texto { display: grid; gap: 16px; align-content: end; }
-  .intro-texto h1 { max-width: 18ch; }
-  .intro-texto .lead { color: var(--sobre-oscuro); max-width: 52ch; }
-  .intro-texto .eyebrow { color: var(--sobre-oscuro-2); }
-  .intro-texto .cta-row { margin-top: 8px; }
-  .intro-texto .lnk { color: var(--blanco); }
-  .intro-texto .lnk:hover { color: var(--naranja-claro); }
-  .intro-foto { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radio-tarjeta); overflow: hidden; background: var(--lienzo-superficie); }
-  .intro-foto img { object-fit: cover; }
-  @media (min-width: 900px) {
-    .intro { padding-block: 72px 8px; }
-    .intro-in { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--sep); align-items: end; }
-    .intro-texto { grid-column: span 7; padding-bottom: 8px; }
-    .intro-foto { grid-column: span 5; }
-  }
+  .interior .seccion.claro + .final { margin-top: 0; }
 
   /* Tarjetas en superficie: número o rótulo, título y texto */
   .tarjetas { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sep); }
@@ -46,47 +28,57 @@
     .tarjetas.t4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
   .tarjeta { display: grid; align-content: start; gap: 12px; padding: 28px 24px 32px; border-radius: var(--radio-tarjeta); background: var(--lienzo-superficie); color: var(--blanco); }
+  @media (min-width: 1100px) { .tarjeta { padding: 32px 32px 36px; } }
   .tarjeta-n { font-size: 40px; font-weight: 300; line-height: 1; color: var(--naranja-claro); margin-bottom: 12px; }
   .tarjeta-r { font-size: 14px; font-weight: 500; color: var(--naranja-claro); }
   .tarjeta-t { font-size: 21px; font-weight: 500; line-height: 1.25; }
   .tarjeta-x { font-size: 15px; line-height: 1.6; color: var(--sobre-oscuro); }
   .tarjeta .check { margin-top: 4px; }
   .tarjeta .cta-row { margin-top: 12px; }
-  .tarjeta .nota { font-size: 13px; color: var(--sobre-oscuro-2); border-top: 1px solid var(--linea-oscura); padding-top: 14px; margin-top: 4px; }
-  /* Una destacada por grupo, en naranja */
+  .tarjeta .nota { font-size: 14px; color: var(--sobre-oscuro-2); border-top: 1px solid var(--linea-oscura); padding-top: 16px; margin-top: 8px; }
+  .tarjeta .nota a { color: var(--blanco); font-weight: 600; margin-left: 4px; }
+  .tarjeta .nota a:hover { color: var(--naranja-claro); }
+  @media (min-width: 900px) { .check.columnas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 40px; } }
+  /* Destacada: solo donde el lector decide algo */
   .tarjeta.naranja { background: var(--naranja); }
-  .tarjeta.naranja .tarjeta-n, .tarjeta.naranja .tarjeta-r { color: var(--blanco); }
-  .tarjeta.naranja .tarjeta-x, .tarjeta.naranja .check li, .tarjeta.naranja .nota { color: var(--blanco); }
+  .tarjeta.naranja .tarjeta-r, .tarjeta.naranja .tarjeta-x, .tarjeta.naranja .check li { color: var(--blanco); }
   .tarjeta.naranja .check li::before { border-color: var(--blanco); }
-  .tarjeta.naranja .nota { border-top-color: rgba(255, 255, 255, 0.35); }
-  @media (min-width: 1100px) { .tarjeta { padding: 32px 32px 36px; } }
-  /* Tarjetas paralelas con las mismas filas */
+  /* Tarjetas paralelas con las mismas filas: rótulo, título, texto, lista y acción */
   @media (min-width: 640px) {
     .tarjetas.filas { row-gap: 0; }
     .tarjetas.filas > .tarjeta { grid-row: span 5; grid-template-rows: subgrid; row-gap: 12px; margin-bottom: var(--sep); }
   }
 
+  /* Lista dentro de una tarjeta: título en blanco y texto debajo, separados por líneas */
+  .lista-tarjeta { display: grid; }
+  .lista-tarjeta li { display: grid; gap: 4px; padding-block: 16px; border-top: 1px solid var(--linea-oscura); font-size: 15px; line-height: 1.55; color: var(--sobre-oscuro); }
+  .lista-tarjeta li:last-child { padding-bottom: 0; }
+  .lista-tarjeta b { font-size: 16px; font-weight: 600; color: var(--blanco); }
+
   /* Datos clave: rótulo arriba, valor grande */
   .datos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   @media (min-width: 900px) { .datos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sep); } }
-  @media (min-width: 1280px) { .datos.d6 { grid-template-columns: repeat(6, minmax(0, 1fr)); } .datos.d4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (min-width: 1280px) { .datos.d6 { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
   .dato { display: grid; align-content: space-between; gap: 20px; min-height: 140px; padding: 20px 18px; border-radius: var(--radio-tarjeta); background: var(--lienzo-superficie); }
   .dato span { font-size: 14px; font-weight: 500; color: var(--sobre-oscuro-2); }
   .dato b { font-size: clamp(21px, 1.1rem + 0.6vw, 26px); font-weight: 500; line-height: 1.2; color: var(--blanco); }
   .dato.naranja { background: var(--naranja); }
   .dato.naranja span { color: var(--blanco); }
-  .dato.ancho { grid-column: 1 / -1; }
+  .condiciones { display: grid; gap: 8px; margin-top: 20px; max-width: 80ch; }
+  .condiciones li { position: relative; padding-left: 16px; font-size: 14px; line-height: 1.6; color: var(--sobre-oscuro-2); }
+  .condiciones li::before { content: ""; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--naranja-claro); }
 
-  /* Términos: fila de rótulo y valor en superficie */
+  /* Términos: rótulo y valor en superficie */
   .terminos { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
   @media (min-width: 900px) { .terminos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sep); } }
-  .termino { display: grid; gap: 6px; padding: 22px 24px; border-radius: var(--radio-tarjeta); background: var(--lienzo-superficie); }
+  .termino { display: grid; align-content: start; gap: 6px; padding: 22px 24px; border-radius: var(--radio-tarjeta); background: var(--lienzo-superficie); }
   .termino span { font-size: 14px; font-weight: 500; color: var(--naranja-claro); }
   .termino p { font-size: 16px; color: var(--blanco); }
+  .termino.ancho { grid-column: 1 / -1; }
   .termino.naranja { background: var(--naranja); }
   .termino.naranja span { color: var(--blanco); }
 
-  /* Equipo: foto pequeña con fondo arena, nombre y cargo; biografía y formación alineadas entre tarjetas */
+  /* Equipo: retrato pequeño, nombre y cargo; biografía, logros y formación alineados entre tarjetas */
   .equipo { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sep); }
   @media (min-width: 900px) { .equipo { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .persona { display: grid; align-content: start; gap: 20px; padding: 24px; border-radius: var(--radio-tarjeta); background: var(--lienzo-superficie); color: var(--blanco); }
@@ -96,7 +88,7 @@
   }
   .persona-cabeza { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 18px; align-items: start; }
   .persona-cabeza > div:last-child { padding-top: 4px; }
-  .persona-foto { position: relative; width: 88px; aspect-ratio: 4 / 5; border-radius: var(--radio-tarjeta); overflow: hidden; background: #e9e6df; }
+  .persona-foto { position: relative; width: 88px; aspect-ratio: 4 / 5; border-radius: var(--radio-tarjeta); overflow: hidden; background: var(--retrato); }
   .persona-foto img { object-fit: cover; }
   .persona-nombre { font-size: 21px; font-weight: 500; line-height: 1.2; }
   .persona-cargo { display: block; margin-top: 4px; font-size: 14px; font-weight: 500; color: var(--naranja-claro); }
@@ -109,45 +101,16 @@
   .persona-enlaces a { font-size: 13px; font-weight: 600; color: var(--blanco); transition: color 0.15s ease-in-out; }
   .persona-enlaces a:hover { color: var(--naranja-claro); }
 
-  /* Cita destacada en naranja (misma pieza que la portada) */
-  .cita.naranja { background: var(--naranja); }
-  .cita.naranja .cita-rotulo { color: var(--blanco); }
-  .cita.naranja .btn-b:hover { background: var(--lienzo); }
-  .cita .nota { font-size: 13px; color: var(--sobre-oscuro-2); }
-  .cita.naranja .nota { color: rgba(255, 255, 255, 0.85); }
+  /* Teaser junto a su explicación */
+  .teaser-lado { display: grid; align-content: start; }
 
-  /* Teaser de ejemplo sobre el lienzo */
-  .interior .card:not(.dk) { color: var(--t1); }
-
-  .termino.ancho { grid-column: 1 / -1; }
-
-  /* Lista dentro de una tarjeta: título en blanco y texto debajo, separados por líneas */
-  .lista-tarjeta { display: grid; }
-  .lista-tarjeta li { display: grid; gap: 4px; padding-block: 16px; border-top: 1px solid var(--linea-oscura); font-size: 15px; line-height: 1.55; color: var(--sobre-oscuro); }
-  .lista-tarjeta li:last-child { padding-bottom: 0; }
-  .lista-tarjeta b { font-size: 16px; font-weight: 600; color: var(--blanco); }
-  .tarjeta.naranja .lista-tarjeta li { color: var(--blanco); border-top-color: rgba(255, 255, 255, 0.35); }
-
-  /* Aire antes del cierre naranja, como en la portada */
-  .interior .final { margin-top: 60px; }
-  @media (min-width: 900px) { .interior .final { margin-top: 80px; } }
-  .interior .seccion.claro + .final { margin-top: 0; }
-
-  /* Condiciones bajo los datos */
-  .condiciones { display: grid; gap: 8px; margin-top: 20px; max-width: 80ch; }
-  .condiciones li { font-size: 14px; line-height: 1.6; color: var(--sobre-oscuro-2); padding-left: 16px; position: relative; }
-  .condiciones li::before { content: ""; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--naranja-claro); }
-  .bloques > .tarjeta { min-height: 240px; }
-  @media (min-width: 1100px) { .bloques > .tarjeta { height: auto; min-height: 335px; align-content: center; } .bloques > .cita { height: auto; min-height: 335px; } }
-
-  .teaser-lado { display: grid; gap: 24px; align-content: start; }
-  .teaser-lado .datos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-  /* Fichas del portafolio sobre el lienzo */
+  /* Portafolio: fichas sobre el lienzo, dos arriba y tres abajo */
   .interior .ficha { color: var(--blanco); }
-  .interior .ficha-cuerpo { background: var(--lienzo-superficie); }
+  .interior .ficha-foto, .interior .ficha-cuerpo { background: var(--lienzo-superficie); }
   .interior .ficha-cuerpo p { color: var(--sobre-oscuro-2); }
-  .interior .ficha-foto { background: var(--lienzo-superficie); }
-
-  .interior .seccion.claro .seccion-texto { color: var(--t2); }
+  @media (min-width: 1100px) {
+    .interior .portafolio { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .interior .portafolio > * { grid-column: span 2; }
+    .interior .portafolio > :nth-child(-n + 2) { grid-column: span 3; }
+  }
 }

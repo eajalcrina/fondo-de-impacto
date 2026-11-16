@@ -24,7 +24,10 @@ Paleta propia de Fondo de Impacto. Tokens en `app/(site)/estilos/tokens.css`; ni
 ## 4. Componentes
 - Botones en píldora (radio 25). Principal naranja; el botón blanco se pinta naranja al pasar el cursor o al tocarlo. En cabecera y cierre: botón principal más enlace `.lnk`.
 - Tarjetas con radio 5, sin barra superior de color. Chips, etiquetas y filtros en píldora.
-- Cabeceras interiores con foto a sangre, velo petróleo y texto abajo a la izquierda; bajada de una oración.
+- Páginas internas sobre el lienzo petróleo, como la portada: cabecera con texto a la izquierda y foto mediana a la derecha (4:3, cinco columnas), tarjetas, datos y términos en superficie. Formularios, buscador y mapa en secciones claras.
+- Naranja de relleno solo donde el lector decide algo (financiamiento directo, precio anticipado, tasa y ticket); nunca en pasos numerados.
+- Retratos del equipo con el mismo encuadre (cabeza a la misma altura y tamaño) sobre `--retrato`; originales sin fondo en `docs/fotos-equipo-originales/`.
+- Sin repetir un dato o una acción en la misma página ni entre páginas: rangos y cifras viven en la portada.
 - Pines del pie como aguja: círculo y palito.
 - Tarjetas paralelas alineadas con `subgrid` (`.filas-5`).
 - Sin estilos en línea salvo anchos dinámicos de barras.
