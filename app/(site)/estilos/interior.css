@@ -94,7 +94,8 @@
     .equipo.completo { row-gap: 0; }
     .equipo.completo > .persona { grid-row: span 4; grid-template-rows: subgrid; row-gap: 20px; margin-bottom: var(--sep); }
   }
-  .persona-cabeza { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 18px; align-items: center; }
+  .persona-cabeza { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 18px; align-items: start; }
+  .persona-cabeza > div:last-child { padding-top: 4px; }
   .persona-foto { position: relative; width: 88px; aspect-ratio: 4 / 5; border-radius: var(--radio-tarjeta); overflow: hidden; background: #e9e6df; }
   .persona-foto img { object-fit: cover; }
   .persona-nombre { font-size: 21px; font-weight: 500; line-height: 1.2; }
