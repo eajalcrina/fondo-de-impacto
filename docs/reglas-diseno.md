@@ -96,4 +96,5 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - Revisión del asesor sobre el piloto: 27 hallazgos; corregidos los de orden de la portada, textos redundantes, cifras, logos, diagrama de la ruta, anillos, selector de idioma en celular y estilos en línea.
 - Línea base de capturas: carpeta de trabajo de la sesión (16-11-2026), 9 rutas en escritorio y celular.
 - Ronda de pedidos sobre el piloto (16-11-2026) aplicada: marca de esquina, cierres en naranja, ruta del capital, cohorte destacada, auditoría de voz del asesor.
-- Esperando decisión del dueño: datos por empresa del portafolio (país, año, instrumento); fuente de «+120 comunidades»; recrear el logo con la firma «by Redesign Lab».
+- Última publicación: 16-11-2026, commit 8a49b70 (piloto). En vivo tras 60 s; marcador «Preparamos, conectamos e»; Portafolio, cohorte y pie sin nota comprobados; imágenes para compartir con 200 en producción.
+- Esperando decisión del dueño: comentarios sobre el piloto en vivo; datos por empresa del portafolio (país, año, instrumento); fuente de «+120 comunidades»; recrear el logo con la firma «by Redesign Lab».
