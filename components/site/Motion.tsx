@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 /** Bloques que entran una sola vez al llegar a la pantalla. */
-const REVEAL = ".head,.rule,.escala li,.pc,.mt,.tarjetas,.feature,.band,.steps > li,.flow > li,.allies > div,.tiles,.stats,.cifra-item,.empresa,.foto-corte,.faq > div";
+const REVEAL = ".seccion-titulo,.bloque,.cita,.cifra-item,.escalon,.ficha,.allies > div,.head,.rule,.pc,.mt,.feature,.band,.steps > li,.flow > li,.tiles,.stats,.faq > div";
 
 /**
  * Movimiento del sitio: entradas bajo el pliegue, títulos que suben y pictogramas que se dibujan.
@@ -32,7 +32,7 @@ export function Motion() {
       io.observe(el);
     });
     document.querySelectorAll<HTMLElement>(".tr").forEach((h) => {
-      if (h.closest(".hero, .heroe")) setTimeout(() => h.classList.add("in"), 80);
+      if (h.closest(".hero, .cabecera")) setTimeout(() => h.classList.add("in"), 80);
       else io.observe(h);
     });
     return () => io.disconnect();

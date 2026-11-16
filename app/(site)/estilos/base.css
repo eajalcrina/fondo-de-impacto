@@ -7,9 +7,10 @@
     background: var(--blanco);
     color: var(--t1);
     font-family: var(--f-sans);
-    font-size: 15px;
-    line-height: 1.65;
-    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+    letter-spacing: 0.2px;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, p, figure { margin: 0; }
@@ -22,40 +23,23 @@
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .num { font-variant-numeric: tabular-nums; }
 
-  @media (min-width: 768px) { body { font-size: 16px; } }
 
-  /* Titulares en Newsreader 400, tamaño óptico al máximo */
-  .d1, .d2, .d3, .serif, .cifra {
-    font-family: var(--f-serif);
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "opsz" 72;
-    font-variant-numeric: lining-nums;
-  }
-  .d1 { font-size: 44px; line-height: 1; letter-spacing: -0.025em; }
-  .d2 { font-size: 30px; line-height: 1.12; letter-spacing: -0.018em; }
-  .d3 { font-size: 26px; line-height: 1.12; letter-spacing: -0.015em; }
-  @media (min-width: 768px) {
-    .d1 { font-size: 60px; }
-    .d2 { font-size: 42px; line-height: 1.1; }
-    .d3 { font-size: 34px; }
-  }
-  @media (min-width: 1100px) { .d1 { font-size: 68px; } }
-  @media (min-width: 1280px) { .d1 { font-size: 80px; } }
-
-  .h4 { font-size: 17px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; }
-  .lead { font-size: 17px; line-height: 1.55; color: var(--t2); }
-  @media (min-width: 768px) { .lead { font-size: 19px; } }
+  /* Una sola familia (Open Sans). Títulos en 500, sin mayúsculas ni tracking decorativo. Cuatro tamaños de trabajo. */
+  .d1, .d2, .d3, .serif, .cifra { font-family: var(--f-sans); font-weight: 500; letter-spacing: 0; }
+  .d1 { font-size: clamp(32px, 1.6rem + 1.6vw, 52px); line-height: 1.12; }
+  .d2 { font-size: clamp(25px, 1.33rem + 0.975vw, 33px); line-height: 1.2; }
+  .d3 { font-size: clamp(20px, 1.25rem + 0.1vw, 21px); line-height: 1.2; }
+  .h4 { font-size: 16px; font-weight: 500; line-height: 1.4; letter-spacing: 0; }
+  .lead { font-size: 19px; line-height: 1.5; font-weight: 300; letter-spacing: 0.3px; color: var(--t2); }
   .p2 { color: var(--t2); }
   .sm { font-size: 14px; }
-  .xs { font-size: 13px; color: var(--t2); }
+  .xs { font-size: 14px; color: var(--t2); }
   .tc, .kw { color: var(--naranja); }
 
   /* Rótulo: Schibsted 500, mayúscula solo inicial */
-  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--t1); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; line-height: 1.2; letter-spacing: 0; color: var(--t2); }
   .eyebrow .n { color: var(--naranja); font-variant-numeric: tabular-nums; }
   .eyebrow.s { color: var(--t2); }
-  @media (min-width: 768px) { .eyebrow { font-size: 14px; } }
   .sep { display: inline-block; width: 1px; height: 0.95em; margin-inline: 10px; background: currentColor; opacity: 0.35; vertical-align: -0.12em; }
 
   /* Retícula */
@@ -86,7 +70,7 @@
   .dk > .wrap { position: relative; }
   .dk .lead, .dk .p2 { color: var(--sobre-oscuro); }
   .dk .xs { color: var(--sobre-oscuro-2); }
-  .dk .eyebrow { color: var(--sobre-oscuro); }
+  .dk .eyebrow { color: var(--sobre-oscuro-2); }
   .dk .eyebrow .n, .dk .tc, .dk .kw { color: var(--naranja-claro); }
   .dk .rule { border-top-color: var(--linea-oscura); }
 }

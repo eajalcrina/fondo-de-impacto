@@ -14,6 +14,8 @@
     --salvia: #7ca07f;          /* líneas y puntos */
     --salvia-profundo: #4a6b4e; /* bloque de color (6:1 con blanco) */
     --salvia-claro: #f1f5f1;    /* bloques alternos */
+    --bosque-superficie: #1e4a34; /* bloques de cita y cifras sobre bosque (variante del bosque) */
+    --bosque-claro: #2a5a42;      /* hover sobre superficies oscuras */
 
     /* Naranjas y terracota */
     --naranja: #c94e10;         /* botón, bloques, pictogramas y palabra clave sobre claro (4,6:1 con blanco) */
@@ -26,6 +28,7 @@
     --arena: #f4f2ed;
     --t1: var(--bosque);
     --t2: #556259;              /* texto secundario (6,4:1 sobre blanco) */
+    --atenuado: #8a958c;        /* enlaces del menú atenuados mientras se pasa el cursor por otro */
     --linea: #e3e8e3;
     --linea-2: #cfd8cf;
     --sobre-oscuro: rgba(255, 255, 255, 0.82);
@@ -33,24 +36,24 @@
     --linea-oscura: rgba(255, 255, 255, 0.18);
 
     /* Tipografía */
-    --f-serif: var(--font-serif), Georgia, serif;
-    --f-sans: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-sans: var(--font-sans), "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-serif: var(--f-sans);
 
-    /* Retícula y ritmo (múltiplos de 8) */
-    --ancho: 1280px;
-    --gut: 20px;
+    /* Retícula fluida de 12 columnas, como la referencia: márgenes de 24 px en celular y 56 px en escritorio */
+    --ancho: 1600px;
+    --gut: 24px;
+    --sep: 24px;
+    --radio-pildora: 25px;
+    --radio-tarjeta: 5px;
     --sec: 72px;
-    --alto-nav: 72px;
-    /* Motivo diagonal único del sitio: 6°, sentido «/» (10,5 px de caída por cada 100 px) */
-    --corte: 6deg;
-    --corte-tan: 0.105;
+    --alto-nav: 64px;
   }
 
   @media (min-width: 768px) {
-    :root { --gut: 40px; --sec: 96px; }
+    :root { --gut: 40px; --sec: 88px; }
   }
 
   @media (min-width: 1100px) {
-    :root { --gut: 80px; --sec: 112px; --alto-nav: 88px; }
+    :root { --gut: 56px; --sec: 96px; --alto-nav: 75px; }
   }
 }

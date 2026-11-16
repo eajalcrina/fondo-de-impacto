@@ -1,32 +1,27 @@
 /*
- * Movimiento: entradas cortas una sola vez, títulos que suben y pictogramas que se dibujan.
- * Sin contadores ni parallax. Con movimiento reducido, todo queda en su estado final.
+ * Movimiento como la referencia: los bloques suben 40 px y aparecen en 0,5 s al entrar en pantalla, una sola vez.
+ * Zoom de 5% en fotos al pasar el cursor (en inicio.css). Sin bucles, contadores ni parallax.
+ * Con movimiento reducido, todo queda en su estado final.
  */
 @layer utilidades {
-  .motion .heroe-panel > * { animation: subir 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-  .motion .heroe-panel > :nth-child(3) { animation-delay: 0.08s; }
-  .motion .heroe-panel > :nth-child(4) { animation-delay: 0.16s; }
-  .motion .heroe-panel > :nth-child(5) { animation-delay: 0.24s; }
-  .motion .hero .hero-in > * { animation: subir 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-  @keyframes subir { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .motion .portada-heroe-texto > *, .motion .cabecera-texto > * { animation: subir 0.6s ease-out both; }
+  .motion .portada-heroe-texto > :nth-child(2), .motion .cabecera-texto > :nth-child(2) { animation-delay: 0.08s; }
+  .motion .portada-heroe-texto > :nth-child(3), .motion .cabecera-texto > :nth-child(3) { animation-delay: 0.16s; }
+  .motion .portada-heroe-texto > :nth-child(4), .motion .cabecera-texto > :nth-child(4) { animation-delay: 0.24s; }
+  @keyframes subir { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
-  .motion .rv { opacity: 0; transform: translateY(18px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .motion .rv { opacity: 0; transform: translateY(40px); transition: opacity 0.5s linear, transform 0.5s cubic-bezier(0.25, 0.25, 0.75, 0.75); }
   .motion .rv.in { opacity: 1; transform: none; }
 
-  /* Títulos que suben palabra por palabra */
+  /* Títulos que suben palabra por palabra (páginas internas) */
   .tr .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em; }
   .tr .w > span { display: inline-block; }
-  .motion .tr .w > span { transform: translateY(108%); transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
+  .motion .tr .w > span { transform: translateY(108%); transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
   .motion .tr.in .w > span { transform: none; }
-
-  /* Pictogramas y arcos que se dibujan una vez */
-  .motion .pict svg * { stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset 1.4s ease; }
-  .motion .in .pict svg *, .motion .pict.in svg * { stroke-dashoffset: 0; }
-  .motion .tarjeta-foto .marco { clip-path: inset(100% 0 0 0); transition: clip-path 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .motion .tarjeta.in .tarjeta-foto .marco, .motion .tarjetas.in .tarjeta-foto .marco { clip-path: inset(0 0 0 0); }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .belt-track { animation: none; }
+    .nav, .panel-menu, .velo-menu, .bloque img { transition: none; }
+    .bloque:hover img { transform: none; }
   }
 }

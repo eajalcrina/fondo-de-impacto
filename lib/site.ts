@@ -92,9 +92,9 @@ export const EQUIPO: Persona[] = [
 
 /** Empresas del portafolio de Fondo de Impacto (confirmadas por el dueño el 16-11-2026; fuente: redesignlab.org/ventures). */
 export const PORTAFOLIO = [
-  { nombre: "Cotton Nation", que: "Algodón regenerativo amazónico" },
-  { nombre: "Endemics", que: "Cosmética natural" },
-  { nombre: "Rare by", que: "Suplementos de la biodiversidad" },
-  { nombre: "GreenProd", que: "Bioinsumos de residuos de pesca artesanal" },
-  { nombre: "Ecovive", que: "Alimentos saludables de la biodiversidad" },
+  { nombre: "Cotton Nation", foto: "/img/rl/cotton-nation.jpg", que: "Algodón regenerativo amazónico" },
+  { nombre: "Endemics", foto: "/img/rl/endemics.jpg", que: "Cosmética natural" },
+  { nombre: "Rare by", foto: "/img/rl/rare-by.jpg", que: "Suplementos de la biodiversidad" },
+  { nombre: "GreenProd", foto: "/img/rl/greenprod.jpg", que: "Bioinsumos de residuos de pesca artesanal" },
+  { nombre: "Ecovive", foto: "/img/rl/ecovive.jpg", que: "Alimentos saludables de la biodiversidad" },
 ];

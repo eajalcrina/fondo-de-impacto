@@ -1,6 +1,6 @@
 # Reglas de diseño de fondodeimpacto.pe
 
-Estado: **en curso** (16-11-2026). Camino visual: B3 (B2 con el encabezado y los botones de B1). Referencia: redesignlab.org (tipografía de la cuarta capa del rediseño, commit b1493d1).
+Estado: **en curso** (16-11-2026). Camino visual: rediseño completo inspirado en fosterandpartners.com (reemplaza a B3 y al motivo diagonal), con la paleta de Fondo de Impacto. Informe de la referencia en la carpeta de trabajo de la sesión. Referencia: redesignlab.org (tipografía de la cuarta capa del rediseño, commit b1493d1).
 
 Público: empresas de impacto de América Latina que ya demostraron tracción y buscan capital; en segundo lugar, fondos e inversionistas. Tono: fondo de impacto de primer nivel, de América Latina para el mundo. Sobrio, preciso y con datos.
 
@@ -75,6 +75,16 @@ Paleta propia de Fondo de Impacto. Se permiten variantes de verde y de terracota
 - 16-11-2026: portafolio de la portada como franja tipográfica con separadores diagonales; «Resultados desde 2021» en banda bosque con cifras blancas y descripciones de una línea.
 - 16-11-2026: próxima cohorte como línea de fecha editorial (rótulo y fecha en Newsreader) con filete blanco, sobre el título del cierre.
 - 16-11-2026: encabezado fijo. Pie con pines de Perú y Colombia y el aviso legal en dos líneas.
+- 16-11-2026 (tercera ronda, **reemplaza las decisiones visuales anteriores**): el dueño no quedó conforme con B3 y pide un rediseño completo inspirado en fosterandpartners.com: minimalista, fácil de navegar, textos limpios y fotos con texto encima.
+  - Tipografía: una sola familia, **Open Sans** (300 para leer, 500 en títulos, 600 en enlaces destacados). Sin mayúsculas ni tracking decorativo. Cuatro tamaños de trabajo: 33, 21, 16 y 14 px (52 px solo en el héroe). Reemplaza a Newsreader y Schibsted Grotesk.
+  - Color: paleta de Fondo de Impacto. Portada en bosque `#123524` con bloques de superficie `#1e4a34`; páginas internas claras; naranja solo para la acción principal y acentos.
+  - Retícula fluida de 12 columnas, márgenes de 24 px (celular) y 56 px (escritorio), separación de 24 px.
+  - Encabezado fijo que se oculta al bajar y vuelve al subir; logo, idioma, «Agendar reunión» y menú a pantalla completa (foto a la izquierda, enlaces grandes a la derecha).
+  - Portada: foto a pantalla completa, secciones con un título y bloques de foto con el texto abajo sobre un velo, bloques de cita en superficie lisa. Zoom de 5% en las fotos al pasar el cursor.
+  - Botones en píldora (radio 25 px) y botones redondos de 40 px con flecha. Tarjetas de listado: foto 3:2 y bloque arena con título y dato.
+  - Pie mínimo con línea punteada: logo, pines de Perú y Colombia, volver arriba; enlaces y aviso legal.
+  - Se retiran el motivo diagonal, los arcos, el cuadrado de esquina, el cinturón de fotos y el diagrama de la ruta del capital.
+  - Fotos de redesignlab.org (ventures y héroes) para el portafolio y los bloques, en `public/img/rl/`.
 - 16-11-2026: pasada de narrativa y voz sin IA sobre todos los textos, en la fase 3, cuando los textos pasen al archivo por idioma.
 - 16-11-2026: `vercel.json` apaga las vistas previas automáticas de las ramas `claude/*`.
 - 16-11-2026: el dueño pide ver la combinación que recomienda el asesor (B2 con el encabezado sólido y los dos botones de B1) como lámina B3, con la foto del río en el héroe.

@@ -54,7 +54,7 @@
   .rep-chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .rep-chips span { font-size: 13px; border: 1px solid var(--linea-oscura); padding: 3px 9px; color: var(--sobre-oscuro); }
   .rep-big { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-block: 1px solid var(--linea-oscura); padding-block: 20px; }
-  .rep-big b { display: block; font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 48px; line-height: 1; color: var(--blanco); }
+  .rep-big b { display: block; font-family: var(--f-sans); font-weight: 500; font-size: 48px; line-height: 1; color: var(--blanco); }
   .rep-big span { display: block; font-size: 14px; color: var(--sobre-oscuro-2); margin-top: 8px; line-height: 1.45; }
   .rbars { display: grid; gap: 10px; }
   .rbar { display: grid; grid-template-columns: 110px 1fr 34px; gap: 12px; align-items: center; font-size: 13px; color: var(--sobre-oscuro); }
@@ -70,7 +70,7 @@
   .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   @media (min-width: 860px) { .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
   .tiles > div { border-top: 1px solid var(--bosque); padding-top: 16px; display: grid; gap: 4px; }
-  .tiles b { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 36px; line-height: 1.05; color: var(--bosque); }
+  .tiles b { font-family: var(--f-sans); font-weight: 500; font-size: 36px; line-height: 1.05; color: var(--bosque); }
   .tiles span { font-size: 13px; color: var(--t2); line-height: 1.4; }
   .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-block: 36px 28px; }
   .filters .lbl { font-size: 13px; font-weight: 500; color: var(--t2); margin-right: 6px; }

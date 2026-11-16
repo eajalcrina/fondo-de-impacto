@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/site/Hero";
 import { Cifras } from "@/components/site/Cifras";
@@ -36,7 +37,10 @@ export default function PortafolioPage() {
         </div>
         <div className="portafolio">
           {PORTAFOLIO.map((p) => (
-            <article key={p.nombre} className="empresa"><h3>{p.nombre}</h3><p>{p.que}</p></article>
+            <article key={p.nombre} className="ficha">
+              <div className="ficha-foto"><Image src={p.foto} alt={`${p.nombre}, ${p.que.toLowerCase()}`} fill sizes="(min-width: 1100px) 33vw, (min-width: 640px) 50vw, 100vw" /></div>
+              <div className="ficha-cuerpo"><h3>{p.nombre}</h3><p>{p.que}</p></div>
+            </article>
           ))}
         </div>
       </div></section>

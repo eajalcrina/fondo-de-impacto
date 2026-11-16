@@ -14,22 +14,36 @@ function Pin() {
   );
 }
 
+/** Pie mínimo: logo, países y volver arriba; enlaces y aviso legal debajo. */
 export function Footer() {
+  const enlaces = [
+    { href: "/bootcamp", t: t.bootcamp },
+    { href: "/pasaporte", t: t.pasaporte },
+    { href: "/empresas", t: t.financiamiento },
+    { href: "/inversionistas", t: es.nav.inversionistas },
+    { href: "/portafolio", t: es.nav.portafolio },
+    { href: "/nosotros", t: es.nav.nosotros },
+  ];
   return (
     <footer className="foot">
       <div className="wrap">
-        <div className="grid">
-          <div>
-            <Logo width={156} />
+        <div className="pie-fila">
+          <div className="pie-marca">
+            <Logo tone="white" width={148} />
             <ul className="paises">{es.marca.paises.map((p) => <li key={p}><Pin />{p}</li>)}</ul>
           </div>
-          <div><b>{t.empresas}</b><ul><li><Link href="/bootcamp">{t.bootcamp}</Link></li><li><Link href="/pasaporte">{t.pasaporte}</Link></li><li><Link href="/empresas">{t.financiamiento}</Link></li></ul></div>
-          <div><b>{t.fondo}</b><ul><li><Link href="/inversionistas">{es.nav.inversionistas}</Link></li><li><Link href="/portafolio">{es.nav.portafolio}</Link></li><li><Link href="/nosotros">{es.nav.nosotros}</Link></li><li><Link href="/privacidad">{t.privacidad}</Link></li></ul></div>
-          <div><b>{t.contacto}</b><ul><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li><a href={SITE.calEmpresas} target="_blank" rel="noopener noreferrer">{es.nav.agendar}</a></li></ul></div>
+          <a className="arriba" href="#top">{t.arriba} <span aria-hidden="true">↑</span></a>
         </div>
-        <div className="legal">
-          <p>{t.legalOferta}</p>
-          <p>{t.legalPrivado} {t.derechos(new Date().getFullYear())}</p>
+        <div className="pie-fila pie-enlaces">
+          <ul className="pie-menu">
+            {enlaces.map((e) => <li key={e.href}><Link href={e.href}>{e.t}</Link></li>)}
+            <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          </ul>
+          <div className="legal">
+            <p>{t.legalOferta}</p>
+            <p>{t.legalPrivado}</p>
+            <p><Link href="/privacidad">{t.privacidad}</Link> {t.derechos(new Date().getFullYear())}</p>
+          </div>
         </div>
       </div>
     </footer>

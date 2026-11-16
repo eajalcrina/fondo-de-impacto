@@ -13,6 +13,7 @@ export const es = {
   },
   nav: {
     principal: "Principal",
+    menu: "Menú",
     empresas: "Empresas",
     inversionistas: "Inversionistas",
     portafolio: "Portafolio",
@@ -33,14 +34,29 @@ export const es = {
     meta: "Preparamos a empresas de impacto de América Latina para levantar capital y las presentamos a más de 50 fondos con el Bootcamp y el Pasaporte de Inversión.",
     heroe: {
       rotulo: "Capital de impacto en Perú y Colombia",
-      titulo: ["Capital para las ", "empresas de impacto", " de América Latina"],
+      titulo: "Capital para las empresas de impacto de América Latina",
       bajada: "Si tu empresa ya demostró tracción, te preparamos para levantar capital y te presentamos a los fondos que pueden financiarte.",
       cta: "Ver fondos para mi empresa",
       inversionista: "Soy inversionista",
       foto: "Río amazónico al atardecer con una canoa",
+      bajar: "Ir al contenido",
+    },
+    empresas: {
+      titulo: "Para empresas",
+      bootcamp: { t: "Bootcamp de Levantamiento de Capital", href: "/bootcamp", foto: "/img/h17.jpg", alt: "Equipos de empresas trabajando en un taller" },
+      cohorte: { rotulo: "Próxima cohorte", titulo: "¿Tu empresa está lista para levantar capital?", cta: "Postular al Bootcamp" },
+      bloques: [
+        { t: "Pasaporte de Inversión", href: "/pasaporte", foto: "/img/rl/mapa.jpg", alt: "Mano marcando un mapa del territorio" },
+        { t: "Financiamiento directo", href: "/empresas", foto: "/img/rl/entrega-cosecha.jpg", alt: "Entrega de cosecha en el campo" },
+        { t: "Buscador de fondos", href: "/pasaporte#buscador", foto: "/img/rl/cacao-manos.jpg", alt: "Mazorca de cacao abierta en manos de un productor" },
+      ],
+    },
+    capital: {
+      titulo: "¿Cuánto capital necesitas?",
+      texto: "Elige un rango para descubrir las fuentes de capital de impacto adecuadas para tu empresa.",
     },
     cifras: {
-      rotulo: "Resultados desde 2021",
+      titulo: "Resultados desde 2021",
       items: [
         { icono: "red", mas: true, valor: "50", texto: "fondos de impacto en nuestra red" },
         { icono: "brote", mas: true, valor: "10", texto: "empresas en nuestro portafolio" },
@@ -48,42 +64,18 @@ export const es = {
         { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025" },
       ],
     },
-    trabajo: {
-      rotulo: "Cómo trabajamos",
-      titulo: ["Preparamos, conectamos e ", "invertimos"],
-      tarjetas: [
-        { clase: "salvia", rotulo: "Preparación", titulo: "Bootcamp de Levantamiento de Capital", texto: "Ocho semanas sobre tu propia empresa. Al final, presentas ante fondos aliados.", cta: "Postular al Bootcamp", href: "/bootcamp", foto: "/img/h17.jpg", alt: "Equipos de empresas trabajando en un taller", pos: "50% 50%" },
-        { clase: "", rotulo: "Acceso a fondos", titulo: "Pasaporte de Inversión", texto: "Un solo perfil para llegar a más de 50 fondos de impacto.", cta: "Crear mi Pasaporte", href: "/pasaporte", foto: "/img/h16.jpg", alt: "Mano marcando un mapa del territorio", pos: "60% 60%" },
-        { clase: "naranja", rotulo: "Para inversionistas", titulo: "Inversión paciente", texto: "Invertimos en empresas que preparamos y acompañamos. Hacemos due diligence financiero y ESG, y reportamos cada mes.", cta: "Conocer la tesis", href: "/inversionistas", foto: "/img/h01.jpg", alt: "Mazorca de cacao en un sistema agroforestal", pos: "50% 40%" },
-      ],
-    },
-    rangos: {
-      titulo: "¿Cuánto capital necesitas?",
-      texto: "Elige un rango para descubrir las fuentes de capital de impacto adecuadas para tu empresa.",
-    },
-    porQue: {
-      rotulo: "Por qué existimos",
-      titulo: ["A muchas empresas rentables les falta un perfil que un ", "comité", " pueda aprobar"],
-      texto: "Conocemos a la empresa por dentro y sabemos lo que exige quien invierte.",
-      foto: "Comunidad reunida frente a su centro de acopio",
-    },
-    proceso: {
-      etiqueta: "Cómo llega el capital a una empresa",
-      etapas: [
-        { n: "01", t: "Empresa con tracción" },
-        { n: "02", t: "Preparación", d: "Bootcamp y Pasaporte de Inversión" },
-        { n: "03", t: "Capital" },
-      ],
-      destinos: ["Red de más de 50 fondos de impacto", "Financiamiento de Fondo de Impacto"],
+    inversionistas: {
+      titulo: "Para inversionistas",
+      bloque: { t: "Inversión paciente", href: "/inversionistas", foto: "/img/rl/cacao-arbol.jpg", alt: "Mazorca de cacao en un sistema agroforestal" },
+      cita: "A muchas empresas rentables les falta un perfil que un comité pueda aprobar. Las preparamos, las acompañamos e invertimos en ellas.",
+      firma: "Fondo de Impacto",
+      cta: "Conocer la tesis",
     },
     portafolio: {
-      rotulo: "Portafolio",
-      titulo: ["Empresas de la ", "biodiversidad", " que ya venden"],
-      bajada: "Algunas de las empresas más relevantes de nuestro portafolio.",
+      titulo: "Portafolio",
       cta: "Ver el portafolio",
     },
-    organizaciones: { rotulo: "Trayectoria", titulo: "Organizaciones con las que hemos trabajado" },
-    cierre: { cohorte: "Próxima cohorte", titulo: "¿Tu empresa está lista para levantar capital?", cta: "Postular al Bootcamp", inversionista: "Soy inversionista" },
+    organizaciones: { titulo: "Organizaciones con las que hemos trabajado" },
   },
   portafolio: {
     meta: "Portafolio de Fondo de Impacto, con empresas como Cotton Nation, Endemics, Rare by, GreenProd y Ecovive. Facturó USD 26 MM en 2025, 28% más que en 2024.",
@@ -131,6 +123,8 @@ export const es = {
     pasaporte: "Pasaporte de Inversión",
     financiamiento: "Financiamiento directo",
     privacidad: "Política de privacidad",
+    arriba: "Volver arriba",
+    contactoCorto: "Contacto",
     derechos: (anio: number) => `© ${anio} Redesign Ventures SAC.`,
     legalOferta: "Este sitio es informativo y no constituye una oferta pública de valores ni una invitación a captar fondos del público.",
     legalPrivado: "Las oportunidades de inversión se presentan solo en conversaciones privadas, bajo acuerdo de confidencialidad.",

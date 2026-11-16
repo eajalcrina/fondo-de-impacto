@@ -1,45 +1,16 @@
-/* Héroes: portada e interiores con foto fija y panel bosque unido por la diagonal de 6°. */
+/* Cabeceras de páginas internas y bloques asociados. */
 @layer componentes {
   .hero { position: relative; }
-  /*
-   * Héroe partido. En celular la foto termina en la diagonal de 6°; en escritorio la foto pasa
-   * por debajo del panel y la unión es una doble diagonal: banda translúcida, filete naranja y panel.
-   * El panel lleva facetas de corte duro paralelas a la unión para que el verde no se vea plano.
-   */
-  .heroe { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--bosque); color: var(--blanco); overflow: hidden; container-type: inline-size; }
-  .heroe-foto { position: relative; aspect-ratio: 16 / 10; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10.5cqw), 0 100%); }
-  .heroe-foto img { object-fit: cover; }
-  .heroe-panel { position: relative; display: grid; align-content: center; gap: 20px; padding: 32px var(--gut) 48px; }
-  .heroe-panel h1 { max-width: 14ch; }
-  .heroe-panel .eyebrow { color: var(--sobre-oscuro); }
-  .heroe-panel .kw { color: var(--naranja-claro); }
-  .heroe-panel .btn-g { border-color: rgba(255, 255, 255, 0.7); color: var(--blanco); }
-  .heroe-panel .btn-g:hover { background: var(--blanco); color: var(--bosque); }
-  .heroe-panel .lead { color: var(--sobre-oscuro); max-width: 44ch; }
-  @media (min-width: 900px) {
-    .heroe { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); min-height: min(740px, calc(100vh - var(--alto-nav))); }
-    .heroe-foto { aspect-ratio: auto; clip-path: none; margin-right: -136px; }
-    .heroe-panel { z-index: 1; padding: 64px var(--gut) 64px 96px; gap: 28px; }
-    .heroe-panel > * { position: relative; z-index: 1; }
-    .heroe-panel::before {
-      content: ""; position: absolute; inset: 0 -200px 0 0; z-index: 0;
-      transform-origin: bottom left; transform: skewX(calc(-1 * var(--corte)));
-      border-left: 3px solid var(--naranja-claro);
-      background:
-        linear-gradient(96deg, transparent 0 58%, rgba(124, 160, 127, 0.1) 58% 80%, rgba(124, 160, 127, 0.18) 80%),
-        var(--bosque);
-    }
-    .heroe-panel::after {
-      content: ""; position: absolute; top: 0; bottom: 0; left: -59px; width: 56px; z-index: 0;
-      transform-origin: bottom left; transform: skewX(calc(-1 * var(--corte)));
-      background: rgba(18, 53, 36, 0.55);
-    }
-  }
-  @media (min-width: 1100px) {
-    .heroe { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
-    .heroe-panel h1 { font-size: 56px; line-height: 1.02; }
-  }
-  @media (min-width: 1280px) { .heroe-panel h1 { font-size: 62px; } }
+  /* Cabecera de páginas internas: foto a sangre al 65% del alto de la pantalla y texto abajo sobre un velo */
+  .cabecera { position: relative; min-height: 65svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--bosque); color: var(--blanco); }
+  .cabecera img { object-fit: cover; }
+  .cabecera::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(10, 30, 20, 0.85) 100%); }
+  .cabecera-texto { position: relative; z-index: 1; width: 100%; display: grid; gap: 16px; padding-top: 120px; padding-bottom: 48px; }
+  .cabecera-texto h1 { max-width: 22ch; }
+  .cabecera-texto .eyebrow, .cabecera-texto .lead { color: var(--sobre-oscuro); }
+  .cabecera-texto .kw { color: var(--naranja-claro); }
+  .cabecera-texto .lead { max-width: 56ch; }
+  .cabecera-texto .btn-g { background: rgba(255, 255, 255, 0.15); color: var(--blanco); }
 
   /* Héroe de páginas interiores: panel bosque con título y foto a la derecha */
   .hero.dk { padding-block: 56px 64px; }
@@ -55,7 +26,7 @@
   /* Cifras del héroe interior */
   .facts { display: flex; flex-wrap: wrap; gap: 20px 32px; margin-top: 16px; padding-top: 20px; border-top: 1px solid var(--linea-oscura); }
   .facts div { display: grid; gap: 2px; }
-  .facts b { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 72; font-size: 30px; line-height: 1.1; color: var(--blanco); white-space: nowrap; }
+  .facts b { font-family: var(--f-sans); font-weight: 500; font-size: 30px; line-height: 1.1; color: var(--blanco); white-space: nowrap; }
   .facts span { font-size: 13px; color: var(--sobre-oscuro-2); }
 
   /* Cinturón de fotos bajo el héroe, como en la web anterior */
