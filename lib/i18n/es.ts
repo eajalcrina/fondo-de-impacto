@@ -53,7 +53,6 @@ export const es = {
     },
     capital: {
       titulo: "¿Cuánto capital necesitas?",
-      texto: "Elige un rango para descubrir las fuentes de capital de impacto adecuadas para tu empresa.",
     },
     cifras: {
       titulo: "Resultados desde 2021",
@@ -89,7 +88,6 @@ export const es = {
     tesis: {
       rotulo: "Tesis",
       titulo: "Resultados del portafolio",
-      texto: "Buscamos ventas, una cadena de valor en la biodiversidad y un equipo que conocemos desde la preparación.",
     },
     cifras: [
       { icono: "barras", mas: false, valor: "USD\u00a026\u00a0MM", texto: "facturación del portafolio en 2025" },

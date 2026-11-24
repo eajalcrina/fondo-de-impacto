@@ -24,10 +24,12 @@
   .acciones { display: flex; align-items: center; gap: 8px; }
   .acciones .btn { display: none; }
   @media (min-width: 900px) { .acciones .btn { display: inline-flex; margin-right: 8px; } }
-  .idioma { display: none; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; margin-right: 8px; }
-  .idioma a { color: var(--t2); transition: color 0.15s ease-in-out; }
+  /* Selector ES / EN visible siempre en el encabezado, también en celular; cada idioma lleva a la misma página en el otro */
+  .idioma { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; margin-right: 4px; }
+  .idioma a { display: inline-grid; place-items: center; min-width: 28px; min-height: 40px; color: var(--t2); transition: color 0.15s ease-in-out; }
+  .idioma b { display: inline-grid; place-items: center; min-width: 28px; min-height: 40px; }
   .idioma a:hover { color: var(--naranja); }
-  @media (min-width: 640px) { .idioma { display: inline-flex; } }
+  @media (min-width: 640px) { .idioma { margin-right: 8px; } }
   .icono { display: grid; place-items: center; width: 44px; height: 44px; background: none; border: 0; color: inherit; cursor: pointer; }
   .icono svg { width: 20px; height: 20px; }
   .icono:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }

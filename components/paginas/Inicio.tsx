@@ -45,10 +45,7 @@ export function Inicio({ lang }: { lang: Lang }) {
       </div></section>
 
       <section className="seccion" id="capital"><div className="wrap">
-        <div className="seccion-cabeza">
-          <h2 className="d2 seccion-titulo">{t.capital.titulo}</h2>
-          <p className="seccion-texto">{t.capital.texto}</p>
-        </div>
+        <h2 className="d2 seccion-titulo">{t.capital.titulo}</h2>
         <Ranges lang={lang} />
       </div></section>
 

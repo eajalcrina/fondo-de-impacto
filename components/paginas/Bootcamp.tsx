@@ -40,12 +40,12 @@ const T = {
     quien: "Para quién es",
     requisitos: ["Tienes operación comercial activa y ventas verificables.", "Sabes para qué necesitas el capital, o quieres definirlo con nosotros.", "Puedes dedicarle horas cada semana durante ocho semanas.", "Quieres feedback directo sobre tu caso."],
     sinVentas: "Si aún no tienes ventas, empieza por tu Pasaporte de Inversión.", acceso: "Solicitar acceso",
-    postulacion: "Postulación", postula: `Postula a la cohorte de ${C.mes}`, enviar: "Enviar postulación",
+    postula: `Postula a la cohorte de ${C.mes}`, enviar: "Enviar postulación",
     gracias: `Gracias. Recibimos tu postulación y te enviamos una confirmación por correo. Te escribimos ${SITE.respuesta}.`,
     campos: { empresa: "Empresa", nombre: "Nombre completo", correo: "Correo", celular: "Celular", pais: "País", rubro: "Rubro", ventas: "Ventas de los últimos 12 meses (USD)", capital: "Capital que buscas", mensaje: "¿Para qué necesitas el capital?" },
     ventas: [["menos-50k", "Menos de USD 50 mil"], ["50k-250k", "USD 50 mil a 250 mil"], ["250k-1m", "USD 250 mil a 1 MM"], ["mas-1m", "Más de USD 1 MM"]] as [string, string][],
     otros: "Cooperativas, consultores y fondos",
-    cierre: "Mira cuántos fondos calzan con tu empresa", cierreX: `El buscador revisa ${fuentes.length} fuentes de capital de impacto y te muestra cuántas financian a empresas como la tuya.`, fondos: "Ver fondos para mi empresa",
+    cierre: "Mira cuántos fondos calzan con tu empresa", cierreX: `El buscador revisa ${fuentes.length} fuentes de capital de impacto.`, fondos: "Ver fondos para mi empresa",
   },
   en: {
     foto: "Workshop with impact companies", rotulo: "Capital Raising Bootcamp", titulo: "Raise capital with people who have done it",
@@ -69,12 +69,12 @@ const T = {
     quien: "Who it is for",
     requisitos: ["You have active commercial operations and verifiable sales.", "You know what you need the capital for, or want to define it with us.", "You can commit hours every week for eight weeks.", "You want direct feedback on your case."],
     sinVentas: "If you do not have sales yet, start with your Investment Passport.", acceso: "Request access",
-    postulacion: "Application", postula: `Apply to the ${CE.mes} cohort`, enviar: "Send application",
+    postula: `Apply to the ${CE.mes} cohort`, enviar: "Send application",
     gracias: "Thank you. We received your application and sent you a confirmation email. We will write to you within 24 hours.",
     campos: { empresa: "Company", nombre: "Full name", correo: "Email", celular: "Mobile", pais: "Country", rubro: "Sector", ventas: "Sales in the last 12 months (USD)", capital: "Capital you are looking for", mensaje: "What do you need the capital for?" },
     ventas: [["menos-50k", "Less than USD 50K"], ["50k-250k", "USD 50K to 250K"], ["250k-1m", "USD 250K to 1 M"], ["mas-1m", "More than USD 1 M"]] as [string, string][],
     otros: "Cooperatives, consultants and funds",
-    cierre: "See how many funds match your company", cierreX: `The finder reviews ${fuentes.length} impact capital sources and shows you how many finance companies like yours.`, fondos: "See funds for my company",
+    cierre: "See how many funds match your company", cierreX: `The finder reviews ${fuentes.length} impact capital sources.`, fondos: "See funds for my company",
   },
 };
 
@@ -133,10 +133,7 @@ export function Bootcamp({ lang }: { lang: Lang }) {
       </div></section>
 
       <section className="seccion claro" id="postular"><div className="wrap split">
-        <div className="stack">
-          <span className="eyebrow">{t.postulacion}</span>
-          <Words as="h2" className="d2" text={t.postula} />
-        </div>
+        <Words as="h2" className="d2" text={t.postula} />
         <LeadForm
           form="bootcamp"
           idPrefix="bc"

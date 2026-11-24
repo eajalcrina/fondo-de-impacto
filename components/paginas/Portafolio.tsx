@@ -20,10 +20,7 @@ export function Portafolio({ lang }: { lang: Lang }) {
       </Hero>
 
       <section className="seccion"><div className="wrap">
-        <div className="seccion-cabeza">
-          <h2 className="d2 seccion-titulo">{t.tesis.titulo}</h2>
-          <p className="seccion-texto">{t.tesis.texto}</p>
-        </div>
+        <h2 className="d2 seccion-titulo">{t.tesis.titulo}</h2>
         <Cifras items={t.cifras} lang={lang} />
       </div></section>
 

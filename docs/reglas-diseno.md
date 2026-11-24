@@ -40,6 +40,14 @@ Paleta propia de Fondo de Impacto. Tokens en `app/(site)/estilos/tokens.css`; ni
 - Fotos propias de Redesign Lab y de la Amazonía (licencia Unsplash). Cada foto acompaña su tema.
 - Pendiente: permisos de imagen de las personas en las fotos.
 
+## 5b. Textos: directo al grano (regla general, 24-11-2026)
+Si el título o el subtítulo ya dice lo que hay en la sección, el texto que lo acompaña sobra.
+- Se quita: la bajada que repite el título con otras palabras; la frase que explica lo obvio de un bloque, un botón o un formulario («Déjanos tus datos…», «Aquí encontrarás…», «En esta sección…»); la descripción de tarjeta que solo parafrasea su título; el texto que repite algo dicho cerca en la misma página; la introducción que anuncia lo que viene en vez de decirlo; el rótulo que repite el título que tiene debajo.
+- Se conserva: datos, cifras, fechas, precios, plazos, entregables, condiciones, fuentes, preguntas frecuentes, metodología y todo texto que agregue una decisión, una condición o un dato que el título no dice.
+- Si un texto es útil pero estorba, se mueve (a la nota de metodología, a un acordeón «Detalle» o a la página que corresponde); no se borra.
+- No se escribe texto nuevo para reemplazar lo quitado ni se cambian datos. El título pasa a ser la entrada directa del contenido, sin huecos.
+- Se aplica igual en español e inglés, en metadatos y en imágenes para compartir.
+
 ## 6. Nombres y estilo
 - Fondo de Impacto, Redesign Lab, Bootcamp de Levantamiento de Capital, Pasaporte de Inversión, Financiamiento directo, empresas de impacto. Firma «by Redesign Lab».
 - Menú: Empresas (Bootcamp, Pasaporte de Inversión, Financiamiento directo), Inversionistas, Nosotros y el botón «Agendar reunión».

@@ -54,7 +54,6 @@ export const en: Textos = {
     },
     capital: {
       titulo: "How much capital do you need?",
-      texto: "Choose a range to find the impact capital sources that fit your company.",
     },
     cifras: {
       titulo: "Results since 2021",
@@ -90,7 +89,6 @@ export const en: Textos = {
     tesis: {
       rotulo: "Thesis",
       titulo: "Portfolio results",
-      texto: "We look for sales, a biodiversity value chain and a team we have known since the preparation stage.",
     },
     cifras: [
       { icono: "barras", mas: false, valor: "USD 26 M", texto: "portfolio revenue in 2025" },
